@@ -7,12 +7,27 @@ import { Zap, Target, BarChart3, Users, Trophy, Gamepad2 } from "lucide-react";
 
 const Index = () => {
   const [draftStarted, setDraftStarted] = useState(false);
-  
-  const defaultLeagueSettings = {
+  const [leagueSettings, setLeagueSettings] = useState({
     teams: 12,
     rounds: 16,
     scoringType: "PPR",
-    draftType: "Snake"
+    draftType: "Snake",
+    draftPosition: 1,
+    roster: {
+      QB: 1,
+      RB: 2,
+      WR: 3,
+      TE: 1,
+      FLEX: 1,
+      K: 1,
+      DST: 1,
+      BENCH: 6
+    },
+    draftStrategy: "balanced" as "value" | "balanced" | "need" | "upside"
+  });
+
+  const handleSettingsChange = (newSettings: Partial<typeof leagueSettings>) => {
+    setLeagueSettings(prev => ({ ...prev, ...newSettings }));
   };
 
   if (draftStarted) {
@@ -43,7 +58,7 @@ const Index = () => {
             </div>
           </div>
           
-          <DraftBoard leagueSettings={defaultLeagueSettings} />
+          <DraftBoard leagueSettings={leagueSettings} onSettingsChange={handleSettingsChange} />
         </div>
       </div>
     );

@@ -20,11 +20,12 @@ interface Player {
 interface PlayerCardProps {
   player: Player;
   onDraft?: (player: Player) => void;
+  onDraftByOthers?: (player: Player) => void;
   isDrafted?: boolean;
   isRecommended?: boolean;
 }
 
-export function PlayerCard({ player, onDraft, isDrafted, isRecommended }: PlayerCardProps) {
+export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isRecommended }: PlayerCardProps) {
   const getPositionColor = (position: string) => {
     switch (position) {
       case 'QB': return 'bg-red-500/20 text-red-400 border-red-500/30';
@@ -103,7 +104,7 @@ export function PlayerCard({ player, onDraft, isDrafted, isRecommended }: Player
           </Badge>
         )}
 
-        <div className="flex items-center justify-between">
+        <div className="space-y-2">
           {player.trending && (
             <div className="flex items-center space-x-1">
               {player.trending === 'up' ? (
@@ -115,18 +116,29 @@ export function PlayerCard({ player, onDraft, isDrafted, isRecommended }: Player
             </div>
           )}
           
-          <Button
-            size="sm"
-            onClick={() => onDraft?.(player)}
-            disabled={isDrafted}
-            className={`${
-              isRecommended 
-                ? 'bg-accent hover:bg-accent/90 text-accent-foreground' 
-                : ''
-            }`}
-          >
-            {isDrafted ? 'Drafted' : 'Draft'}
-          </Button>
+          <div className="flex gap-2">
+            <Button
+              size="sm"
+              onClick={() => onDraft?.(player)}
+              disabled={isDrafted}
+              className={`flex-1 ${
+                isRecommended 
+                  ? 'bg-accent hover:bg-accent/90 text-accent-foreground' 
+                  : ''
+              }`}
+            >
+              {isDrafted ? 'Drafted' : 'Draft'}
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => onDraftByOthers?.(player)}
+              disabled={isDrafted}
+              className="flex-1"
+            >
+              Others
+            </Button>
+          </div>
         </div>
       </CardContent>
     </Card>

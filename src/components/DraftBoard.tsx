@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { PlayerCard } from "./PlayerCard";
 import { TeamRoster } from "./TeamRoster";
 import { DraftSettings } from "./DraftSettings";
-import { Search, Filter, Users, Trophy, BarChart3, AlertCircle } from "lucide-react";
+import { Search, Filter, Users, Trophy, BarChart3, AlertCircle, Undo2 } from "lucide-react";
 import { 
   usePlayersQuery, 
   useDraftQuery, 
@@ -102,15 +102,30 @@ interface DraftBoardProps {
     rounds: number;
     scoringType: string;
     draftType: string;
+    draftPosition?: number;
+    draftStrategy?: "value" | "balanced" | "need" | "upside";
+    roster?: {
+      QB: number;
+      RB: number;
+      WR: number;
+      TE: number;
+      FLEX: number;
+      K: number;
+      DST: number;
+      BENCH: number;
+    };
   };
+  onSettingsChange?: (settings: Partial<DraftBoardProps['leagueSettings']>) => void;
 }
 
-export function DraftBoard({ leagueSettings }: DraftBoardProps) {
+export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPosition, setSelectedPosition] = useState("ALL");
-  const [draftedPlayers, setDraftedPlayers] = useState<Set<string>>(new Set());
+  const [draftedPlayers, setDraftedPlayers] = useState<Set<string>>(new Set()); // Players I drafted
+  const [playersDraftedByOthers, setPlayersDraftedByOthers] = useState<Set<string>>(new Set()); // Players drafted by other teams
   const [myTeam, setMyTeam] = useState<any[]>([]);
   const [currentPick, setCurrentPick] = useState(1);
+  const [lastAction, setLastAction] = useState<{ type: 'draft' | 'others', player: any, pick: number } | null>(null);
   
   // Tank01 API hooks - always try to use live data
   const { data: tank01Players, isLoading: playersLoading, error: playersError } = useTank01Players();
@@ -208,9 +223,10 @@ export function DraftBoard({ leagueSettings }: DraftBoardProps) {
       const matchesSearch = playerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            playerTeam.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesPosition = selectedPosition === "ALL" || playerPosition === selectedPosition;
-      const notDrafted = !draftedPlayers.has(playerId);
+      const notDraftedByMe = !draftedPlayers.has(playerId);
+      const notDraftedByOthers = !playersDraftedByOthers.has(playerId);
       
-      return matchesSearch && matchesPosition && notDrafted;
+      return matchesSearch && matchesPosition && notDraftedByMe && notDraftedByOthers;
     });
     
     console.log('🎯 Filtered Players:', {
@@ -227,23 +243,138 @@ export function DraftBoard({ leagueSettings }: DraftBoardProps) {
 
   const handleDraftPlayer = (player: any) => {
     const playerId = player.id || player.playerID || '';
+    const playerWithId = { ...player, draftedAt: currentPick, id: playerId };
+    
+    // Store last action for undo
+    setLastAction({ type: 'draft', player: playerWithId, pick: currentPick });
+    
     setDraftedPlayers(prev => new Set([...prev, playerId]));
-    setMyTeam(prev => [...prev, { ...player, draftedAt: currentPick, id: playerId }]);
+    setMyTeam(prev => [...prev, playerWithId]);
     setCurrentPick(prev => prev + 1);
   };
 
-  const getRecommendedPlayers = () => {
-    // Simple recommendation logic - in real app this would be more sophisticated
-    const positionNeeds = {
-      QB: myTeam.filter(p => p.position === 'QB').length < 2,
-      RB: myTeam.filter(p => p.position === 'RB').length < 3,
-      WR: myTeam.filter(p => p.position === 'WR').length < 4,
-      TE: myTeam.filter(p => p.position === 'TE').length < 2,
-    };
+  const handleDraftByOthers = (player: any) => {
+    const playerId = player.id || player.playerID || '';
+    const playerWithId = { ...player, id: playerId };
+    
+    // Store last action for undo
+    setLastAction({ type: 'others', player: playerWithId, pick: currentPick });
+    
+    setPlayersDraftedByOthers(prev => new Set([...prev, playerId]));
+    setCurrentPick(prev => prev + 1);
+  };
 
-    return filteredPlayers.slice(0, 3).filter(player => 
-      positionNeeds[player.position as keyof typeof positionNeeds]
-    ).map(p => p.id);
+  const handleUndo = () => {
+    if (!lastAction) return;
+    
+    const playerId = lastAction.player.id || lastAction.player.playerID || '';
+    
+    if (lastAction.type === 'draft') {
+      // Undo drafting to my team
+      setDraftedPlayers(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(playerId);
+        return newSet;
+      });
+      setMyTeam(prev => prev.filter(p => (p.id || p.playerID) !== playerId));
+    } else if (lastAction.type === 'others') {
+      // Undo drafting by others
+      setPlayersDraftedByOthers(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(playerId);
+        return newSet;
+      });
+    }
+    
+    // Restore pick count and clear last action
+    setCurrentPick(lastAction.pick);
+    setLastAction(null);
+  };
+
+  const getRecommendedPlayers = () => {
+    const strategy = leagueSettings.draftStrategy || "balanced";
+    
+    if (strategy === "balanced") {
+      // KEEP EXISTING LOGIC EXACTLY AS IS - Simple recommendation logic
+      const positionNeeds = {
+        QB: myTeam.filter(p => p.position === 'QB').length < 2,
+        RB: myTeam.filter(p => p.position === 'RB').length < 3,
+        WR: myTeam.filter(p => p.position === 'WR').length < 4,
+        TE: myTeam.filter(p => p.position === 'TE').length < 2,
+      };
+
+      return filteredPlayers.slice(0, 3).filter(player => 
+        positionNeeds[player.position as keyof typeof positionNeeds]
+      ).map(p => p.id);
+    }
+    
+    if (strategy === "value") {
+      // Best Player Available - pure ADP ranking regardless of position
+      return filteredPlayers
+        .slice(0, 5) // Top 5 available players by ADP
+        .map(p => p.id);
+    }
+    
+    if (strategy === "need") {
+      // Fill Roster Needs - aggressive position targeting
+      const roster = leagueSettings.roster || {QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6};
+      const currentCounts = {
+        QB: myTeam.filter(p => p.position === 'QB').length,
+        RB: myTeam.filter(p => p.position === 'RB').length,
+        WR: myTeam.filter(p => p.position === 'WR').length,
+        TE: myTeam.filter(p => p.position === 'TE').length,
+        K: myTeam.filter(p => p.position === 'K').length,
+        DST: myTeam.filter(p => p.position === 'DST').length,
+      };
+      
+      // Find positions where we're most behind target
+      const positionPriority = Object.entries(roster)
+        .filter(([pos]) => pos !== 'FLEX' && pos !== 'BENCH')
+        .map(([pos, target]) => ({
+          position: pos,
+          shortage: Math.max(0, target - (currentCounts[pos as keyof typeof currentCounts] || 0))
+        }))
+        .filter(p => p.shortage > 0)
+        .sort((a, b) => b.shortage - a.shortage);
+      
+      if (positionPriority.length === 0) {
+        // No urgent needs, get best available
+        return filteredPlayers.slice(0, 3).map(p => p.id);
+      }
+      
+      // Recommend players from most needed positions
+      const neededPositions = positionPriority.slice(0, 2).map(p => p.position);
+      return filteredPlayers
+        .filter(player => neededPositions.includes(player.position))
+        .slice(0, 4)
+        .map(p => p.id);
+    }
+    
+    if (strategy === "upside") {
+      // High Upside - favor younger players, higher tiers, and breakout candidates
+      const currentRound = Math.ceil(currentPick / leagueSettings.teams);
+      
+      if (currentRound <= 6) {
+        // Early rounds: safe high-value picks (tiers 1-3)
+        return filteredPlayers
+          .filter(player => player.tier <= 3)
+          .slice(0, 4)
+          .map(p => p.id);
+      } else {
+        // Later rounds: high upside picks - RB/WR in better tiers than expected for the round
+        const expectedTierForRound = Math.ceil(currentRound * 1.5); // Rough tier expectation
+        return filteredPlayers
+          .filter(player => 
+            ['RB', 'WR', 'TE'].includes(player.position) && 
+            player.tier < expectedTierForRound
+          )
+          .slice(0, 5)
+          .map(p => p.id);
+      }
+    }
+    
+    // Fallback to balanced if unknown strategy
+    return filteredPlayers.slice(0, 3).map(p => p.id);
   };
 
   const recommendedPlayerIds = getRecommendedPlayers();
@@ -295,14 +426,70 @@ export function DraftBoard({ leagueSettings }: DraftBoardProps) {
                 <p className="text-sm text-muted-foreground">
                   Pick {currentPick} of {leagueSettings.teams * leagueSettings.rounds}
                 </p>
+                {leagueSettings.draftPosition && (
+                  <p className="text-xs text-muted-foreground">
+                    Your pick: {leagueSettings.draftPosition}{leagueSettings.draftPosition === 1 ? 'st' : leagueSettings.draftPosition === 2 ? 'nd' : leagueSettings.draftPosition === 3 ? 'rd' : 'th'} position
+                  </p>
+                )}
               </div>
             </div>
             <div className="flex items-center space-x-2">
               <Badge variant="secondary" className="text-lg px-3 py-1">
                 Round {Math.ceil(currentPick / leagueSettings.teams)}
               </Badge>
+              {lastAction && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleUndo}
+                  className="flex items-center space-x-1 hover:bg-destructive/10 hover:text-destructive hover:border-destructive"
+                >
+                  <Undo2 className="h-4 w-4" />
+                  <span>Undo</span>
+                </Button>
+              )}
             </div>
           </div>
+          
+          {/* Draft Order Preview */}
+          {leagueSettings.draftPosition && (
+            <div className="mt-4 p-4 bg-background/30 rounded-lg">
+              <h4 className="text-sm font-medium mb-2">Your Upcoming Picks</h4>
+              <div className="flex gap-2 flex-wrap">
+                {(() => {
+                  const yourPicks = [];
+                  const totalPicks = leagueSettings.teams * leagueSettings.rounds;
+                  
+                  for (let round = 1; round <= leagueSettings.rounds; round++) {
+                    let pickInRound;
+                    if (leagueSettings.draftType === "Snake" && round % 2 === 0) {
+                      // Even rounds in snake draft reverse order
+                      pickInRound = leagueSettings.teams - leagueSettings.draftPosition + 1;
+                    } else {
+                      pickInRound = leagueSettings.draftPosition;
+                    }
+                    
+                    const overallPick = (round - 1) * leagueSettings.teams + pickInRound;
+                    if (overallPick >= currentPick && overallPick <= totalPicks) {
+                      yourPicks.push(overallPick);
+                    }
+                    
+                    if (yourPicks.length >= 5) break; // Show only next 5 picks
+                  }
+                  
+                  return yourPicks.map((pick, index) => (
+                    <Badge 
+                      key={pick} 
+                      variant={pick === currentPick ? "default" : "outline"}
+                      className={pick === currentPick ? "bg-accent text-accent-foreground animate-pulse" : ""}
+                    >
+                      {pick === currentPick ? "NOW" : `#${pick}`}
+                    </Badge>
+                  ));
+                })()}
+              </div>
+            </div>
+          )}
         </CardHeader>
       </Card>
 
@@ -405,6 +592,7 @@ export function DraftBoard({ leagueSettings }: DraftBoardProps) {
                   key={player.id || player.playerID || Math.random()}
                   player={player}
                   onDraft={handleDraftPlayer}
+                  onDraftByOthers={handleDraftByOthers}
                   isDrafted={draftedPlayers.has(player.id || player.playerID)}
                   isRecommended={recommendedPlayerIds.includes(player.id || player.playerID)}
               />
@@ -446,7 +634,7 @@ export function DraftBoard({ leagueSettings }: DraftBoardProps) {
         </TabsContent>
 
         <TabsContent value="settings">
-          <DraftSettings leagueSettings={leagueSettings} />
+          <DraftSettings leagueSettings={leagueSettings} onSettingsChange={onSettingsChange} />
         </TabsContent>
       </Tabs>
     </div>
