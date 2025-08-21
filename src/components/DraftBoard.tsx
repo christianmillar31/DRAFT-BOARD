@@ -29,8 +29,14 @@ import {
   sosMultiplierPos, 
   positionRankFromADP,
   applyFloors,
-  type Pos 
+  getFlexWeights,
+  replacementPointsMemoized,
+  sosMultiplierPosMemoized,
+  calculateVBDWithBreakdown,
+  type Pos,
+  type VBDBreakdown
 } from "../lib/vbd";
+import { validateVBDSystem } from "../lib/backtest";
 
 // Mock data for development/testing
 const mockPlayers = [
@@ -404,20 +410,25 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   const recommendedPlayerIds = getRecommendedPlayers();
 
 
-  // Configurable flex weights based on league type
-  const getFlexWeights = (leagueSettings: any) => {
-    // Default flex allocation: RB 40%, WR 40%, TE 20%
-    const defaultWeights = { QB: 0, RB: 0.4, WR: 0.4, TE: 0.2 };
-    
-    // Check if league settings specify flex weights
-    const flexWeights = leagueSettings.flexWeights || defaultWeights;
-    
-    // Adjust for 3WR leagues (push more flex toward WR)
-    if (leagueSettings.roster?.WR >= 3) {
-      return { QB: 0, RB: 0.35, WR: 0.5, TE: 0.15 };
+  // Get VBD breakdown for debug tooltip
+  const getVBDBreakdown = (player: any): VBDBreakdown | null => {
+    try {
+      return calculateVBDWithBreakdown(
+        { id: player.id || player.playerID || '', position: player.position, adp: player.adp || 999 },
+        filteredPlayers.map(p => ({ 
+          id: p.id || p.playerID || '', 
+          position: p.position, 
+          adp: p.adp || 999 
+        })),
+        null, // SOS data would go here
+        leagueSettings.teams || 12,
+        { QB: leagueSettings.roster?.QB || 1, RB: leagueSettings.roster?.RB || 2, WR: leagueSettings.roster?.WR || 3, TE: leagueSettings.roster?.TE || 1 },
+        { count: leagueSettings.roster?.FLEX || 1, eligible: leagueSettings.flexType === 'superflex' ? ['QB', 'RB', 'WR', 'TE'] : ['RB', 'WR', 'TE'] },
+        getFlexWeights(leagueSettings)
+      );
+    } catch (error) {
+      return null;
     }
-    
-    return flexWeights;
   };
 
   // Adapter for position-specific SOS with current SOS function
@@ -482,8 +493,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     const starters = { QB: roster.QB, RB: roster.RB, WR: roster.WR, TE: roster.TE };
     const flexWeights = getFlexWeights(leagueSettings);
     
-    // Calculate replacement level points with configurable flex allocation
-    const replPoints = replacementPoints(position, teams, starters, flex, flexWeights);
+    // Calculate replacement level points with configurable flex allocation (memoized)
+    const replPoints = replacementPointsMemoized(position, teams, starters, flex, flexWeights);
     
     // Final VBD calculation
     const vbd = Math.max(0, adjustedProjectedPoints - replPoints);
@@ -520,6 +531,10 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   React.useEffect(() => {
     if (process.env.NODE_ENV === 'development') {
       validateReplacementTargets();
+      
+      // Run backtest validation
+      const backtestResult = validateVBDSystem();
+      console.log('🎯 VBD Backtest Summary:', backtestResult.summary);
     }
   }, [leagueSettings]);
 
@@ -1310,6 +1325,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                   isDrafted={draftedPlayers.has(player.id || player.playerID)}
                   isRecommended={recommendedPlayerIds.includes(player.id || player.playerID)}
                   vbdValue={calculateVBD(player)}
+                  vbdBreakdown={getVBDBreakdown(player)}
                   sosData={getStrengthOfSchedule(player)}
                   advancedMetrics={getAdvancedMetrics(player)}
                   injuryRisk={getInjuryRisk(player)}

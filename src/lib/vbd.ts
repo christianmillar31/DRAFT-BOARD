@@ -138,6 +138,117 @@ export const playoffWeightedSOS = (
   return (1 - w) * regularSOS + w * playoffSOS;
 };
 
+// Superflex and custom flex weight configuration
+export const getFlexWeights = (leagueSettings: any) => {
+  // Superflex preset - QB is eligible in flex pool
+  if (leagueSettings.scoring?.superflex || leagueSettings.flexType === 'superflex') {
+    return { QB: 0.3, RB: 0.3, WR: 0.3, TE: 0.1 }; // QB gets 30% of flex allocation
+  }
+  
+  // 3WR leagues preset (push more flex toward WR)
+  if (leagueSettings.roster?.WR >= 3) {
+    return { QB: 0, RB: 0.35, WR: 0.5, TE: 0.15 };
+  }
+  
+  // Custom flex weights from settings
+  if (leagueSettings.flexWeights) {
+    return leagueSettings.flexWeights;
+  }
+  
+  // Default allocation: RB 40%, WR 40%, TE 20%
+  return { QB: 0, RB: 0.4, WR: 0.4, TE: 0.2 };
+};
+
+// Caching for expensive calculations
+const replacementPointsCache = new Map<string, number>();
+const sosMultiplierCache = new Map<string, number>();
+
+// Memoized replacement points calculation
+export const replacementPointsMemoized = (
+  pos: Pos,
+  teams: number,
+  starters: { QB: number; RB: number; WR: number; TE: number },
+  flex: { count: number; eligible: Pos[] } | null,
+  flexWeights?: { QB: number; RB: number; WR: number; TE: number }
+): number => {
+  const cacheKey = `${pos}-${teams}-${JSON.stringify(starters)}-${JSON.stringify(flex)}-${JSON.stringify(flexWeights)}`;
+  
+  if (replacementPointsCache.has(cacheKey)) {
+    return replacementPointsCache.get(cacheKey)!;
+  }
+  
+  const result = replacementPoints(pos, teams, starters, flex, flexWeights);
+  replacementPointsCache.set(cacheKey, result);
+  return result;
+};
+
+// Memoized SOS multiplier calculation
+export const sosMultiplierPosMemoized = (pos: Pos, sosByPos: Record<Pos, number>, k = 0.08): number => {
+  const cacheKey = `${pos}-${JSON.stringify(sosByPos)}-${k}`;
+  
+  if (sosMultiplierCache.has(cacheKey)) {
+    return sosMultiplierCache.get(cacheKey)!;
+  }
+  
+  const result = sosMultiplierPos(pos, sosByPos, k);
+  sosMultiplierCache.set(cacheKey, result);
+  return result;
+};
+
+// VBD breakdown for debugging
+export interface VBDBreakdown {
+  rawPoints: number;
+  sosMultiplier: number;
+  sosAdjustedPoints: number;
+  floorApplied: boolean;
+  finalPoints: number;
+  replacementPoints: number;
+  vbd: number;
+}
+
+export const calculateVBDWithBreakdown = (
+  player: { id: string; position: Pos; adp: number },
+  allPlayers: { id: string; position: string; adp: number }[],
+  sosData: Record<Pos, number> | null,
+  teams: number = 12,
+  starters: { QB: number; RB: number; WR: number; TE: number } = { QB: 1, RB: 2, WR: 3, TE: 1 },
+  flex: { count: number; eligible: Pos[] } | null = { count: 1, eligible: ['RB', 'WR', 'TE'] },
+  flexWeights?: { QB: number; RB: number; WR: number; TE: number }
+): VBDBreakdown => {
+  const position = player.position;
+  
+  // Calculate position rank
+  const positionRanks = positionRankFromADP(allPlayers);
+  const positionRank = positionRanks[player.id] || Math.ceil(player.adp / 10);
+  
+  // Step 1: Raw projected points
+  const rawPoints = projPointsTiered(position, positionRank);
+  
+  // Step 2: SOS adjustment
+  const sosMultiplier = sosData ? sosMultiplierPosMemoized(position, sosData) : 1.0;
+  const sosAdjustedPoints = rawPoints * sosMultiplier;
+  
+  // Step 3: Apply floor
+  const finalPoints = applyFloors(position, sosAdjustedPoints);
+  const floorApplied = finalPoints > sosAdjustedPoints;
+  
+  // Step 4: Replacement level
+  const replPoints = replacementPointsMemoized(position, teams, starters, flex, flexWeights);
+  
+  // Step 5: Final VBD
+  const vbd = Math.max(0, finalPoints - replPoints);
+  
+  return {
+    rawPoints,
+    sosMultiplier,
+    sosAdjustedPoints,
+    floorApplied,
+    finalPoints,
+    replacementPoints: replPoints,
+    vbd
+  };
+};
+
 // Main VBD calculation function
 export const calculateVBD = (
   player: { id: string; position: Pos; adp: number },

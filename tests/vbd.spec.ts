@@ -5,6 +5,9 @@ import {
   sosMultiplierPos,
   applyFloors,
   playoffWeightedSOS,
+  getFlexWeights,
+  replacementPointsMemoized,
+  sosMultiplierPosMemoized,
   FLOOR,
   type Pos
 } from "../src/lib/vbd";
@@ -92,6 +95,41 @@ function testPlayoffWeightedSOS(): void {
   console.log("✅ Playoff weighted SOS helper OK", { combo: combo.toFixed(2) });
 }
 
+function testSuperflex(): void {
+  // Test superflex flex weights
+  const superflexSettings = { flexType: 'superflex' };
+  const weights = getFlexWeights(superflexSettings);
+  
+  assert.strictEqual(weights.QB, 0.3, "Superflex should allocate 30% to QB");
+  assert.strictEqual(weights.RB, 0.3, "Superflex should allocate 30% to RB");
+  assert.strictEqual(weights.WR, 0.3, "Superflex should allocate 30% to WR");
+  assert.strictEqual(weights.TE, 0.1, "Superflex should allocate 10% to TE");
+  
+  console.log("✅ Superflex configuration OK", weights);
+}
+
+function testCaching(): void {
+  // Test that memoized functions return same results
+  const pos: Pos = "RB";
+  const teams = 12;
+  const starters = { QB: 1, RB: 2, WR: 3, TE: 1 };
+  const flex = { count: 1, eligible: ["RB", "WR", "TE"] as Pos[] };
+  
+  const result1 = replacementPointsMemoized(pos, teams, starters, flex);
+  const result2 = replacementPointsMemoized(pos, teams, starters, flex);
+  
+  assert.strictEqual(result1, result2, "Memoized function should return identical results");
+  
+  // Test SOS caching
+  const sosByPos = { QB: 16.5, RB: 20, WR: 16.5, TE: 16.5 };
+  const sos1 = sosMultiplierPosMemoized("RB", sosByPos);
+  const sos2 = sosMultiplierPosMemoized("RB", sosByPos);
+  
+  assert.strictEqual(sos1, sos2, "Memoized SOS should return identical results");
+  
+  console.log("✅ Caching/memoization OK", { replacement: result1.toFixed(1), sos: sos1.toFixed(3) });
+}
+
 async function main(): Promise<void> {
   console.log("🧪 Running VBD System Tests...\n");
   
@@ -100,6 +138,8 @@ async function main(): Promise<void> {
   testSOSClampAndMath();
   testFloorOrder();
   testPlayoffWeightedSOS();
+  testSuperflex();
+  testCaching();
   
   console.log("\n🎉 All VBD checks passed!");
 }

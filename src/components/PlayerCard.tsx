@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { TrendingUp, TrendingDown, Star } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { TrendingUp, TrendingDown, Star, Info } from "lucide-react";
 
 interface Player {
   id: string;
@@ -17,6 +18,16 @@ interface Player {
   trending?: 'up' | 'down';
 }
 
+interface VBDBreakdown {
+  rawPoints: number;
+  sosMultiplier: number;
+  sosAdjustedPoints: number;
+  floorApplied: boolean;
+  finalPoints: number;
+  replacementPoints: number;
+  vbd: number;
+}
+
 interface PlayerCardProps {
   player: Player;
   onDraft?: (player: Player) => void;
@@ -24,13 +35,14 @@ interface PlayerCardProps {
   isDrafted?: boolean;
   isRecommended?: boolean;
   vbdValue?: number;
+  vbdBreakdown?: VBDBreakdown | null;
   sosData?: any;
   advancedMetrics?: any;
   injuryRisk?: any;
   careerCurve?: any;
 }
 
-export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isRecommended, vbdValue, sosData, advancedMetrics, injuryRisk, careerCurve }: PlayerCardProps) {
+export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isRecommended, vbdValue, vbdBreakdown, sosData, advancedMetrics, injuryRisk, careerCurve }: PlayerCardProps) {
   const getPositionColor = (position: string) => {
     switch (position) {
       case 'QB': return 'bg-red-500/20 text-red-400 border-red-500/30';
@@ -84,7 +96,29 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
             <p className="font-semibold text-lg">{player.projectedPoints}</p>
           </div>
           <div className="space-y-1">
-            <p className="text-muted-foreground">VBD Value</p>
+            <div className="flex items-center gap-1">
+              <p className="text-muted-foreground">VBD Value</p>
+              {vbdBreakdown && (
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <Info className="h-3 w-3 text-muted-foreground hover:text-foreground" />
+                    </TooltipTrigger>
+                    <TooltipContent className="max-w-64">
+                      <div className="space-y-1 text-xs">
+                        <div className="font-semibold">VBD Breakdown</div>
+                        <div>Raw Points: {vbdBreakdown.rawPoints.toFixed(1)}</div>
+                        <div>SOS Multiplier: {vbdBreakdown.sosMultiplier.toFixed(3)}</div>
+                        <div>SOS Adjusted: {vbdBreakdown.sosAdjustedPoints.toFixed(1)}</div>
+                        {vbdBreakdown.floorApplied && <div className="text-orange-400">Floor Applied: {vbdBreakdown.finalPoints.toFixed(1)}</div>}
+                        <div className="border-t pt-1">Replacement: {vbdBreakdown.replacementPoints.toFixed(1)}</div>
+                        <div className="font-semibold text-green-400">Final VBD: +{vbdBreakdown.vbd.toFixed(1)}</div>
+                      </div>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              )}
+            </div>
             <p className="font-semibold text-green-600">+{(vbdValue || 0).toFixed(1)}</p>
           </div>
           <div className="space-y-1">
