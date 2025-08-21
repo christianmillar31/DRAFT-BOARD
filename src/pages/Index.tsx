@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { DraftBoard } from "@/components/DraftBoard";
 import { Zap, Target, BarChart3, Users, Trophy, Gamepad2 } from "lucide-react";
 
@@ -98,14 +99,152 @@ const Index = () => {
                 <Zap className="mr-2 h-5 w-5" />
                 Start Draft
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-accent/50 hover:bg-accent/10"
-              >
-                <BarChart3 className="mr-2 h-5 w-5" />
-                View Analytics
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="border-accent/50 hover:bg-accent/10"
+                  >
+                    <BarChart3 className="mr-2 h-5 w-5" />
+                    View Analytics
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-xl">Value-Based Drafting (VBD) Analytics</DialogTitle>
+                    <DialogDescription>
+                      Understanding how VBD works and why it gives you a competitive edge in fantasy football drafts
+                    </DialogDescription>
+                  </DialogHeader>
+                  
+                  <div className="space-y-6 text-sm">
+                    {/* What is VBD Section */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-3 text-primary">What is Value-Based Drafting?</h3>
+                      <p className="mb-3">
+                        VBD measures how much more valuable a player is compared to a "replacement level" player at their position. 
+                        Instead of just looking at projected points, VBD shows you which players provide the most advantage over what you could get later in the draft.
+                      </p>
+                      <div className="bg-muted p-3 rounded-lg">
+                        <p className="font-medium">Formula: VBD = Player's Projected Points - Replacement Level Points</p>
+                      </div>
+                    </div>
+
+                    {/* Static vs Dynamic VBD */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-3 text-primary">Static vs Dynamic VBD</h3>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="p-4 rounded-lg border border-blue-200 dark:border-blue-800">
+                          <h4 className="font-semibold text-blue-400 mb-2">Static VBD</h4>
+                          <p className="text-sm text-foreground">Uses fixed replacement levels (QB12, RB24, WR36, TE12) throughout the entire draft. Doesn't change based on who gets drafted.</p>
+                        </div>
+                        <div className="p-4 rounded-lg border border-green-200 dark:border-green-800">
+                          <h4 className="font-semibold text-green-400 mb-2">Dynamic VBD (Recommended)</h4>
+                          <p className="text-sm text-foreground">Adjusts replacement levels in real-time as players get drafted. As top RBs get taken, remaining RBs become more valuable!</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* How Dynamic VBD Works */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-3 text-primary">How Dynamic VBD Works</h3>
+                      <div className="space-y-3">
+                        <div className="flex items-start gap-3">
+                          <div className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</div>
+                          <p className="text-foreground"><strong>Tracks Draft State:</strong> Monitors which players have been drafted at each position</p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <div className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">2</div>
+                          <p className="text-foreground"><strong>Calculates Scarcity:</strong> As more top players get drafted, remaining players become scarcer and more valuable</p>
+                        </div>
+                        <div className="flex items-start gap-3">
+                          <div className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">3</div>
+                          <p className="text-foreground"><strong>Adjusts Values:</strong> Increases VBD scores for remaining players at positions with high scarcity</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Example Scenario */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-3 text-primary">Example Scenario</h3>
+                      <div className="p-4 rounded-lg border border-amber-200 dark:border-amber-800">
+                        <p className="font-medium mb-2 text-foreground">Round 3: Multiple top RBs have been drafted</p>
+                        <ul className="space-y-1 text-sm text-foreground">
+                          <li>• <strong>Static VBD:</strong> Shows remaining RBs with same values as pre-draft</li>
+                          <li>• <strong>Dynamic VBD:</strong> Boosts remaining RB values because they're now scarcer</li>
+                          <li>• <strong>Result:</strong> Dynamic VBD correctly identifies that you should prioritize RBs over WRs</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Sort Options */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-3 text-primary">Sort Options Explained</h3>
+                      <div className="grid md:grid-cols-2 gap-3">
+                        <div className="p-3 border rounded-lg">
+                          <h4 className="font-semibold mb-1">ADP</h4>
+                          <p className="text-xs text-muted-foreground">Average Draft Position - where players typically get drafted</p>
+                        </div>
+                        <div className="p-3 border rounded-lg">
+                          <h4 className="font-semibold mb-1 text-green-400">Dynamic VBD</h4>
+                          <p className="text-xs text-muted-foreground">Real-time value considering current draft state (RECOMMENDED)</p>
+                        </div>
+                        <div className="p-3 border rounded-lg">
+                          <h4 className="font-semibold mb-1">Projected Points</h4>
+                          <p className="text-xs text-muted-foreground">Raw projected fantasy points for the season</p>
+                        </div>
+                        <div className="p-3 border rounded-lg">
+                          <h4 className="font-semibold mb-1">Best Value</h4>
+                          <p className="text-xs text-muted-foreground">Cross-position VBD rankings to find optimal picks</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Pro Tips */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-3 text-primary">Pro Tips</h3>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          <div className="text-green-500">✓</div>
+                          <p className="text-sm text-foreground">Use Dynamic VBD as your primary sorting method</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <div className="text-green-500">✓</div>
+                          <p className="text-sm text-foreground">Check "Best Value" when deciding between positions</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <div className="text-green-500">✓</div>
+                          <p className="text-sm text-foreground">Use position filters to compare players within the same position</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <div className="text-green-500">✓</div>
+                          <p className="text-sm text-foreground">Pay attention to the VBD breakdown in player card tooltips</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <div className="text-green-500">✓</div>
+                          <p className="text-sm text-foreground">Don't draft kickers or defenses early - they have minimal VBD impact</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Getting Started */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-3 text-primary">Getting Started</h3>
+                      <div className="bg-accent/10 p-4 rounded-lg border border-accent/20">
+                        <p className="mb-3 text-foreground">Ready to use advanced VBD analytics in your draft?</p>
+                        <Button 
+                          className="w-full" 
+                          onClick={() => setDraftStarted(true)}
+                        >
+                          <Gamepad2 className="mr-2 h-4 w-4" />
+                          Start Your Draft Now
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </div>
         </div>

@@ -6,10 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { PlayerCard } from "./PlayerCard";
 import { TeamRoster } from "./TeamRoster";
 import { DraftSettings } from "./DraftSettings";
-import { Search, Filter, Users, Trophy, BarChart3, AlertCircle, Undo2, TrendingUp, AlertTriangle, Target, ArrowUpDown, Crown } from "lucide-react";
+import { Search, Filter, Users, Trophy, BarChart3, AlertCircle, Undo2, TrendingUp, AlertTriangle, Target, ArrowUpDown, Crown, HelpCircle } from "lucide-react";
 import { 
   usePlayersQuery, 
   useDraftQuery, 
@@ -41,79 +42,6 @@ import {
 } from "../lib/vbd";
 import { validateVBDSystem } from "../lib/backtest";
 
-// Mock data for development/testing
-const mockPlayers = [
-  {
-    id: "1",
-    name: "Christian McCaffrey",
-    position: "RB",
-    team: "SF",
-    rank: 1,
-    projectedPoints: 315.2,
-    lastYearPoints: 298.4,
-    adp: 1.2,
-    tier: 1,
-    trending: "up" as const
-  },
-  {
-    id: "2",
-    name: "Josh Allen",
-    position: "QB",
-    team: "BUF",
-    rank: 2,
-    projectedPoints: 395.8,
-    lastYearPoints: 387.2,
-    adp: 2.8,
-    tier: 1,
-    trending: "up" as const
-  },
-  {
-    id: "3",
-    name: "Cooper Kupp",
-    position: "WR",
-    team: "LA",
-    rank: 3,
-    projectedPoints: 285.6,
-    lastYearPoints: 198.3,
-    adp: 3.1,
-    tier: 1,
-    injury: "Hamstring"
-  },
-  {
-    id: "4",
-    name: "Travis Kelce",
-    position: "TE",
-    team: "KC",
-    rank: 4,
-    projectedPoints: 225.4,
-    lastYearPoints: 234.1,
-    adp: 4.2,
-    tier: 1
-  },
-  {
-    id: "5",
-    name: "Tyreek Hill",
-    position: "WR",
-    team: "MIA",
-    rank: 5,
-    projectedPoints: 275.8,
-    lastYearPoints: 283.2,
-    adp: 5.6,
-    tier: 2,
-    trending: "down" as const
-  },
-  {
-    id: "6",
-    name: "Davante Adams",
-    position: "WR",
-    team: "LV",
-    rank: 6,
-    projectedPoints: 268.4,
-    lastYearPoints: 255.7,
-    adp: 6.8,
-    tier: 2
-  }
-];
 
 interface DraftBoardProps {
   leagueSettings: {
@@ -140,13 +68,13 @@ interface DraftBoardProps {
 export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPosition, setSelectedPosition] = useState("ALL");
-  const [sortBy, setSortBy] = useState<'dynamicVBD' | 'adp' | 'projectedPoints' | 'crossPositionVBD'>('adp');
+  const [sortBy, setSortBy] = useState<'dynamicVBD' | 'adp' | 'projectedPoints' | 'crossPositionVBD'>('dynamicVBD');
   const [showBestByPosition, setShowBestByPosition] = useState(false);
   const [draftedPlayers, setDraftedPlayers] = useState<Set<string>>(new Set()); // Players I drafted
   const [playersDraftedByOthers, setPlayersDraftedByOthers] = useState<Set<string>>(new Set()); // Players drafted by other teams
   const [myTeam, setMyTeam] = useState<any[]>([]);
   const [currentPick, setCurrentPick] = useState(1);
-  const [lastAction, setLastAction] = useState<{ type: 'draft' | 'others', player: any, pick: number } | null>(null);
+  const [actionHistory, setActionHistory] = useState<{ type: 'draft' | 'others', player: any, pick: number }[]>([]);
   const [useDynamicVBD, setUseDynamicVBD] = useState(true); // Default to dynamic VBD
   
   // Tank01 API hooks - always try to use live data
@@ -156,8 +84,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
 
   const positions = ["ALL", "QB", "RB", "WR", "TE", "K", "DST"];
 
-  // Always try to use live data first, fallback to mock data if API fails
-  const rawPlayers = tank01Players && tank01Players.length > 0 ? tank01Players : mockPlayers;
+  // Use live data when available, no fallback to mock data
+  const rawPlayers = tank01Players && tank01Players.length > 0 ? tank01Players : [];
   const hasLiveData = tank01Players && tank01Players.length > 0;
   
   // Create ADP lookup map
@@ -367,7 +295,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     }
   } catch (error) {
     console.error('💥 Error processing players:', error);
-    players = mockPlayers;
+    players = [];
   }
 
   // Apply filters and sorting (simplified)
@@ -442,8 +370,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     const playerId = player.id || player.playerID || '';
     const playerWithId = { ...player, draftedAt: currentPick, id: playerId };
     
-    // Store last action for undo
-    setLastAction({ type: 'draft', player: playerWithId, pick: currentPick });
+    // Store action in history for undo
+    setActionHistory(prev => [...prev, { type: 'draft', player: playerWithId, pick: currentPick }]);
     
     setDraftedPlayers(prev => new Set([...prev, playerId]));
     setMyTeam(prev => [...prev, playerWithId]);
@@ -454,16 +382,18 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     const playerId = player.id || player.playerID || '';
     const playerWithId = { ...player, id: playerId };
     
-    // Store last action for undo
-    setLastAction({ type: 'others', player: playerWithId, pick: currentPick });
+    // Store action in history for undo
+    setActionHistory(prev => [...prev, { type: 'others', player: playerWithId, pick: currentPick }]);
     
     setPlayersDraftedByOthers(prev => new Set([...prev, playerId]));
     setCurrentPick(prev => prev + 1);
   };
 
   const handleUndo = () => {
-    if (!lastAction) return;
+    if (actionHistory.length === 0) return;
     
+    // Get the most recent action
+    const lastAction = actionHistory[actionHistory.length - 1];
     const playerId = lastAction.player.id || lastAction.player.playerID || '';
     
     if (lastAction.type === 'draft') {
@@ -483,9 +413,9 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       });
     }
     
-    // Restore pick count and clear last action
+    // Restore pick count and remove action from history
     setCurrentPick(lastAction.pick);
-    setLastAction(null);
+    setActionHistory(prev => prev.slice(0, -1));
   };
 
   const getRecommendedPlayers = () => {
@@ -1204,7 +1134,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
               <Badge variant="secondary" className="text-lg px-3 py-1">
                 Round {Math.ceil(currentPick / leagueSettings.teams)}
               </Badge>
-              {lastAction && (
+              {actionHistory.length > 0 && (
                 <Button
                   variant="outline"
                   size="sm"
@@ -1465,6 +1395,139 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                       <Trophy className="h-3 w-3" />
                       Best Value
                     </Button>
+                    
+                    {/* VBD Explained Dialog */}
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex items-center gap-1"
+                        >
+                          <HelpCircle className="h-3 w-3" />
+                          VBD Explained
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="text-xl">Value-Based Drafting (VBD) Explained</DialogTitle>
+                          <DialogDescription>
+                            Understanding how VBD works and why it gives you a competitive edge in fantasy football drafts
+                          </DialogDescription>
+                        </DialogHeader>
+                        
+                        <div className="space-y-6 text-sm">
+                          {/* What is VBD Section */}
+                          <div>
+                            <h3 className="text-lg font-semibold mb-3 text-primary">What is Value-Based Drafting?</h3>
+                            <p className="mb-3">
+                              VBD measures how much more valuable a player is compared to a "replacement level" player at their position. 
+                              Instead of just looking at projected points, VBD shows you which players provide the most advantage over what you could get later in the draft.
+                            </p>
+                            <div className="bg-muted p-3 rounded-lg">
+                              <p className="font-medium">Formula: VBD = Player's Projected Points - Replacement Level Points</p>
+                            </div>
+                          </div>
+
+                          {/* Static vs Dynamic VBD */}
+                          <div>
+                            <h3 className="text-lg font-semibold mb-3 text-primary">Static vs Dynamic VBD</h3>
+                            <div className="grid md:grid-cols-2 gap-4">
+                              <div className="p-4 rounded-lg border border-blue-200 dark:border-blue-800">
+                                <h4 className="font-semibold text-blue-400 mb-2">Static VBD</h4>
+                                <p className="text-sm text-foreground">Uses fixed replacement levels (QB12, RB24, WR36, TE12) throughout the entire draft. Doesn't change based on who gets drafted.</p>
+                              </div>
+                              <div className="p-4 rounded-lg border border-green-200 dark:border-green-800">
+                                <h4 className="font-semibold text-green-400 mb-2">Dynamic VBD (Recommended)</h4>
+                                <p className="text-sm text-foreground">Adjusts replacement levels in real-time as players get drafted. As top RBs get taken, remaining RBs become more valuable!</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* How Dynamic VBD Works */}
+                          <div>
+                            <h3 className="text-lg font-semibold mb-3 text-primary">How Dynamic VBD Works</h3>
+                            <div className="space-y-3">
+                              <div className="flex items-start gap-3">
+                                <div className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</div>
+                                <p className="text-foreground"><strong>Tracks Draft State:</strong> Monitors which players have been drafted at each position</p>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                <div className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">2</div>
+                                <p className="text-foreground"><strong>Calculates Scarcity:</strong> As more top players get drafted, remaining players become scarcer and more valuable</p>
+                              </div>
+                              <div className="flex items-start gap-3">
+                                <div className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">3</div>
+                                <p className="text-foreground"><strong>Adjusts Values:</strong> Increases VBD scores for remaining players at positions with high scarcity</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Example Scenario */}
+                          <div>
+                            <h3 className="text-lg font-semibold mb-3 text-primary">Example Scenario</h3>
+                            <div className="p-4 rounded-lg border border-amber-200 dark:border-amber-800">
+                              <p className="font-medium mb-2 text-foreground">Round 3: Multiple top RBs have been drafted</p>
+                              <ul className="space-y-1 text-sm text-foreground">
+                                <li>• <strong>Static VBD:</strong> Shows remaining RBs with same values as pre-draft</li>
+                                <li>• <strong>Dynamic VBD:</strong> Boosts remaining RB values because they're now scarcer</li>
+                                <li>• <strong>Result:</strong> Dynamic VBD correctly identifies that you should prioritize RBs over WRs</li>
+                              </ul>
+                            </div>
+                          </div>
+
+                          {/* Sort Options */}
+                          <div>
+                            <h3 className="text-lg font-semibold mb-3 text-primary">Sort Options Explained</h3>
+                            <div className="grid md:grid-cols-2 gap-3">
+                              <div className="p-3 border rounded-lg">
+                                <h4 className="font-semibold mb-1">ADP</h4>
+                                <p className="text-xs text-muted-foreground">Average Draft Position - where players typically get drafted</p>
+                              </div>
+                              <div className="p-3 border rounded-lg">
+                                <h4 className="font-semibold mb-1 text-green-400">Dynamic VBD</h4>
+                                <p className="text-xs text-muted-foreground">Real-time value considering current draft state (RECOMMENDED)</p>
+                              </div>
+                              <div className="p-3 border rounded-lg">
+                                <h4 className="font-semibold mb-1">Projected Points</h4>
+                                <p className="text-xs text-muted-foreground">Raw projected fantasy points for the season</p>
+                              </div>
+                              <div className="p-3 border rounded-lg">
+                                <h4 className="font-semibold mb-1">Best Value</h4>
+                                <p className="text-xs text-muted-foreground">Cross-position VBD rankings to find optimal picks</p>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Pro Tips */}
+                          <div>
+                            <h3 className="text-lg font-semibold mb-3 text-primary">Pro Tips</h3>
+                            <div className="space-y-2">
+                              <div className="flex items-start gap-2">
+                                <div className="text-green-500">✓</div>
+                                <p className="text-sm text-foreground">Use Dynamic VBD as your primary sorting method</p>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <div className="text-green-500">✓</div>
+                                <p className="text-sm text-foreground">Check "Best Value" when deciding between positions</p>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <div className="text-green-500">✓</div>
+                                <p className="text-sm text-foreground">Use position filters to compare players within the same position</p>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <div className="text-green-500">✓</div>
+                                <p className="text-sm text-foreground">Pay attention to the VBD breakdown in player card tooltips</p>
+                              </div>
+                              <div className="flex items-start gap-2">
+                                <div className="text-green-500">✓</div>
+                                <p className="text-sm text-foreground">Don't draft kickers or defenses early - they have minimal VBD impact</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </div>
                 
@@ -1492,7 +1555,17 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
           </Card>
 
           {/* Player Grid */}
-          {filteredPlayers.length === 0 ? (
+          {playersLoading ? (
+            <div className="col-span-full text-center py-16">
+              <div className="flex flex-col items-center space-y-4">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold text-foreground">Loading Live NFL Data</h3>
+                  <p className="text-muted-foreground">Fetching the latest player information, projections, and injury updates...</p>
+                </div>
+              </div>
+            </div>
+          ) : filteredPlayers.length === 0 ? (
             <div className="col-span-full text-center py-8">
               <p className="text-muted-foreground">No players found matching your criteria.</p>
             </div>
