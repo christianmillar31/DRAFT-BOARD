@@ -5,6 +5,8 @@ An intelligent fantasy football draft board featuring advanced analytics, real N
 ## 🚀 Key Features
 
 ### 🧠 Advanced VBD System
+- **Dynamic VBD Engine**: Real-time replacement level adjustments based on actual draft state
+- **Static & Dynamic Modes**: Toggle between traditional static replacements and live draft-aware calculations
 - **Realistic Tiered Projections**: Non-linear point curves that match actual NFL performance patterns
 - **Position-Specific Scarcity**: RB cliff after 18, TE drop after top 3, QB streaming effects
 - **Strength of Schedule Integration**: 2025 NFL schedule with position-specific defensive rankings
@@ -83,6 +85,22 @@ npx tsx tests/vbd.spec.ts
 
 ## 🎯 VBD System Details
 
+### Dynamic vs Static VBD
+
+**Static VBD (Traditional)**:
+- Uses fixed replacement levels (QB12, RB24, WR36, TE12)
+- Based on theoretical league-average roster construction
+- Consistent throughout the draft regardless of actual picks
+
+**Dynamic VBD (Revolutionary)**:
+- Recalculates replacement levels in real-time based on actual draft state
+- Adjusts for positional runs and scarcity as they happen
+- Accounts for how many players at each position have actually been drafted
+- Provides scarcity bonuses when positions become depleted
+- Shows remaining players available at each position
+
+**Example**: If 15 RBs have been drafted early, dynamic VBD recognizes the remaining RBs are more valuable than static calculations suggest, automatically increasing their VBD scores.
+
 ### Tiered Point Projections
 The system uses realistic, position-specific tiers that mirror actual NFL performance patterns:
 
@@ -97,15 +115,43 @@ The system uses realistic, position-specific tiers that mirror actual NFL perfor
 - Late (29+): 160 - (0.25 × rank) → WR41: 150pts
 
 ### Replacement Level Calculations
+
+**Static Replacement Levels**:
 - **Standard League**: QB12, RB24, WR36, TE12 based on roster requirements
 - **Superflex League**: QB gets 30% flex allocation, dramatically increasing QB values
 - **Custom Flex Weights**: Configurable via league settings for any format
+
+**Dynamic Replacement Levels**:
+- **Real-Time Calculation**: Based on actual players drafted and remaining roster needs
+- **Position Scarcity Tracking**: Monitors how many players at each position have been taken
+- **Remaining Need Assessment**: Calculates how many more players will be drafted at each position
+- **Live Adjustment**: Replacement level = the Nth best remaining player where N = remaining draft need
 
 ### Strength of Schedule
 - **Complete 2025 Schedule**: All 17 games for each team
 - **Position-Specific Rankings**: Teams ranked 1-32 vs QB/RB/WR/TE separately
 - **±8% Point Adjustments**: Clamped to prevent extreme swings
 - **Real Defensive Data**: Based on official NFL defense vs position statistics
+
+## 🎮 Dynamic VBD Usage
+
+### Accessing Dynamic VBD
+1. **Toggle Switch**: Use the "Dynamic VBD Mode" toggle in the player search section
+2. **Live Updates**: VBD values automatically update as players are drafted
+3. **Enhanced Tooltips**: Hover over VBD values to see both static and dynamic calculations
+4. **Scarcity Indicators**: See remaining players at each position and scarcity bonuses
+
+### Dynamic VBD Tooltip Information
+- **Static vs Dynamic VBD**: Compare traditional and real-time calculations
+- **Replacement Levels**: See both theoretical and actual replacement players
+- **Scarcity Bonus**: Additional value from position depletion
+- **Remaining Count**: Players left at each position
+
+### Strategic Applications
+- **Positional Runs**: Identify when to jump ahead of runs at scarce positions
+- **Value Opportunities**: Find players whose value increases due to draft state
+- **Timing Decisions**: Know when to wait vs. when scarcity demands action
+- **Draft Adaptation**: Adjust strategy based on how the draft unfolds
 
 ## 🔧 API Endpoints
 

@@ -3,6 +3,39 @@
 
 export type Pos = "QB" | "RB" | "WR" | "TE";
 
+// Dynamic VBD types for real-time draft analysis
+export interface DraftState {
+  draftedPlayers: Set<string>;           // All drafted player IDs
+  currentPick: number;                   // Overall pick number (1-based)
+  myPosition: number;                    // Your draft position (1-12)
+  teams: number;                        // League size
+  roundsRemaining: number;              // Rounds left to draft
+  totalRounds: number;                  // Total rounds in draft
+}
+
+export interface PositionDraftCounts {
+  QB: { starters: number; flex: number };
+  RB: { starters: number; flex: number };
+  WR: { starters: number; flex: number };
+  TE: { starters: number; flex: number };
+}
+
+export interface Player {
+  id: string;
+  name: string;
+  position: string;
+  team: string;
+  adp: number;
+  projectedPoints?: number;
+}
+
+export interface DynamicVBDResult extends VBDBreakdown {
+  staticReplacement: number;
+  dynamicReplacement: number;
+  scarcityBonus: number;
+  remainingAtPosition: number;
+}
+
 // Helper functions for smooth tier transitions
 export const lerp = (a: number, b: number, t: number): number => {
   return a + (b - a) * t;
@@ -248,6 +281,211 @@ export const calculateVBDWithBreakdown = (
     vbd
   };
 };
+
+// =============================================================================
+// DYNAMIC VBD SYSTEM - Real-time replacement calculation based on draft state
+// =============================================================================
+
+// Calculate how many players have been drafted by position/role
+export const calculateDraftCounts = (
+  draftedPlayerIds: Set<string>,
+  allPlayers: Player[],
+  leagueSettings: any
+): PositionDraftCounts => {
+  const counts: PositionDraftCounts = {
+    QB: { starters: 0, flex: 0 },
+    RB: { starters: 0, flex: 0 },
+    WR: { starters: 0, flex: 0 },
+    TE: { starters: 0, flex: 0 }
+  };
+
+  const roster = leagueSettings.roster || { QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1 };
+  const flexWeights = getFlexWeights(leagueSettings);
+  
+  // Track drafted players by position
+  const draftedByPosition: Record<Pos, number> = { QB: 0, RB: 0, WR: 0, TE: 0 };
+  
+  allPlayers.forEach(player => {
+    if (draftedPlayerIds.has(player.id) && ['QB', 'RB', 'WR', 'TE'].includes(player.position)) {
+      draftedByPosition[player.position as Pos]++;
+    }
+  });
+
+  // Allocate drafted players to starter vs flex slots
+  (['QB', 'RB', 'WR', 'TE'] as Pos[]).forEach(pos => {
+    const totalDrafted = draftedByPosition[pos];
+    const starterSlots = roster[pos] * leagueSettings.teams;
+    
+    // Fill starter slots first
+    counts[pos].starters = Math.min(totalDrafted, starterSlots);
+    
+    // Remaining go to flex (weighted)
+    const overflowToFlex = Math.max(0, totalDrafted - starterSlots);
+    counts[pos].flex = overflowToFlex;
+  });
+
+  return counts;
+};
+
+// Calculate total need for a position in the league
+export const calculateTotalPositionNeed = (
+  pos: Pos,
+  draftState: DraftState,
+  leagueSettings: any
+): number => {
+  const roster = leagueSettings.roster || { QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1 };
+  const flexWeights = getFlexWeights(leagueSettings);
+  
+  const totalStartersNeeded = roster[pos] * draftState.teams;
+  const totalFlexNeeded = Math.round(flexWeights[pos] * roster.FLEX * draftState.teams);
+  
+  return totalStartersNeeded + totalFlexNeeded;
+};
+
+// Get static replacement rank for comparison
+export const getStaticReplacementRank = (
+  pos: Pos,
+  leagueSettings: any
+): number => {
+  const teams = leagueSettings.teams || 12;
+  const roster = leagueSettings.roster || { QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1 };
+  const flexWeights = getFlexWeights(leagueSettings);
+  
+  return replacementRank(
+    pos,
+    teams,
+    { QB: roster.QB, RB: roster.RB, WR: roster.WR, TE: roster.TE },
+    { count: roster.FLEX, eligible: ['RB', 'WR', 'TE'] },
+    flexWeights
+  );
+};
+
+// Calculate remaining need for each position based on what's left to draft
+export const calculateRemainingNeed = (
+  pos: Pos,
+  draftState: DraftState,
+  leagueSettings: any,
+  draftedCounts: PositionDraftCounts
+): number => {
+  const totalNeed = calculateTotalPositionNeed(pos, draftState, leagueSettings);
+  const alreadyDrafted = draftedCounts[pos].starters + draftedCounts[pos].flex;
+  
+  return Math.max(0, totalNeed - alreadyDrafted);
+};
+
+// Calculate dynamic replacement levels based on current draft state
+export const calculateDynamicReplacement = (
+  availablePlayers: Player[],
+  draftState: DraftState,
+  leagueSettings: any,
+  draftedCounts: PositionDraftCounts
+): Record<Pos, number> => {
+  const replacement: Record<Pos, number> = { QB: 0, RB: 0, WR: 0, TE: 0 };
+  
+  (['QB', 'RB', 'WR', 'TE'] as Pos[]).forEach(pos => {
+    // Get static replacement level as baseline
+    const staticReplacement = replacementPointsMemoized(
+      pos, 
+      draftState.teams, 
+      { QB: leagueSettings.roster?.QB || 1, RB: leagueSettings.roster?.RB || 2, WR: leagueSettings.roster?.WR || 3, TE: leagueSettings.roster?.TE || 1 },
+      { count: leagueSettings.roster?.FLEX || 1, eligible: ['RB', 'WR', 'TE'] },
+      getFlexWeights(leagueSettings)
+    );
+    
+    // Count how many good players have been drafted at this position
+    const alreadyDrafted = draftedCounts[pos].starters + draftedCounts[pos].flex;
+    
+    // CORRECT LOGIC: More drafted players = worse replacement level = higher VBD for remaining
+    // Each drafted player makes the replacement level worse by reducing available talent
+    const scarcityPenalty = alreadyDrafted * 3; // 3 points worse per drafted player
+    
+    // Dynamic replacement = static replacement - scarcity penalty
+    // (Lower replacement level = higher VBD for remaining players)
+    replacement[pos] = Math.max(FLOOR[pos], staticReplacement - scarcityPenalty);
+    
+    // Apply streaming discount for QB/TE
+    if (pos === "QB" || pos === "TE") {
+      replacement[pos] *= 0.95;
+    }
+  });
+  
+  return replacement;
+};
+
+// Main dynamic VBD calculation
+export const calculateDynamicVBD = (
+  player: Player,
+  availablePlayers: Player[],
+  draftState: DraftState,
+  leagueSettings: any
+): DynamicVBDResult => {
+  const position = player.position as Pos;
+  
+  // Skip calculation for unsupported positions
+  if (!['QB', 'RB', 'WR', 'TE'].includes(position)) {
+    const fallback = { rawPoints: 0, sosMultiplier: 1.0, sosAdjustedPoints: 0, floorApplied: false, finalPoints: 0, replacementPoints: 0, vbd: 0 };
+    return { 
+      ...fallback, 
+      staticReplacement: 0, 
+      dynamicReplacement: 0, 
+      scarcityBonus: 0, 
+      remainingAtPosition: 0 
+    };
+  }
+
+  // Calculate current draft counts
+  const draftedCounts = calculateDraftCounts(draftState.draftedPlayers, availablePlayers, leagueSettings);
+  
+  // Get both static and dynamic replacement levels
+  const staticReplacement = replacementPointsMemoized(
+    position,
+    draftState.teams,
+    { QB: leagueSettings.roster?.QB || 1, RB: leagueSettings.roster?.RB || 2, WR: leagueSettings.roster?.WR || 3, TE: leagueSettings.roster?.TE || 1 },
+    { count: leagueSettings.roster?.FLEX || 1, eligible: ['RB', 'WR', 'TE'] },
+    getFlexWeights(leagueSettings)
+  );
+  
+  const dynamicReplacements = calculateDynamicReplacement(availablePlayers, draftState, leagueSettings, draftedCounts);
+  const dynamicReplacement = dynamicReplacements[position];
+  
+  // Calculate scarcity bonus (how much more valuable due to draft state)
+  const scarcityBonus = staticReplacement - dynamicReplacement;
+  
+  // Count remaining players at this position
+  const remainingAtPosition = availablePlayers.filter(p => 
+    p.position === position && !draftState.draftedPlayers.has(p.id)
+  ).length;
+  
+  // Standard VBD calculation using dynamic replacement
+  const positionRanks = positionRankFromADP(availablePlayers);
+  const positionRank = positionRanks[player.id] || Math.ceil(player.adp / 10);
+  
+  const rawPoints = projPointsTiered(position, positionRank);
+  const sosMultiplier = 1.0; // Could integrate SOS here
+  const sosAdjustedPoints = rawPoints * sosMultiplier;
+  const finalPoints = applyFloors(position, sosAdjustedPoints);
+  const floorApplied = finalPoints > sosAdjustedPoints;
+  
+  const vbd = Math.max(0, finalPoints - dynamicReplacement);
+  
+  return {
+    rawPoints,
+    sosMultiplier,
+    sosAdjustedPoints,
+    floorApplied,
+    finalPoints,
+    replacementPoints: dynamicReplacement,
+    vbd,
+    staticReplacement,
+    dynamicReplacement,
+    scarcityBonus,
+    remainingAtPosition
+  };
+};
+
+// =============================================================================
+// STATIC VBD SYSTEM (Original)
+// =============================================================================
 
 // Main VBD calculation function
 export const calculateVBD = (

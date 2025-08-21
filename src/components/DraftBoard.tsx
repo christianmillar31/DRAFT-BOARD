@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { PlayerCard } from "./PlayerCard";
 import { TeamRoster } from "./TeamRoster";
 import { DraftSettings } from "./DraftSettings";
-import { Search, Filter, Users, Trophy, BarChart3, AlertCircle, Undo2, TrendingUp, AlertTriangle, Target } from "lucide-react";
+import { Search, Filter, Users, Trophy, BarChart3, AlertCircle, Undo2, TrendingUp, AlertTriangle, Target, ArrowUpDown, Crown } from "lucide-react";
 import { 
   usePlayersQuery, 
   useDraftQuery, 
@@ -33,8 +33,11 @@ import {
   replacementPointsMemoized,
   sosMultiplierPosMemoized,
   calculateVBDWithBreakdown,
+  calculateDynamicVBD,
   type Pos,
-  type VBDBreakdown
+  type VBDBreakdown,
+  type DraftState,
+  type DynamicVBDResult
 } from "../lib/vbd";
 import { validateVBDSystem } from "../lib/backtest";
 
@@ -137,11 +140,14 @@ interface DraftBoardProps {
 export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPosition, setSelectedPosition] = useState("ALL");
+  const [sortBy, setSortBy] = useState<'dynamicVBD' | 'adp' | 'projectedPoints'>('adp');
+  const [showBestByPosition, setShowBestByPosition] = useState(false);
   const [draftedPlayers, setDraftedPlayers] = useState<Set<string>>(new Set()); // Players I drafted
   const [playersDraftedByOthers, setPlayersDraftedByOthers] = useState<Set<string>>(new Set()); // Players drafted by other teams
   const [myTeam, setMyTeam] = useState<any[]>([]);
   const [currentPick, setCurrentPick] = useState(1);
   const [lastAction, setLastAction] = useState<{ type: 'draft' | 'others', player: any, pick: number } | null>(null);
+  const [useDynamicVBD, setUseDynamicVBD] = useState(true); // Default to dynamic VBD
   
   // Tank01 API hooks - always try to use live data
   const { data: tank01Players, isLoading: playersLoading, error: playersError } = useTank01Players();
@@ -164,26 +170,149 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     });
   }
 
-  // Debug logging
-  console.log('🏈 DraftBoard Debug:', {
-    playersLoading,
-    adpLoading,
-    playersError,
-    tank01PlayersLength: tank01Players?.length,
-    tank01ADPLength: tank01ADP?.length,
-    adpMapSize: adpMap.size,
-    tank01PlayersFirstItem: tank01Players?.[0],
-    selectedPosition,
-    searchTerm
-  });
+  // Minimal debug logging only in development
+  if (process.env.NODE_ENV === 'development' && Math.random() < 0.1) { // Only 10% of the time
+    console.log('🏈 DraftBoard Debug:', {
+      playersLength: tank01Players?.length,
+      adpLength: tank01ADP?.length,
+      hasLiveData,
+      selectedPosition
+    });
+  }
   
-  console.log('🔍 Data Processing:', {
-    rawPlayersLength: rawPlayers?.length,
-    hasLiveData,
-    rawPlayersType: typeof rawPlayers,
-    isArray: Array.isArray(rawPlayers)
-  });
-  
+  // Create draft state for dynamic VBD
+  const createDraftState = (): DraftState => {
+    const allDraftedPlayers = new Set([...draftedPlayers, ...playersDraftedByOthers]);
+    
+    // Debug: Show when draft state changes
+    if (process.env.NODE_ENV === 'development' && allDraftedPlayers.size > 0) {
+      console.log('🎯 Dynamic VBD Draft State:', {
+        draftedCount: allDraftedPlayers.size,
+        currentPick,
+        myDrafted: draftedPlayers.size,
+        othersDrafted: playersDraftedByOthers.size
+      });
+    }
+    
+    return {
+      draftedPlayers: allDraftedPlayers,
+      currentPick,
+      myPosition: leagueSettings.draftPosition || 6, // Middle position if not set
+      teams: leagueSettings.teams || 12,
+      roundsRemaining: Math.max(0, leagueSettings.rounds - Math.ceil(currentPick / leagueSettings.teams)),
+      totalRounds: leagueSettings.rounds || 15
+    };
+  };
+
+  // Adapter for position-specific SOS with current SOS function
+  const getSosMultiplierForPlayer = (pos: Pos, player: any): number => {
+    try {
+      const sosData = getStrengthOfSchedule(player);
+      if (!sosData || typeof sosData.defensiveRank !== 'number') return 1.0;
+      
+      // Convert to position-specific record format expected by sosMultiplierPos
+      const sosByPos: Record<Pos, number> = {
+        QB: sosData.defensiveRank, // Your SOS function already returns position-specific rank
+        RB: sosData.defensiveRank,
+        WR: sosData.defensiveRank, 
+        TE: sosData.defensiveRank
+      };
+      
+      return sosMultiplierPos(pos, sosByPos);
+    } catch (error) {
+      return 1.0; // Fallback to neutral
+    }
+  };
+
+  // Enhanced Value-Based Drafting (VBD) Calculator - Static Version
+  const calculateStaticVBD = (player: any) => {
+    const position = player.position as Pos;
+    const adp = player.adp || 999;
+    
+    // Skip calculation for unsupported positions
+    if (!['QB', 'RB', 'WR', 'TE'].includes(position)) {
+      // Simple fallback for K/DST
+      if (position === 'K') return Math.max(0, 140 - (adp * 2) - 115);
+      if (position === 'DST') return Math.max(0, 130 - (adp * 2.5) - 105);
+      return 0;
+    }
+
+    // Calculate actual position ranks from all available players
+    const positionRanks = positionRankFromADP(
+      rawPlayers.map(p => ({ 
+        id: p.id || p.playerID || '', 
+        position: p.position, 
+        adp: p.adp || 999 
+      }))
+    );
+    
+    const positionRank = positionRanks[player.id || player.playerID || ''] || Math.ceil(adp / 10);
+    
+    // Get base projected points using improved tiered formulas with smooth transitions
+    const baseProjectedPoints = projPointsTiered(position, positionRank);
+    
+    // Position-specific SOS Adjustment with clamping
+    const sosAdjustment = getSosMultiplierForPlayer(position, player);
+    
+    // Apply SOS adjustment and floor
+    const adjustedProjectedPoints = applyFloors(position, baseProjectedPoints * sosAdjustment);
+    
+    // Dynamic Replacement Level based on league settings
+    const roster = leagueSettings.roster || { QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6 };
+    const teams = leagueSettings.teams || 12;
+    
+    // Define flex configuration with configurable weights
+    const flex = { count: roster.FLEX || 1, eligible: ['RB', 'WR', 'TE'] as Pos[] };
+    const starters = { QB: roster.QB, RB: roster.RB, WR: roster.WR, TE: roster.TE };
+    const flexWeights = getFlexWeights(leagueSettings);
+    
+    // Calculate replacement level points with configurable flex allocation (memoized)
+    const replPoints = replacementPointsMemoized(position, teams, starters, flex, flexWeights);
+    
+    // Final VBD calculation
+    const vbd = Math.max(0, adjustedProjectedPoints - replPoints);
+    
+    return vbd;
+  };
+
+  // Dynamic VBD Calculator - Real-time replacement adjustment
+  const calculateDynamicVBDForPlayer = (player: any, allPlayers: any[]): DynamicVBDResult | null => {
+    try {
+      const draftState = createDraftState();
+      const availablePlayers = allPlayers.map(p => ({
+        id: p.id || p.playerID || '',
+        name: p.name || p.longName || p.espnName || 'Unknown',
+        position: p.position,
+        team: p.team || 'FA',
+        adp: p.adp || 999,
+        projectedPoints: p.projectedPoints
+      }));
+      
+      const playerForDynamic = {
+        id: player.id || player.playerID || '',
+        name: player.name || player.longName || player.espnName || 'Unknown',
+        position: player.position,
+        team: player.team || 'FA',
+        adp: player.adp || 999,
+        projectedPoints: player.projectedPoints
+      };
+      
+      return calculateDynamicVBD(playerForDynamic, availablePlayers, draftState, leagueSettings);
+    } catch (error) {
+      console.error('Dynamic VBD calculation error:', error);
+      return null;
+    }
+  };
+
+  // Main VBD Calculator - switches between static and dynamic
+  const calculateVBD = (player: any) => {
+    if (useDynamicVBD) {
+      const dynamicResult = calculateDynamicVBDForPlayer(player, players || []);
+      return dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
+    }
+    return calculateStaticVBD(player);
+  };
+
   // Filter to relevant fantasy positions and limit dataset for performance
   const relevantPositions = ['QB', 'RB', 'WR', 'TE', 'K', 'DST'];
   
@@ -196,11 +325,11 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
             const isRelevant = relevantPositions.includes(position);
             return isRelevant;
           })
-          // Get all fantasy relevant players - no limits
+          .slice(0, 1200) // Reasonable limit but not too restrictive
           .map((p: any, index: number) => {
             const realADP = adpMap.get(p.playerID);
             
-            // Debug age data for first few players
+            // Debug age data for first few players only
             if (index < 3) {
               console.log(`🎂 Age Debug for ${p.longName || p.espnName}:`, {
                 age: p.age,
@@ -216,13 +345,12 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
               position: p.pos || p.position || 'UNKNOWN',
               team: p.team || 'FA',
               rank: realADP || (index + 1),
-              projectedPoints: realADP ? Math.max(50, 400 - (realADP * 3)) : 100, // Realistic based on ADP
-              lastYearPoints: realADP ? Math.max(30, 350 - (realADP * 2.5)) : 80, // Realistic based on ADP
+              projectedPoints: realADP ? Math.round(Math.max(50, 400 - (realADP * 3)) * 10) / 10 : 100,
+              lastYearPoints: realADP ? Math.round(Math.max(30, 350 - (realADP * 2.5)) * 10) / 10 : 80,
               adp: realADP || 999,
               tier: realADP ? Math.ceil(realADP / 12) : Math.ceil((index + 1) / 50),
               injury: p.injury || undefined,
-              trending: undefined, // Remove fake trending data
-              // INCLUDE ACTUAL AGE DATA FROM TANK01 API
+              trending: undefined,
               age: p.age,
               bDay: p.bDay,
               birthdate: p.birthdate
@@ -231,17 +359,18 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
           .sort((a, b) => a.adp - b.adp) // Sort by ADP (lower ADP = higher draft priority)
       : rawPlayers;
     
-    console.log('✅ Final players array:', {
-      playersLength: players?.length,
-      firstPlayer: players?.[0],
-      playersType: typeof players,
-      isArray: Array.isArray(players)
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.log('✅ Final players array:', {
+        playersLength: players?.length,
+        firstPlayer: players?.[0]?.name || 'No name'
+      });
+    }
   } catch (error) {
     console.error('💥 Error processing players:', error);
     players = mockPlayers;
   }
 
+  // Apply filters and sorting (simplified)
   let filteredPlayers;
   try {
     filteredPlayers = players.filter((player: any) => {
@@ -257,6 +386,41 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       const notDraftedByOthers = !playersDraftedByOthers.has(playerId);
       
       return matchesSearch && matchesPosition && notDraftedByMe && notDraftedByOthers;
+    });
+    
+    // Apply "Best by Position" filter if enabled
+    if (showBestByPosition) {
+      const corePositions = ['QB', 'RB', 'WR', 'TE'];
+      const bestByPosition: any[] = [];
+      
+      corePositions.forEach(position => {
+        const playersAtPosition = filteredPlayers.filter((p: any) => p.position === position);
+        if (playersAtPosition.length > 0) {
+          // Sort by dynamic VBD and take the best
+          const bestPlayer = playersAtPosition.sort((a: any, b: any) => {
+            const aVBD = calculateVBD(a);
+            const bVBD = calculateVBD(b);
+            return bVBD - aVBD;
+          })[0];
+          bestByPosition.push(bestPlayer);
+        }
+      });
+      
+      filteredPlayers = bestByPosition;
+    }
+    
+    // Apply sorting
+    filteredPlayers.sort((a: any, b: any) => {
+      switch (sortBy) {
+        case 'dynamicVBD':
+          return calculateVBD(b) - calculateVBD(a); // Descending
+        case 'adp':
+          return (a.adp || 999) - (b.adp || 999); // Ascending
+        case 'projectedPoints':
+          return (b.projectedPoints || 0) - (a.projectedPoints || 0); // Descending
+        default:
+          return (a.adp || 999) - (b.adp || 999); // Default to ADP
+      }
     });
     
     console.log('🎯 Filtered Players:', {
@@ -431,75 +595,26 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     }
   };
 
-  // Adapter for position-specific SOS with current SOS function
-  const getSosMultiplierForPlayer = (pos: Pos, player: any): number => {
-    try {
-      const sosData = getStrengthOfSchedule(player);
-      if (!sosData || typeof sosData.defensiveRank !== 'number') return 1.0;
-      
-      // Convert to position-specific record format expected by sosMultiplierPos
-      const sosByPos: Record<Pos, number> = {
-        QB: sosData.defensiveRank, // Your SOS function already returns position-specific rank
-        RB: sosData.defensiveRank,
-        WR: sosData.defensiveRank, 
-        TE: sosData.defensiveRank
-      };
-      
-      return sosMultiplierPos(pos, sosByPos);
-    } catch (error) {
-      return 1.0; // Fallback to neutral
+  // Get comprehensive VBD breakdown including dynamic data
+  const getComprehensiveVBDBreakdown = (player: any) => {
+    const staticBreakdown = getVBDBreakdown(player);
+    
+    if (useDynamicVBD && players) {
+      const dynamicResult = calculateDynamicVBDForPlayer(player, players);
+      if (dynamicResult && staticBreakdown) {
+        return {
+          ...staticBreakdown,
+          dynamicVBD: dynamicResult.vbd,
+          staticVBD: staticBreakdown.vbd,
+          scarcityBonus: dynamicResult.scarcityBonus,
+          remainingAtPosition: dynamicResult.remainingAtPosition,
+          dynamicReplacement: dynamicResult.dynamicReplacement,
+          staticReplacement: dynamicResult.staticReplacement
+        };
+      }
     }
-  };
-
-  // Enhanced Value-Based Drafting (VBD) Calculator - Final Improved Version
-  const calculateVBD = (player: any) => {
-    const position = player.position as Pos;
-    const adp = player.adp || 999;
     
-    // Skip calculation for unsupported positions
-    if (!['QB', 'RB', 'WR', 'TE'].includes(position)) {
-      // Simple fallback for K/DST
-      if (position === 'K') return Math.max(0, 140 - (adp * 2) - 115);
-      if (position === 'DST') return Math.max(0, 130 - (adp * 2.5) - 105);
-      return 0;
-    }
-
-    // Calculate actual position ranks from all available players
-    const positionRanks = positionRankFromADP(
-      filteredPlayers.map(p => ({ 
-        id: p.id || p.playerID || '', 
-        position: p.position, 
-        adp: p.adp || 999 
-      }))
-    );
-    
-    const positionRank = positionRanks[player.id || player.playerID || ''] || Math.ceil(adp / 10);
-    
-    // Get base projected points using improved tiered formulas with smooth transitions
-    const baseProjectedPoints = projPointsTiered(position, positionRank);
-    
-    // Position-specific SOS Adjustment with clamping
-    const sosAdjustment = getSosMultiplierForPlayer(position, player);
-    
-    // Apply SOS adjustment and floor
-    const adjustedProjectedPoints = applyFloors(position, baseProjectedPoints * sosAdjustment);
-    
-    // Dynamic Replacement Level based on league settings
-    const roster = leagueSettings.roster || { QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6 };
-    const teams = leagueSettings.teams || 12;
-    
-    // Define flex configuration with configurable weights
-    const flex = { count: roster.FLEX || 1, eligible: ['RB', 'WR', 'TE'] as Pos[] };
-    const starters = { QB: roster.QB, RB: roster.RB, WR: roster.WR, TE: roster.TE };
-    const flexWeights = getFlexWeights(leagueSettings);
-    
-    // Calculate replacement level points with configurable flex allocation (memoized)
-    const replPoints = replacementPointsMemoized(position, teams, starters, flex, flexWeights);
-    
-    // Final VBD calculation
-    const vbd = Math.max(0, adjustedProjectedPoints - replPoints);
-    
-    return vbd;
+    return staticBreakdown;
   };
 
   // Sanity check function for replacement targets (for debugging)
@@ -1029,11 +1144,10 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     };
   };
 
-  console.log('🚀 About to render DraftBoard with:', {
-    filteredPlayersLength: filteredPlayers?.length,
-    hasLiveData,
-    playersLoading
-  });
+  // Reduce console spam
+  if (process.env.NODE_ENV === 'development' && Math.random() < 0.05) {
+    console.log('🚀 Rendering DraftBoard:', { playersCount: filteredPlayers?.length });
+  }
 
   // Early return for debugging
   if (playersError) {
@@ -1305,6 +1419,26 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                     </Select>
                   </div>
                 </div>
+                
+                {/* Dynamic VBD Toggle */}
+                <div className="flex items-center justify-between p-4 bg-accent/10 rounded-lg border border-accent/20">
+                  <div className="flex items-center space-x-3">
+                    <TrendingUp className="h-5 w-5 text-accent" />
+                    <div>
+                      <Label htmlFor="dynamic-vbd" className="text-sm font-medium">Dynamic VBD Mode</Label>
+                      <p className="text-xs text-muted-foreground">Real-time replacement levels based on actual draft state</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className={`text-xs ${useDynamicVBD ? 'text-muted-foreground' : 'text-accent font-medium'}`}>Static</span>
+                    <Switch
+                      id="dynamic-vbd"
+                      checked={useDynamicVBD}
+                      onCheckedChange={setUseDynamicVBD}
+                    />
+                    <span className={`text-xs ${useDynamicVBD ? 'text-accent font-medium' : 'text-muted-foreground'}`}>Dynamic</span>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -1325,7 +1459,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                   isDrafted={draftedPlayers.has(player.id || player.playerID)}
                   isRecommended={recommendedPlayerIds.includes(player.id || player.playerID)}
                   vbdValue={calculateVBD(player)}
-                  vbdBreakdown={getVBDBreakdown(player)}
+                  vbdBreakdown={getComprehensiveVBDBreakdown(player)}
                   sosData={getStrengthOfSchedule(player)}
                   advancedMetrics={getAdvancedMetrics(player)}
                   injuryRisk={getInjuryRisk(player)}

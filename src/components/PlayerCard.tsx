@@ -26,6 +26,13 @@ interface VBDBreakdown {
   finalPoints: number;
   replacementPoints: number;
   vbd: number;
+  // Dynamic VBD properties (optional)
+  dynamicVBD?: number;
+  staticVBD?: number;
+  scarcityBonus?: number;
+  remainingAtPosition?: number;
+  dynamicReplacement?: number;
+  staticReplacement?: number;
 }
 
 interface PlayerCardProps {
@@ -93,7 +100,7 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div className="space-y-1">
             <p className="text-muted-foreground">Projected</p>
-            <p className="font-semibold text-lg">{player.projectedPoints}</p>
+            <p className="font-semibold text-lg">{typeof player.projectedPoints === 'number' ? player.projectedPoints.toFixed(1) : player.projectedPoints}</p>
           </div>
           <div className="space-y-1">
             <div className="flex items-center gap-1">
@@ -104,15 +111,34 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
                     <TooltipTrigger>
                       <Info className="h-3 w-3 text-muted-foreground hover:text-foreground" />
                     </TooltipTrigger>
-                    <TooltipContent className="max-w-64">
+                    <TooltipContent className="max-w-72">
                       <div className="space-y-1 text-xs">
                         <div className="font-semibold">VBD Breakdown</div>
                         <div>Raw Points: {vbdBreakdown.rawPoints.toFixed(1)}</div>
                         <div>SOS Multiplier: {vbdBreakdown.sosMultiplier.toFixed(3)}</div>
                         <div>SOS Adjusted: {vbdBreakdown.sosAdjustedPoints.toFixed(1)}</div>
                         {vbdBreakdown.floorApplied && <div className="text-orange-400">Floor Applied: {vbdBreakdown.finalPoints.toFixed(1)}</div>}
-                        <div className="border-t pt-1">Replacement: {vbdBreakdown.replacementPoints.toFixed(1)}</div>
-                        <div className="font-semibold text-green-400">Final VBD: +{vbdBreakdown.vbd.toFixed(1)}</div>
+                        
+                        {vbdBreakdown.dynamicVBD !== undefined && vbdBreakdown.staticVBD !== undefined ? (
+                          <>
+                            <div className="border-t pt-1">
+                              <div className="font-semibold text-blue-400 mb-1">Dynamic VBD Mode</div>
+                              <div>Static Replacement: {vbdBreakdown.staticReplacement?.toFixed(1)}</div>
+                              <div>Dynamic Replacement: {vbdBreakdown.dynamicReplacement?.toFixed(1)}</div>
+                              <div>Scarcity Bonus: {vbdBreakdown.scarcityBonus && vbdBreakdown.scarcityBonus > 0 ? '+' : ''}{vbdBreakdown.scarcityBonus?.toFixed(1)}</div>
+                              <div>Remaining @ {player.position}: {vbdBreakdown.remainingAtPosition}</div>
+                              <div className="border-t pt-1 mt-1">
+                                <div>Static VBD: +{vbdBreakdown.staticVBD.toFixed(1)}</div>
+                                <div className="font-semibold text-green-400">Dynamic VBD: +{vbdBreakdown.dynamicVBD.toFixed(1)}</div>
+                              </div>
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="border-t pt-1">Replacement: {vbdBreakdown.replacementPoints.toFixed(1)}</div>
+                            <div className="font-semibold text-green-400">Final VBD: +{vbdBreakdown.vbd.toFixed(1)}</div>
+                          </>
+                        )}
                       </div>
                     </TooltipContent>
                   </Tooltip>
@@ -123,7 +149,7 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
           </div>
           <div className="space-y-1">
             <p className="text-muted-foreground">ADP</p>
-            <p className="font-semibold">{player.adp}</p>
+            <p className="font-semibold">{typeof player.adp === 'number' ? player.adp.toFixed(1) : player.adp}</p>
           </div>
           <div className="space-y-1">
             <p className="text-muted-foreground">Tier</p>
