@@ -140,7 +140,7 @@ interface DraftBoardProps {
 export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPosition, setSelectedPosition] = useState("ALL");
-  const [sortBy, setSortBy] = useState<'dynamicVBD' | 'adp' | 'projectedPoints'>('adp');
+  const [sortBy, setSortBy] = useState<'dynamicVBD' | 'adp' | 'projectedPoints' | 'crossPositionVBD'>('adp');
   const [showBestByPosition, setShowBestByPosition] = useState(false);
   const [draftedPlayers, setDraftedPlayers] = useState<Set<string>>(new Set()); // Players I drafted
   const [playersDraftedByOthers, setPlayersDraftedByOthers] = useState<Set<string>>(new Set()); // Players drafted by other teams
@@ -418,6 +418,9 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
           return (a.adp || 999) - (b.adp || 999); // Ascending
         case 'projectedPoints':
           return (b.projectedPoints || 0) - (a.projectedPoints || 0); // Descending
+        case 'crossPositionVBD':
+          // Cross-position VBD: All players ranked by VBD value regardless of position
+          return calculateVBD(b) - calculateVBD(a); // Descending
         default:
           return (a.adp || 999) - (b.adp || 999); // Default to ADP
       }
@@ -1417,6 +1420,51 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                         ))}
                       </SelectContent>
                     </Select>
+                  </div>
+                </div>
+                
+                {/* Sort Options */}
+                <div className="flex items-center gap-4">
+                  <Label className="text-sm font-medium">Sort By:</Label>
+                  <div className="flex gap-2 flex-wrap">
+                    <Button
+                      variant={sortBy === 'adp' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setSortBy('adp')}
+                      className="flex items-center gap-1"
+                    >
+                      <ArrowUpDown className="h-3 w-3" />
+                      ADP
+                    </Button>
+                    <Button
+                      variant={sortBy === 'dynamicVBD' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setSortBy('dynamicVBD')}
+                      className="flex items-center gap-1"
+                    >
+                      <TrendingUp className="h-3 w-3" />
+                      Dynamic VBD
+                    </Button>
+                    <Button
+                      variant={sortBy === 'projectedPoints' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setSortBy('projectedPoints')}
+                      className="flex items-center gap-1"
+                    >
+                      <BarChart3 className="h-3 w-3" />
+                      Projected
+                    </Button>
+                    <Button
+                      variant={sortBy === 'crossPositionVBD' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setSortBy('crossPositionVBD')}
+                      disabled={selectedPosition !== 'ALL'}
+                      className="flex items-center gap-1"
+                      title={selectedPosition !== 'ALL' ? 'Only available when ALL positions selected' : 'Best value across all positions'}
+                    >
+                      <Trophy className="h-3 w-3" />
+                      Best Value
+                    </Button>
                   </div>
                 </div>
                 
