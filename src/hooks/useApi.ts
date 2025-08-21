@@ -154,15 +154,50 @@ export const useTank01Projections = (position: string = "all") => {
   });
 };
 
-export const useTank01Injuries = () => {
+// Get real injury data via team rosters
+export const useTank01TeamRoster = (teamID: string) => {
   return useQuery({
-    queryKey: ["tank01", "injuries"],
+    queryKey: ["tank01", "roster", teamID],
     queryFn: async () => {
-      const response = await fetch(`${API_BASE}/tank01/injuries`);
+      const response = await fetch(`${API_BASE}/tank01/roster/${teamID}`);
       if (!response.ok) {
-        throw new Error("Failed to fetch Tank01 injuries");
+        throw new Error("Failed to fetch Tank01 roster");
       }
       return response.json();
     },
+    enabled: !!teamID,
+  });
+};
+
+// Get player games history for injury analysis
+export const useTank01PlayerGames = (playerID: string, season?: string) => {
+  return useQuery({
+    queryKey: ["tank01", "player-games", playerID, season],
+    queryFn: async () => {
+      const url = season 
+        ? `${API_BASE}/tank01/player/${playerID}/games/${season}`
+        : `${API_BASE}/tank01/player/${playerID}/games`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Failed to fetch player games");
+      }
+      return response.json();
+    },
+    enabled: !!playerID,
+  });
+};
+
+// Get player stats with injury data
+export const useTank01PlayerStats = (playerID: string) => {
+  return useQuery({
+    queryKey: ["tank01", "player-stats", playerID],
+    queryFn: async () => {
+      const response = await fetch(`${API_BASE}/tank01/player/${playerID}/stats`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch player stats");
+      }
+      return response.json();
+    },
+    enabled: !!playerID,
   });
 };

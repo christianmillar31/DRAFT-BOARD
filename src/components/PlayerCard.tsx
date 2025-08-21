@@ -23,9 +23,14 @@ interface PlayerCardProps {
   onDraftByOthers?: (player: Player) => void;
   isDrafted?: boolean;
   isRecommended?: boolean;
+  vbdValue?: number;
+  sosData?: any;
+  advancedMetrics?: any;
+  injuryRisk?: any;
+  careerCurve?: any;
 }
 
-export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isRecommended }: PlayerCardProps) {
+export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isRecommended, vbdValue, sosData, advancedMetrics, injuryRisk, careerCurve }: PlayerCardProps) {
   const getPositionColor = (position: string) => {
     switch (position) {
       case 'QB': return 'bg-red-500/20 text-red-400 border-red-500/30';
@@ -79,8 +84,8 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
             <p className="font-semibold text-lg">{player.projectedPoints}</p>
           </div>
           <div className="space-y-1">
-            <p className="text-muted-foreground">Last Year</p>
-            <p className="font-semibold">{player.lastYearPoints}</p>
+            <p className="text-muted-foreground">VBD Value</p>
+            <p className="font-semibold text-green-600">+{(vbdValue || 0).toFixed(1)}</p>
           </div>
           <div className="space-y-1">
             <p className="text-muted-foreground">ADP</p>
@@ -92,6 +97,42 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
               {player.tier}
             </p>
           </div>
+        </div>
+
+        {/* Advanced Metrics Display */}
+        <div className="flex flex-wrap gap-1 mb-2">
+          {sosData && (
+            <Badge variant="outline" className={`text-xs ${
+              sosData.difficulty === 'Easy' ? 'border-green-300 text-green-700' :
+              sosData.difficulty === 'Hard' ? 'border-red-300 text-red-700' :
+              'border-yellow-300 text-yellow-700'
+            }`}>
+              SOS: {sosData.difficulty} (#{sosData.defensiveRank})
+            </Badge>
+          )}
+          {injuryRisk && (
+            <Badge variant="outline" className={`text-xs ${
+              injuryRisk.riskLevel === 'Low' ? 'border-green-300 text-green-700' :
+              injuryRisk.riskLevel === 'High' ? 'border-red-300 text-red-700' :
+              'border-yellow-300 text-yellow-700'
+            }`}>
+              Risk: {injuryRisk.riskLevel} ({injuryRisk.careerGamesMissedPct}% missed)
+            </Badge>
+          )}
+          {careerCurve && (
+            <Badge variant="outline" className={`text-xs ${
+              careerCurve.careerPhase === 'Rising' ? 'border-green-300 text-green-700' :
+              careerCurve.careerPhase === 'Declining' ? 'border-red-300 text-red-700' :
+              'border-blue-300 text-blue-700'
+            }`}>
+              {careerCurve.careerPhase} ({careerCurve.estimatedAge}y)
+            </Badge>
+          )}
+          {advancedMetrics && ['WR', 'TE'].includes(player.position) && advancedMetrics.targetShare > 0.15 && (
+            <Badge variant="outline" className="text-xs border-purple-300 text-purple-700">
+              {(advancedMetrics.targetShare * 100).toFixed(0)}% Targets
+            </Badge>
+          )}
         </div>
 
         {player.injury && (

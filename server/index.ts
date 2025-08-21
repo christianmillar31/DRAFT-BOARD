@@ -10,9 +10,11 @@ import {
   getNFLPlayers, 
   getNFLFantasyProjections, 
   getNFLPlayerADP, 
-  getNFLInjuries,
   getNFLPlayerInfo,
-  getNFLGamesForWeek
+  getNFLGamesForWeek,
+  getNFLTeamRoster,
+  getNFLPlayerGames,
+  getNFLPlayerStats
 } from "./tank01";
 
 const app = express();
@@ -114,10 +116,36 @@ app.get("/api/tank01/adp", async (_req, res) => {
   }
 });
 
-app.get("/api/tank01/injuries", async (_req, res) => {
+// Get team roster (includes injury data)
+app.get("/api/tank01/roster/:teamID", async (req, res) => {
+  const { teamID } = req.params;
   try {
-    const injuries = await getNFLInjuries();
-    return res.json(injuries);
+    const roster = await getNFLTeamRoster(teamID);
+    return res.json(roster);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    return res.status(500).json({ message });
+  }
+});
+
+// Get player games history for injury analysis
+app.get("/api/tank01/player/:playerID/games/:season?", async (req, res) => {
+  const { playerID, season } = req.params;
+  try {
+    const games = await getNFLPlayerGames(playerID, season);
+    return res.json(games);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    return res.status(500).json({ message });
+  }
+});
+
+// Get player stats with injury data
+app.get("/api/tank01/player/:playerID/stats", async (req, res) => {
+  const { playerID } = req.params;
+  try {
+    const stats = await getNFLPlayerStats(playerID);
+    return res.json(stats);
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : String(err);
     return res.status(500).json({ message });

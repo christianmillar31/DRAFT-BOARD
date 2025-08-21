@@ -165,9 +165,10 @@ export async function getNFLTeamRoster(teamID: string): Promise<Tank01Player[]> 
   }
 }
 
-export async function getNFLInjuries(): Promise<any[]> {
+export async function getNFLPlayerGames(playerID: string, season?: string): Promise<any[]> {
   try {
-    const response = await fetch(`${BASE_URL}/getNFLInjuries`, {
+    const seasonParam = season ? `&season=${season}` : '';
+    const response = await fetch(`${BASE_URL}/getNFLGamesForPlayer?playerID=${playerID}${seasonParam}`, {
       method: 'GET',
       headers: tank01Headers
     });
@@ -179,7 +180,26 @@ export async function getNFLInjuries(): Promise<any[]> {
     const data = await response.json() as any;
     return data.body || [];
   } catch (error) {
-    console.error('Error fetching injuries from Tank01:', error);
+    console.error('Error fetching player games from Tank01:', error);
     return [];
+  }
+}
+
+export async function getNFLPlayerStats(playerID: string): Promise<any> {
+  try {
+    const response = await fetch(`${BASE_URL}/getNFLPlayerInfo?playerID=${playerID}&getStats=true`, {
+      method: 'GET',
+      headers: tank01Headers
+    });
+
+    if (!response.ok) {
+      throw new Error(`Tank01 API error: ${response.statusText}`);
+    }
+
+    const data = await response.json() as any;
+    return data.body?.[0] || null;
+  } catch (error) {
+    console.error('Error fetching player stats from Tank01:', error);
+    return null;
   }
 }
