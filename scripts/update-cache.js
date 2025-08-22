@@ -1,4 +1,3 @@
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -17,6 +16,8 @@ const headers = {
 };
 
 async function fetchAndCache() {
+  // Import fetch dynamically
+  const { default: fetch } = await import('node-fetch');
   console.log('🚀 Starting daily cache update...');
   
   const cacheData = {
