@@ -18,6 +18,29 @@ export default async function handler(req, res) {
       return;
     }
 
+    // First, try to serve from cache
+    console.log('📁 Attempting to serve ADP from cache...');
+    
+    const cacheUrl = `${req.headers.origin || 'https://draftboardlive.online'}/cache/tank01-data.json`;
+    
+    try {
+      const cacheResponse = await fetch(cacheUrl);
+      if (cacheResponse.ok) {
+        const cacheData = await cacheResponse.json();
+        
+        const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
+        const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+        
+        if (cacheAge < maxAge && cacheData.data.adp) {
+          console.log(`✅ Serving ${cacheData.data.adp.length} ADP entries from cache`);
+          res.status(200).json(cacheData.data.adp);
+          return;
+        }
+      }
+    } catch (cacheError) {
+      console.log('⚠️ Cache not available, falling back to API');
+    }
+
     console.log('🌐 Fetching ADP from Tank01 API...');
     const response = await fetch('https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLADP?adpType=halfPPR', {
       headers: {

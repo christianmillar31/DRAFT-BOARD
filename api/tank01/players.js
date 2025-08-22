@@ -10,6 +10,32 @@ export default async function handler(req, res) {
   }
 
   try {
+    // First, try to serve from cache
+    console.log('📁 Attempting to serve from cache...');
+    
+    // In production, fetch from the public cache file
+    const cacheUrl = `${req.headers.origin || 'https://draftboardlive.online'}/cache/tank01-data.json`;
+    
+    try {
+      const cacheResponse = await fetch(cacheUrl);
+      if (cacheResponse.ok) {
+        const cacheData = await cacheResponse.json();
+        
+        // Check if cache is less than 24 hours old
+        const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
+        const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+        
+        if (cacheAge < maxAge && cacheData.data.players) {
+          console.log(`✅ Serving ${cacheData.data.players.length} players from cache (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
+          res.status(200).json(cacheData.data.players);
+          return;
+        }
+      }
+    } catch (cacheError) {
+      console.log('⚠️ Cache not available, falling back to API');
+    }
+
+    // Fallback to direct API call if cache fails
     const TANK01_API_KEY = process.env.TANK01_API_KEY;
     
     if (!TANK01_API_KEY) {

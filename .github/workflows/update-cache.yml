@@ -1,0 +1,42 @@
+name: Update Tank01 Data Cache
+
+on:
+  schedule:
+    # Run at 12:00 AM PST every day (8:00 AM UTC)
+    - cron: '0 8 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-cache:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: |
+        cd scripts
+        npm init -y
+        npm install node-fetch
+    
+    - name: Update cache
+      env:
+        TANK01_API_KEY: ${{ secrets.TANK01_API_KEY }}
+      run: |
+        node scripts/update-cache.js
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add public/cache/
+        git diff --staged --quiet || git commit -m "🔄 Update Tank01 data cache [$(date +'%Y-%m-%d %H:%M:%S PST')]"
+        git push
