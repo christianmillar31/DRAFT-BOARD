@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     // First, try to serve from cache
-    console.log('📁 Attempting to serve players from cache...');
+    console.log('📁 [v2] Attempting to serve players from cache...');
     
     const cacheUrl = `${req.headers.origin || 'https://draftboardlive.online'}/cache/tank01-data.json`;
     

@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     const { position = 'all' } = req.query;
     
     // First, try to serve from cache
-    console.log(`📁 Attempting to serve ${position} projections from cache...`);
+    console.log(`📁 [v2] Attempting to serve ${position} projections from cache...`);
     
     const cacheUrl = `${req.headers.origin || 'https://draftboardlive.online'}/cache/tank01-data.json`;
     
