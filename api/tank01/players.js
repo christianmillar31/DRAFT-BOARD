@@ -26,7 +26,10 @@ export default async function handler(req, res) {
         const maxAge = 24 * 60 * 60 * 1000; // 24 hours
         
         if (cacheAge < maxAge && cacheData.data.players) {
-          console.log(`✅ Serving ${cacheData.data.players.length} players from cache (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
+          console.log(`✅ CACHE HIT: Serving ${cacheData.data.players.length} players from cache (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
+          // Add response header to prove cache usage
+          res.setHeader('X-Data-Source', 'cache');
+          res.setHeader('X-Cache-Age-Minutes', Math.round(cacheAge / 1000 / 60));
           res.status(200).json(cacheData.data.players);
           return;
         }
@@ -61,7 +64,8 @@ export default async function handler(req, res) {
     const data = await response.json();
     const players = data.body || [];
     
-    console.log(`✅ Tank01 API returned ${players.length} players`);
+    console.log(`✅ API HIT: Tank01 API returned ${players.length} players`);
+    res.setHeader('X-Data-Source', 'api');
     res.status(200).json(players);
     
   } catch (error) {
