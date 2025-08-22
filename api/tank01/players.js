@@ -11,9 +11,8 @@ export default async function handler(req, res) {
 
   try {
     // First, try to serve from cache
-    console.log('📁 Attempting to serve from cache...');
+    console.log('📁 Attempting to serve players from cache...');
     
-    // In production, fetch from the public cache file
     const cacheUrl = `${req.headers.origin || 'https://draftboardlive.online'}/cache/tank01-data.json`;
     
     try {
@@ -21,52 +20,31 @@ export default async function handler(req, res) {
       if (cacheResponse.ok) {
         const cacheData = await cacheResponse.json();
         
-        // Check if cache is less than 24 hours old
+        // Check if cache is less than 25 hours old
         const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
-        const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+        const maxAge = 25 * 60 * 60 * 1000; // 25 hours
         
-        if (cacheAge < maxAge && cacheData.data.players) {
-          console.log(`✅ CACHE HIT: Serving ${cacheData.data.players.length} players from cache (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
-          // Add response header to prove cache usage
+        if (cacheAge < maxAge && cacheData.data && Array.isArray(cacheData.data.players) && cacheData.data.players.length > 0) {
+          console.log(`📦 CACHE HIT: Serving ${cacheData.data.players.length} players from cache (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
           res.setHeader('X-Data-Source', 'cache');
           res.setHeader('X-Cache-Age-Minutes', Math.round(cacheAge / 1000 / 60));
           res.status(200).json(cacheData.data.players);
           return;
+        } else {
+          console.log('⚠️ Cache exists but is stale or invalid format - age:', Math.round(cacheAge / 1000 / 60), 'minutes');
         }
       }
     } catch (cacheError) {
-      console.log('⚠️ Cache not available, falling back to API');
+      console.log('⚠️ Cache not available, falling back to API:', cacheError.message);
     }
 
-    // Fallback to direct API call if cache fails
-    const TANK01_API_KEY = process.env.TANK01_API_KEY;
-    
-    if (!TANK01_API_KEY) {
-      console.error('❌ Missing TANK01_API_KEY environment variable');
-      res.status(500).json({ error: 'API key not configured' });
-      return;
-    }
-
-    console.log('🌐 Fetching players from Tank01 API...');
-    const response = await fetch('https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLPlayerList', {
-      headers: {
-        'X-RapidAPI-Key': TANK01_API_KEY,
-        'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com'
-      }
+    // STOP: Cache should always work in production
+    console.error('❌ CACHE MISS: Players API should never hit Tank01 in production');
+    res.status(503).json({ 
+      error: 'Cache service unavailable',
+      message: 'Players data should be served from cache only'
     });
-
-    if (!response.ok) {
-      console.error('❌ Tank01 API error:', response.status, response.statusText);
-      res.status(response.status).json({ error: `Tank01 API error: ${response.status}` });
-      return;
-    }
-
-    const data = await response.json();
-    const players = data.body || [];
-    
-    console.log(`✅ API HIT: Tank01 API returned ${players.length} players`);
-    res.setHeader('X-Data-Source', 'api');
-    res.status(200).json(players);
+    return;
     
   } catch (error) {
     console.error('❌ Tank01 players API error:', error);

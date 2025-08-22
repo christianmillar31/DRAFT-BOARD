@@ -11,33 +11,61 @@ export default async function handler(req, res) {
 
   try {
     const { position = 'all' } = req.query;
-    const TANK01_API_KEY = process.env.TANK01_API_KEY;
     
-    if (!TANK01_API_KEY) {
-      console.error('❌ Missing TANK01_API_KEY environment variable');
-      res.status(500).json({ error: 'API key not configured' });
-      return;
-    }
-
-    console.log(`🌐 Fetching ${position} projections from Tank01 API...`);
-    const response = await fetch(`https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLProjections?position=${position}`, {
-      headers: {
-        'X-RapidAPI-Key': TANK01_API_KEY,
-        'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com'
+    // First, try to serve from cache
+    console.log(`📁 Attempting to serve ${position} projections from cache...`);
+    
+    const cacheUrl = `${req.headers.origin || 'https://draftboardlive.online'}/cache/tank01-data.json`;
+    
+    try {
+      const cacheResponse = await fetch(cacheUrl);
+      if (cacheResponse.ok) {
+        const cacheData = await cacheResponse.json();
+        
+        const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
+        const maxAge = 25 * 60 * 60 * 1000; // 25 hours
+        
+        if (cacheAge < maxAge && cacheData.data && cacheData.data.projections) {
+          // Handle position-specific requests
+          let projections;
+          
+          if (position.toLowerCase() === 'all') {
+            // Return all projections
+            const allProjections = [];
+            for (const pos of ['QB', 'RB', 'WR', 'TE', 'K', 'DEF']) {
+              if (Array.isArray(cacheData.data.projections[pos])) {
+                allProjections.push(...cacheData.data.projections[pos]);
+              }
+            }
+            projections = allProjections;
+          } else {
+            // Return position-specific projections
+            const posKey = position.toUpperCase();
+            projections = cacheData.data.projections[posKey] || [];
+          }
+          
+          if (Array.isArray(projections) && projections.length > 0) {
+            console.log(`📦 CACHE HIT: Serving ${projections.length} ${position} projections from cache (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
+            res.setHeader('X-Data-Source', 'cache');
+            res.setHeader('X-Cache-Age-Minutes', Math.round(cacheAge / 1000 / 60));
+            res.status(200).json(projections);
+            return;
+          }
+        } else {
+          console.log('⚠️ Cache exists but is stale or invalid format - age:', Math.round(cacheAge / 1000 / 60), 'minutes');
+        }
       }
-    });
-
-    if (!response.ok) {
-      console.error('❌ Tank01 Projections API error:', response.status, response.statusText);
-      res.status(response.status).json({ error: `Tank01 API error: ${response.status}` });
-      return;
+    } catch (cacheError) {
+      console.log('⚠️ Cache not available, falling back to API:', cacheError.message);
     }
 
-    const data = await response.json();
-    const projections = data.body || [];
-    
-    console.log(`✅ Tank01 Projections API returned ${projections.length} projections for ${position}`);
-    res.status(200).json(projections);
+    // STOP: Cache should always work in production
+    console.error(`❌ CACHE MISS: ${position} projections API should never hit Tank01 in production`);
+    res.status(503).json({ 
+      error: 'Cache service unavailable',
+      message: `${position} projections data should be served from cache only`
+    });
+    return;
     
   } catch (error) {
     console.error('❌ Tank01 projections API error:', error);

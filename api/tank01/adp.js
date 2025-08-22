@@ -10,14 +10,6 @@ export default async function handler(req, res) {
   }
 
   try {
-    const TANK01_API_KEY = process.env.TANK01_API_KEY;
-    
-    if (!TANK01_API_KEY) {
-      console.error('❌ Missing TANK01_API_KEY environment variable');
-      res.status(500).json({ error: 'API key not configured' });
-      return;
-    }
-
     // First, try to serve from cache
     console.log('📁 Attempting to serve ADP from cache...');
     
@@ -29,37 +21,29 @@ export default async function handler(req, res) {
         const cacheData = await cacheResponse.json();
         
         const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
-        const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+        const maxAge = 25 * 60 * 60 * 1000; // 25 hours
         
-        if (cacheAge < maxAge && cacheData.data.adp) {
-          console.log(`✅ Serving ${cacheData.data.adp.length} ADP entries from cache`);
+        if (cacheAge < maxAge && cacheData.data && Array.isArray(cacheData.data.adp) && cacheData.data.adp.length > 0) {
+          console.log(`📦 CACHE HIT: Serving ${cacheData.data.adp.length} ADP entries from cache (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
+          res.setHeader('X-Data-Source', 'cache');
+          res.setHeader('X-Cache-Age-Minutes', Math.round(cacheAge / 1000 / 60));
           res.status(200).json(cacheData.data.adp);
           return;
+        } else {
+          console.log('⚠️ Cache exists but is stale or invalid format - age:', Math.round(cacheAge / 1000 / 60), 'minutes');
         }
       }
     } catch (cacheError) {
-      console.log('⚠️ Cache not available, falling back to API');
+      console.log('⚠️ Cache not available, falling back to API:', cacheError.message);
     }
 
-    console.log('🌐 Fetching ADP from Tank01 API...');
-    const response = await fetch('https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLADP?adpType=halfPPR', {
-      headers: {
-        'X-RapidAPI-Key': TANK01_API_KEY,
-        'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com'
-      }
+    // STOP: Cache should always work in production
+    console.error('❌ CACHE MISS: ADP API should never hit Tank01 in production');
+    res.status(503).json({ 
+      error: 'Cache service unavailable',
+      message: 'ADP data should be served from cache only'
     });
-
-    if (!response.ok) {
-      console.error('❌ Tank01 ADP API error:', response.status, response.statusText);
-      res.status(response.status).json({ error: `Tank01 API error: ${response.status}` });
-      return;
-    }
-
-    const data = await response.json();
-    const adpData = data.body?.adpList || [];
-    
-    console.log(`✅ Tank01 ADP API returned ${adpData.length} records`);
-    res.status(200).json(adpData);
+    return;
     
   } catch (error) {
     console.error('❌ Tank01 ADP API error:', error);
