@@ -49,8 +49,19 @@ async function fetchAndCache() {
       console.log(`📥 Fetching ${pos} projections...`);
       const projResponse = await fetch(`https://${TANK01_HOST}/getNFLProjections?position=${pos}`, { headers });
       const projData = await projResponse.json();
-      cacheData.data.projections[pos] = projData.body || [];
-      console.log(`✅ Fetched ${cacheData.data.projections[pos].length} ${pos} projections`);
+      
+      // Extract player projections from Tank01's nested structure
+      let playerProjections = [];
+      if (projData.body && projData.body.playerProjections) {
+        // Convert object of players to array
+        playerProjections = Object.values(projData.body.playerProjections);
+        console.log(`📊 Extracted ${playerProjections.length} player projections for ${pos}`);
+      } else {
+        console.warn(`⚠️ No playerProjections found for ${pos}, structure:`, Object.keys(projData.body || {}));
+      }
+      
+      cacheData.data.projections[pos] = playerProjections;
+      console.log(`✅ Cached ${cacheData.data.projections[pos].length} ${pos} projections`);
     }
 
     // 4. Write to cache file

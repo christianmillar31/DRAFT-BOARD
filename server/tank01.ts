@@ -1,10 +1,41 @@
 import fetch from 'node-fetch';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// ES module equivalent of __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const TANK01_API_KEY = process.env.TANK01_API_KEY || '';
 const TANK01_API_HOST = 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com';
 const BASE_URL = `https://${TANK01_API_HOST}`;
 
 console.log('Tank01 API Key loaded:', TANK01_API_KEY ? `${TANK01_API_KEY.substring(0, 10)}...` : 'MISSING');
+
+// Cache helper function
+function getCachedData() {
+  try {
+    const cacheFile = path.join(__dirname, '..', 'public', 'cache', 'tank01-data.json');
+    if (fs.existsSync(cacheFile)) {
+      const cacheData = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
+      const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
+      
+      // If cache is less than 25 hours old, use it
+      if (cacheAge < 25 * 60 * 60 * 1000) {
+        console.log(`📦 Using cached data (${Math.round(cacheAge / (60 * 60 * 1000))}h old)`);
+        return cacheData.data;
+      } else {
+        console.log(`⏰ Cache expired (${Math.round(cacheAge / (60 * 60 * 1000))}h old), fetching fresh data`);
+      }
+    } else {
+      console.log('📦 No cache file found, fetching fresh data');
+    }
+  } catch (error) {
+    console.error('❌ Cache read error:', error);
+  }
+  return null;
+}
 
 interface Tank01Player {
   playerID: string;
@@ -52,7 +83,15 @@ const tank01Headers = {
 };
 
 export async function getNFLPlayers(): Promise<Tank01Player[]> {
+  // Check cache first
+  const cachedData = getCachedData();
+  if (cachedData?.players) {
+    return cachedData.players;
+  }
+
+  // Fallback to API
   try {
+    console.log('🌐 Fetching fresh players data from Tank01 API');
     const response = await fetch(`${BASE_URL}/getNFLPlayerList`, {
       method: 'GET',
       headers: tank01Headers
@@ -109,7 +148,30 @@ export async function getNFLPlayerInfo(playerID: string): Promise<Tank01Player |
 }
 
 export async function getNFLFantasyProjections(position: string = 'all'): Promise<any[]> {
+  // Check cache first
+  const cachedData = getCachedData();
+  if (cachedData?.projections) {
+    // If requesting 'all' or 'ALL', combine all cached positions
+    if (position.toLowerCase() === 'all') {
+      const allProjections = [];
+      for (const pos of ['QB', 'RB', 'WR', 'TE', 'K', 'DST']) {
+        if (Array.isArray(cachedData.projections[pos]) && cachedData.projections[pos].length > 0) {
+          allProjections.push(...cachedData.projections[pos]);
+        }
+      }
+      if (allProjections.length > 0) {
+        console.log(`📦 Using cached projections: ${allProjections.length} total players`);
+        return allProjections;
+      }
+    } else if (Array.isArray(cachedData.projections[position]) && cachedData.projections[position].length > 0) {
+      console.log(`📦 Using cached ${position} projections: ${cachedData.projections[position].length} players`);
+      return cachedData.projections[position];
+    }
+  }
+
+  // Fallback to API
   try {
+    console.log(`🌐 Fetching fresh ${position} projections from Tank01 API`);
     const response = await fetch(`${BASE_URL}/getNFLProjections?position=${position}`, {
       method: 'GET',
       headers: tank01Headers
@@ -120,7 +182,13 @@ export async function getNFLFantasyProjections(position: string = 'all'): Promis
     }
 
     const data = await response.json() as any;
-    return data.body || [];
+    
+    // Extract player projections from API response
+    if (data.body?.playerProjections) {
+      return Object.values(data.body.playerProjections);
+    }
+    
+    return [];
   } catch (error) {
     console.error('Error fetching fantasy projections from Tank01:', error);
     return [];
@@ -128,7 +196,15 @@ export async function getNFLFantasyProjections(position: string = 'all'): Promis
 }
 
 export async function getNFLPlayerADP(): Promise<any[]> {
+  // Check cache first
+  const cachedData = getCachedData();
+  if (cachedData?.adp) {
+    return cachedData.adp;
+  }
+
+  // Fallback to API
   try {
+    console.log('🌐 Fetching fresh ADP data from Tank01 API');
     const response = await fetch(`${BASE_URL}/getNFLADP?adpType=halfPPR`, {
       method: 'GET',
       headers: tank01Headers
