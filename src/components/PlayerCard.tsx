@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { TrendingUp, TrendingDown, Star, Info } from "lucide-react";
+import { TierSystem, type Position } from "../lib/tierSystem";
 
 interface Player {
   id: string;
@@ -62,12 +63,37 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
     }
   };
 
-  const getTierColor = (tier: number) => {
-    if (tier <= 1) return 'text-yellow-400';
-    if (tier <= 3) return 'text-green-400';
-    if (tier <= 5) return 'text-blue-400';
-    return 'text-gray-400';
+  const getTierColor = (tier: number, position: string) => {
+    // Create a temporary TierSystem instance for color calculation
+    const tierSystem = new TierSystem();
+    const validPosition = position?.toUpperCase() as Position;
+    
+    // Fallback to generic coloring if position is invalid
+    if (!['QB', 'RB', 'WR', 'TE', 'K', 'DST'].includes(validPosition)) {
+      if (tier <= 1) return 'text-yellow-400';
+      if (tier <= 3) return 'text-green-400';
+      if (tier <= 5) return 'text-blue-400';
+      return 'text-gray-400';
+    }
+    
+    return tierSystem.getTierColor(tier, validPosition);
   };
+
+  const getDeadZoneWarning = () => {
+    const tierSystem = new TierSystem();
+    const playerForTiering = {
+      id: player.id,
+      name: player.name,
+      position: player.position.toUpperCase() as Position,
+      vbd: vbdValue || 0,
+      adp: player.adp,
+      projectedPoints: player.projectedPoints
+    };
+    
+    return tierSystem.checkDeadZone(playerForTiering);
+  };
+
+  const deadZoneInfo = getDeadZoneWarning();
 
   return (
     <Card 
@@ -153,7 +179,7 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
           </div>
           <div className="space-y-1">
             <p className="text-muted-foreground">Tier</p>
-            <p className={`font-semibold ${getTierColor(player.tier)}`}>
+            <p className={`font-semibold ${getTierColor(player.tier, player.position)}`}>
               {player.tier}
             </p>
           </div>
@@ -202,6 +228,12 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
         ) && (
           <Badge variant="destructive" className="w-full justify-center">
             {typeof player.injury === 'string' ? player.injury : player.injury.description || 'Injured'}
+          </Badge>
+        )}
+
+        {deadZoneInfo.inDeadZone && (
+          <Badge variant="outline" className="w-full justify-center border-amber-300 text-amber-700 bg-amber-50/20">
+            {deadZoneInfo.warning}
           </Badge>
         )}
 

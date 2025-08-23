@@ -60,9 +60,9 @@ export const projPointsTiered = (pos: Pos, r: number): number => {
     return Math.max(110, r < 17 ? smoothBlend(r, 15, mid, late) : late(r));
   }
   if (pos === "RB") {
-    const elite = (x: number) => 315 - 5.5 * x;     // 1-6
-    const mid = (x: number) => 325 - 7.0 * x;       // 7-18
-    const late = (x: number) => 235 - 2.4 * x;      // 19+ (tuned for RB29 ≈ 165)
+    const elite = (x: number) => 320 - 5.0 * x;     // 1-6 (RB6 = 290)
+    const mid = (x: number) => 296 - 3.5 * x;       // 7-18 (RB7 = 271.5, ensures continuity)
+    const late = (x: number) => 240 - 2.0 * x;      // 19+ (more realistic decline)
     
     if (r <= 6) return Math.max(90, elite(r));
     if (r <= 18) return Math.max(90, r < 8 ? smoothBlend(r, 6, elite, mid) : mid(r));
@@ -71,7 +71,7 @@ export const projPointsTiered = (pos: Pos, r: number): number => {
   if (pos === "WR") {
     const elite = (x: number) => 290 - 4.0 * x;     // 1-8
     const mid = (x: number) => 300 - 5.0 * x;       // 9-28
-    const late = (x: number) => 160 - 0.25 * x;     // 29+ (ensures continuity from mid tier)
+    const late = (x: number) => 180 - 1.5 * x;      // 29+ (more realistic decline)
     
     if (r <= 8) return Math.max(90, elite(r));
     if (r <= 28) return Math.max(90, r < 10 ? smoothBlend(r, 8, elite, mid) : mid(r));
@@ -265,15 +265,15 @@ export const calculateVBDWithBreakdown = (
   const sosMultiplier = sosData ? sosMultiplierPosMemoized(position, sosData) : 1.0;
   const sosAdjustedPoints = rawPoints * sosMultiplier;
   
-  // Step 3: Apply floor
-  const finalPoints = applyFloors(position, sosAdjustedPoints);
-  const floorApplied = finalPoints > sosAdjustedPoints;
+  // Step 3: Use raw SOS-adjusted points (no floors in VBD)
+  const finalPoints = sosAdjustedPoints;
+  const floorApplied = false;
   
   // Step 4: Replacement level
   const replPoints = replacementPointsMemoized(position, teams, starters, flex, flexWeights);
   
-  // Step 5: Final VBD
-  const vbd = Math.max(0, finalPoints - replPoints);
+  // Step 5: Final VBD - allow negative values
+  const vbd = finalPoints - replPoints;
   
   return {
     rawPoints,
@@ -469,8 +469,10 @@ export const calculateDynamicVBD = (
   const positionRanks = positionRankFromADP(availablePlayers);
   const positionRank = positionRanks[player.id] || Math.ceil(player.adp / 10);
   
-  // PURE VBD: Use actual projections or tiered estimate, no adjustments
-  const rawPoints = player.projectedPoints || projPointsTiered(position, positionRank);
+  // PRIORITIZE Tank01 projections over tiered estimates
+  const rawPoints = (player.projectedPoints && player.projectedPoints > 0) 
+    ? player.projectedPoints 
+    : projPointsTiered(position, positionRank);
   
   // NO SOS in VBD calculation - keep it pure
   const sosMultiplier = 1.0;
@@ -480,7 +482,7 @@ export const calculateDynamicVBD = (
   const finalPoints = rawPoints;
   const floorApplied = false;
   
-  const vbd = Math.max(0, finalPoints - dynamicReplacement);
+  const vbd = finalPoints - dynamicReplacement; // Allow negative VBD - it's meaningful!
   
   return {
     rawPoints,
@@ -522,7 +524,8 @@ export const calculateVBD = (
   const positionRanks = positionRankFromADP(allPlayers);
   const positionRank = positionRanks[player.id] || Math.ceil(player.adp / 10);
   
-  // Get base projected points (no adjustments for pure VBD)
+  // PRIORITIZE Tank01 projections over tiered estimates (if available)
+  // Note: static VBD doesn't receive projectedPoints, so this is mainly for future-proofing
   const baseProjectedPoints = projPointsTiered(position, positionRank);
   
   // PURE VBD: No SOS adjustment, no floors - just raw points
@@ -531,6 +534,6 @@ export const calculateVBD = (
   // Calculate replacement level points with correct flex allocation
   const replPoints = replacementPoints(position, teams, starters, flex, flexWeights);
   
-  // Pure VBD calculation - just the difference
-  return Math.max(0, projectedPoints - replPoints);
+  // Pure VBD calculation - allow negative values (meaningful information!)
+  return projectedPoints - replPoints;
 };

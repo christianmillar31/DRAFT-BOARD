@@ -40,6 +40,7 @@ import {
   type DraftState,
   type DynamicVBDResult
 } from "../lib/vbd";
+import { TierSystem, type PlayerForTiering, type Position } from "../lib/tierSystem";
 import { validateVBDSystem } from "../lib/backtest";
 
 
@@ -76,6 +77,9 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   const [currentPick, setCurrentPick] = useState(1);
   const [actionHistory, setActionHistory] = useState<{ type: 'draft' | 'others', player: any, pick: number }[]>([]);
   const [useDynamicVBD, setUseDynamicVBD] = useState(true); // Default to dynamic VBD
+  
+  // Initialize TierSystem with league size
+  const tierSystem = useMemo(() => new TierSystem(leagueSettings.teams), [leagueSettings.teams]);
   
   // Tank01 API hooks - always try to use live data
   const { data: tank01Players, isLoading: playersLoading, error: playersError } = useTank01Players();
@@ -303,7 +307,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
               })(),
               lastYearPoints: realADP ? Math.round(Math.max(30, 350 - (realADP * 2.5)) * 10) / 10 : 80,
               adp: realADP || 999,
-              tier: realADP ? Math.ceil(realADP / 12) : Math.ceil((index + 1) / 50),
+              tier: 1, // Will be calculated after VBD processing
               injury: p.injury || undefined,
               trending: undefined,
               age: p.age,
@@ -343,10 +347,59 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     return vbdCache.get(playerId) || calculateVBD(player);
   };
 
+  // Calculate advanced tiers using VBD-based TierSystem
+  const playersWithTiers = useMemo(() => {
+    if (!players?.length) return [];
+    
+    // Group players by position and prepare for tier calculation
+    const positionGroups: Record<string, PlayerForTiering[]> = {};
+    
+    players.forEach((player: any) => {
+      const position = player.position?.toUpperCase() as Position;
+      if (!['QB', 'RB', 'WR', 'TE', 'K', 'DST'].includes(position)) return;
+      
+      if (!positionGroups[position]) {
+        positionGroups[position] = [];
+      }
+      
+      const vbdResult = getCachedVBD(player);
+      
+      positionGroups[position].push({
+        id: player.id || player.playerID || '',
+        name: player.name || '',
+        position,
+        vbd: vbdResult,
+        adp: player.adp || 999,
+        projectedPoints: player.projectedPoints || 0,
+        rushAttempts: player.rushAttempts,
+        targets: player.targets
+      });
+    });
+    
+    // Calculate tiers for each position group
+    const tieredPlayers = new Map<string, number>();
+    
+    Object.entries(positionGroups).forEach(([position, posPlayers]) => {
+      // Sort by VBD descending for tier calculation
+      const sortedPlayers = [...posPlayers].sort((a, b) => b.vbd - a.vbd);
+      const withTiers = tierSystem.calculateTiers(sortedPlayers);
+      
+      withTiers.forEach(player => {
+        tieredPlayers.set(player.id, player.tier || 1);
+      });
+    });
+    
+    // Apply tiers back to original players
+    return players.map((player: any) => ({
+      ...player,
+      tier: tieredPlayers.get(player.id || player.playerID || '') || 1
+    }));
+  }, [players, vbdCache, tierSystem]);
+
   // Apply filters and sorting (simplified)
   let filteredPlayers;
   try {
-    filteredPlayers = players.filter((player: any) => {
+    filteredPlayers = playersWithTiers.filter((player: any) => {
       const playerName = player.name || player.longName || player.espnName || '';
       const playerTeam = player.team || player.teamAbv || '';
       const playerPosition = player.position || player.pos || '';
@@ -633,7 +686,16 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
 
   // Tier Break Detection
   const detectTierBreaks = () => {
-    const positionGroups = filteredPlayers.reduce((acc, player) => {
+    // Don't show warnings before any picks have been made
+    if (currentPick <= 1) return [];
+    
+    // Only look at AVAILABLE players (not drafted)
+    const availablePlayers = filteredPlayers.filter(player => {
+      const playerId = player.id || player.playerID || '';
+      return !draftedPlayers.has(playerId) && !playersDraftedByOthers.has(playerId);
+    });
+    
+    const positionGroups = availablePlayers.reduce((acc, player) => {
       if (!acc[player.position]) acc[player.position] = [];
       acc[player.position].push(player);
       return acc;
@@ -642,11 +704,14 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     const tierBreaks: { position: string; playersLeft: number; nextTierDrop: number }[] = [];
     
     Object.entries(positionGroups).forEach(([position, players]) => {
+      if (players.length === 0) return;
+      
       const currentTier = players[0]?.tier;
       const playersInCurrentTier = players.filter(p => p.tier === currentTier).length;
       const nextTierPlayers = players.filter(p => p.tier === currentTier + 1);
       
-      if (playersInCurrentTier <= 3 && nextTierPlayers.length > 0) {
+      // Only warn if we're down to the last few in a tier AND there are next tier players
+      if (playersInCurrentTier <= 2 && playersInCurrentTier > 0 && nextTierPlayers.length > 0) {
         const vbdDrop = calculateVBD(players[0]) - calculateVBD(nextTierPlayers[0]);
         tierBreaks.push({
           position,
@@ -656,7 +721,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       }
     });
     
-    return tierBreaks.filter(tb => tb.nextTierDrop > 15); // Only significant drops
+    return tierBreaks.filter(tb => tb.nextTierDrop > 20); // Higher threshold for true tier breaks
   };
 
   // Advanced Draft Intelligence System
@@ -680,20 +745,33 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     // Don't show aggressive warnings in first 2 rounds
     const isEarlyDraft = currentPick <= leagueSettings.teams * 2;
     
-    // Helper function for survival probability calculation
+    // Proper survival probability using cumulative distribution
     const calculateSurvivalProbability = (player: any, targetPick: number) => {
       if (targetPick <= currentPick) return 1.0;
       
-      let survivalProb = 1.0;
       const playerADP = player.adp || 999;
-      const adpStd = Math.max(5, playerADP * 0.15); // 15% standard deviation
+      const adpStd = Math.max(3, playerADP * 0.12); // 12% standard deviation - more realistic
       
-      for (let pick = currentPick + 1; pick < targetPick; pick++) {
-        // Simple normal approximation: P(drafted at this pick)
-        const pickProb = Math.exp(-0.5 * Math.pow((pick - playerADP) / adpStd, 2)) * 0.1;
-        survivalProb *= (1 - Math.min(0.3, pickProb)); // Cap at 30% per pick
-      }
-      return Math.max(0, survivalProb);
+      // Use error function approximation for normal CDF since we don't have a stats library
+      const normalCDF = (x: number, mean: number, std: number) => {
+        const z = (x - mean) / std;
+        // Abramowitz and Stegun approximation
+        const t = 1 / (1 + 0.2316419 * Math.abs(z));
+        const d = 0.3989423 * Math.exp(-z * z / 2);
+        let prob = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+        
+        if (z > 0) prob = 1 - prob;
+        return prob;
+      };
+      
+      // Probability player is drafted by targetPick
+      const probDraftedByTarget = normalCDF(targetPick, playerADP, adpStd);
+      const probDraftedByNow = normalCDF(currentPick, playerADP, adpStd);
+      
+      // Conditional probability: P(survives to target | hasn't been drafted yet)
+      const conditionalSurvival = Math.max(0, (1 - probDraftedByTarget) / Math.max(0.001, 1 - probDraftedByNow));
+      
+      return Math.min(1, conditionalSurvival);
     };
 
     // Position Scarcity Index (PSI)
@@ -708,22 +786,42 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
         DST: leagueSettings.teams
       };
       
-      // Count remaining quality players above replacement
-      const remainingAtPosition = filteredPlayers.filter(p => p.position === position);
+      // Count remaining AVAILABLE players above replacement (exclude drafted)
+      const availablePlayers = filteredPlayers.filter(player => {
+        const playerId = player.id || player.playerID || '';
+        return !draftedPlayers.has(playerId) && !playersDraftedByOthers.has(playerId);
+      });
+      
+      const remainingAtPosition = availablePlayers.filter(p => p.position === position);
       const cutoff = starterCutoffs[position] || 30;
       const remainingAboveReplacement = remainingAtPosition.filter((p, idx) => idx < cutoff).length;
       
-      // Calculate survival probability (chance they'll still be there)
+      // More realistic survival probability calculation
       const recentTakeRate = recentlyDrafted.filter(p => p?.position === position).length / Math.max(1, recentPickWindow);
-      const expectedLoss = recentTakeRate * picksUntilMe * 2; // 2x for going and coming back
-      const survivalProb = Math.max(0, 1 - (expectedLoss / Math.max(1, remainingAboveReplacement)));
+      
+      // Early in draft: use position-specific demand patterns
+      let demandMultiplier = 1.0;
+      if (currentRound <= 3) {
+        const earlyDemand = { QB: 0.3, RB: 2.0, WR: 1.8, TE: 0.4, K: 0.1, DST: 0.1 };
+        demandMultiplier = earlyDemand[position as keyof typeof earlyDemand] || 1.0;
+      }
+      
+      const expectedDraftedBeforeReturn = Math.min(
+        remainingAboveReplacement,
+        (recentTakeRate * demandMultiplier * picksUntilMe * 1.5) // More conservative than 2x
+      );
+      
+      const survivalProb = Math.max(0, 1 - (expectedDraftedBeforeReturn / Math.max(1, remainingAboveReplacement)));
       
       return {
         position,
         remaining: remainingAboveReplacement,
         survivalProb,
-        scarcityIndex: remainingAboveReplacement * survivalProb,
-        takeRate: recentTakeRate
+        // Proper scarcity calculation - urgency increases as survival decreases and remaining decreases
+        scarcityIndex: (1 - survivalProb) / Math.max(1, remainingAboveReplacement / cutoff),
+        takeRate: recentTakeRate,
+        absolute: remainingAboveReplacement / cutoff, // What % of replacement level remains
+        temporal: 1 - survivalProb // How likely they'll be gone
       };
     };
     
@@ -787,12 +885,16 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
         const positionPlayers = filteredPlayers.filter(p => p.position === pos);
         const threshold = getTierThreshold(pos);
         
-        // Group into tiers based on dynamic VBD gaps
+        // Group into tiers based on dynamic VBD gaps - check more players in later rounds
+        const tiersToCheck = currentRound <= 5 ? 30 : 
+                           currentRound <= 10 ? 50 : 
+                           Math.min(80, positionPlayers.length);
+        
         let currentTier: any[] = [];
         let lastVBD = Infinity;
         let tierCount = 1;
         
-        positionPlayers.slice(0, 20).forEach((player, idx) => {
+        positionPlayers.slice(0, tiersToCheck).forEach((player, idx) => {
           const vbd = getCachedVBD(player);
           const vbdGap = lastVBD - vbd;
           
@@ -947,16 +1049,18 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       const hasUpside = vbd > 5; // Positive VBD value
       const isSkillPosition = ['RB', 'WR', 'TE'].includes(player.position);
       
-      // High upside criteria for late rounds
+      // High upside criteria based on actual player data
       const lotteryFactors = {
-        // Young players (age < 25) - simulated
-        youngPlayer: Math.random() > 0.7,
-        // Opportunity (starter injury, role change) - simulated  
-        opportunity: Math.random() > 0.8,
-        // Breakout candidate (previous production spike) - simulated
-        breakoutCandidate: Math.random() > 0.85,
-        // Red zone looks (goal line back, slot receiver) - simulated
-        redZoneOpportunity: player.position === 'RB' ? Math.random() > 0.6 : Math.random() > 0.8
+        // Young player with development potential
+        youngPlayer: (player.age && player.age < 25) || false,
+        // High projected volume relative to ADP
+        volumeOpportunity: (player.projectedPoints / Math.max(1, player.adp * 0.1)) > 1.2,
+        // Strong recent trend (simulated but consistent)
+        trendingUp: player.trending === 'up' || (player.adp < 150 && player.projectedPoints > 100),
+        // Goal line/red zone opportunity for skill positions
+        redZoneRole: player.position === 'RB' ? player.projectedPoints > 120 : 
+                    player.position === 'TE' ? player.projectedPoints > 80 : 
+                    player.projectedPoints > 140
       };
       
       const lotteryScore = Object.values(lotteryFactors).filter(Boolean).length;
@@ -964,15 +1068,18 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       return isLateRound && hasUpside && isSkillPosition && lotteryScore >= 2;
     });
     
-    return lotteryTickets.slice(0, 8).map(player => ({
-      ...player,
-      lotteryReasons: [
-        'High ceiling player',
-        'Opportunity for expanded role', 
-        'Strong red zone usage',
-        'Breakout candidate'
-      ].slice(0, Math.floor(Math.random() * 3) + 1)
-    }));
+    return lotteryTickets.slice(0, 8).map(player => {
+      const reasons = [];
+      if ((player.age && player.age < 25)) reasons.push('Young player - development upside');
+      if ((player.projectedPoints / Math.max(1, player.adp * 0.1)) > 1.2) reasons.push('High volume opportunity');
+      if (player.trending === 'up' || (player.adp < 150 && player.projectedPoints > 100)) reasons.push('Strong recent trend');
+      if (player.projectedPoints > (player.position === 'RB' ? 120 : player.position === 'TE' ? 80 : 140)) reasons.push('Red zone role potential');
+      
+      return {
+        ...player,
+        lotteryReasons: reasons.slice(0, 3) // Max 3 reasons
+      };
+    });
   };
 
   const tierBreaks = detectTierBreaks();
@@ -1186,7 +1293,29 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     return null;
   };
 
-  // Real Injury Risk Analysis using Tank01 API Data
+  // Enhanced workload risk calculation based on Claude Opus research
+  const getWorkloadRisk = (player: any) => {
+    if (!player.Rushing && !player.Receiving) return 0;
+    
+    const carries = parseFloat(player.Rushing?.carries || '0');
+    const targets = parseFloat(player.Receiving?.targets || '0');
+    const projectedTouches = carries + targets;
+    
+    // High workload thresholds by position (Claude Opus research)
+    const highWorkloadThresholds: Record<string, number> = {
+      'RB': 250,  // 250+ touches = high risk
+      'WR': 120,  // 120+ targets = high risk  
+      'TE': 80,   // 80+ targets = high risk
+      'QB': 50    // 50+ rushes = high risk
+    };
+    
+    const threshold = highWorkloadThresholds[player.position] || 100;
+    
+    // Return workload risk factor (0 to 0.3)
+    return Math.min(0.3, (projectedTouches / threshold) * 0.3);
+  };
+
+  // Real Injury Risk Analysis using Tank01 API Data + Workload
   const getInjuryRisk = (player: any) => {
     // Check for current injury status from Tank01 API
     const currentInjury = player.injury;
@@ -1236,8 +1365,21 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     // Current injury adjustment
     const currentInjuryAdjustment = currentInjuryStatus ? 1.5 : 1.0;
     
-    // Calculate final risk percentage
-    const riskPercentage = Math.min(0.4, baselineRisk * ageAdjustment * currentInjuryAdjustment);
+    // Get workload risk factor
+    const workloadRisk = getWorkloadRisk(player);
+    
+    // Claude Opus multi-factor injury risk model
+    const injuryHistory = 0; // TODO: Add when historical data available
+    const environmentalFactors = 0; // TODO: Add team/field conditions
+    
+    const riskPercentage = Math.min(0.4, 
+      baselineRisk * 0.40 +
+      (ageAdjustment - 1) * 0.25 +
+      workloadRisk * 0.20 +
+      injuryHistory * 0.10 +
+      environmentalFactors * 0.05 +
+      (currentInjuryAdjustment - 1) * 0.15 // Current injury gets separate weight
+    );
     
     // Determine risk level
     let riskLevel: 'Low' | 'Medium' | 'High';
