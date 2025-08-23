@@ -80,12 +80,25 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   // Tank01 API hooks - always try to use live data
   const { data: tank01Players, isLoading: playersLoading, error: playersError } = useTank01Players();
   const { data: tank01ADP, isLoading: adpLoading } = useTank01ADP();
-  const { data: tank01Projections } = useTank01Projections(selectedPosition);
+  const { data: tank01AllProjections } = useTank01Projections("all"); // Get ALL projections for merging
 
   const positions = ["ALL", "QB", "RB", "WR", "TE", "K", "DST"];
 
   // Use live data when available, no fallback to mock data
   const rawPlayers = tank01Players && tank01Players.length > 0 ? tank01Players : [];
+  
+  // Create a map of player projections for quick lookup
+  const projectionsMap = useMemo(() => {
+    const map = new Map();
+    if (tank01AllProjections && Array.isArray(tank01AllProjections)) {
+      tank01AllProjections.forEach((proj: any) => {
+        if (proj.playerID) {
+          map.set(proj.playerID, proj.fantasyPointsDefault);
+        }
+      });
+    }
+    return map;
+  }, [tank01AllProjections]);
   const hasLiveData = tank01Players && tank01Players.length > 0;
   
   // Create ADP lookup map
@@ -274,13 +287,15 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
               team: p.team || 'FA',
               rank: realADP || (index + 1),
               projectedPoints: (() => {
-                // Extract projected points based on scoring type
-                if (p.fantasyPointsDefault) {
+                // First try to get projections from the merged projections data
+                const projectionData = projectionsMap.get(p.playerID) || p.fantasyPointsDefault;
+                
+                if (projectionData) {
                   const scoringKey = leagueSettings.scoringType === 'PPR' ? 'PPR' : 
                                      leagueSettings.scoringType === 'Half-PPR' ? 'halfPPR' :
                                      leagueSettings.scoringType === 'Standard' ? 'standard' : 
                                      'PPR'; // Default to PPR for Superflex/Dynasty
-                  const points = p.fantasyPointsDefault[scoringKey];
+                  const points = projectionData[scoringKey];
                   if (points) return parseFloat(points);
                 }
                 // Fallback to ADP-based estimation if no actual projections
