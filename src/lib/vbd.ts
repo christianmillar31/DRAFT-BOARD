@@ -373,12 +373,21 @@ export const calculateRemainingNeed = (
   return Math.max(0, totalNeed - alreadyDrafted);
 };
 
+// Position-specific scarcity penalties (points per drafted player)
+const SCARCITY_PENALTIES: Record<Pos, number> = {
+  QB: 2,   // QBs are easily replaceable
+  RB: 4,   // RBs have steep dropoff
+  WR: 3,   // WRs have moderate dropoff  
+  TE: 5    // TEs have biggest dropoff after elite tier
+};
+
 // Calculate dynamic replacement levels based on current draft state
 export const calculateDynamicReplacement = (
   availablePlayers: Player[],
   draftState: DraftState,
   leagueSettings: any,
-  draftedCounts: PositionDraftCounts
+  draftedCounts: PositionDraftCounts,
+  sosData?: Record<Pos, number> | null
 ): Record<Pos, number> => {
   const replacement: Record<Pos, number> = { QB: 0, RB: 0, WR: 0, TE: 0 };
   
@@ -395,18 +404,19 @@ export const calculateDynamicReplacement = (
     // Count how many good players have been drafted at this position
     const alreadyDrafted = draftedCounts[pos].starters + draftedCounts[pos].flex;
     
-    // CORRECT LOGIC: More drafted players = worse replacement level = higher VBD for remaining
-    // Each drafted player makes the replacement level worse by reducing available talent
-    const scarcityPenalty = alreadyDrafted * 3; // 3 points worse per drafted player
+    // Use position-specific scarcity penalty
+    const scarcityPenalty = alreadyDrafted * SCARCITY_PENALTIES[pos];
     
     // Dynamic replacement = static replacement - scarcity penalty
-    // (Lower replacement level = higher VBD for remaining players)
-    replacement[pos] = Math.max(FLOOR[pos], staticReplacement - scarcityPenalty);
+    let dynamicReplacement = staticReplacement - scarcityPenalty;
     
-    // Apply streaming discount for QB/TE
+    // Apply streaming discount for QB/TE BEFORE floor
     if (pos === "QB" || pos === "TE") {
-      replacement[pos] *= 0.95;
+      dynamicReplacement *= 0.95;
     }
+    
+    // Apply floor AFTER streaming discount to ensure minimum value
+    replacement[pos] = Math.max(FLOOR[pos], dynamicReplacement);
   });
   
   return replacement;
@@ -417,7 +427,8 @@ export const calculateDynamicVBD = (
   player: Player,
   availablePlayers: Player[],
   draftState: DraftState,
-  leagueSettings: any
+  leagueSettings: any,
+  sosData?: Record<Pos, number> | null
 ): DynamicVBDResult => {
   const position = player.position as Pos;
   
@@ -445,7 +456,7 @@ export const calculateDynamicVBD = (
     getFlexWeights(leagueSettings)
   );
   
-  const dynamicReplacements = calculateDynamicReplacement(availablePlayers, draftState, leagueSettings, draftedCounts);
+  const dynamicReplacements = calculateDynamicReplacement(availablePlayers, draftState, leagueSettings, draftedCounts, sosData);
   const dynamicReplacement = dynamicReplacements[position];
   
   // Calculate scarcity bonus (how much more valuable due to draft state)
@@ -460,9 +471,14 @@ export const calculateDynamicVBD = (
   const positionRanks = positionRankFromADP(availablePlayers);
   const positionRank = positionRanks[player.id] || Math.ceil(player.adp / 10);
   
-  const rawPoints = projPointsTiered(position, positionRank);
-  const sosMultiplier = 1.0; // Could integrate SOS here
+  // Get raw points (either from actual projections or tiered estimate)
+  const rawPoints = player.projectedPoints || projPointsTiered(position, positionRank);
+  
+  // Apply SOS adjustment if available
+  const sosMultiplier = sosData ? sosMultiplierPosMemoized(position, sosData) : 1.0;
   const sosAdjustedPoints = rawPoints * sosMultiplier;
+  
+  // Apply floor to ensure minimum value
   const finalPoints = applyFloors(position, sosAdjustedPoints);
   const floorApplied = finalPoints > sosAdjustedPoints;
   
