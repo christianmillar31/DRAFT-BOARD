@@ -273,7 +273,9 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
               position: p.pos || p.position || 'UNKNOWN',
               team: p.team || 'FA',
               rank: realADP || (index + 1),
-              projectedPoints: realADP ? Math.round(Math.max(50, 400 - (realADP * 3)) * 10) / 10 : 100,
+              projectedPoints: p.fantasyPointsDefault?.standard ? parseFloat(p.fantasyPointsDefault.standard) : 
+                               p.fantasyPointsDefault?.PPR ? parseFloat(p.fantasyPointsDefault.PPR) :
+                               realADP ? Math.round(Math.max(50, 400 - (realADP * 3)) * 10) / 10 : 100,
               lastYearPoints: realADP ? Math.round(Math.max(30, 350 - (realADP * 2.5)) * 10) / 10 : 80,
               adp: realADP || 999,
               tier: realADP ? Math.ceil(realADP / 12) : Math.ceil((index + 1) / 50),
