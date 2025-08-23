@@ -632,28 +632,170 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     return tierBreaks.filter(tb => tb.nextTierDrop > 15); // Only significant drops
   };
 
-  // Live Opponent Analysis
-  const analyzeOpponentNeeds = () => {
-    // Simulate what positions other teams likely need based on draft patterns
+  // Advanced Draft Intelligence System
+  const calculateDraftIntelligence = () => {
     const currentRound = Math.ceil(currentPick / leagueSettings.teams);
-    const teamsStillPicking = leagueSettings.teams;
+    const picksUntilMe = ((leagueSettings.teams - (currentPick % leagueSettings.teams)) % leagueSettings.teams) || leagueSettings.teams;
     
-    // Early rounds: everyone needs RB/WR
-    if (currentRound <= 6) {
-      return {
-        highDemandPositions: ['RB', 'WR'],
-        lowDemandPositions: ['K', 'DST'],
-        urgency: currentRound <= 3 ? 'high' : 'medium'
+    // Track recent draft history (last 12-15 picks)
+    const recentPickWindow = Math.min(15, Math.max(0, currentPick - 1));
+    const allDrafted = [...draftedPlayers, ...playersDraftedByOthers];
+    
+    // Get recently drafted players for run detection
+    const recentlyDrafted = actionHistory.slice(-recentPickWindow).map(h => h.player);
+    
+    // Don't show aggressive warnings in first 2 rounds
+    const isEarlyDraft = currentPick <= leagueSettings.teams * 2;
+    
+    // Position Scarcity Index (PSI)
+    const calculatePositionScarcity = (position: string) => {
+      // Define replacement level cutoffs based on league settings
+      const starterCutoffs: Record<string, number> = {
+        QB: leagueSettings.teams * 1.2, // Most teams want 1 QB + some backups
+        RB: leagueSettings.teams * 2.5, // 2 starters + flex considerations
+        WR: leagueSettings.teams * 3,   // 2-3 starters + flex
+        TE: leagueSettings.teams * 1.3,  // 1 starter + some premium TEs
+        K: leagueSettings.teams,
+        DST: leagueSettings.teams
       };
-    }
+      
+      // Count remaining quality players above replacement
+      const remainingAtPosition = filteredPlayers.filter(p => p.position === position);
+      const cutoff = starterCutoffs[position] || 30;
+      const remainingAboveReplacement = remainingAtPosition.filter((p, idx) => idx < cutoff).length;
+      
+      // Calculate survival probability (chance they'll still be there)
+      const recentTakeRate = recentlyDrafted.filter(p => p?.position === position).length / Math.max(1, recentPickWindow);
+      const expectedLoss = recentTakeRate * picksUntilMe * 2; // 2x for going and coming back
+      const survivalProb = Math.max(0, 1 - (expectedLoss / Math.max(1, remainingAboveReplacement)));
+      
+      return {
+        position,
+        remaining: remainingAboveReplacement,
+        survivalProb,
+        scarcityIndex: remainingAboveReplacement * survivalProb,
+        takeRate: recentTakeRate
+      };
+    };
     
-    // Late rounds: teams filling bench and kickers/defense
+    // Run Detection - ONLY after enough picks to matter
+    const detectPositionRuns = () => {
+      const runs: Record<string, number> = {};
+      
+      // Need at least 8 picks to detect a run
+      if (currentPick < 8) {
+        return runs;
+      }
+      
+      const baselineRates: Record<string, number> = {
+        QB: 0.08, RB: 0.35, WR: 0.35, TE: 0.12, K: 0.05, DST: 0.05
+      };
+      
+      ['QB', 'RB', 'WR', 'TE'].forEach(pos => {
+        const recentCount = recentlyDrafted.filter(p => p?.position === pos).length;
+        const expectedCount = baselineRates[pos] * recentPickWindow;
+        // Only flag a run if we have enough data AND it's significant
+        if (recentPickWindow >= 8 && recentCount >= 4) {
+          runs[pos] = expectedCount > 0 ? recentCount / expectedCount : 1;
+        } else {
+          runs[pos] = 1; // No run
+        }
+      });
+      
+      return runs;
+    };
+    
+    // Tier Cliff Detection
+    const detectTierCliffs = () => {
+      const cliffs: any[] = [];
+      ['QB', 'RB', 'WR', 'TE'].forEach(pos => {
+        const positionPlayers = filteredPlayers.filter(p => p.position === pos);
+        
+        // Group into tiers based on VBD gaps
+        let currentTier: any[] = [];
+        let lastVBD = Infinity;
+        
+        positionPlayers.slice(0, 20).forEach(player => {
+          const vbd = getCachedVBD(player);
+          if (lastVBD - vbd > 5) { // 5 point VBD gap = tier break
+            if (currentTier.length > 0 && currentTier.length <= 3) {
+              cliffs.push({
+                position: pos,
+                playersLeft: currentTier.length,
+                players: currentTier.map(p => p.name),
+                urgency: currentTier.length <= 2 ? 'critical' : 'moderate'
+              });
+            }
+            currentTier = [player];
+          } else {
+            currentTier.push(player);
+          }
+          lastVBD = vbd;
+        });
+      });
+      
+      return cliffs;
+    };
+    
+    // Roster Need Score
+    const calculateRosterNeed = (position: string) => {
+      const currentAtPosition = myTeam.filter(p => p.position === position).length;
+      const starterNeeds: Record<string, number> = {
+        QB: 1, RB: 2, WR: 3, TE: 1, K: 1, DST: 1
+      };
+      const benchTargets: Record<string, number> = {
+        QB: 2, RB: 5, WR: 6, TE: 2, K: 1, DST: 1
+      };
+      
+      const needed = starterNeeds[position] || 0;
+      const target = benchTargets[position] || 0;
+      
+      if (currentAtPosition < needed) return 3; // Critical need
+      if (currentAtPosition < target) return 1; // Bench depth need
+      return 0; // Filled
+    };
+    
+    // Combine all signals
+    const positions = ['QB', 'RB', 'WR', 'TE'];
+    const scarcityData = positions.map(calculatePositionScarcity);
+    const runs = detectPositionRuns();
+    const cliffs = detectTierCliffs();
+    
+    // Calculate final urgency scores
+    const urgencyScores = positions.map(pos => {
+      const scarcity = scarcityData.find(s => s.position === pos);
+      const runMultiplier = runs[pos] || 1;
+      const needScore = calculateRosterNeed(pos);
+      const cliffBoost = cliffs.find(c => c.position === pos)?.urgency === 'critical' ? 1.5 : 1;
+      
+      // Scale down urgency in early rounds - MUCH more conservative
+      const roundMultiplier = currentPick <= 5 ? 0.1 : 
+                             currentPick <= 15 ? 0.2 : 
+                             currentPick <= 30 ? 0.4 : 
+                             currentPick <= 50 ? 0.7 : 1.0;
+      
+      // Only detect runs after pick 20
+      const effectiveRunMultiplier = currentPick < 20 ? 1 : Math.min(runMultiplier, 1.5);
+      
+      return {
+        position: pos,
+        urgency: (scarcity?.scarcityIndex || 0) * effectiveRunMultiplier * (needScore + 1) * cliffBoost * roundMultiplier,
+        scarcity: scarcity,
+        isRun: currentPick >= 30 && runMultiplier > 2.5, // Much higher threshold for run detection
+        need: needScore,
+        cliff: cliffs.find(c => c.position === pos)
+      };
+    }).sort((a, b) => b.urgency - a.urgency);
+    
     return {
-      highDemandPositions: ['QB', 'TE'],
-      lowDemandPositions: ['K', 'DST'],
-      urgency: 'low'
+      urgencyScores,
+      topPriority: urgencyScores[0],
+      cliffs,
+      runs: Object.entries(runs).filter(([_, v]) => v > 2.5).map(([k]) => k) // Much higher threshold
     };
   };
+  
+  const draftIntelligence = calculateDraftIntelligence();
 
   // Handcuff Suggestions
   const getHandcuffSuggestions = () => {
@@ -725,7 +867,6 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   };
 
   const tierBreaks = detectTierBreaks();
-  const opponentAnalysis = analyzeOpponentNeeds();
   const handcuffSuggestions = getHandcuffSuggestions();
   const lotteryTickets = getLateRoundLotteryTickets();
 
@@ -1259,40 +1400,76 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                     <div className="flex items-center space-x-3">
                       <Target className="h-4 w-4 text-blue-500" />
                       <div>
-                        <p className="font-medium text-blue-700">Handcuff Available</p>
-                        <p className="text-sm text-blue-600">Protect {suggestion.starter.name} with {suggestion.backups[0].name}</p>
+                        <p className="font-medium text-blue-400">Handcuff Available</p>
+                        <p className="text-sm text-blue-300">Protect {suggestion.starter.name} with {suggestion.backups[0].name}</p>
                       </div>
                     </div>
-                    <Badge variant="outline" className="border-blue-300 text-blue-700">Protect Investment</Badge>
+                    <Badge variant="outline" className="border-blue-400 text-blue-400">Protect Investment</Badge>
                   </div>
                 ))}
                 
-                {/* Opponent Analysis */}
-                <div className="flex items-center justify-between p-3 bg-purple-100/20 rounded-lg border border-purple-200/30">
-                  <div className="flex items-center space-x-3">
-                    <Users className="h-4 w-4 text-purple-500" />
-                    <div>
-                      <p className="font-medium text-purple-700">Opponent Demand: {opponentAnalysis.urgency.toUpperCase()}</p>
-                      <p className="text-sm text-purple-600">High demand: {opponentAnalysis.highDemandPositions.join(', ')} | Safe to wait: {opponentAnalysis.lowDemandPositions.join(', ')}</p>
+                {/* Position Scarcity Intelligence - Only show meaningful alerts */}
+                {draftIntelligence.urgencyScores
+                  .filter(score => score.urgency > 2) // Very low threshold, just show top positions
+                  .slice(0, currentPick < 20 ? 1 : currentPick < 40 ? 2 : 3) // Start with 1 suggestion, gradually increase
+                  .map((score, idx) => {
+                  const urgencyColor = score.urgency > 100 ? 'red' : score.urgency > 50 ? 'orange' : 'purple';
+                  const urgencyLevel = score.urgency > 100 ? 'CRITICAL' : score.urgency > 50 ? 'HIGH' : currentPick < 20 ? 'SUGGESTED' : 'MODERATE';
+                  
+                  return (
+                    <div key={score.position} className={`flex items-center justify-between p-3 bg-${urgencyColor}-100/20 rounded-lg border border-${urgencyColor}-200/30`}>
+                      <div className="flex items-center space-x-3">
+                        <TrendingUp className={`h-4 w-4 text-${urgencyColor}-500`} />
+                        <div>
+                          <p className={`font-medium text-${urgencyColor}-400`}>
+                            {score.position} - {urgencyLevel} Priority
+                            {score.isRun && " 🔥 RUN DETECTED"}
+                          </p>
+                          <p className={`text-sm text-${urgencyColor}-300`}>
+                            {score.scarcity?.remaining} quality players left | 
+                            {Math.round((score.scarcity?.survivalProb || 0) * 100)}% chance they survive | 
+                            {score.cliff && `⚠️ Tier cliff: ${score.cliff.playersLeft} elite left`}
+                          </p>
+                          {score.need === 3 && (
+                            <p className={`text-xs text-${urgencyColor}-400 font-semibold`}>📌 You still need a starter!</p>
+                          )}
+                        </div>
+                      </div>
+                      <Badge variant="outline" className={`border-${urgencyColor}-400 text-${urgencyColor}-400`}>
+                        Score: {score.urgency.toFixed(1)}
+                      </Badge>
                     </div>
+                  );
+                })}
+                
+                {/* Position Run Alert - Only after meaningful sample size */}
+                {draftIntelligence.runs.length > 0 && currentPick >= 15 && (
+                  <div className="flex items-center justify-between p-3 bg-red-100/20 rounded-lg border border-red-200/30">
+                    <div className="flex items-center space-x-3">
+                      <AlertTriangle className="h-4 w-4 text-red-500" />
+                      <div>
+                        <p className="font-medium text-red-400">🔥 POSITION RUN DETECTED</p>
+                        <p className="text-sm text-red-300">Heavy drafting on: {draftIntelligence.runs.join(', ')} - Act fast or miss out!</p>
+                      </div>
+                    </div>
+                    <Badge variant="outline" className="border-red-400 text-red-400">RUN</Badge>
                   </div>
-                  <Badge variant="outline" className="border-purple-300 text-purple-700">Intel</Badge>
-                </div>
+                )}
                 
                 {/* Late Round Lottery Tickets */}
                 {lotteryTickets.length > 0 && (
                   <div className="mt-4">
-                    <h4 className="text-sm font-medium mb-3 text-green-700">🎰 Late Round Lottery Tickets</h4>
+                    <h4 className="text-sm font-medium mb-3 text-green-400">🎰 Late Round Lottery Tickets</h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {lotteryTickets.slice(0, 4).map(ticket => (
                         <div key={ticket.id} className="p-3 bg-green-100/20 rounded-lg border border-green-200/30">
                           <div className="flex justify-between items-start">
                             <div>
-                              <p className="font-medium text-green-700">{ticket.name} ({ticket.position})</p>
-                              <p className="text-xs text-green-600">ADP: {ticket.adp} | VBD: +{calculateVBD(ticket).toFixed(1)}</p>
+                              <p className="font-medium text-green-400">{ticket.name} ({ticket.position})</p>
+                              <p className="text-xs text-green-300">ADP: {ticket.adp} | VBD: +{getCachedVBD(ticket).toFixed(1)}</p>
                               <div className="flex flex-wrap gap-1 mt-1">
                                 {ticket.lotteryReasons?.map((reason: string, idx: number) => (
-                                  <Badge key={idx} variant="outline" className="text-xs border-green-300 text-green-700">
+                                  <Badge key={idx} variant="outline" className="text-xs border-green-400 text-green-400">
                                     {reason}
                                   </Badge>
                                 ))}
