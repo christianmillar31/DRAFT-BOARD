@@ -1,12 +1,10 @@
-const fetch = require('node-fetch');
-
 export default async function handler(req, res) {
-  // Force rebuild v5 - fixed fetch import
+  // Force rebuild v3 - cache fix
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('X-Function-Version', 'v5-fetch-fixed');
+  res.setHeader('X-Function-Version', 'v3-cache-fixed');
   
   if (req.method === 'OPTIONS') {
     res.status(200).end();
