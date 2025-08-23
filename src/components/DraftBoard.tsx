@@ -664,8 +664,14 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     const currentRound = Math.ceil(currentPick / leagueSettings.teams);
     const picksUntilMe = ((leagueSettings.teams - (currentPick % leagueSettings.teams)) % leagueSettings.teams) || leagueSettings.teams;
     
-    // Track recent draft history (last 12-15 picks)
-    const recentPickWindow = Math.min(15, Math.max(0, currentPick - 1));
+    // UPGRADED: Adaptive lookback window based on league size
+    const getAdaptiveLookback = () => {
+      const baseWindow = Math.floor(leagueSettings.teams * 0.7); // ~8 for 12-team
+      const maxWindow = Math.min(10, currentPick - 1); // Cap at 10 picks
+      return Math.min(baseWindow, maxWindow);
+    };
+    
+    const recentPickWindow = getAdaptiveLookback();
     const allDrafted = [...draftedPlayers, ...playersDraftedByOthers];
     
     // Get recently drafted players for run detection
@@ -674,6 +680,22 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     // Don't show aggressive warnings in first 2 rounds
     const isEarlyDraft = currentPick <= leagueSettings.teams * 2;
     
+    // Helper function for survival probability calculation
+    const calculateSurvivalProbability = (player: any, targetPick: number) => {
+      if (targetPick <= currentPick) return 1.0;
+      
+      let survivalProb = 1.0;
+      const playerADP = player.adp || 999;
+      const adpStd = Math.max(5, playerADP * 0.15); // 15% standard deviation
+      
+      for (let pick = currentPick + 1; pick < targetPick; pick++) {
+        // Simple normal approximation: P(drafted at this pick)
+        const pickProb = Math.exp(-0.5 * Math.pow((pick - playerADP) / adpStd, 2)) * 0.1;
+        survivalProb *= (1 - Math.min(0.3, pickProb)); // Cap at 30% per pick
+      }
+      return Math.max(0, survivalProb);
+    };
+
     // Position Scarcity Index (PSI)
     const calculatePositionScarcity = (position: string) => {
       // Define replacement level cutoffs based on league settings
@@ -705,12 +727,13 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       };
     };
     
-    // Run Detection - ONLY after enough picks to matter
+    // UPGRADED: Z-Score based run detection with statistical significance
     const detectPositionRuns = () => {
       const runs: Record<string, number> = {};
+      const runDetails: Record<string, any> = {};
       
-      // Need at least 8 picks to detect a run
-      if (currentPick < 8) {
+      // Need at least 6 picks for statistical significance
+      if (recentPickWindow < 6) {
         return runs;
       }
       
@@ -721,47 +744,98 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       ['QB', 'RB', 'WR', 'TE'].forEach(pos => {
         const recentCount = recentlyDrafted.filter(p => p?.position === pos).length;
         const expectedCount = baselineRates[pos] * recentPickWindow;
-        // Only flag a run if we have enough data AND it's significant
-        if (recentPickWindow >= 8 && recentCount >= 4) {
-          runs[pos] = expectedCount > 0 ? recentCount / expectedCount : 1;
+        
+        // Calculate z-score for statistical significance
+        const variance = expectedCount * (1 - baselineRates[pos]);
+        const standardDeviation = Math.sqrt(variance);
+        const zScore = standardDeviation > 0 ? (recentCount - expectedCount) / standardDeviation : 0;
+        
+        // Use z-score thresholds: 1.5 = moderate run, 2.0 = strong run
+        if (zScore > 1.5) {
+          runs[pos] = zScore;
+          runDetails[pos] = {
+            count: recentCount,
+            expected: expectedCount.toFixed(1),
+            zScore: zScore.toFixed(2),
+            strength: zScore > 2.0 ? 'strong' : 'moderate'
+          };
         } else {
-          runs[pos] = 1; // No run
+          runs[pos] = 1; // No significant run
         }
       });
       
       return runs;
     };
     
-    // Tier Cliff Detection
+    // UPGRADED: Round-adjusted tier breaks with position-specific thresholds
     const detectTierCliffs = () => {
       const cliffs: any[] = [];
+      
+      // Position and round-specific tier thresholds
+      const getTierThreshold = (position: string) => {
+        const round = currentRound;
+        const thresholds: Record<string, number> = {
+          RB: round <= 5 ? 5.0 : round <= 10 ? 3.5 : 2.0,
+          WR: round <= 5 ? 4.0 : round <= 10 ? 2.5 : 1.5,
+          TE: round <= 5 ? 2.5 : round <= 10 ? 1.5 : 1.0,
+          QB: round <= 5 ? 3.0 : round <= 10 ? 2.0 : 1.0
+        };
+        return thresholds[position] || 2.0;
+      };
+      
       ['QB', 'RB', 'WR', 'TE'].forEach(pos => {
         const positionPlayers = filteredPlayers.filter(p => p.position === pos);
+        const threshold = getTierThreshold(pos);
         
-        // Group into tiers based on VBD gaps
+        // Group into tiers based on dynamic VBD gaps
         let currentTier: any[] = [];
         let lastVBD = Infinity;
+        let tierCount = 1;
         
-        positionPlayers.slice(0, 20).forEach(player => {
+        positionPlayers.slice(0, 20).forEach((player, idx) => {
           const vbd = getCachedVBD(player);
-          if (lastVBD - vbd > 5) { // 5 point VBD gap = tier break
-            if (currentTier.length > 0 && currentTier.length <= 3) {
+          const vbdGap = lastVBD - vbd;
+          
+          if (vbdGap > threshold && currentTier.length > 0) {
+            // Tier break detected
+            if (currentTier.length <= 3) {
               cliffs.push({
                 position: pos,
+                tier: tierCount,
                 playersLeft: currentTier.length,
-                players: currentTier.map(p => p.name),
-                urgency: currentTier.length <= 2 ? 'critical' : 'moderate'
+                players: currentTier.slice(0, 3).map(p => p.name),
+                vbdDrop: vbdGap.toFixed(1),
+                urgency: currentTier.length === 1 ? 'critical' : 
+                        currentTier.length === 2 ? 'high' : 'moderate'
               });
             }
             currentTier = [player];
+            tierCount++;
           } else {
             currentTier.push(player);
           }
           lastVBD = vbd;
         });
+        
+        // Check the current tier we're building
+        if (currentTier.length > 0 && currentTier.length <= 3 && tierCount <= 3) {
+          cliffs.push({
+            position: pos,
+            tier: tierCount,
+            playersLeft: currentTier.length,
+            players: currentTier.slice(0, 3).map(p => p.name),
+            vbdDrop: 'current',
+            urgency: currentTier.length === 1 ? 'critical' : 
+                    currentTier.length === 2 ? 'high' : 'moderate'
+          });
+        }
       });
       
-      return cliffs;
+      return cliffs.sort((a, b) => {
+        // Sort by urgency (critical first) then by tier
+        const urgencyOrder = { critical: 0, high: 1, moderate: 2 };
+        return urgencyOrder[a.urgency] - urgencyOrder[b.urgency] || a.tier - b.tier;
+      });
     };
     
     // Roster Need Score
@@ -808,7 +882,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
         position: pos,
         urgency: (scarcity?.scarcityIndex || 0) * effectiveRunMultiplier * (needScore + 1) * cliffBoost * roundMultiplier,
         scarcity: scarcity,
-        isRun: currentPick >= 30 && runMultiplier > 2.5, // Much higher threshold for run detection
+        isRun: runs[pos] > 1.5, // Z-score based run detection
+        runStrength: runs[pos] > 2.0 ? 'strong' : runs[pos] > 1.5 ? 'moderate' : 'none',
         need: needScore,
         cliff: cliffs.find(c => c.position === pos)
       };
@@ -818,7 +893,14 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       urgencyScores,
       topPriority: urgencyScores[0],
       cliffs,
-      runs: Object.entries(runs).filter(([_, v]) => v > 2.5).map(([k]) => k) // Much higher threshold
+      runs: Object.entries(runs).filter(([_, v]) => v > 1.5).map(([k]) => k), // Z-score threshold
+      runDetails: Object.entries(runs)
+        .filter(([_, v]) => v > 1.5)
+        .map(([pos, zScore]) => ({ 
+          position: pos, 
+          zScore: zScore.toFixed(2),
+          strength: zScore > 2.0 ? 'strong' : 'moderate'
+        }))
     };
   };
   
