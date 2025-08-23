@@ -104,8 +104,10 @@ export const replacementRank = (
   teams: number,
   starters: { QB: number; RB: number; WR: number; TE: number },
   flex: { count: number; eligible: Pos[] } | null,
-  flexShare: { QB: number; RB: number; WR: number; TE: number } = { QB: 0, RB: 0.4, WR: 0.4, TE: 0.2 }
+  flexShare: { QB: number; RB: number; WR: number; TE: number } = { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 }
 ): number => {
+  // Correct baseline calculation per the comprehensive guide
+  // RB gets 60% of flex, WR gets 35%, TE gets 5%
   const base = starters[pos] * teams;
   if (!flex || flex.count <= 0) return base;
   const eligibleShare = flex.eligible.includes(pos) ? flexShare[pos] : 0;
@@ -120,11 +122,11 @@ export const replacementPoints = (
   flex: { count: number; eligible: Pos[] } | null,
   flexWeights?: { QB: number; RB: number; WR: number; TE: number }
 ): number => {
-  const weights = flexWeights || { QB: 0, RB: 0.4, WR: 0.4, TE: 0.2 };
+  // Use correct flex weights: RB 60%, WR 35%, TE 5%
+  const weights = flexWeights || { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 };
   const rr = replacementRank(pos, teams, starters, flex, weights);
-  let pts = projPointsTiered(pos, rr);
-  // streaming discount for QB and TE
-  if (pos === "QB" || pos === "TE") pts *= 0.95;
+  // NO streaming discount - keep VBD pure per the guide
+  const pts = projPointsTiered(pos, rr);
   return pts;
 };
 
@@ -188,8 +190,8 @@ export const getFlexWeights = (leagueSettings: any) => {
     return leagueSettings.flexWeights;
   }
   
-  // Default allocation: RB 40%, WR 40%, TE 20%
-  return { QB: 0, RB: 0.4, WR: 0.4, TE: 0.2 };
+  // CORRECTED Default allocation per guide: RB 60%, WR 35%, TE 5%
+  return { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 };
 };
 
 // Caching for expensive calculations
@@ -204,13 +206,15 @@ export const replacementPointsMemoized = (
   flex: { count: number; eligible: Pos[] } | null,
   flexWeights?: { QB: number; RB: number; WR: number; TE: number }
 ): number => {
-  const cacheKey = `${pos}-${teams}-${JSON.stringify(starters)}-${JSON.stringify(flex)}-${JSON.stringify(flexWeights)}`;
+  // Use correct default weights if not provided
+  const weights = flexWeights || { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 };
+  const cacheKey = `${pos}-${teams}-${JSON.stringify(starters)}-${JSON.stringify(flex)}-${JSON.stringify(weights)}`;
   
   if (replacementPointsCache.has(cacheKey)) {
     return replacementPointsCache.get(cacheKey)!;
   }
   
-  const result = replacementPoints(pos, teams, starters, flex, flexWeights);
+  const result = replacementPoints(pos, teams, starters, flex, weights);
   replacementPointsCache.set(cacheKey, result);
   return result;
 };
@@ -373,15 +377,8 @@ export const calculateRemainingNeed = (
   return Math.max(0, totalNeed - alreadyDrafted);
 };
 
-// Position-specific scarcity penalties (points per drafted player)
-const SCARCITY_PENALTIES: Record<Pos, number> = {
-  QB: 2,   // QBs are easily replaceable
-  RB: 4,   // RBs have steep dropoff
-  WR: 3,   // WRs have moderate dropoff  
-  TE: 5    // TEs have biggest dropoff after elite tier
-};
-
 // Calculate dynamic replacement levels based on current draft state
+// CORRECTED: No scarcity penalties - VBD inherently captures scarcity
 export const calculateDynamicReplacement = (
   availablePlayers: Player[],
   draftState: DraftState,
@@ -392,31 +389,32 @@ export const calculateDynamicReplacement = (
   const replacement: Record<Pos, number> = { QB: 0, RB: 0, WR: 0, TE: 0 };
   
   (['QB', 'RB', 'WR', 'TE'] as Pos[]).forEach(pos => {
-    // Get static replacement level as baseline
-    const staticReplacement = replacementPointsMemoized(
-      pos, 
-      draftState.teams, 
+    // Calculate the correct baseline rank with proper flex allocation
+    const baselineRank = replacementRank(
+      pos,
+      draftState.teams,
       { QB: leagueSettings.roster?.QB || 1, RB: leagueSettings.roster?.RB || 2, WR: leagueSettings.roster?.WR || 3, TE: leagueSettings.roster?.TE || 1 },
       { count: leagueSettings.roster?.FLEX || 1, eligible: ['RB', 'WR', 'TE'] },
-      getFlexWeights(leagueSettings)
+      { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 }  // Correct flex weights
     );
     
-    // Count how many good players have been drafted at this position
-    const alreadyDrafted = draftedCounts[pos].starters + draftedCounts[pos].flex;
+    // Get available players at this position
+    const positionPlayers = availablePlayers
+      .filter(p => p.position === pos && !draftState.draftedPlayers.has(p.id))
+      .sort((a, b) => (b.projectedPoints || 0) - (a.projectedPoints || 0));
     
-    // Use position-specific scarcity penalty
-    const scarcityPenalty = alreadyDrafted * SCARCITY_PENALTIES[pos];
-    
-    // Dynamic replacement = static replacement - scarcity penalty
-    let dynamicReplacement = staticReplacement - scarcityPenalty;
-    
-    // Apply streaming discount for QB/TE BEFORE floor
-    if (pos === "QB" || pos === "TE") {
-      dynamicReplacement *= 0.95;
+    // Use actual projections if available, otherwise use tiered estimate
+    if (positionPlayers.length > baselineRank) {
+      const baselinePlayer = positionPlayers[baselineRank];
+      replacement[pos] = baselinePlayer.projectedPoints || projPointsTiered(pos, baselineRank);
+    } else if (positionPlayers.length > 0) {
+      // Not enough players left, use last available
+      const lastPlayer = positionPlayers[positionPlayers.length - 1];
+      replacement[pos] = lastPlayer.projectedPoints || projPointsTiered(pos, baselineRank);
+    } else {
+      // No players left, use floor
+      replacement[pos] = FLOOR[pos];
     }
-    
-    // Apply floor AFTER streaming discount to ensure minimum value
-    replacement[pos] = Math.max(FLOOR[pos], dynamicReplacement);
   });
   
   return replacement;
@@ -471,16 +469,16 @@ export const calculateDynamicVBD = (
   const positionRanks = positionRankFromADP(availablePlayers);
   const positionRank = positionRanks[player.id] || Math.ceil(player.adp / 10);
   
-  // Get raw points (either from actual projections or tiered estimate)
+  // PURE VBD: Use actual projections or tiered estimate, no adjustments
   const rawPoints = player.projectedPoints || projPointsTiered(position, positionRank);
   
-  // Apply SOS adjustment if available
-  const sosMultiplier = sosData ? sosMultiplierPosMemoized(position, sosData) : 1.0;
-  const sosAdjustedPoints = rawPoints * sosMultiplier;
+  // NO SOS in VBD calculation - keep it pure
+  const sosMultiplier = 1.0;
+  const sosAdjustedPoints = rawPoints;
   
-  // Apply floor to ensure minimum value
-  const finalPoints = applyFloors(position, sosAdjustedPoints);
-  const floorApplied = finalPoints > sosAdjustedPoints;
+  // Use raw points directly - no floor application in pure VBD
+  const finalPoints = rawPoints;
+  const floorApplied = false;
   
   const vbd = Math.max(0, finalPoints - dynamicReplacement);
   
@@ -524,18 +522,15 @@ export const calculateVBD = (
   const positionRanks = positionRankFromADP(allPlayers);
   const positionRank = positionRanks[player.id] || Math.ceil(player.adp / 10);
   
-  // Get base projected points using improved tiered formulas with smooth transitions
+  // Get base projected points (no adjustments for pure VBD)
   const baseProjectedPoints = projPointsTiered(position, positionRank);
   
-  // Position-specific SOS Adjustment with clamping
-  const sosAdjustment = sosData ? sosMultiplierPos(position, sosData) : 1.0;
+  // PURE VBD: No SOS adjustment, no floors - just raw points
+  const projectedPoints = baseProjectedPoints;
   
-  // Apply SOS adjustment and floor
-  const adjustedProjectedPoints = applyFloors(position, baseProjectedPoints * sosAdjustment);
-  
-  // Calculate replacement level points with configurable flex allocation
+  // Calculate replacement level points with correct flex allocation
   const replPoints = replacementPoints(position, teams, starters, flex, flexWeights);
   
-  // Final VBD calculation
-  return Math.max(0, adjustedProjectedPoints - replPoints);
+  // Pure VBD calculation - just the difference
+  return Math.max(0, projectedPoints - replPoints);
 };
