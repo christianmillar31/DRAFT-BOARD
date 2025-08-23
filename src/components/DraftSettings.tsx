@@ -36,6 +36,11 @@ export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSetting
       roster: { QB: 1, RB: 2, WR: 2, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6 },
       rounds: 15
     },
+    halfppr: {
+      name: "Half-PPR",
+      roster: { QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6 },
+      rounds: 16
+    },
     ppr: {
       name: "PPR",
       roster: { QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6 },
@@ -73,7 +78,10 @@ export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSetting
                 onClick={() => onSettingsChange?.({ 
                   roster: preset.roster,
                   rounds: preset.rounds,
-                  scoringType: key === 'ppr' ? 'PPR' : key === 'standard' ? 'Standard' : key === 'superflex' ? 'Superflex' : 'Dynasty'
+                  scoringType: key === 'ppr' ? 'PPR' : 
+                               key === 'halfppr' ? 'Half-PPR' :
+                               key === 'standard' ? 'Standard' : 
+                               key === 'superflex' ? 'Superflex' : 'Dynasty'
                 })}
               >
                 <span className="font-semibold">{preset.name}</span>

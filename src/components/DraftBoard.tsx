@@ -273,9 +273,19 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
               position: p.pos || p.position || 'UNKNOWN',
               team: p.team || 'FA',
               rank: realADP || (index + 1),
-              projectedPoints: p.fantasyPointsDefault?.standard ? parseFloat(p.fantasyPointsDefault.standard) : 
-                               p.fantasyPointsDefault?.PPR ? parseFloat(p.fantasyPointsDefault.PPR) :
-                               realADP ? Math.round(Math.max(50, 400 - (realADP * 3)) * 10) / 10 : 100,
+              projectedPoints: (() => {
+                // Extract projected points based on scoring type
+                if (p.fantasyPointsDefault) {
+                  const scoringKey = leagueSettings.scoringType === 'PPR' ? 'PPR' : 
+                                     leagueSettings.scoringType === 'Half-PPR' ? 'halfPPR' :
+                                     leagueSettings.scoringType === 'Standard' ? 'standard' : 
+                                     'PPR'; // Default to PPR for Superflex/Dynasty
+                  const points = p.fantasyPointsDefault[scoringKey];
+                  if (points) return parseFloat(points);
+                }
+                // Fallback to ADP-based estimation if no actual projections
+                return realADP ? Math.round(Math.max(50, 400 - (realADP * 3)) * 10) / 10 : 100;
+              })(),
               lastYearPoints: realADP ? Math.round(Math.max(30, 350 - (realADP * 2.5)) * 10) / 10 : 80,
               adp: realADP || 999,
               tier: realADP ? Math.ceil(realADP / 12) : Math.ceil((index + 1) / 50),
