@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
 import { Settings, Clock, Users, Calculator } from "lucide-react";
+import { useState, useEffect, useMemo } from "react";
 
 interface DraftSettingsProps {
   leagueSettings: {
@@ -30,6 +31,45 @@ interface DraftSettingsProps {
 }
 
 export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSettingsProps) {
+  // Local state for immediate UI updates (no lag when typing)
+  // Store as strings to allow empty values during editing
+  const [localRosterStrings, setLocalRosterStrings] = useState(() => {
+    const roster = leagueSettings.roster || {QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6};
+    return Object.fromEntries(Object.entries(roster).map(([k, v]) => [k, v.toString()]));
+  });
+  
+  // Convert to numbers for calculations
+  const localRoster = useMemo(() => {
+    return Object.fromEntries(
+      Object.entries(localRosterStrings).map(([k, v]) => [k, parseInt(v) || 0])
+    );
+  }, [localRosterStrings]);
+
+  // Debounced function to update parent (only after user stops typing)
+  const debouncedUpdate = useMemo(() => {
+    let timeoutId: NodeJS.Timeout;
+    return (newRoster: any) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        const totalStarters = newRoster.QB + newRoster.RB + newRoster.WR + newRoster.TE + newRoster.FLEX + newRoster.K + newRoster.DST;
+        const totalRounds = totalStarters + newRoster.BENCH;
+        onSettingsChange?.({ 
+          roster: newRoster,
+          rounds: totalRounds
+        });
+      }, 1000); // 1000ms delay after user stops typing
+    };
+  }, [onSettingsChange]);
+
+  // Update local state when parent changes (from presets)
+  useEffect(() => {
+    if (leagueSettings.roster) {
+      setLocalRosterStrings(
+        Object.fromEntries(Object.entries(leagueSettings.roster).map(([k, v]) => [k, v.toString()]))
+      );
+    }
+  }, [leagueSettings.roster]);
+
   const presets = {
     standard: {
       name: "Standard",
@@ -48,7 +88,7 @@ export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSetting
     },
     superflex: {
       name: "Superflex",
-      roster: { QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 2, K: 1, DST: 1, BENCH: 5 },
+      roster: { QB: 2, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6 },
       rounds: 16
     },
     dynasty: {
@@ -207,26 +247,25 @@ export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSetting
                   type="number"
                   min="0"
                   max="10"
-                  value={leagueSettings.roster?.[position as keyof typeof leagueSettings.roster] || 
-                    (position === 'QB' ? 1 : 
-                     position === 'RB' ? 2 : 
-                     position === 'WR' ? 3 : 
-                     position === 'TE' ? 1 : 
-                     position === 'FLEX' ? 1 : 
-                     position === 'K' ? 1 : 
-                     position === 'DST' ? 1 : 
-                     position === 'BENCH' ? 6 : 0)}
+                  value={localRosterStrings[position as keyof typeof localRosterStrings] || ''}
                   onChange={(e) => {
-                    const newRoster = { 
-                      ...leagueSettings.roster,
-                      [position]: parseInt(e.target.value) || 0 
-                    };
-                    const totalStarters = newRoster.QB + newRoster.RB + newRoster.WR + newRoster.TE + newRoster.FLEX + newRoster.K + newRoster.DST;
-                    const totalRounds = totalStarters + newRoster.BENCH;
-                    onSettingsChange?.({ 
-                      roster: newRoster,
-                      rounds: totalRounds
-                    });
+                    const value = e.target.value;
+                    
+                    // Update string state immediately (allows empty values)
+                    setLocalRosterStrings(prev => ({
+                      ...prev,
+                      [position]: value
+                    }));
+                    
+                    // Only trigger calculations if value is not empty
+                    if (value !== '') {
+                      const numValue = parseInt(value) || 0;
+                      const newRoster = { 
+                        ...localRoster,
+                        [position]: numValue 
+                      };
+                      debouncedUpdate(newRoster);
+                    }
                   }}
                   className="h-8"
                 />
@@ -239,10 +278,7 @@ export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSetting
             <div className="flex justify-between items-center text-sm">
               <span>Total Roster Size:</span>
               <span className="font-semibold">
-                {(() => {
-                  const roster = leagueSettings.roster || {QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6};
-                  return roster.QB + roster.RB + roster.WR + roster.TE + roster.FLEX + roster.K + roster.DST + roster.BENCH;
-                })()} spots
+                {localRoster.QB + localRoster.RB + localRoster.WR + localRoster.TE + localRoster.FLEX + localRoster.K + localRoster.DST + localRoster.BENCH} spots
               </span>
             </div>
             <div className="flex justify-between items-center text-sm mt-1">

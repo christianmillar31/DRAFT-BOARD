@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, startTransition } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -335,9 +335,20 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     players.forEach((player: any) => {
       const playerId = player.id || player.playerID || '';
       if (playerId) {
-        cache.set(playerId, calculateVBD(player));
+        const vbd = calculateVBD(player);
+        cache.set(playerId, vbd);
+        
+        // DEBUG: Log QB VBD changes
+        if (process.env.NODE_ENV === 'development' && player.position === 'QB' && draftedPlayers.size > 0) {
+          console.log(`🏈 QB VBD Update: ${player.name} = ${vbd.toFixed(1)} (Drafted: ${draftedPlayers.size} total)`);
+        }
       }
     });
+    
+    if (process.env.NODE_ENV === 'development' && draftedPlayers.size > 0) {
+      console.log(`🔄 VBD Cache Recalculated: ${draftedPlayers.size} drafted, ${playersDraftedByOthers.size} by others`);
+    }
+    
     return cache;
   }, [players, draftedPlayers, playersDraftedByOthers, currentPick]);
 
@@ -468,23 +479,29 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     const playerId = player.id || player.playerID || '';
     const playerWithId = { ...player, draftedAt: currentPick, id: playerId };
     
-    // Store action in history for undo
-    setActionHistory(prev => [...prev, { type: 'draft', player: playerWithId, pick: currentPick }]);
-    
+    // IMMEDIATE UI updates (no lag!)
     setDraftedPlayers(prev => new Set([...prev, playerId]));
     setMyTeam(prev => [...prev, playerWithId]);
     setCurrentPick(prev => prev + 1);
+    
+    // NON-URGENT updates in background (won't block UI)
+    startTransition(() => {
+      setActionHistory(prev => [...prev, { type: 'draft', player: playerWithId, pick: currentPick }]);
+    });
   };
 
   const handleDraftByOthers = (player: any) => {
     const playerId = player.id || player.playerID || '';
     const playerWithId = { ...player, id: playerId };
     
-    // Store action in history for undo
-    setActionHistory(prev => [...prev, { type: 'others', player: playerWithId, pick: currentPick }]);
-    
+    // IMMEDIATE UI updates (no lag!)
     setPlayersDraftedByOthers(prev => new Set([...prev, playerId]));
     setCurrentPick(prev => prev + 1);
+    
+    // NON-URGENT updates in background (won't block UI)
+    startTransition(() => {
+      setActionHistory(prev => [...prev, { type: 'others', player: playerWithId, pick: currentPick }]);
+    });
   };
 
   const handleUndo = () => {

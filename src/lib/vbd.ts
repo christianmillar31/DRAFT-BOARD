@@ -194,6 +194,17 @@ export const getFlexWeights = (leagueSettings: any) => {
   return { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 };
 };
 
+// Get flex-eligible positions based on league settings
+export const getFlexEligible = (leagueSettings: any): Pos[] => {
+  // Superflex leagues - QB is flex eligible
+  if (leagueSettings.scoring?.superflex || leagueSettings.flexType === 'superflex') {
+    return ['QB', 'RB', 'WR', 'TE'];
+  }
+  
+  // Standard leagues - QB not flex eligible
+  return ['RB', 'WR', 'TE'];
+};
+
 // Caching for expensive calculations
 const replacementPointsCache = new Map<string, number>();
 const sosMultiplierCache = new Map<string, number>();
@@ -359,7 +370,7 @@ export const getStaticReplacementRank = (
     pos,
     teams,
     { QB: roster.QB, RB: roster.RB, WR: roster.WR, TE: roster.TE },
-    { count: roster.FLEX, eligible: ['RB', 'WR', 'TE'] },
+    { count: roster.FLEX, eligible: getFlexEligible(leagueSettings) },
     flexWeights
   );
 };
@@ -394,8 +405,8 @@ export const calculateDynamicReplacement = (
       pos,
       draftState.teams,
       { QB: leagueSettings.roster?.QB || 1, RB: leagueSettings.roster?.RB || 2, WR: leagueSettings.roster?.WR || 3, TE: leagueSettings.roster?.TE || 1 },
-      { count: leagueSettings.roster?.FLEX || 1, eligible: ['RB', 'WR', 'TE'] },
-      { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 }  // Correct flex weights
+      { count: leagueSettings.roster?.FLEX || 1, eligible: getFlexEligible(leagueSettings) },
+      getFlexWeights(leagueSettings)  // Use dynamic weights
     );
     
     // Get available players at this position
@@ -403,14 +414,24 @@ export const calculateDynamicReplacement = (
       .filter(p => p.position === pos && !draftState.draftedPlayers.has(p.id))
       .sort((a, b) => (b.projectedPoints || 0) - (a.projectedPoints || 0));
     
+    // FIXED: Account for already drafted players
+    const totalNeeded = calculateTotalPositionNeed(pos, draftState, leagueSettings);
+    const alreadyDrafted = Array.from(draftState.draftedPlayers).filter(id => {
+      const player = availablePlayers.find(p => p.id === id);
+      return player?.position === pos;
+    }).length;
+    
+    // Dynamic replacement rank = baseline - already drafted
+    const dynamicReplacementIndex = Math.max(0, baselineRank - alreadyDrafted);
+    
     // Use actual projections if available, otherwise use tiered estimate
-    if (positionPlayers.length > baselineRank) {
-      const baselinePlayer = positionPlayers[baselineRank];
-      replacement[pos] = baselinePlayer.projectedPoints || projPointsTiered(pos, baselineRank);
+    if (positionPlayers.length > dynamicReplacementIndex) {
+      const baselinePlayer = positionPlayers[dynamicReplacementIndex];
+      replacement[pos] = baselinePlayer.projectedPoints || projPointsTiered(pos, baselineRank - alreadyDrafted);
     } else if (positionPlayers.length > 0) {
-      // Not enough players left, use last available
+      // Not enough players left, use last available (scarcity!)
       const lastPlayer = positionPlayers[positionPlayers.length - 1];
-      replacement[pos] = lastPlayer.projectedPoints || projPointsTiered(pos, baselineRank);
+      replacement[pos] = lastPlayer.projectedPoints || projPointsTiered(pos, baselineRank - alreadyDrafted);
     } else {
       // No players left, use floor
       replacement[pos] = FLOOR[pos];
@@ -450,7 +471,7 @@ export const calculateDynamicVBD = (
     position,
     draftState.teams,
     { QB: leagueSettings.roster?.QB || 1, RB: leagueSettings.roster?.RB || 2, WR: leagueSettings.roster?.WR || 3, TE: leagueSettings.roster?.TE || 1 },
-    { count: leagueSettings.roster?.FLEX || 1, eligible: ['RB', 'WR', 'TE'] },
+    { count: leagueSettings.roster?.FLEX || 1, eligible: getFlexEligible(leagueSettings) },
     getFlexWeights(leagueSettings)
   );
   
