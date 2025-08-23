@@ -1,8 +1,11 @@
+const https = require('https');
+
 export default async function handler(req, res) {
-  // Set CORS headers
+  // v6 - Using native https instead of fetch
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('X-Function-Version', 'v6-https-native');
   
   if (req.method === 'OPTIONS') {
     res.status(200).end();
@@ -11,64 +14,78 @@ export default async function handler(req, res) {
 
   try {
     const { position = 'all' } = req.query;
+    console.log(`📁 [v6] Attempting to serve ${position} projections from cache...`);
     
-    // First, try to serve from cache
-    console.log(`📁 [v2] Attempting to serve ${position} projections from cache...`);
-    
-    const cacheUrl = `${req.headers.origin || 'https://draftboardlive.online'}/cache/tank01-data.json`;
-    
-    try {
-      const cacheResponse = await fetch(cacheUrl);
-      if (cacheResponse.ok) {
-        const cacheData = await cacheResponse.json();
+    // Fetch cache file using native https
+    const cacheData = await new Promise((resolve, reject) => {
+      https.get('https://draftboardlive.online/cache/tank01-data.json', (response) => {
+        let data = '';
         
-        const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
-        const maxAge = 25 * 60 * 60 * 1000; // 25 hours
+        response.on('data', (chunk) => {
+          data += chunk;
+        });
         
-        if (cacheAge < maxAge && cacheData.data && cacheData.data.projections) {
-          // Handle position-specific requests
-          let projections;
-          
-          if (position.toLowerCase() === 'all') {
-            // Return all projections
-            const allProjections = [];
-            for (const pos of ['QB', 'RB', 'WR', 'TE', 'K', 'DEF']) {
-              if (Array.isArray(cacheData.data.projections[pos])) {
-                allProjections.push(...cacheData.data.projections[pos]);
-              }
-            }
-            projections = allProjections;
-          } else {
-            // Return position-specific projections
-            const posKey = position.toUpperCase();
-            projections = cacheData.data.projections[posKey] || [];
+        response.on('end', () => {
+          try {
+            const parsed = JSON.parse(data);
+            resolve(parsed);
+          } catch (e) {
+            reject(new Error('Invalid JSON in cache file'));
           }
-          
-          if (Array.isArray(projections) && projections.length > 0) {
-            console.log(`📦 CACHE HIT: Serving ${projections.length} ${position} projections from cache (age: ${Math.round(cacheAge / 1000 / 60)} minutes)`);
-            res.setHeader('X-Data-Source', 'cache');
-            res.setHeader('X-Cache-Age-Minutes', Math.round(cacheAge / 1000 / 60));
-            res.status(200).json(projections);
-            return;
-          }
-        } else {
-          console.log('⚠️ Cache exists but is stale or invalid format - age:', Math.round(cacheAge / 1000 / 60), 'minutes');
+        });
+      }).on('error', reject);
+    });
+    
+    // Validate cache structure
+    if (!cacheData.data || !cacheData.data.projections) {
+      throw new Error('Invalid cache structure - missing projections data');
+    }
+    
+    // Check cache age
+    const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
+    const maxAge = 25 * 60 * 60 * 1000; // 25 hours
+    
+    if (cacheAge > maxAge) {
+      throw new Error(`Cache too old: ${Math.round(cacheAge / 1000 / 60)} minutes`);
+    }
+    
+    // Handle position-specific requests
+    let projections;
+    
+    if (position.toLowerCase() === 'all') {
+      // Return all projections
+      const allProjections = [];
+      for (const pos of ['QB', 'RB', 'WR', 'TE', 'K', 'DST']) {
+        if (Array.isArray(cacheData.data.projections[pos])) {
+          allProjections.push(...cacheData.data.projections[pos]);
         }
       }
-    } catch (cacheError) {
-      console.log('⚠️ Cache not available, falling back to API:', cacheError.message);
+      projections = allProjections;
+    } else {
+      // Return position-specific projections
+      const posKey = position.toUpperCase();
+      projections = cacheData.data.projections[posKey] || [];
     }
-
-    // STOP: Cache should always work in production
-    console.error(`❌ CACHE MISS: ${position} projections API should never hit Tank01 in production`);
-    res.status(503).json({ 
-      error: 'Cache service unavailable',
-      message: `${position} projections data should be served from cache only`
-    });
-    return;
+    
+    if (!Array.isArray(projections) || projections.length === 0) {
+      throw new Error(`No projections found for position: ${position}`);
+    }
+    
+    // Return cached data with proper headers
+    console.log(`📦 CACHE HIT: Serving ${projections.length} ${position} projections from cache`);
+    res.setHeader('X-Data-Source', 'cache');
+    res.setHeader('X-Cache-Age-Minutes', Math.round(cacheAge / 1000 / 60));
+    res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=300');
+    res.status(200).json(projections);
     
   } catch (error) {
-    console.error('❌ Tank01 projections API error:', error);
-    res.status(500).json({ error: 'Failed to fetch projections' });
+    console.error('❌ Cache error:', error.message);
+    res.setHeader('X-Data-Source', 'error');
+    res.setHeader('X-Error', error.message);
+    res.status(503).json({ 
+      error: 'Cache service unavailable',
+      message: error.message,
+      version: 'v6-https-native'
+    });
   }
 }
