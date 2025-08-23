@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -298,6 +298,24 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     players = [];
   }
 
+  // Memoize VBD calculations to improve performance
+  const vbdCache = useMemo(() => {
+    const cache = new Map();
+    players.forEach((player: any) => {
+      const playerId = player.id || player.playerID || '';
+      if (playerId) {
+        cache.set(playerId, calculateVBD(player));
+      }
+    });
+    return cache;
+  }, [players, draftedPlayers, playersDraftedByOthers, currentPick]);
+
+  // Helper function to get cached VBD
+  const getCachedVBD = (player: any) => {
+    const playerId = player.id || player.playerID || '';
+    return vbdCache.get(playerId) || calculateVBD(player);
+  };
+
   // Apply filters and sorting (simplified)
   let filteredPlayers;
   try {
@@ -326,8 +344,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
         if (playersAtPosition.length > 0) {
           // Sort by dynamic VBD and take the best
           const bestPlayer = playersAtPosition.sort((a: any, b: any) => {
-            const aVBD = calculateVBD(a);
-            const bVBD = calculateVBD(b);
+            const aVBD = getCachedVBD(a);
+            const bVBD = getCachedVBD(b);
             return bVBD - aVBD;
           })[0];
           bestByPosition.push(bestPlayer);
@@ -341,7 +359,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     filteredPlayers.sort((a: any, b: any) => {
       switch (sortBy) {
         case 'dynamicVBD':
-          return calculateVBD(b) - calculateVBD(a); // Descending
+          return getCachedVBD(b) - getCachedVBD(a); // Descending
         case 'adp':
           return (a.adp || 999) - (b.adp || 999); // Ascending
         case 'projectedPoints':
@@ -1579,7 +1597,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                   onDraftByOthers={handleDraftByOthers}
                   isDrafted={draftedPlayers.has(player.id || player.playerID)}
                   isRecommended={recommendedPlayerIds.includes(player.id || player.playerID)}
-                  vbdValue={calculateVBD(player)}
+                  vbdValue={getCachedVBD(player)}
                   vbdBreakdown={getComprehensiveVBDBreakdown(player)}
                   sosData={getStrengthOfSchedule(player)}
                   advancedMetrics={getAdvancedMetrics(player)}

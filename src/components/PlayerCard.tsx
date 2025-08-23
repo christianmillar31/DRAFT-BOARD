@@ -222,7 +222,7 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
               size="sm"
               onClick={() => onDraft?.(player)}
               disabled={isDrafted}
-              className={`flex-1 ${
+              className={`flex-1 min-w-[120px] ${
                 isRecommended 
                   ? 'bg-accent hover:bg-accent/90 text-accent-foreground' 
                   : ''
@@ -235,9 +235,9 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
               variant="outline"
               onClick={() => onDraftByOthers?.(player)}
               disabled={isDrafted}
-              className="flex-1"
+              className="flex-1 min-w-[120px]"
             >
-              Others
+              Opponent Drafted
             </Button>
           </div>
         </div>
