@@ -115,15 +115,6 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     });
   }
 
-  // Minimal debug logging only in development
-  if (process.env.NODE_ENV === 'development' && Math.random() < 0.1) { // Only 10% of the time
-    console.log('🏈 DraftBoard Debug:', {
-      playersLength: tank01Players?.length,
-      adpLength: tank01ADP?.length,
-      hasLiveData,
-      selectedPosition
-    });
-  }
   
   // Create draft state for dynamic VBD
   const createDraftState = (): DraftState => {
@@ -258,38 +249,42 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     return calculateStaticVBD(player);
   };
 
-  // Filter to relevant fantasy positions and limit dataset for performance
-  const relevantPositions = ['QB', 'RB', 'WR', 'TE', 'K', 'DST'];
+  // Filter to relevant fantasy positions
+  const relevantPositions = ['QB', 'RB', 'WR', 'TE'];
+  // Note: We'll add K and DST separately as they come from different data sources
   
   let players;
   try {
     players = hasLiveData 
       ? rawPlayers
-          .filter((p: any) => {
-            const position = p.pos || p.position;
-            const isRelevant = relevantPositions.includes(position);
-            return isRelevant;
-          })
-          .slice(0, 1200) // Reasonable limit but not too restrictive
+          // First map all players with their ADP
           .map((p: any, index: number) => {
             const realADP = adpMap.get(p.playerID);
+            const position = p.pos || p.position;
             
-            // Debug age data for first few players only
-            if (index < 3) {
-              console.log(`🎂 Age Debug for ${p.longName || p.espnName}:`, {
-                age: p.age,
-                bDay: p.bDay,
-                birthdate: p.birthdate,
-                rawPlayer: p
-              });
-            }
-            
+            return {
+              ...p,
+              adp: realADP || 999,
+              position: position
+            };
+          })
+          // Sort by ADP FIRST to get the actual top players
+          .sort((a, b) => a.adp - b.adp)
+          // Filter to relevant positions
+          .filter((p: any) => {
+            const isRelevant = relevantPositions.includes(p.position);
+            return isRelevant;
+          })
+          // NOW limit to top 400 players by ADP (much more reasonable)
+          .slice(0, 400)
+          // Map to our player format
+          .map((p: any, index: number) => {
             return {
               id: p.playerID || p.id || `tank01-${index}`,
               name: p.longName || p.espnName || p.name || 'Unknown Player',
-              position: p.pos || p.position || 'UNKNOWN',
+              position: p.position,
               team: p.team || 'FA',
-              rank: realADP || (index + 1),
+              rank: p.adp || (index + 1),
               projectedPoints: (() => {
                 // First try to get projections from the merged projections data
                 const projectionData = projectionsMap.get(p.playerID) || p.fantasyPointsDefault;
@@ -303,10 +298,10 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                   if (points) return parseFloat(points);
                 }
                 // Fallback to ADP-based estimation if no actual projections
-                return realADP ? Math.round(Math.max(50, 400 - (realADP * 3)) * 10) / 10 : 100;
+                return p.adp ? Math.round(Math.max(50, 400 - (p.adp * 3)) * 10) / 10 : 100;
               })(),
-              lastYearPoints: realADP ? Math.round(Math.max(30, 350 - (realADP * 2.5)) * 10) / 10 : 80,
-              adp: realADP || 999,
+              lastYearPoints: p.adp ? Math.round(Math.max(30, 350 - (p.adp * 2.5)) * 10) / 10 : 80,
+              adp: p.adp,
               tier: 1, // Will be calculated after VBD processing
               injury: p.injury || undefined,
               trending: undefined,
@@ -315,42 +310,37 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
               birthdate: p.birthdate
             };
           })
-          .sort((a, b) => a.adp - b.adp) // Sort by ADP (lower ADP = higher draft priority)
       : rawPlayers;
     
-    if (process.env.NODE_ENV === 'development') {
-      console.log('✅ Final players array:', {
-        playersLength: players?.length,
-        firstPlayer: players?.[0]?.name || 'No name'
-      });
-    }
   } catch (error) {
     console.error('💥 Error processing players:', error);
     players = [];
   }
 
-  // Memoize VBD calculations to improve performance
+  // Memoize VBD calculations with better dependency management
   const vbdCache = useMemo(() => {
     const cache = new Map();
+    
+    // Only recalculate if we're using dynamic VBD and players are drafted
+    const needsRecalc = useDynamicVBD && (draftedPlayers.size > 0 || playersDraftedByOthers.size > 0);
+    
     players.forEach((player: any) => {
       const playerId = player.id || player.playerID || '';
       if (playerId) {
         const vbd = calculateVBD(player);
         cache.set(playerId, vbd);
-        
-        // DEBUG: Log QB VBD changes
-        if (process.env.NODE_ENV === 'development' && player.position === 'QB' && draftedPlayers.size > 0) {
-          console.log(`🏈 QB VBD Update: ${player.name} = ${vbd.toFixed(1)} (Drafted: ${draftedPlayers.size} total)`);
-        }
       }
     });
     
-    if (process.env.NODE_ENV === 'development' && draftedPlayers.size > 0) {
-      console.log(`🔄 VBD Cache Recalculated: ${draftedPlayers.size} drafted, ${playersDraftedByOthers.size} by others`);
-    }
-    
     return cache;
-  }, [players, draftedPlayers, playersDraftedByOthers, currentPick]);
+  }, [
+    players,
+    // Only trigger recalc on draft state changes if using dynamic VBD
+    useDynamicVBD ? draftedPlayers.size : 0,
+    useDynamicVBD ? playersDraftedByOthers.size : 0,
+    useDynamicVBD ? currentPick : 0,
+    useDynamicVBD
+  ]);
 
   // Helper function to get cached VBD
   const getCachedVBD = (player: any) => {
@@ -407,73 +397,88 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     }));
   }, [players, vbdCache, tierSystem]);
 
-  // Apply filters and sorting (simplified)
-  let filteredPlayers;
-  try {
-    filteredPlayers = playersWithTiers.filter((player: any) => {
-      const playerName = player.name || player.longName || player.espnName || '';
-      const playerTeam = player.team || player.teamAbv || '';
-      const playerPosition = player.position || player.pos || '';
-      const playerId = player.id || player.playerID || '';
+  // Memoize filtered and sorted players for better performance
+  const filteredPlayers = useMemo(() => {
+    try {
+      // First, filter players
+      let filtered = playersWithTiers.filter((player: any) => {
+        const playerName = player.name || '';
+        const playerTeam = player.team || '';
+        const playerPosition = player.position || '';
+        const playerId = player.id || '';
+        
+        // Early return for drafted players
+        if (draftedPlayers.has(playerId) || playersDraftedByOthers.has(playerId)) {
+          return false;
+        }
+        
+        // Position filter
+        if (selectedPosition !== "ALL" && playerPosition !== selectedPosition) {
+          return false;
+        }
+        
+        // Search filter (only if search term exists)
+        if (searchTerm) {
+          const searchLower = searchTerm.toLowerCase();
+          return playerName.toLowerCase().includes(searchLower) ||
+                 playerTeam.toLowerCase().includes(searchLower);
+        }
+        
+        return true;
+      });
       
-      const matchesSearch = playerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           playerTeam.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesPosition = selectedPosition === "ALL" || playerPosition === selectedPosition;
-      const notDraftedByMe = !draftedPlayers.has(playerId);
-      const notDraftedByOthers = !playersDraftedByOthers.has(playerId);
+      // Apply "Best by Position" filter if enabled
+      if (showBestByPosition) {
+        const corePositions = ['QB', 'RB', 'WR', 'TE'];
+        const bestByPosition: any[] = [];
+        
+        corePositions.forEach(position => {
+          const playersAtPosition = filtered.filter((p: any) => p.position === position);
+          if (playersAtPosition.length > 0) {
+            // Take the first player (already sorted by VBD in most cases)
+            const bestPlayer = playersAtPosition.reduce((best, current) => {
+              const bestVBD = getCachedVBD(best);
+              const currentVBD = getCachedVBD(current);
+              return currentVBD > bestVBD ? current : best;
+            });
+            bestByPosition.push(bestPlayer);
+          }
+        });
+        
+        filtered = bestByPosition;
+      }
       
-      return matchesSearch && matchesPosition && notDraftedByMe && notDraftedByOthers;
-    });
-    
-    // Apply "Best by Position" filter if enabled
-    if (showBestByPosition) {
-      const corePositions = ['QB', 'RB', 'WR', 'TE'];
-      const bestByPosition: any[] = [];
-      
-      corePositions.forEach(position => {
-        const playersAtPosition = filteredPlayers.filter((p: any) => p.position === position);
-        if (playersAtPosition.length > 0) {
-          // Sort by dynamic VBD and take the best
-          const bestPlayer = playersAtPosition.sort((a: any, b: any) => {
-            const aVBD = getCachedVBD(a);
-            const bVBD = getCachedVBD(b);
-            return bVBD - aVBD;
-          })[0];
-          bestByPosition.push(bestPlayer);
+      // Apply sorting
+      const sorted = [...filtered].sort((a: any, b: any) => {
+        switch (sortBy) {
+          case 'dynamicVBD':
+            return getCachedVBD(b) - getCachedVBD(a);
+          case 'adp':
+            return (a.adp || 999) - (b.adp || 999);
+          case 'projectedPoints':
+            return (b.projectedPoints || 0) - (a.projectedPoints || 0);
+          case 'crossPositionVBD':
+            return getCachedVBD(b) - getCachedVBD(a);
+          default:
+            return (a.adp || 999) - (b.adp || 999);
         }
       });
       
-      filteredPlayers = bestByPosition;
+      return sorted;
+    } catch (error) {
+      console.error('Error filtering players:', error);
+      return [];
     }
-    
-    // Apply sorting
-    filteredPlayers.sort((a: any, b: any) => {
-      switch (sortBy) {
-        case 'dynamicVBD':
-          return getCachedVBD(b) - getCachedVBD(a); // Descending
-        case 'adp':
-          return (a.adp || 999) - (b.adp || 999); // Ascending
-        case 'projectedPoints':
-          return (b.projectedPoints || 0) - (a.projectedPoints || 0); // Descending
-        case 'crossPositionVBD':
-          // Cross-position VBD: All players ranked by VBD value regardless of position
-          return calculateVBD(b) - calculateVBD(a); // Descending
-        default:
-          return (a.adp || 999) - (b.adp || 999); // Default to ADP
-      }
-    });
-    
-    console.log('🎯 Filtered Players:', {
-      originalCount: players?.length,
-      filteredCount: filteredPlayers?.length,
-      selectedPosition,
-      searchTerm,
-      firstFiltered: filteredPlayers?.[0]
-    });
-  } catch (error) {
-    console.error('💥 Error filtering players:', error);
-    filteredPlayers = [];
-  }
+  }, [
+    playersWithTiers,
+    searchTerm,
+    selectedPosition,
+    showBestByPosition,
+    sortBy,
+    draftedPlayers,
+    playersDraftedByOthers,
+    vbdCache // Use cache for sorting
+  ])
 
   const handleDraftPlayer = (player: any) => {
     const playerId = player.id || player.playerID || '';
@@ -533,7 +538,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     setActionHistory(prev => prev.slice(0, -1));
   };
 
-  const getRecommendedPlayers = () => {
+  // Memoize recommendation logic for better performance
+  const recommendedPlayerIds = useMemo(() => {
     const strategy = leagueSettings.draftStrategy || "balanced";
     
     if (strategy === "balanced") {
@@ -617,9 +623,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     
     // Fallback to balanced if unknown strategy
     return filteredPlayers.slice(0, 3).map(p => p.id);
-  };
-
-  const recommendedPlayerIds = getRecommendedPlayers();
+  }, [filteredPlayers, myTeam, leagueSettings.draftStrategy, leagueSettings.roster, currentPick, leagueSettings.teams]);
 
 
   // Get VBD breakdown for debug tooltip
