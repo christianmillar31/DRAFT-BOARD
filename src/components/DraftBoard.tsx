@@ -242,14 +242,6 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     }
   };
 
-  // Main VBD Calculator - switches between static and dynamic
-  const calculateVBD = (player: any, allPlayers: any[]) => {
-    if (useDynamicVBD) {
-      const dynamicResult = calculateDynamicVBDForPlayer(player, allPlayers);
-      return dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
-    }
-    return calculateStaticVBD(player);
-  };
 
   // Memoize the players array so it doesn't recreate every render
   const players = useMemo(() => {
@@ -319,6 +311,16 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     }
   }, [rawPlayers, hasLiveData, adpMap, projectionsMap, leagueSettings.scoringType]);
 
+  // Main VBD Calculator - switches between static and dynamic
+  // MUST be defined AFTER players so it can use closure!
+  const calculateVBD = (player: any) => {
+    if (useDynamicVBD) {
+      const dynamicResult = calculateDynamicVBDForPlayer(player, players || []);
+      return dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
+    }
+    return calculateStaticVBD(player);
+  };
+
   // Memoize VBD calculations with proper dependency tracking
   const vbdCache = useMemo(() => {
     const cache = new Map();
@@ -330,7 +332,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     players.forEach((player: any) => {
       const playerId = player.id || player.playerID || '';
       if (playerId) {
-        const vbd = calculateVBD(player, players);
+        const vbd = calculateVBD(player);
         cache.set(playerId, vbd);
       }
     });
@@ -349,18 +351,10 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     return cache;
   }, [
     players,
-    // Use the SIZE of sets for proper dependency tracking
-    // React doesn't deeply compare arrays, so Array.from doesn't work!
-    useDynamicVBD ? draftedPlayers.size : 0,
-    useDynamicVBD ? playersDraftedByOthers.size : 0,
-    useDynamicVBD ? currentPick : 0,
-    useDynamicVBD,
-    leagueSettings.teams,
-    leagueSettings.roster?.QB,
-    leagueSettings.roster?.RB,
-    leagueSettings.roster?.WR,
-    leagueSettings.roster?.TE,
-    leagueSettings.roster?.FLEX
+    draftedPlayers, // Use the actual Set objects
+    playersDraftedByOthers, // Use the actual Set objects
+    currentPick,
+    useDynamicVBD
   ]);
 
   // Helper function to get cached VBD
@@ -371,7 +365,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       return cachedValue;
     }
     // Fallback if not in cache (shouldn't happen normally)
-    return players ? calculateVBD(player, players) : 0;
+    return calculateVBD(player);
   };
 
   // Calculate advanced tiers using VBD-based TierSystem
@@ -501,8 +495,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     selectedPosition,
     showBestByPosition,
     sortBy,
-    draftedPlayers.size,        // USE SIZE for proper change detection!
-    playersDraftedByOthers.size, // USE SIZE for proper change detection!
+    draftedPlayers,
+    playersDraftedByOthers,
     vbdCache // Use cache for sorting
   ])
 
