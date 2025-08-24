@@ -216,14 +216,6 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     try {
       const draftState = createDraftState();
       
-      // LOG DRAFT STATE FOR QBs
-      if (player.position === 'QB' && draftedPlayers.size > 0) {
-        console.log(`📐 DYNAMIC VBD CALC for ${player.name}:`, {
-          draftStateSize: draftState.draftedPlayers.size,
-          myDrafted: draftedPlayers.size,
-          othersDrafted: playersDraftedByOthers.size
-        });
-      }
       
       const availablePlayers = allPlayers.map(p => ({
         id: p.id || p.playerID || '',
@@ -243,13 +235,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
         projectedPoints: player.projectedPoints
       };
       
-      const result = calculateDynamicVBD(playerForDynamic, availablePlayers, draftState, leagueSettings);
-      
-      if (player.position === 'QB' && draftedPlayers.size > 0) {
-        console.log(`📊 DYNAMIC VBD RESULT for ${player.name}:`, result);
-      }
-      
-      return result;
+      return calculateDynamicVBD(playerForDynamic, availablePlayers, draftState, leagueSettings);
     } catch (error) {
       console.error('Dynamic VBD calculation error:', error);
       return null;
@@ -260,13 +246,6 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   const calculateVBD = (player: any, allPlayers: any[]) => {
     if (useDynamicVBD) {
       const dynamicResult = calculateDynamicVBDForPlayer(player, allPlayers);
-      if (player.position === 'QB' && draftedPlayers.size > 0) {
-        console.log(`🎲 VBD CALC for ${player.name}:`, {
-          dynamicVBD: dynamicResult?.vbd,
-          staticVBD: calculateStaticVBD(player),
-          draftedCount: draftedPlayers.size
-        });
-      }
       return dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
     }
     return calculateStaticVBD(player);
@@ -522,8 +501,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     selectedPosition,
     showBestByPosition,
     sortBy,
-    draftedPlayers,
-    playersDraftedByOthers,
+    draftedPlayers.size,        // USE SIZE for proper change detection!
+    playersDraftedByOthers.size, // USE SIZE for proper change detection!
     vbdCache // Use cache for sorting
   ])
 
