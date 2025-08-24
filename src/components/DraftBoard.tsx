@@ -317,12 +317,9 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     players = [];
   }
 
-  // Memoize VBD calculations with better dependency management
+  // Memoize VBD calculations with proper dependency tracking
   const vbdCache = useMemo(() => {
     const cache = new Map();
-    
-    // Only recalculate if we're using dynamic VBD and players are drafted
-    const needsRecalc = useDynamicVBD && (draftedPlayers.size > 0 || playersDraftedByOthers.size > 0);
     
     players.forEach((player: any) => {
       const playerId = player.id || player.playerID || '';
@@ -332,14 +329,20 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       }
     });
     
+    // Log when VBD recalculates (for debugging)
+    if (process.env.NODE_ENV === 'development' && draftedPlayers.size > 0) {
+      console.log(`🔄 VBD Recalculated: ${draftedPlayers.size} drafted, mode: ${useDynamicVBD ? 'dynamic' : 'static'}`);
+    }
+    
     return cache;
   }, [
     players,
-    // Only trigger recalc on draft state changes if using dynamic VBD
-    useDynamicVBD ? draftedPlayers.size : 0,
-    useDynamicVBD ? playersDraftedByOthers.size : 0,
+    // Always recalculate when draft state changes if using dynamic VBD
+    useDynamicVBD ? Array.from(draftedPlayers) : [],
+    useDynamicVBD ? Array.from(playersDraftedByOthers) : [],
     useDynamicVBD ? currentPick : 0,
-    useDynamicVBD
+    useDynamicVBD,
+    leagueSettings // Also update if league settings change
   ]);
 
   // Helper function to get cached VBD
