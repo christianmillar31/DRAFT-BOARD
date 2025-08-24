@@ -272,73 +272,73 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     return calculateStaticVBD(player);
   };
 
-  // Filter to relevant fantasy positions
-  const relevantPositions = ['QB', 'RB', 'WR', 'TE'];
-  // Note: We'll add K and DST separately as they come from different data sources
-  
-  let players;
-  try {
-    players = hasLiveData 
-      ? rawPlayers
-          // First map all players with their ADP
-          .map((p: any, index: number) => {
-            const realADP = adpMap.get(p.playerID);
-            const position = p.pos || p.position;
-            
-            return {
-              ...p,
-              adp: realADP || 999,
-              position: position
-            };
-          })
-          // Sort by ADP FIRST to get the actual top players
-          .sort((a, b) => a.adp - b.adp)
-          // Filter to relevant positions
-          .filter((p: any) => {
-            const isRelevant = relevantPositions.includes(p.position);
-            return isRelevant;
-          })
-          // NOW limit to top 400 players by ADP (much more reasonable)
-          .slice(0, 400)
-          // Map to our player format
-          .map((p: any, index: number) => {
-            return {
-              id: p.playerID || p.id || `tank01-${index}`,
-              name: p.longName || p.espnName || p.name || 'Unknown Player',
-              position: p.position,
-              team: p.team || 'FA',
-              rank: p.adp || (index + 1),
-              projectedPoints: (() => {
-                // First try to get projections from the merged projections data
-                const projectionData = projectionsMap.get(p.playerID) || p.fantasyPointsDefault;
-                
-                if (projectionData) {
-                  const scoringKey = leagueSettings.scoringType === 'PPR' ? 'PPR' : 
-                                     leagueSettings.scoringType === 'Half-PPR' ? 'halfPPR' :
-                                     leagueSettings.scoringType === 'Standard' ? 'standard' : 
-                                     'PPR'; // Default to PPR for Superflex/Dynasty
-                  const points = projectionData[scoringKey];
-                  if (points) return parseFloat(points);
-                }
-                // Fallback to ADP-based estimation if no actual projections
-                return p.adp ? Math.round(Math.max(50, 400 - (p.adp * 3)) * 10) / 10 : 100;
-              })(),
-              lastYearPoints: p.adp ? Math.round(Math.max(30, 350 - (p.adp * 2.5)) * 10) / 10 : 80,
-              adp: p.adp,
-              tier: 1, // Will be calculated after VBD processing
-              injury: p.injury || undefined,
-              trending: undefined,
-              age: p.age,
-              bDay: p.bDay,
-              birthdate: p.birthdate
-            };
-          })
-      : rawPlayers;
+  // Memoize the players array so it doesn't recreate every render
+  const players = useMemo(() => {
+    // Filter to relevant fantasy positions
+    const relevantPositions = ['QB', 'RB', 'WR', 'TE'];
     
-  } catch (error) {
-    console.error('💥 Error processing players:', error);
-    players = [];
-  }
+    try {
+      return hasLiveData 
+        ? rawPlayers
+            // First map all players with their ADP
+            .map((p: any, index: number) => {
+              const realADP = adpMap.get(p.playerID);
+              const position = p.pos || p.position;
+              
+              return {
+                ...p,
+                adp: realADP || 999,
+                position: position
+              };
+            })
+            // Sort by ADP FIRST to get the actual top players
+            .sort((a, b) => a.adp - b.adp)
+            // Filter to relevant positions
+            .filter((p: any) => {
+              const isRelevant = relevantPositions.includes(p.position);
+              return isRelevant;
+            })
+            // NOW limit to top 400 players by ADP (much more reasonable)
+            .slice(0, 400)
+            // Map to our player format
+            .map((p: any, index: number) => {
+              return {
+                id: p.playerID || p.id || `tank01-${index}`,
+                name: p.longName || p.espnName || p.name || 'Unknown Player',
+                position: p.position,
+                team: p.team || 'FA',
+                rank: p.adp || (index + 1),
+                projectedPoints: (() => {
+                  // First try to get projections from the merged projections data
+                  const projectionData = projectionsMap.get(p.playerID) || p.fantasyPointsDefault;
+                  
+                  if (projectionData) {
+                    const scoringKey = leagueSettings.scoringType === 'PPR' ? 'PPR' : 
+                                       leagueSettings.scoringType === 'Half-PPR' ? 'halfPPR' :
+                                       leagueSettings.scoringType === 'Standard' ? 'standard' : 
+                                       'PPR'; // Default to PPR for Superflex/Dynasty
+                    const points = projectionData[scoringKey];
+                    if (points) return parseFloat(points);
+                  }
+                  // Fallback to ADP-based estimation if no actual projections
+                  return p.adp ? Math.round(Math.max(50, 400 - (p.adp * 3)) * 10) / 10 : 100;
+                })(),
+                lastYearPoints: p.adp ? Math.round(Math.max(30, 350 - (p.adp * 2.5)) * 10) / 10 : 80,
+                adp: p.adp,
+                tier: 1, // Will be calculated after VBD processing
+                injury: p.injury || undefined,
+                trending: undefined,
+                age: p.age,
+                bDay: p.bDay,
+                birthdate: p.birthdate
+              };
+            })
+        : rawPlayers || [];
+    } catch (error) {
+      console.error('💥 Error processing players:', error);
+      return [];
+    }
+  }, [rawPlayers, hasLiveData, adpMap, projectionsMap, leagueSettings.scoringType]);
 
   // Memoize VBD calculations with proper dependency tracking
   const vbdCache = useMemo(() => {
