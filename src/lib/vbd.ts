@@ -424,6 +424,17 @@ export const calculateDynamicReplacement = (
     // Dynamic replacement rank = baseline - already drafted
     const dynamicReplacementIndex = Math.max(0, baselineRank - alreadyDrafted);
     
+    // DEBUG LOG FOR QBs
+    if (pos === 'QB' && alreadyDrafted > 0) {
+      console.log(`⚡ QB REPLACEMENT CALC:`, {
+        baselineRank,
+        alreadyDrafted,
+        dynamicReplacementIndex,
+        availableQBs: positionPlayers.length,
+        replacementQB: positionPlayers[dynamicReplacementIndex]?.name || 'N/A'
+      });
+    }
+    
     // Use actual projections if available, otherwise use tiered estimate
     if (positionPlayers.length > dynamicReplacementIndex) {
       const baselinePlayer = positionPlayers[dynamicReplacementIndex];
@@ -450,6 +461,16 @@ export const calculateDynamicVBD = (
   sosData?: Record<Pos, number> | null
 ): DynamicVBDResult => {
   const position = player.position as Pos;
+  
+  // DEBUG LOG FOR QBs
+  if (position === 'QB' && draftState.draftedPlayers.size > 0) {
+    console.log(`🔥🔥🔥 DYNAMIC VBD LIB CALLED for ${player.name}:`, {
+      draftedTotal: draftState.draftedPlayers.size,
+      draftedQBs: Array.from(draftState.draftedPlayers).filter(id => 
+        availablePlayers.find(p => p.id === id)?.position === 'QB'
+      ).length
+    });
+  }
   
   // Skip calculation for unsupported positions
   if (!['QB', 'RB', 'WR', 'TE'].includes(position)) {
