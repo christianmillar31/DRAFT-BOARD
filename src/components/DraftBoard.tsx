@@ -316,7 +316,18 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   const calculateVBD = (player: any) => {
     if (useDynamicVBD) {
       const dynamicResult = calculateDynamicVBDForPlayer(player, players || []);
-      return dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
+      const vbdValue = dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
+      
+      // Debug first player of each position
+      if (player.name === players.find(p => p.position === player.position)?.name) {
+        console.log(`📊 VBD for ${player.name} (${player.position}):`, {
+          value: vbdValue,
+          drafted: draftedPlayers.size,
+          dynamic: !!dynamicResult
+        });
+      }
+      
+      return vbdValue;
     }
     return calculateStaticVBD(player);
   };
@@ -338,13 +349,18 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     });
     
     // Log when VBD recalculates (for debugging)
+    const firstQB = players.find(p => p.position === 'QB');
+    const firstRB = players.find(p => p.position === 'RB');
+    const firstWR = players.find(p => p.position === 'WR');
+    
     console.log(`🔄🔄🔄 VBD CACHE REBUILT:`, {
       draftedCount: draftedPlayers.size,
       othersDraftedCount: playersDraftedByOthers.size,
       mode: useDynamicVBD ? 'DYNAMIC' : 'STATIC',
       cacheSize: cache.size,
-      firstQB: players.find(p => p.position === 'QB')?.name,
-      firstQBVBD: cache.get(players.find(p => p.position === 'QB')?.id),
+      QB: { name: firstQB?.name, vbd: cache.get(firstQB?.id) },
+      RB: { name: firstRB?.name, vbd: cache.get(firstRB?.id) },
+      WR: { name: firstWR?.name, vbd: cache.get(firstWR?.id) },
       timestamp: new Date().toISOString()
     });
     
