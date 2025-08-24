@@ -241,9 +241,9 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   };
 
   // Main VBD Calculator - switches between static and dynamic
-  const calculateVBD = (player: any) => {
+  const calculateVBD = (player: any, allPlayers: any[]) => {
     if (useDynamicVBD) {
-      const dynamicResult = calculateDynamicVBDForPlayer(player, players || []);
+      const dynamicResult = calculateDynamicVBDForPlayer(player, allPlayers);
       return dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
     }
     return calculateStaticVBD(player);
@@ -321,17 +321,27 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   const vbdCache = useMemo(() => {
     const cache = new Map();
     
+    if (!players || players.length === 0) {
+      return cache;
+    }
+    
     players.forEach((player: any) => {
       const playerId = player.id || player.playerID || '';
       if (playerId) {
-        const vbd = calculateVBD(player);
+        const vbd = calculateVBD(player, players);
         cache.set(playerId, vbd);
       }
     });
     
     // Log when VBD recalculates (for debugging)
-    if (process.env.NODE_ENV === 'development' && draftedPlayers.size > 0) {
-      console.log(`🔄 VBD Recalculated: ${draftedPlayers.size} drafted, mode: ${useDynamicVBD ? 'dynamic' : 'static'}`);
+    if (process.env.NODE_ENV === 'development') {
+      console.log(`🔄 VBD Cache Updated:`, {
+        draftedCount: draftedPlayers.size,
+        othersDraftedCount: playersDraftedByOthers.size,
+        mode: useDynamicVBD ? 'dynamic' : 'static',
+        cacheSize: cache.size,
+        sampleVBD: cache.size > 0 ? Array.from(cache.values())[0] : 'N/A'
+      });
     }
     
     return cache;
@@ -348,7 +358,12 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   // Helper function to get cached VBD
   const getCachedVBD = (player: any) => {
     const playerId = player.id || player.playerID || '';
-    return vbdCache.get(playerId) || calculateVBD(player);
+    const cachedValue = vbdCache.get(playerId);
+    if (cachedValue !== undefined) {
+      return cachedValue;
+    }
+    // Fallback if not in cache (shouldn't happen normally)
+    return players ? calculateVBD(player, players) : 0;
   };
 
   // Calculate advanced tiers using VBD-based TierSystem
@@ -487,8 +502,15 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     const playerId = player.id || player.playerID || '';
     const playerWithId = { ...player, draftedAt: currentPick, id: playerId };
     
+    console.log(`🎯 DRAFTING PLAYER: ${player.name} (${player.position}), ID: ${playerId}`);
+    console.log(`📊 Before Draft - My team size: ${draftedPlayers.size}, Dynamic VBD: ${useDynamicVBD}`);
+    
     // IMMEDIATE UI updates (no lag!)
-    setDraftedPlayers(prev => new Set([...prev, playerId]));
+    setDraftedPlayers(prev => {
+      const newSet = new Set([...prev, playerId]);
+      console.log(`📊 After Draft - My team size: ${newSet.size}`);
+      return newSet;
+    });
     setMyTeam(prev => [...prev, playerWithId]);
     setCurrentPick(prev => prev + 1);
     
@@ -736,7 +758,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       
       // Only warn if we're down to the last few in a tier AND there are next tier players
       if (playersInCurrentTier <= 2 && playersInCurrentTier > 0 && nextTierPlayers.length > 0) {
-        const vbdDrop = calculateVBD(players[0]) - calculateVBD(nextTierPlayers[0]);
+        const vbdDrop = getCachedVBD(players[0]) - getCachedVBD(nextTierPlayers[0]);
         tierBreaks.push({
           position,
           playersLeft: playersInCurrentTier,
@@ -1068,7 +1090,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     if (currentRound < 10) return [];
     
     const lotteryTickets = filteredPlayers.filter(player => {
-      const vbd = calculateVBD(player);
+      const vbd = getCachedVBD(player);
       const isLateRound = player.adp > (currentRound * leagueSettings.teams);
       const hasUpside = vbd > 5; // Positive VBD value
       const isSkillPosition = ['RB', 'WR', 'TE'].includes(player.position);
@@ -2078,7 +2100,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                 </div>
                 <div className="text-center p-4 bg-muted/50 rounded-lg">
                   <h3 className="text-2xl font-bold text-success">
-                    {myTeam.reduce((sum, p) => sum + calculateVBD(p), 0).toFixed(1)}
+                    {myTeam.reduce((sum, p) => sum + getCachedVBD(p), 0).toFixed(1)}
                   </h3>
                   <p className="text-sm text-muted-foreground">Total VBD Value</p>
                 </div>
