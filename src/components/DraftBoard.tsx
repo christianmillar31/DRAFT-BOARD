@@ -370,12 +370,18 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     return cache;
   }, [
     players,
-    // Always recalculate when draft state changes if using dynamic VBD
-    useDynamicVBD ? Array.from(draftedPlayers) : [],
-    useDynamicVBD ? Array.from(playersDraftedByOthers) : [],
+    // Use the SIZE of sets for proper dependency tracking
+    // React doesn't deeply compare arrays, so Array.from doesn't work!
+    useDynamicVBD ? draftedPlayers.size : 0,
+    useDynamicVBD ? playersDraftedByOthers.size : 0,
     useDynamicVBD ? currentPick : 0,
     useDynamicVBD,
-    leagueSettings // Also update if league settings change
+    leagueSettings.teams,
+    leagueSettings.roster?.QB,
+    leagueSettings.roster?.RB,
+    leagueSettings.roster?.WR,
+    leagueSettings.roster?.TE,
+    leagueSettings.roster?.FLEX
   ]);
 
   // Helper function to get cached VBD
