@@ -424,6 +424,17 @@ export const calculateDynamicReplacement = (
     // Dynamic replacement rank = baseline - already drafted
     const dynamicReplacementIndex = Math.max(0, baselineRank - alreadyDrafted);
     
+    // Debug log to understand replacement changes
+    if (pos === 'QB' && draftState.draftedPlayers.size > 0) {
+      console.log(`🎯 QB Replacement Update:`, {
+        totalDrafted: draftState.draftedPlayers.size,
+        QBsDrafted: alreadyDrafted,
+        baselineRank,
+        dynamicReplacementIndex,
+        replacementPlayer: positionPlayers[dynamicReplacementIndex]?.name
+      });
+    }
+    
     
     // Use actual projections if available, otherwise use tiered estimate
     if (positionPlayers.length > dynamicReplacementIndex) {
