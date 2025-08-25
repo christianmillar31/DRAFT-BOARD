@@ -482,6 +482,17 @@ export const calculateDynamicVBD = (
   const dynamicReplacements = calculateDynamicReplacement(availablePlayers, draftState, leagueSettings, draftedCounts, sosData);
   const dynamicReplacement = dynamicReplacements[position];
   
+  // SURGICAL DEBUG: Log dynamic replacement for WR position
+  if (position === 'WR') {
+    console.log(`🎯 DYNAMIC REPLACEMENT DEBUG for ${position}:`, {
+      dynamicReplacement: dynamicReplacement,
+      staticReplacement: staticReplacement,
+      draftedCount: draftState.draftedPlayers.size,
+      availablePlayers: availablePlayers.filter(p => p.position === 'WR' && !draftState.draftedPlayers.has(p.id)).length,
+      replacementValues: dynamicReplacements
+    });
+  }
+  
   // Calculate scarcity bonus (how much more valuable due to draft state)
   const scarcityBonus = staticReplacement - dynamicReplacement;
   
