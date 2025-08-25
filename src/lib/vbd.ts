@@ -443,6 +443,17 @@ export const calculateDynamicReplacement = (
     if (positionPlayers.length > dynamicReplacementIndex) {
       const baselinePlayer = positionPlayers[dynamicReplacementIndex];
       replacement[pos] = baselinePlayer.projectedPoints || projPointsTiered(pos, baselineRank - alreadyDrafted);
+      
+      // SURGICAL DEBUG: Log the actual replacement player selection for WR
+      if (pos === 'WR') {
+        console.log(`🎯 WR REPLACEMENT PLAYER SELECTED:`, {
+          replacementIndex: dynamicReplacementIndex,
+          replacementPlayer: baselinePlayer.name,
+          replacementPoints: baselinePlayer.projectedPoints,
+          fallbackPoints: projPointsTiered(pos, baselineRank - alreadyDrafted),
+          finalReplacementValue: replacement[pos]
+        });
+      }
     } else if (positionPlayers.length > 0) {
       // Not enough players left, use last available (scarcity!)
       const lastPlayer = positionPlayers[positionPlayers.length - 1];
