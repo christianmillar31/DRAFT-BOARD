@@ -130,6 +130,15 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       });
     }
     
+    // Always log when draft state is created (for debugging)
+    console.log('🎯 Creating Draft State:', {
+      draftedCount: allDraftedPlayers.size,
+      currentPick,
+      myDrafted: draftedPlayers.size,
+      othersDrafted: playersDraftedByOthers.size,
+      timestamp: new Date().toISOString()
+    });
+    
     return {
       draftedPlayers: allDraftedPlayers,
       currentPick,
@@ -367,8 +376,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     return cache;
   }, [
     players,
-    draftedPlayers, // Use the actual Set objects
-    playersDraftedByOthers, // Use the actual Set objects
+    draftedPlayers.size, // Use Set size instead of Set object
+    playersDraftedByOthers.size, // Use Set size instead of Set object
     currentPick,
     useDynamicVBD
   ]);
@@ -511,8 +520,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     selectedPosition,
     showBestByPosition,
     sortBy,
-    draftedPlayers,
-    playersDraftedByOthers,
+    draftedPlayers.size, // Use Set size instead of Set object
+    playersDraftedByOthers.size, // Use Set size instead of Set object
     vbdCache // Use cache for sorting
   ])
 
