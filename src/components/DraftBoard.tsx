@@ -130,14 +130,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       });
     }
     
-    // Always log when draft state is created (for debugging)
-    console.log('🎯 Creating Draft State:', {
-      draftedCount: allDraftedPlayers.size,
-      currentPick,
-      myDrafted: draftedPlayers.size,
-      othersDrafted: playersDraftedByOthers.size,
-      timestamp: new Date().toISOString()
-    });
+
     
     return {
       draftedPlayers: allDraftedPlayers,
