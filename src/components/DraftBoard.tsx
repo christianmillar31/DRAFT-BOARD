@@ -1565,6 +1565,19 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     console.log('🚀 Rendering DraftBoard:', { playersCount: filteredPlayers?.length });
   }
 
+  // TEMPORARY DEBUG - see what's actually happening
+  console.log('🔍 DEBUG RENDER:', {
+    players: players,
+    playersType: typeof players,
+    playersIsArray: Array.isArray(players),
+    playersLength: players?.length,
+    filteredPlayers: filteredPlayers,
+    filteredPlayersType: typeof filteredPlayers,
+    filteredPlayersIsArray: Array.isArray(filteredPlayers),
+    filteredPlayersLength: filteredPlayers?.length,
+    playersError: playersError
+  });
+
   // Early return for debugging
   if (playersError) {
     console.error('🚨 Players Error:', playersError);
