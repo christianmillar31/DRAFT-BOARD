@@ -424,8 +424,20 @@ export const calculateDynamicReplacement = (
     // Dynamic replacement rank = baseline - already drafted
     const dynamicReplacementIndex = Math.max(0, baselineRank - alreadyDrafted);
     
-
-    
+    // SURGICAL DEBUG: Log detailed WR replacement calculation
+    if (pos === 'WR') {
+      console.log(`🎯 WR REPLACEMENT CALCULATION:`, {
+        baselineRank: baselineRank,
+        alreadyDrafted: alreadyDrafted,
+        dynamicReplacementIndex: dynamicReplacementIndex,
+        positionPlayersCount: positionPlayers.length,
+        totalNeeded: totalNeeded,
+        firstAvailablePlayer: positionPlayers[0]?.name,
+        firstAvailablePoints: positionPlayers[0]?.projectedPoints,
+        replacementPlayer: positionPlayers[dynamicReplacementIndex]?.name,
+        replacementPoints: positionPlayers[dynamicReplacementIndex]?.projectedPoints
+      });
+    }
     
     // Use actual projections if available, otherwise use tiered estimate
     if (positionPlayers.length > dynamicReplacementIndex) {
