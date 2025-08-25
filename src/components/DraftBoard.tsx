@@ -545,6 +545,11 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     startTransition(() => {
       setActionHistory(prev => [...prev, { type: 'draft', player: playerWithId, pick: currentPick }]);
     });
+    
+    // SURGICAL PRECISION: Track VBD updates after draft
+    setTimeout(() => {
+      trackKeyPlayers();
+    }, 100);
   };
 
   const handleDraftByOthers = (player: any) => {
@@ -559,6 +564,11 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     startTransition(() => {
       setActionHistory(prev => [...prev, { type: 'others', player: playerWithId, pick: currentPick }]);
     });
+    
+    // SURGICAL PRECISION: Track VBD updates after others draft
+    setTimeout(() => {
+      trackKeyPlayers();
+    }, 100);
   };
 
   const handleUndo = () => {
@@ -1565,18 +1575,36 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     console.log('🚀 Rendering DraftBoard:', { playersCount: filteredPlayers?.length });
   }
 
-  // TEMPORARY DEBUG - see what's actually happening
-  console.log('🔍 DEBUG RENDER:', {
-    players: players,
-    playersType: typeof players,
-    playersIsArray: Array.isArray(players),
-    playersLength: players?.length,
-    filteredPlayers: filteredPlayers,
-    filteredPlayersType: typeof filteredPlayers,
-    filteredPlayersIsArray: Array.isArray(filteredPlayers),
-    filteredPlayersLength: filteredPlayers?.length,
-    playersError: playersError
-  });
+  // SURGICAL PRECISION: Track only Nabers and Jefferson VBD updates
+  const trackKeyPlayers = () => {
+    if (!players) return;
+    
+    const nabers = players.find(p => p.name?.includes('Nabers'));
+    const jefferson = players.find(p => p.name?.includes('Jefferson'));
+    
+    if (nabers || jefferson) {
+      console.log('🎯 KEY PLAYERS VBD:', {
+        draftedCount: draftedPlayers.size,
+        nabers: nabers ? { 
+          name: nabers.name, 
+          vbd: getCachedVBD(nabers), 
+          drafted: draftedPlayers.has(nabers.id),
+          adp: nabers.adp
+        } : null,
+        jefferson: jefferson ? { 
+          name: jefferson.name, 
+          vbd: getCachedVBD(jefferson), 
+          drafted: draftedPlayers.has(jefferson.id),
+          adp: jefferson.adp
+        } : null
+      });
+    }
+  };
+
+  // Track VBD updates when cache rebuilds
+  trackKeyPlayers();
+
+
 
   // Early return for debugging
   if (playersError) {
