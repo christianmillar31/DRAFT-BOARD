@@ -327,12 +327,14 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
       const dynamicResult = calculateDynamicVBDForPlayer(player, players || []);
       const vbdValue = dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
       
-      // Debug first player of each position
-      if (player.name === players.find(p => p.position === player.position)?.name) {
-        console.log(`📊 VBD for ${player.name} (${player.position}):`, {
-          value: vbdValue,
-          drafted: draftedPlayers.size,
-          dynamic: !!dynamicResult
+      // SURGICAL DEBUG: Only log for Nabers and Jefferson
+      if (player.name?.includes('Nabers') || player.name?.includes('Jefferson')) {
+        console.log(`🎯 VBD CALCULATION for ${player.name}:`, {
+          dynamicResult: dynamicResult,
+          vbdValue: vbdValue,
+          draftedCount: draftedPlayers.size,
+          othersDraftedCount: playersDraftedByOthers.size,
+          useDynamicVBD: useDynamicVBD
         });
       }
       
