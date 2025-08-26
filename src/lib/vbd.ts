@@ -544,7 +544,11 @@ export const calculateDynamicVBD = (
   const finalPoints = rawPoints;
   const floorApplied = false;
   
-  const vbd = finalPoints - dynamicReplacement; // Allow negative VBD - it's meaningful!
+  let vbd = finalPoints - dynamicReplacement; // Allow negative VBD - it's meaningful!
+  
+  // Phase 1: Elite Fall Detection - Add cross-positional value for elite players falling
+  const eliteBonus = calculateEliteFallBonus(player, draftState.currentPick);
+  vbd = vbd + eliteBonus;
   
   return {
     rawPoints,
@@ -598,4 +602,28 @@ export const calculateVBD = (
   
   // Pure VBD calculation - allow negative values (meaningful information!)
   return projectedPoints - replPoints;
+};
+
+// =============================================================================
+// PHASE 1: ELITE FALL DETECTION - Cross-Positional Enhancement
+// =============================================================================
+
+export const calculateEliteFallBonus = (
+  player: Player,
+  currentPick: number
+): number => {
+  const adpDeviation = currentPick - player.adp;
+  
+  // Tiered bonuses based on consensus value
+  if (player.adp <= 6 && adpDeviation >= 2) {
+    // True elite (Chase, Jefferson, CMC tier)
+    return adpDeviation * 5 + 20;  // Massive boost
+  } else if (player.adp <= 12 && adpDeviation >= 4) {
+    // First round talent falling
+    return adpDeviation * 3 + 10;
+  } else if (player.adp <= 24 && adpDeviation >= 8) {
+    // Second round value
+    return adpDeviation * 2;
+  }
+  return 0;
 };
