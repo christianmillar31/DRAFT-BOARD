@@ -550,7 +550,19 @@ export const calculateDynamicVBD = (
   
   // Phase 1: Elite Fall Detection - Add cross-positional value for elite players falling
   const eliteBonus = calculateEliteFallBonus(player, draftState.currentPick);
+  const vbdBeforeEliteBonus = vbd;
   vbd = vbd + eliteBonus;
+  
+  // DEBUG: Log VBD changes for elite players
+  if (eliteBonus > 0) {
+    console.log('🎯 ELITE VBD TRANSFORMATION:', {
+      playerName: player.name,
+      vbdBefore: vbdBeforeEliteBonus,
+      eliteBonus: eliteBonus,
+      vbdAfter: vbd,
+      currentPick: draftState.currentPick
+    });
+  }
   
   // Phase 2: Position Run Adjustment
   if (recentPicks && recentPicks.length > 0) {
@@ -631,16 +643,45 @@ export const calculateEliteFallBonus = (
 ): number => {
   const adpDeviation = currentPick - player.adp;
   
+  // DEBUG: Log all elite fall calculations
+  if (player.name.includes('Chase') || adpDeviation >= 2) {
+    console.log('🎯 ELITE FALL DEBUG:', {
+      playerName: player.name,
+      playerADP: player.adp,
+      currentPick: currentPick,
+      adpDeviation: adpDeviation,
+      condition1: player.adp <= 6,
+      condition2: adpDeviation >= 2,
+      meetsEliteConditions: player.adp <= 6 && adpDeviation >= 2
+    });
+  }
+  
   // Tiered bonuses based on consensus value
   if (player.adp <= 6 && adpDeviation >= 2) {
     // True elite (Chase, Jefferson, CMC tier)
-    return adpDeviation * 5 + 20;  // Massive boost
+    const bonus = adpDeviation * 5 + 20;
+    console.log('🚀 ELITE FALL BONUS APPLIED:', {
+      playerName: player.name,
+      bonus: bonus,
+      formula: `${adpDeviation} * 5 + 20`
+    });
+    return bonus;
   } else if (player.adp <= 12 && adpDeviation >= 4) {
     // First round talent falling
-    return adpDeviation * 3 + 10;
+    const bonus = adpDeviation * 3 + 10;
+    console.log('📈 FIRST ROUND FALL BONUS:', {
+      playerName: player.name,
+      bonus: bonus
+    });
+    return bonus;
   } else if (player.adp <= 24 && adpDeviation >= 8) {
     // Second round value
-    return adpDeviation * 2;
+    const bonus = adpDeviation * 2;
+    console.log('📊 SECOND ROUND FALL BONUS:', {
+      playerName: player.name,
+      bonus: bonus
+    });
+    return bonus;
   }
   return 0;
 };
