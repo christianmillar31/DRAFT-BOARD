@@ -78,13 +78,13 @@ export const projPointsTiered = (pos: Pos, r: number): number => {
     return Math.max(90, late(r)); // Remove smoothBlend for WR late tier to ensure monotonicity
   }
   if (pos === "TE") {
-    const elite = (x: number) => 220 - 8.0 * x;     // 1-3
-    const mid = (x: number) => 215 - 6.5 * x;       // 4-10
-    const late = (x: number) => 150 - 0.5 * x;      // 11+ (ensures continuity)
+    const elite = (x: number) => 270 - 12.0 * x;    // 1-3 (TE1 = 258, TE3 = 234)
+    const mid = (x: number) => 240 - 8.0 * x;       // 4-8 (TE4 = 208, TE8 = 176)
+    const late = (x: number) => 160 - 2.0 * x;      // 9+ (TE12 = 136)
     
     if (r <= 3) return Math.max(95, elite(r));
-    if (r <= 10) return Math.max(95, r < 5 ? smoothBlend(r, 3, elite, mid) : mid(r));
-    return Math.max(95, r < 12 ? smoothBlend(r, 10, mid, late) : late(r));
+    if (r <= 8) return Math.max(95, r < 5 ? smoothBlend(r, 3, elite, mid) : mid(r));
+    return Math.max(95, r < 10 ? smoothBlend(r, 8, mid, late) : late(r));
   }
   return 100; // fallback
 };
@@ -192,9 +192,9 @@ export const calculateDynamicFlexWeights = (leagueSettings: any): Record<Pos, nu
   // Step 2: Historical usage data (from actual fantasy leagues)
   const baseFlexUsage = {
     QB: superflexCount > 0 ? 0.30 : 0.00,  // QBs only in superflex
-    RB: 0.45,  // Slight RB preference historically
-    WR: 0.50,  // WRs most commonly flexed
-    TE: 0.05   // Rarely flexed except elite TEs
+    RB: 0.42,  // Slight RB preference historically
+    WR: 0.46,  // WRs most commonly flexed
+    TE: 0.12   // Elite TEs flexed more often than people think
   };
   
   // Step 3: Adjust based on roster construction
@@ -202,7 +202,7 @@ export const calculateDynamicFlexWeights = (leagueSettings: any): Record<Pos, nu
     QB: 0,
     RB: totalSpots.RB === 2 ? 0 : (3 - totalSpots.RB) * 0.1,  // If fewer RB slots, more likely to flex
     WR: totalSpots.WR === 2 ? 0 : (3 - totalSpots.WR) * 0.05, // Less adjustment for WR depth
-    TE: totalSpots.TE === 2 ? 0.1 : 0  // 2TE leagues flex more TEs
+    TE: totalSpots.TE === 2 ? 0.15 : 0.02  // 2TE leagues flex more TEs, plus small base boost for elite TE scarcity
   };
   
   // Step 4: Special adjustment for 2+ FLEX leagues
