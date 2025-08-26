@@ -69,9 +69,9 @@ export const projPointsTiered = (pos: Pos, r: number): number => {
     return Math.max(90, r < 20 ? smoothBlend(r, 18, mid, late) : late(r));
   }
   if (pos === "WR") {
-    const elite = (x: number) => 290 - 4.0 * x;     // 1-8
-    const mid = (x: number) => 300 - 5.0 * x;       // 9-28
-    const late = (x: number) => 180 - 1.5 * x;      // 29+ (more realistic decline)
+    const elite = (x: number) => 350 - 6.0 * x;     // 1-8 (WR1 = 344, more realistic)
+    const mid = (x: number) => 320 - 5.0 * x;       // 9-28 (adjusted upward)
+    const late = (x: number) => 200 - 2.0 * x;      // 29+ (adjusted upward)
     
     if (r <= 8) return Math.max(90, elite(r));
     if (r <= 28) return Math.max(90, r < 10 ? smoothBlend(r, 8, elite, mid) : mid(r));
@@ -173,25 +173,70 @@ export const playoffWeightedSOS = (
   return (1 - w) * regularSOS + w * playoffSOS;
 };
 
-// Superflex and custom flex weight configuration
+// DYNAMIC FLEX WEIGHT SYSTEM - Adapts to any roster configuration
+export const calculateDynamicFlexWeights = (leagueSettings: any): Record<Pos, number> => {
+  const roster = leagueSettings.roster || {};
+  const flexCount = roster.FLEX || 0;
+  const superflexCount = roster.SUPERFLEX || 0;
+  
+  console.log('🔧 CALCULATING DYNAMIC FLEX WEIGHTS:', { roster, flexCount, superflexCount });
+  
+  // Step 1: Calculate total roster spots by position
+  const totalSpots = {
+    QB: (roster.QB || 1) + superflexCount,
+    RB: roster.RB || 2,
+    WR: roster.WR || 2,  // Changed default to match your league
+    TE: roster.TE || 1
+  };
+  
+  // Step 2: Historical usage data (from actual fantasy leagues)
+  const baseFlexUsage = {
+    QB: superflexCount > 0 ? 0.30 : 0.00,  // QBs only in superflex
+    RB: 0.45,  // Slight RB preference historically
+    WR: 0.50,  // WRs most commonly flexed
+    TE: 0.05   // Rarely flexed except elite TEs
+  };
+  
+  // Step 3: Adjust based on roster construction
+  const rosterAdjustment = {
+    QB: 0,
+    RB: totalSpots.RB === 2 ? 0 : (3 - totalSpots.RB) * 0.1,  // If fewer RB slots, more likely to flex
+    WR: totalSpots.WR === 2 ? 0 : (3 - totalSpots.WR) * 0.05, // Less adjustment for WR depth
+    TE: totalSpots.TE === 2 ? 0.1 : 0  // 2TE leagues flex more TEs
+  };
+  
+  // Step 4: Special adjustment for 2+ FLEX leagues
+  const flexAdjustment = {
+    QB: 0,
+    RB: flexCount >= 2 ? -0.05 : 0,  // Less RB-heavy in 2+ flex
+    WR: flexCount >= 2 ? 0.05 : 0,   // More WR usage in 2+ flex
+    TE: 0
+  };
+  
+  // Step 5: Combine factors
+  let weights: Record<Pos, number> = { QB: 0, RB: 0, WR: 0, TE: 0 };
+  let totalWeight = 0;
+  
+  (['QB', 'RB', 'WR', 'TE'] as Pos[]).forEach(pos => {
+    weights[pos] = baseFlexUsage[pos] + rosterAdjustment[pos] + flexAdjustment[pos];
+    weights[pos] = Math.max(0, Math.min(1, weights[pos])); // Clamp 0-1
+    totalWeight += weights[pos];
+  });
+  
+  // Step 6: Normalize to sum to 1.0
+  if (totalWeight > 0) {
+    (['QB', 'RB', 'WR', 'TE'] as Pos[]).forEach(pos => {
+      weights[pos] = weights[pos] / totalWeight;
+    });
+  }
+  
+  console.log('✅ DYNAMIC FLEX WEIGHTS CALCULATED:', weights);
+  return weights;
+};
+
+// Updated getFlexWeights to use dynamic system
 export const getFlexWeights = (leagueSettings: any) => {
-  // Superflex preset - QB is eligible in flex pool
-  if (leagueSettings.scoring?.superflex || leagueSettings.flexType === 'superflex') {
-    return { QB: 0.3, RB: 0.3, WR: 0.3, TE: 0.1 }; // QB gets 30% of flex allocation
-  }
-  
-  // 3WR leagues preset (push more flex toward WR)
-  if (leagueSettings.roster?.WR >= 3) {
-    return { QB: 0, RB: 0.35, WR: 0.5, TE: 0.15 };
-  }
-  
-  // Custom flex weights from settings
-  if (leagueSettings.flexWeights) {
-    return leagueSettings.flexWeights;
-  }
-  
-  // CORRECTED Default allocation per guide: RB 60%, WR 35%, TE 5%
-  return { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 };
+  return calculateDynamicFlexWeights(leagueSettings);
 };
 
 // Get flex-eligible positions based on league settings
