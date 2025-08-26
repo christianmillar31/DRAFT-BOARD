@@ -1,11 +1,10 @@
-const https = require('https');
+const fs = require('fs');
+const path = require('path');
 
 export default async function handler(req, res) {
-  // v6 - Using native https instead of fetch
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('X-Function-Version', 'v6-https-native');
   
   if (req.method === 'OPTIONS') {
     res.status(200).end();
@@ -13,27 +12,16 @@ export default async function handler(req, res) {
   }
 
   try {
-    console.log('📁 [v6] Attempting to serve ADP from cache...');
+    // Read cache file from the filesystem (included in deployment)
+    const cacheFilePath = path.join(process.cwd(), 'public', 'cache', 'tank01-data.json');
     
-    // Fetch cache file using native https
-    const cacheData = await new Promise((resolve, reject) => {
-      https.get('https://draftboardlive.online/cache/tank01-data.json', (response) => {
-        let data = '';
-        
-        response.on('data', (chunk) => {
-          data += chunk;
-        });
-        
-        response.on('end', () => {
-          try {
-            const parsed = JSON.parse(data);
-            resolve(parsed);
-          } catch (e) {
-            reject(new Error('Invalid JSON in cache file'));
-          }
-        });
-      }).on('error', reject);
-    });
+    console.log('📁 Attempting to read ADP from filesystem cache...');
+    
+    if (!fs.existsSync(cacheFilePath)) {
+      throw new Error('Cache file not found in deployment');
+    }
+    
+    const cacheData = JSON.parse(fs.readFileSync(cacheFilePath, 'utf8'));
     
     // Validate cache structure
     if (!cacheData.data || !Array.isArray(cacheData.data.adp)) {
@@ -42,27 +30,58 @@ export default async function handler(req, res) {
     
     // Check cache age
     const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
-    const maxAge = 25 * 60 * 60 * 1000; // 25 hours
+    const maxAge = 30 * 60 * 60 * 1000; // 30 hours (give some buffer)
     
     if (cacheAge > maxAge) {
-      throw new Error(`Cache too old: ${Math.round(cacheAge / 1000 / 60)} minutes`);
+      console.log(`⚠️ Cache is ${Math.round(cacheAge / (60 * 60 * 1000))}h old (max: 30h), but still serving it`);
     }
     
     // Return cached data with proper headers
-    console.log(`📦 CACHE HIT: Serving ${cacheData.data.adp.length} ADP entries from cache`);
-    res.setHeader('X-Data-Source', 'cache');
-    res.setHeader('X-Cache-Age-Minutes', Math.round(cacheAge / 1000 / 60));
+    console.log(`📦 CACHE HIT: Serving ${cacheData.data.adp.length} ADP entries from filesystem cache`);
+    res.setHeader('X-Data-Source', 'filesystem-cache');
+    res.setHeader('X-Cache-Age-Hours', Math.round(cacheAge / (60 * 60 * 1000)));
     res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=300');
     res.status(200).json(cacheData.data.adp);
     
   } catch (error) {
-    console.error('❌ Cache error:', error.message);
-    res.setHeader('X-Data-Source', 'error');
-    res.setHeader('X-Error', error.message);
-    res.status(503).json({ 
-      error: 'Cache service unavailable',
-      message: error.message,
-      version: 'v6-https-native'
-    });
+    console.error('❌ Error:', error.message);
+    
+    // Fallback: Try to fetch from Tank01 API directly
+    try {
+      console.log('🌐 Attempting fallback to Tank01 API...');
+      const fetch = require('node-fetch');
+      
+      const TANK01_API_KEY = process.env.TANK01_API_KEY || '293521c39dmshd34917039531846p115b84jsnd13efd600b8c';
+      
+      const response = await fetch('https://tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com/getNFLADP?adpType=halfPPR', {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': TANK01_API_KEY,
+          'X-RapidAPI-Host': 'tank01-nfl-live-in-game-real-time-statistics-nfl.p.rapidapi.com'
+        }
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Tank01 API error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      const adp = data.body?.adpList || [];
+      
+      console.log(`✅ FALLBACK SUCCESS: Serving ${adp.length} ADP entries from Tank01 API`);
+      res.setHeader('X-Data-Source', 'tank01-api-fallback');
+      res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=3600');
+      res.status(200).json(adp);
+      
+    } catch (fallbackError) {
+      console.error('❌ Fallback also failed:', fallbackError.message);
+      res.setHeader('X-Data-Source', 'error');
+      res.setHeader('X-Error', error.message);
+      res.status(503).json({ 
+        error: 'Service temporarily unavailable',
+        message: 'Cache not found and API fallback failed',
+        details: error.message
+      });
+    }
   }
 }
