@@ -421,43 +421,46 @@ export const calculateDynamicReplacement = (
       return player?.position === pos;
     }).length;
     
-    // Dynamic replacement rank = baseline - already drafted
-    const dynamicReplacementIndex = Math.max(0, baselineRank - alreadyDrafted);
+    // FIXED: Use baseline rank directly since we already filtered out drafted players
+    const replacementIndex = Math.min(
+      baselineRank - 1,  // Convert to 0-based index
+      positionPlayers.length - 1  // Don't go past array bounds
+    );
     
-    // SURGICAL DEBUG: Log detailed WR replacement calculation
-    if (pos === 'WR') {
-      console.log(`🎯 WR REPLACEMENT CALCULATION:`, {
-        baselineRank: baselineRank,
-        alreadyDrafted: alreadyDrafted,
-        dynamicReplacementIndex: dynamicReplacementIndex,
-        positionPlayersCount: positionPlayers.length,
-        totalNeeded: totalNeeded,
-        firstAvailablePlayer: positionPlayers[0]?.name,
-        firstAvailablePoints: positionPlayers[0]?.projectedPoints,
-        replacementPlayer: positionPlayers[dynamicReplacementIndex]?.name,
-        replacementPoints: positionPlayers[dynamicReplacementIndex]?.projectedPoints
-      });
-    }
+          // SURGICAL DEBUG: Log detailed WR replacement calculation
+      if (pos === 'WR') {
+        console.log(`🎯 WR REPLACEMENT CALCULATION:`, {
+          baselineRank: baselineRank,
+          alreadyDrafted: alreadyDrafted,
+          replacementIndex: replacementIndex,
+          positionPlayersCount: positionPlayers.length,
+          totalNeeded: totalNeeded,
+          firstAvailablePlayer: positionPlayers[0]?.name,
+          firstAvailablePoints: positionPlayers[0]?.projectedPoints,
+          replacementPlayer: positionPlayers[replacementIndex]?.name,
+          replacementPoints: positionPlayers[replacementIndex]?.projectedPoints
+        });
+      }
     
     // Use actual projections if available, otherwise use tiered estimate
-    if (positionPlayers.length > dynamicReplacementIndex) {
-      const baselinePlayer = positionPlayers[dynamicReplacementIndex];
-      replacement[pos] = baselinePlayer.projectedPoints || projPointsTiered(pos, baselineRank - alreadyDrafted);
+    if (replacementIndex >= 0 && positionPlayers[replacementIndex]) {
+      const baselinePlayer = positionPlayers[replacementIndex];
+      replacement[pos] = baselinePlayer.projectedPoints || projPointsTiered(pos, baselineRank);
       
       // SURGICAL DEBUG: Log the actual replacement player selection for WR
       if (pos === 'WR') {
         console.log(`🎯 WR REPLACEMENT PLAYER SELECTED:`, {
-          replacementIndex: dynamicReplacementIndex,
+          replacementIndex: replacementIndex,
           replacementPlayer: baselinePlayer.name,
           replacementPoints: baselinePlayer.projectedPoints,
-          fallbackPoints: projPointsTiered(pos, baselineRank - alreadyDrafted),
+          fallbackPoints: projPointsTiered(pos, baselineRank),
           finalReplacementValue: replacement[pos]
         });
       }
     } else if (positionPlayers.length > 0) {
       // Not enough players left, use last available (scarcity!)
       const lastPlayer = positionPlayers[positionPlayers.length - 1];
-      replacement[pos] = lastPlayer.projectedPoints || projPointsTiered(pos, baselineRank - alreadyDrafted);
+      replacement[pos] = lastPlayer.projectedPoints || projPointsTiered(pos, baselineRank);
     } else {
       // No players left, use floor
       replacement[pos] = FLOOR[pos];

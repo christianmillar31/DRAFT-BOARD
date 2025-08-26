@@ -521,7 +521,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   ])
 
   const handleDraftPlayer = (player: any) => {
-    const playerId = player.id || player.playerID || '';
+    const playerId = String(player.id || player.playerID || ''); // FIX: Normalize to string
     const playerWithId = { ...player, draftedAt: currentPick, id: playerId };
     
     console.log(`🎯 DRAFTING PLAYER: ${player.name} (${player.position}), ID: ${playerId}`);
@@ -548,7 +548,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   };
 
   const handleDraftByOthers = (player: any) => {
-    const playerId = player.id || player.playerID || '';
+    const playerId = String(player.id || player.playerID || ''); // FIX: Normalize to string
     const playerWithId = { ...player, id: playerId };
     
     // IMMEDIATE UI updates (no lag!)
