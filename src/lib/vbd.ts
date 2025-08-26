@@ -476,7 +476,9 @@ export const calculateDynamicVBD = (
   availablePlayers: Player[],
   draftState: DraftState,
   leagueSettings: any,
-  sosData?: Record<Pos, number> | null
+  sosData?: Record<Pos, number> | null,
+  recentPicks?: { position: Pos }[],
+  myNextPick?: number
 ): DynamicVBDResult => {
   const position = player.position as Pos;
   
@@ -550,6 +552,20 @@ export const calculateDynamicVBD = (
   const eliteBonus = calculateEliteFallBonus(player, draftState.currentPick);
   vbd = vbd + eliteBonus;
   
+  // Phase 2: Position Run Adjustment
+  if (recentPicks && recentPicks.length > 0) {
+    const runState = detectPositionRun(recentPicks);
+    vbd = applyPositionRunAdjustment(vbd, position, runState);
+  }
+  
+  // Phase 3: EVONA Integration
+  if (myNextPick && myNextPick > draftState.currentPick) {
+    const evonaValue = calculateEVONA(player, availablePlayers, draftState, myNextPick);
+    // Negative EVONA means waiting costs value - boost current player
+    // Positive EVONA means we can wait - reduce urgency slightly
+    vbd = vbd - (evonaValue * 0.3); // 30% weight to EVONA considerations
+  }
+  
   return {
     rawPoints,
     sosMultiplier,
@@ -605,9 +621,10 @@ export const calculateVBD = (
 };
 
 // =============================================================================
-// PHASE 1: ELITE FALL DETECTION - Cross-Positional Enhancement
+// CROSS-POSITIONAL VBD ENHANCEMENTS
 // =============================================================================
 
+// PHASE 1: ELITE FALL DETECTION
 export const calculateEliteFallBonus = (
   player: Player,
   currentPick: number
@@ -626,4 +643,122 @@ export const calculateEliteFallBonus = (
     return adpDeviation * 2;
   }
   return 0;
+};
+
+// PHASE 2: POSITION RUN DETECTION & ADJUSTMENT
+export interface PositionRunState {
+  intensity: number;  // 0-1 scale
+  position: Pos | null;
+  consecutiveCount: number;
+}
+
+export const detectPositionRun = (
+  recentPicks: { position: Pos }[],
+  lookback: number = 7
+): PositionRunState => {
+  const relevantPicks = recentPicks.slice(-lookback);
+  if (relevantPicks.length < 4) return { intensity: 0, position: null, consecutiveCount: 0 };
+  
+  const positionCounts: Record<Pos, number> = { QB: 0, RB: 0, WR: 0, TE: 0 };
+  relevantPicks.forEach(p => positionCounts[p.position]++);
+  
+  // Find dominant position
+  const maxCount = Math.max(...Object.values(positionCounts));
+  const dominantPosition = Object.entries(positionCounts)
+    .find(([_, count]) => count === maxCount)?.[0] as Pos;
+  
+  const intensity = maxCount / relevantPicks.length;
+  
+  // Check consecutive picks for true "run"
+  let consecutive = 0;
+  for (let i = relevantPicks.length - 1; i >= 0; i--) {
+    if (relevantPicks[i].position === dominantPosition) consecutive++;
+    else break;
+  }
+  
+  return {
+    intensity: intensity > 0.4 ? intensity : 0,  // 40% threshold
+    position: intensity > 0.4 ? dominantPosition : null,
+    consecutiveCount: consecutive
+  };
+};
+
+export const applyPositionRunAdjustment = (
+  baseVBD: number,
+  playerPosition: Pos,
+  runState: PositionRunState
+): number => {
+  if (!runState.position || runState.intensity === 0) return baseVBD;
+  
+  if (playerPosition === runState.position) {
+    // Position being run on - likely overvalued by market
+    // Heavier penalty for extreme runs
+    const penalty = runState.consecutiveCount >= 5 ? 0.15 : 0.08;
+    return baseVBD * (1 - runState.intensity * penalty);
+  } else {
+    // Other positions - opportunity for value
+    // Bigger boost for positions that complement the run
+    let boost = runState.intensity * 0.12;
+    
+    // Special case: RB run makes elite WRs more valuable
+    if (runState.position === 'RB' && playerPosition === 'WR') {
+      boost *= 1.3;
+    }
+    
+    return baseVBD * (1 + boost);
+  }
+};
+
+// PHASE 3: EVONA INTEGRATION
+// Add normal CDF approximation
+const normCDF = (z: number): number => {
+  const t = 1 / (1 + 0.2316419 * Math.abs(z));
+  const d = 0.3989423 * Math.exp(-z * z / 2);
+  const prob = d * t * (0.31938153 + t * (-0.356563782 + t * (1.781477937 + 
+    t * (-1.821255978 + 1.330274429 * t))));
+  return z > 0 ? 1 - prob : prob;
+};
+
+const calculateSurvivalProbability = (
+  playerADP: number,
+  currentPick: number,
+  targetPick: number
+): number => {
+  const adpStdDev = Math.max(3, playerADP * 0.15);
+  const zScore = (targetPick - playerADP) / adpStdDev;
+  return Math.max(0, Math.min(1, 1 - normCDF(zScore)));
+};
+
+export const calculateEVONA = (
+  player: Player,
+  availablePlayers: Player[],
+  draftState: DraftState,
+  myNextPick: number
+): number => {
+  // Filter to same position
+  const positionPlayers = availablePlayers
+    .filter(p => p.position === player.position && p.id !== player.id)
+    .sort((a, b) => (b.projectedPoints || 0) - (a.projectedPoints || 0));
+  
+  // Calculate expected best available at next pick
+  let expectedValue = 0;
+  let totalProb = 0;
+  
+  for (const p of positionPlayers.slice(0, 5)) {  // Top 5 remaining
+    const survivalProb = calculateSurvivalProbability(
+      p.adp,
+      draftState.currentPick,
+      myNextPick
+    );
+    expectedValue += (p.projectedPoints || 0) * survivalProb;
+    totalProb += survivalProb;
+  }
+  
+  if (totalProb > 0) {
+    expectedValue = expectedValue / totalProb;
+  }
+  
+  // If waiting costs us value, return 0 (don't wait)
+  // If current player is worse than expected next, return positive (can wait)
+  return Math.max(0, expectedValue - (player.projectedPoints || 0));
 };
