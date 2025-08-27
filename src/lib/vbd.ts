@@ -177,7 +177,9 @@ export const playoffWeightedSOS = (
 export const calculateDynamicFlexWeights = (leagueSettings: any): Record<Pos, number> => {
   const roster = leagueSettings.roster || {};
   const flexCount = roster.FLEX || 0;
-  const superflexCount = roster.SUPERFLEX || 0;
+  // Fix superflex detection - check both roster.SUPERFLEX and flexType setting
+  const superflexCount = roster.SUPERFLEX || 
+    (leagueSettings.scoring?.superflex || leagueSettings.flexType === 'superflex' ? 1 : 0);
   
   console.log('🔧 CALCULATING DYNAMIC FLEX WEIGHTS:', { roster, flexCount, superflexCount });
   

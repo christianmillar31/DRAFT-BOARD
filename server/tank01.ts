@@ -13,7 +13,7 @@ const BASE_URL = `https://${TANK01_API_HOST}`;
 
 console.log('Tank01 API Key loaded:', TANK01_API_KEY ? `${TANK01_API_KEY.substring(0, 10)}...` : 'MISSING');
 
-// Cache helper function
+// Cache helper functions
 function getCachedData() {
   try {
     const cacheFile = path.join(__dirname, '..', 'public', 'cache', 'tank01-data.json');
@@ -33,6 +33,22 @@ function getCachedData() {
     }
   } catch (error) {
     console.error('❌ Cache read error:', error);
+  }
+  return null;
+}
+
+// Get stale cache data as fallback when API fails
+function getStaleCacheData() {
+  try {
+    const cacheFile = path.join(__dirname, '..', 'public', 'cache', 'tank01-data.json');
+    if (fs.existsSync(cacheFile)) {
+      const cacheData = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
+      const cacheAge = Date.now() - new Date(cacheData.timestamp).getTime();
+      console.log(`🔄 Using stale cache as API fallback (${Math.round(cacheAge / (60 * 60 * 1000))}h old)`);
+      return cacheData.data;
+    }
+  } catch (error) {
+    console.error('❌ Stale cache read error:', error);
   }
   return null;
 }
@@ -105,6 +121,12 @@ export async function getNFLPlayers(): Promise<Tank01Player[]> {
     return data.body || [];
   } catch (error) {
     console.error('Error fetching NFL players from Tank01:', error);
+    // Try to use stale cache as fallback
+    const staleData = getStaleCacheData();
+    if (staleData?.players) {
+      console.log('✅ Using stale cache as fallback for players');
+      return staleData.players;
+    }
     return [];
   }
 }
@@ -191,12 +213,38 @@ export async function getNFLFantasyProjections(position: string = 'all'): Promis
     return [];
   } catch (error) {
     console.error('Error fetching fantasy projections from Tank01:', error);
+    // Try to use stale cache as fallback
+    const staleData = getStaleCacheData();
+    if (staleData?.projections) {
+      console.log('✅ Using stale cache as fallback for projections');
+      if (position.toLowerCase() === 'all') {
+        const allProjections = [];
+        for (const pos of ['QB', 'RB', 'WR', 'TE', 'K', 'DST']) {
+          if (Array.isArray(staleData.projections[pos]) && staleData.projections[pos].length > 0) {
+            allProjections.push(...staleData.projections[pos]);
+          }
+        }
+        return allProjections;
+      } else if (Array.isArray(staleData.projections[position])) {
+        return staleData.projections[position];
+      }
+    }
     return [];
   }
 }
 
-export async function getNFLPlayerADP(): Promise<any[]> {
-  // Check cache first
+export async function getNFLPlayerADP(scoringType?: string): Promise<any[]> {
+  // Map scoring type to ADP type parameter
+  let adpTypeParam = 'halfPPR'; // default fallback
+  if (scoringType === 'Standard') {
+    adpTypeParam = 'standard';
+  } else if (scoringType === 'PPR') {
+    adpTypeParam = 'ppr';
+  } else if (scoringType === 'Half-PPR') {
+    adpTypeParam = 'halfPPR';
+  }
+
+  // Check cache first (still use cached data regardless of scoring format)
   const cachedData = getCachedData();
   if (cachedData?.adp) {
     return cachedData.adp;
@@ -204,8 +252,8 @@ export async function getNFLPlayerADP(): Promise<any[]> {
 
   // Fallback to API
   try {
-    console.log('🌐 Fetching fresh ADP data from Tank01 API');
-    const response = await fetch(`${BASE_URL}/getNFLADP?adpType=halfPPR`, {
+    console.log(`🌐 Fetching fresh ADP data from Tank01 API (${adpTypeParam})`);
+    const response = await fetch(`${BASE_URL}/getNFLADP?adpType=${adpTypeParam}`, {
       method: 'GET',
       headers: tank01Headers
     });
@@ -218,6 +266,12 @@ export async function getNFLPlayerADP(): Promise<any[]> {
     return data.body?.adpList || [];
   } catch (error) {
     console.error('Error fetching ADP from Tank01:', error);
+    // Try to use stale cache as fallback
+    const staleData = getStaleCacheData();
+    if (staleData?.adp) {
+      console.log('✅ Using stale cache as fallback for ADP');
+      return staleData.adp;
+    }
     return [];
   }
 }

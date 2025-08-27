@@ -106,9 +106,10 @@ app.get("/api/tank01/projections/:position?", async (req, res) => {
   }
 });
 
-app.get("/api/tank01/adp", async (_req, res) => {
+app.get("/api/tank01/adp", async (req, res) => {
   try {
-    const adp = await getNFLPlayerADP();
+    const scoringType = req.query.scoringType as string;
+    const adp = await getNFLPlayerADP(scoringType);
     return res.json(adp);
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : String(err);

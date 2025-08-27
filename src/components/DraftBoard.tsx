@@ -42,6 +42,7 @@ import {
 } from "../lib/vbd";
 import { TierSystem, type PlayerForTiering, type Position } from "../lib/tierSystem";
 import { validateVBDSystem } from "../lib/backtest";
+import { getRecommendations } from "../lib/recommend";
 
 
 interface DraftBoardProps {
@@ -597,89 +598,13 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
 
   // Memoize recommendation logic for better performance
   const recommendedPlayerIds = useMemo(() => {
-    const strategy = leagueSettings.draftStrategy || "balanced";
-    
-    if (strategy === "balanced") {
-      // KEEP EXISTING LOGIC EXACTLY AS IS - Simple recommendation logic
-      const positionNeeds = {
-        QB: myTeam.filter(p => p.position === 'QB').length < 2,
-        RB: myTeam.filter(p => p.position === 'RB').length < 3,
-        WR: myTeam.filter(p => p.position === 'WR').length < 4,
-        TE: myTeam.filter(p => p.position === 'TE').length < 2,
-      };
-
-      return filteredPlayers.slice(0, 3).filter(player => 
-        positionNeeds[player.position as keyof typeof positionNeeds]
-      ).map(p => p.id);
-    }
-    
-    if (strategy === "value") {
-      // Best Player Available - pure ADP ranking regardless of position
-      return filteredPlayers
-        .slice(0, 5) // Top 5 available players by ADP
-        .map(p => p.id);
-    }
-    
-    if (strategy === "need") {
-      // Fill Roster Needs - aggressive position targeting
-      const roster = leagueSettings.roster || {QB: 1, RB: 2, WR: 3, TE: 1, FLEX: 1, K: 1, DST: 1, BENCH: 6};
-      const currentCounts = {
-        QB: myTeam.filter(p => p.position === 'QB').length,
-        RB: myTeam.filter(p => p.position === 'RB').length,
-        WR: myTeam.filter(p => p.position === 'WR').length,
-        TE: myTeam.filter(p => p.position === 'TE').length,
-        K: myTeam.filter(p => p.position === 'K').length,
-        DST: myTeam.filter(p => p.position === 'DST').length,
-      };
-      
-      // Find positions where we're most behind target
-      const positionPriority = Object.entries(roster)
-        .filter(([pos]) => pos !== 'FLEX' && pos !== 'BENCH')
-        .map(([pos, target]) => ({
-          position: pos,
-          shortage: Math.max(0, target - (currentCounts[pos as keyof typeof currentCounts] || 0))
-        }))
-        .filter(p => p.shortage > 0)
-        .sort((a, b) => b.shortage - a.shortage);
-      
-      if (positionPriority.length === 0) {
-        // No urgent needs, get best available
-        return filteredPlayers.slice(0, 3).map(p => p.id);
-      }
-      
-      // Recommend players from most needed positions
-      const neededPositions = positionPriority.slice(0, 2).map(p => p.position);
-      return filteredPlayers
-        .filter(player => neededPositions.includes(player.position))
-        .slice(0, 4)
-        .map(p => p.id);
-    }
-    
-    if (strategy === "upside") {
-      // High Upside - favor younger players, higher tiers, and breakout candidates
-      const currentRound = Math.ceil(currentPick / leagueSettings.teams);
-      
-      if (currentRound <= 6) {
-        // Early rounds: safe high-value picks (tiers 1-3)
-        return filteredPlayers
-          .filter(player => player.tier <= 3)
-          .slice(0, 4)
-          .map(p => p.id);
-      } else {
-        // Later rounds: high upside picks - RB/WR in better tiers than expected for the round
-        const expectedTierForRound = Math.ceil(currentRound * 1.5); // Rough tier expectation
-        return filteredPlayers
-          .filter(player => 
-            ['RB', 'WR', 'TE'].includes(player.position) && 
-            player.tier < expectedTierForRound
-          )
-          .slice(0, 5)
-          .map(p => p.id);
-      }
-    }
-    
-    // Fallback to balanced if unknown strategy
-    return filteredPlayers.slice(0, 3).map(p => p.id);
+    return getRecommendations({
+      strategy: leagueSettings.draftStrategy || "balanced",
+      myTeam,
+      availablePlayers: filteredPlayers,
+      leagueSettings,
+      currentPick
+    });
   }, [filteredPlayers, myTeam, leagueSettings.draftStrategy, leagueSettings.roster, currentPick, leagueSettings.teams]);
 
 
