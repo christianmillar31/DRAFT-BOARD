@@ -69,13 +69,13 @@ export const projPointsTiered = (pos: Pos, r: number): number => {
     return Math.max(90, r < 20 ? smoothBlend(r, 18, mid, late) : late(r));
   }
   if (pos === "WR") {
-    const elite = (x: number) => 350 - 6.0 * x;     // 1-8 (WR1 = 344, more realistic)
-    const mid = (x: number) => 320 - 5.0 * x;       // 9-28 (adjusted upward)
-    const late = (x: number) => 200 - 2.0 * x;      // 29+ (adjusted upward)
+    const elite = (x: number) => 280 - 3.5 * x;     // Less aggressive decline: WR1=276.5
+    const mid = (x: number) => 250 - 2.8 * x;       // Better continuity
+    const late = (x: number) => 180 - 1.5 * x;      // More realistic floor
     
-    if (r <= 8) return Math.max(90, elite(r));
-    if (r <= 28) return Math.max(90, r < 10 ? smoothBlend(r, 8, elite, mid) : mid(r));
-    return Math.max(90, late(r)); // Remove smoothBlend for WR late tier to ensure monotonicity
+    if (r <= 12) return Math.max(90, elite(r));
+    if (r <= 36) return Math.max(90, r < 14 ? smoothBlend(r, 12, elite, mid) : mid(r));
+    return Math.max(90, r < 38 ? smoothBlend(r, 36, mid, late) : late(r));
   }
   if (pos === "TE") {
     const elite = (x: number) => 270 - 12.0 * x;    // 1-3 (TE1 = 258, TE3 = 234)
@@ -206,8 +206,8 @@ export const calculateDynamicFlexWeights = (leagueSettings: any): Record<Pos, nu
   
   // 2WR leagues: Boost WR flex usage significantly
   if (dedicatedSlots.WR === 2) {
-    adjustedWeights.WR = 0.65;  // Increase WR flex weight in 2WR formats
-    adjustedWeights.RB = 0.30;  // Reduce RB flex weight accordingly
+    adjustedWeights.WR = 0.70;  // Increase WR flex weight in 2WR formats
+    adjustedWeights.RB = 0.25;  // Reduce RB flex weight accordingly
   }
   
   // 3+ RB leagues: Reduce RB flex usage
@@ -480,10 +480,10 @@ export const calculateDynamicReplacement = (
       getFlexWeights(leagueSettings)  // Use dynamic weights
     );
     
-    // Get available players at this position
+    // Get available players at this position - CRITICAL FIX: Sort by ADP not projectedPoints!
     const positionPlayers = availablePlayers
       .filter(p => p.position === pos && !draftState.draftedPlayers.has(p.id))
-      .sort((a, b) => (b.projectedPoints || 0) - (a.projectedPoints || 0));
+      .sort((a, b) => a.adp - b.adp);  // Sort by ADP (ascending) to match consensus rankings
     
     // FIXED: Account for already drafted players
     const totalNeeded = calculateTotalPositionNeed(pos, draftState, leagueSettings);
@@ -492,11 +492,43 @@ export const calculateDynamicReplacement = (
       return player?.position === pos;
     }).length;
     
-    // FIXED: Use baseline rank directly since we already filtered out drafted players
+    // CORRECTED: Use effective replacement calculation for actual roster format
+    const roster = leagueSettings.roster || { RB: 2, WR: 2, TE: 1, FLEX: 2 };
+    const flexSlots = roster.FLEX || 1;
+    
+    // Calculate EFFECTIVE starters for this specific roster format
+    let effectiveStarters;
+    if (pos === 'RB') {
+      effectiveStarters = roster.RB + (flexSlots * 0.5); // RBs take ~50% of flex
+    } else if (pos === 'WR') {
+      effectiveStarters = roster.WR + (flexSlots * 0.65); // WRs take 65% in 2WR leagues 
+    } else if (pos === 'TE') {
+      effectiveStarters = roster.TE + (flexSlots * 0.1); // TEs take ~10% of flex
+    } else {
+      effectiveStarters = roster[pos] || 1;
+    }
+    
+    const effectiveReplacementRank = Math.round(effectiveStarters * draftState.teams);
     const replacementIndex = Math.min(
-      baselineRank - 1,  // Convert to 0-based index
-      positionPlayers.length - 1  // Don't go past array bounds
+      effectiveReplacementRank - 1,  // Convert to 0-based index  
+      positionPlayers.length - 1     // Don't go past array bounds
     );
+    
+    // SURGICAL DEBUG: Enhanced logging for WR position
+    if (pos === 'WR') {
+      console.log(`🎯 CORRECTED WR REPLACEMENT CALCULATION:`, {
+        rosterWR: roster.WR,
+        flexSlots: flexSlots,
+        effectiveStarters: effectiveStarters.toFixed(1),
+        effectiveReplacementRank,
+        replacementIndex,
+        oldBaselineRank: baselineRank,
+        difference: effectiveReplacementRank - baselineRank,
+        availableWRs: positionPlayers.length,
+        replacementPlayer: positionPlayers[replacementIndex]?.name,
+        replacementADP: positionPlayers[replacementIndex]?.adp
+      });
+    }
     
           // SURGICAL DEBUG: Log detailed WR replacement calculation
       if (pos === 'WR') {
@@ -513,10 +545,10 @@ export const calculateDynamicReplacement = (
         });
       }
     
-    // Use actual projections if available, otherwise use tiered estimate
+    // Use actual projections if available, otherwise use tiered estimate with CORRECTED rank
     if (replacementIndex >= 0 && positionPlayers[replacementIndex]) {
       const baselinePlayer = positionPlayers[replacementIndex];
-      replacement[pos] = baselinePlayer.projectedPoints || projPointsTiered(pos, baselineRank);
+      replacement[pos] = baselinePlayer.projectedPoints || projPointsTiered(pos, effectiveReplacementRank);
       
       // SURGICAL DEBUG: Log the actual replacement player selection for WR
       if (pos === 'WR') {
@@ -531,10 +563,10 @@ export const calculateDynamicReplacement = (
     } else if (positionPlayers.length > 0) {
       // Not enough players left, use last available (scarcity!)
       const lastPlayer = positionPlayers[positionPlayers.length - 1];
-      replacement[pos] = lastPlayer.projectedPoints || projPointsTiered(pos, baselineRank);
+      replacement[pos] = lastPlayer.projectedPoints || projPointsTiered(pos, effectiveReplacementRank);
     } else {
-      // No players left, use floor
-      replacement[pos] = FLOOR[pos];
+      // No players left, use tiered estimate for effective rank
+      replacement[pos] = projPointsTiered(pos, effectiveReplacementRank);
     }
   });
   
