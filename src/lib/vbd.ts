@@ -60,9 +60,10 @@ export const projPointsTiered = (pos: Pos, r: number): number => {
     return Math.max(110, r < 17 ? smoothBlend(r, 15, mid, late) : late(r));
   }
   if (pos === "RB") {
-    const elite = (x: number) => 320 - 5.0 * x;     // 1-6 (RB6 = 290)
-    const mid = (x: number) => 296 - 3.5 * x;       // 7-18 (RB7 = 271.5, ensures continuity)
-    const late = (x: number) => 240 - 2.0 * x;      // 19+ (more realistic decline)
+    // CORRECTED: RB projections were way too high causing VBD compression
+    const elite = (x: number) => 300 - 6.0 * x;     // RB1=294, RB6=264
+    const mid = (x: number) => 270 - 4.5 * x;       // RB12=216, RB18=189
+    const late = (x: number) => 190 - 2.5 * x;      // RB24=130, RB30=115
     
     if (r <= 6) return Math.max(90, elite(r));
     if (r <= 18) return Math.max(90, r < 8 ? smoothBlend(r, 6, elite, mid) : mid(r));

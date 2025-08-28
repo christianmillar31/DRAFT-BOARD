@@ -24,6 +24,7 @@ import {
 } from "@/hooks/useApi";
 import { Switch } from "@/components/ui/switch";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { enhancePlayersWithFFCADP } from "@/lib/ffc-simple";
 import { 
   projPointsTiered, 
   replacementPoints, 
@@ -314,11 +315,42 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     }
   }, [rawPlayers, hasLiveData, adpMap, projectionsMap, leagueSettings.scoringType]);
 
+  // FFC Enhancement - Replace Tank01 ADP with format-specific FFC ADP
+  const [enhancedPlayers, setEnhancedPlayers] = useState<any[]>([]);
+  const [ffcLoading, setFFCLoading] = useState(false);
+  
+  useEffect(() => {
+    const enhanceWithFFC = async () => {
+      if (!players || players.length === 0) {
+        setEnhancedPlayers([]);
+        return;
+      }
+      
+      setFFCLoading(true);
+      try {
+        console.log('🚀 Enhancing players with FFC ADP data...');
+        const enhanced = await enhancePlayersWithFFCADP(players, leagueSettings);
+        setEnhancedPlayers(enhanced);
+        console.log('✅ FFC enhancement complete');
+      } catch (error) {
+        console.error('❌ FFC enhancement failed:', error);
+        setEnhancedPlayers(players); // Fallback to original
+      } finally {
+        setFFCLoading(false);
+      }
+    };
+    
+    enhanceWithFFC();
+  }, [players, leagueSettings]);
+  
+  // Use enhanced players for all calculations (falls back to original if FFC fails)
+  const finalPlayers = enhancedPlayers.length > 0 ? enhancedPlayers : players;
+
   // Main VBD Calculator - switches between static and dynamic
   // MUST be defined AFTER players so it can use closure!
   const calculateVBD = (player: any) => {
     if (useDynamicVBD) {
-      const dynamicResult = calculateDynamicVBDForPlayer(player, players || []);
+      const dynamicResult = calculateDynamicVBDForPlayer(player, finalPlayers || []);
       const vbdValue = dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
       
       // SURGICAL DEBUG: Only log for Nabers and Jefferson
@@ -341,11 +373,11 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   const vbdCache = useMemo(() => {
     const cache = new Map();
     
-    if (!players || players.length === 0) {
+    if (!finalPlayers || finalPlayers.length === 0) {
       return cache;
     }
     
-    players.forEach((player: any) => {
+    finalPlayers.forEach((player: any) => {
       const playerId = player.id || player.playerID || '';
       if (playerId) {
         const vbd = calculateVBD(player);
@@ -391,7 +423,7 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
 
   // Calculate advanced tiers using VBD-based TierSystem
   const playersWithTiers = useMemo(() => {
-    if (!players?.length) return [];
+    if (!finalPlayers?.length) return [];
     
     // Group players by position and prepare for tier calculation
     const positionGroups: Record<string, PlayerForTiering[]> = {};
@@ -1533,8 +1565,8 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   }
 
   // Fallback if something is broken
-  if (!players || !Array.isArray(players)) {
-    console.error('🚨 Invalid players data:', players);
+  if (!finalPlayers || !Array.isArray(finalPlayers)) {
+    console.error('🚨 Invalid players data:', finalPlayers);
     return (
       <div className="p-8 text-center">
         <p className="text-yellow-600">Invalid player data. Using fallback...</p>
