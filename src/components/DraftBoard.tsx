@@ -351,8 +351,9 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   const calculateVBD = (player: any) => {
     // Get base VBD
     let vbdValue: number;
+    let dynamicResult: any = null;
     if (useDynamicVBD) {
-      const dynamicResult = calculateDynamicVBDForPlayer(player, finalPlayers || []);
+      dynamicResult = calculateDynamicVBDForPlayer(player, finalPlayers || []);
       vbdValue = dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
     } else {
       vbdValue = calculateStaticVBD(player);
@@ -371,7 +372,33 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     };
     
     const positionMultiplier = multipliers[scoringFormat][player.position as keyof typeof multipliers['PPR']] || 1.0;
-    return vbdValue * positionMultiplier;
+    const finalVBD = vbdValue * positionMultiplier;
+    
+    // DEBUG: Log detailed calculation for key players
+    if (player.name?.includes('Achane') || 
+        player.name?.includes('Jefferson') || 
+        player.name?.includes('Lamb') ||
+        player.name?.includes('Chase')) {
+      console.log(`🎯 DETAILED VBD CALCULATION for ${player.name}:`, {
+        position: player.position,
+        adp: player.adp,
+        projectedPoints: player.projectedPoints,
+        dynamicResult: dynamicResult,
+        baseVBD: vbdValue,
+        scoringFormat: scoringFormat,
+        positionMultiplier: positionMultiplier,
+        finalVBD: finalVBD,
+        breakdown: dynamicResult ? {
+          playerPoints: dynamicResult.finalPoints,
+          replacementPoints: dynamicResult.replacementPoints,
+          rawVBD: dynamicResult.vbd,
+          scarcityBonus: dynamicResult.scarcityBonus,
+          eliteBonus: dynamicResult.eliteBonus || 0
+        } : null
+      });
+    }
+    
+    return finalVBD;
   };
 
   // Memoize VBD calculations with proper dependency tracking

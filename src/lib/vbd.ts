@@ -116,7 +116,14 @@ export const replacementRank = (
   if (leagueSettings) {
     const rosterType = getRosterType(leagueSettings);
     const baselines = BASELINE_RANKS[rosterType];
-    return baselines[pos] || 30;
+    const rank = baselines[pos] || 30;
+    
+    // DEBUG: Log replacement ranks
+    if (pos === 'RB' || pos === 'WR') {
+      console.log(`📊 REPLACEMENT RANK for ${pos}: ${rank} (roster type: ${rosterType})`);
+    }
+    
+    return rank;
   }
   
   // Fallback to calculated baseline
@@ -652,6 +659,20 @@ export const calculateDynamicVBD = (
   const rawPoints = (player.projectedPoints && player.projectedPoints > 0) 
     ? player.projectedPoints 
     : projPointsTiered(position, positionRank);
+  
+  // DEBUG: Log Achane's calculation details
+  if (player.name?.includes('Achane')) {
+    console.log(`🏃 ACHANE VBD DETAILS:`, {
+      positionRank: positionRank,
+      hasProjections: !!player.projectedPoints,
+      projectedPoints: player.projectedPoints,
+      tieredPoints: projPointsTiered(position, positionRank),
+      finalPoints: rawPoints,
+      dynamicReplacement: dynamicReplacement,
+      staticReplacement: staticReplacement,
+      rawVBD: rawPoints - dynamicReplacement
+    });
+  }
   
   // NO SOS in VBD calculation - keep it pure
   const sosMultiplier = 1.0;
