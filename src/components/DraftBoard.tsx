@@ -293,7 +293,32 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
                                        leagueSettings.scoringType === 'Standard' ? 'standard' : 
                                        'PPR'; // Default to PPR for Superflex/Dynasty
                     const points = projectionData[scoringKey];
-                    if (points) return parseFloat(points);
+                    
+                    // DEBUG: Log Achane's projection source
+                    if (p.longName?.includes('Achane') || p.espnName?.includes('Achane')) {
+                      console.log(`📊 ACHANE PROJECTION SOURCE:`, {
+                        playerID: p.playerID,
+                        name: p.longName || p.espnName,
+                        scoringKey: scoringKey,
+                        projectionData: projectionData,
+                        points: points,
+                        parsedPoints: parseFloat(points)
+                      });
+                    }
+                    
+                    if (points) {
+                      const parsedPoints = parseFloat(points);
+                      // Sanity check - cap projections at reasonable levels
+                      // No RB should project for more than 300 points in standard PPR
+                      if (p.position === 'RB' && parsedPoints > 300) {
+                        console.warn(`⚠️ Unrealistic RB projection: ${p.longName} - ${parsedPoints} points`);
+                        return Math.min(parsedPoints, 280); // Cap at 280 for RBs
+                      }
+                      if (p.position === 'WR' && parsedPoints > 350) {
+                        return Math.min(parsedPoints, 330); // Cap at 330 for WRs
+                      }
+                      return parsedPoints;
+                    }
                   }
                   // Fallback to ADP-based estimation if no actual projections
                   return p.adp ? Math.round(Math.max(50, 400 - (p.adp * 3)) * 10) / 10 : 100;
