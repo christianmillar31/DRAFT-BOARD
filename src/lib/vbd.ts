@@ -1,6 +1,8 @@
 // VBD (Value-Based Drafting) Utility Functions
 // Extracted from DraftBoard component for reusability and testing
 
+import { getRosterType, BASELINE_RANKS, SCORING_MULTIPLIERS } from './roster-configs';
+
 export type Pos = "QB" | "RB" | "WR" | "TE";
 
 // Dynamic VBD types for real-time draft analysis
@@ -60,23 +62,25 @@ export const projPointsTiered = (pos: Pos, r: number): number => {
     return Math.max(110, r < 17 ? smoothBlend(r, 15, mid, late) : late(r));
   }
   if (pos === "RB") {
-    // CORRECTED: RB projections were way too high causing VBD compression
-    const elite = (x: number) => 300 - 6.0 * x;     // RB1=294, RB6=264
-    const mid = (x: number) => 270 - 4.5 * x;       // RB12=216, RB18=189
-    const late = (x: number) => 190 - 2.5 * x;      // RB24=130, RB30=115
+    // Adjusted RB projections - more realistic curve
+    const elite = (x: number) => 260 - 4.0 * x;     // RB1=256, RB6=236
+    const mid = (x: number) => 240 - 3.5 * x;       // RB12=198, RB18=177
+    const late = (x: number) => 180 - 2.0 * x;      // RB24=132, RB30=120, RB36=108
     
     if (r <= 6) return Math.max(90, elite(r));
     if (r <= 18) return Math.max(90, r < 8 ? smoothBlend(r, 6, elite, mid) : mid(r));
-    return Math.max(90, r < 20 ? smoothBlend(r, 18, mid, late) : late(r));
+    if (r <= 36) return Math.max(90, r < 20 ? smoothBlend(r, 18, mid, late) : late(r));
+    return Math.max(90, 150 - r); // Extended for deeper leagues
   }
   if (pos === "WR") {
-    const elite = (x: number) => 280 - 3.5 * x;     // Less aggressive decline: WR1=276.5
-    const mid = (x: number) => 250 - 2.8 * x;       // Better continuity
-    const late = (x: number) => 180 - 1.5 * x;      // More realistic floor
+    const elite = (x: number) => 280 - 3.0 * x;     // WR1=277, WR6=262
+    const mid = (x: number) => 260 - 2.5 * x;       // WR12=230, WR24=200
+    const late = (x: number) => 200 - 1.8 * x;      // WR36=135, WR44=120 (for 3WR+2FLEX)
     
     if (r <= 12) return Math.max(90, elite(r));
     if (r <= 36) return Math.max(90, r < 14 ? smoothBlend(r, 12, elite, mid) : mid(r));
-    return Math.max(90, r < 38 ? smoothBlend(r, 36, mid, late) : late(r));
+    if (r <= 50) return Math.max(90, r < 38 ? smoothBlend(r, 36, mid, late) : late(r));
+    return Math.max(90, 140 - r * 0.5); // Extended for 3WR leagues
   }
   if (pos === "TE") {
     const elite = (x: number) => 270 - 12.0 * x;    // 1-3 (TE1 = 258, TE3 = 234)
@@ -105,10 +109,17 @@ export const replacementRank = (
   teams: number,
   starters: { QB: number; RB: number; WR: number; TE: number },
   flex: { count: number; eligible: Pos[] } | null,
-  flexShare: { QB: number; RB: number; WR: number; TE: number } = { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 }
+  flexShare: { QB: number; RB: number; WR: number; TE: number } = { QB: 0, RB: 0.6, WR: 0.35, TE: 0.05 },
+  leagueSettings?: any
 ): number => {
-  // Correct baseline calculation per the comprehensive guide
-  // RB gets 60% of flex, WR gets 35%, TE gets 5%
+  // Use roster-specific baselines if available
+  if (leagueSettings) {
+    const rosterType = getRosterType(leagueSettings);
+    const baselines = BASELINE_RANKS[rosterType];
+    return baselines[pos] || 30;
+  }
+  
+  // Fallback to calculated baseline
   const base = starters[pos] * teams;
   if (!flex || flex.count <= 0) return base;
   const eligibleShare = flex.eligible.includes(pos) ? flexShare[pos] : 0;

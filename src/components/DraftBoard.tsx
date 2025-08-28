@@ -349,24 +349,29 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
   // Main VBD Calculator - switches between static and dynamic
   // MUST be defined AFTER players so it can use closure!
   const calculateVBD = (player: any) => {
+    // Get base VBD
+    let vbdValue: number;
     if (useDynamicVBD) {
       const dynamicResult = calculateDynamicVBDForPlayer(player, finalPlayers || []);
-      const vbdValue = dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
-      
-      // SURGICAL DEBUG: Only log for Nabers and Jefferson
-      if (player.name?.includes('Nabers') || player.name?.includes('Jefferson')) {
-        console.log(`🎯 VBD CALCULATION for ${player.name}:`, {
-          dynamicResult: dynamicResult,
-          vbdValue: vbdValue,
-          draftedCount: draftedPlayers.size,
-          othersDraftedCount: playersDraftedByOthers.size,
-          useDynamicVBD: useDynamicVBD
-        });
-      }
-      
-      return vbdValue;
+      vbdValue = dynamicResult ? dynamicResult.vbd : calculateStaticVBD(player);
+    } else {
+      vbdValue = calculateStaticVBD(player);
     }
-    return calculateStaticVBD(player);
+    
+    // Apply scoring format multipliers
+    const scoringFormat = leagueSettings.scoringType === 'PPR' ? 'PPR' :
+                         leagueSettings.scoringType === 'Half-PPR' ? 'Half-PPR' :
+                         leagueSettings.scoringType === 'Standard' ? 'Standard' :
+                         'PPR';
+    
+    const multipliers = {
+      'Standard': { QB: 1.0, RB: 1.0, WR: 0.85, TE: 0.8 },
+      'Half-PPR': { QB: 1.0, RB: 0.95, WR: 0.92, TE: 0.88 },
+      'PPR': { QB: 1.0, RB: 0.9, WR: 1.0, TE: 0.95 }
+    };
+    
+    const positionMultiplier = multipliers[scoringFormat][player.position as keyof typeof multipliers['PPR']] || 1.0;
+    return vbdValue * positionMultiplier;
   };
 
   // Memoize VBD calculations with proper dependency tracking
