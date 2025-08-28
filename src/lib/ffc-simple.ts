@@ -25,27 +25,22 @@ export const fetchFFCADP = async (
     if (cached) {
       const { data, timestamp } = JSON.parse(cached);
       if (Date.now() - timestamp < 24 * 60 * 60 * 1000) {
-        console.log('📦 Using cached FFC ADP data');
         return data;
       }
     }
   } catch (e) {
-    console.warn('Cache read error:', e);
   }
   
   // Fetch fresh data
   try {
-    console.log(`🌐 Fetching FFC ${format} ADP for ${teams} teams...`);
     const url = `https://fantasyfootballcalculator.com/api/v1/adp/${format}?teams=${teams}`;
     const response = await fetch(url);
     
     if (!response.ok) {
-      console.error('FFC API failed:', response.status);
       return null;
     }
     
     const data: FFCResponse = await response.json();
-    console.log(`✅ FFC Success: ${data.players.length} players loaded`);
     
     // Cache for 24 hours
     localStorage.setItem(cacheKey, JSON.stringify({
@@ -55,7 +50,6 @@ export const fetchFFCADP = async (
     
     return data.players;
   } catch (error) {
-    console.error('❌ FFC fetch error:', error);
     return null;
   }
 };
@@ -101,7 +95,6 @@ export const enhancePlayersWithFFCADP = async (
   const ffcData = await fetchFFCADP(format, teams);
   
   if (!ffcData || ffcData.length === 0) {
-    console.warn('⚠️ No FFC data available, using Tank01 ADP');
     return players;
   }
   
@@ -130,7 +123,6 @@ export const enhancePlayersWithFFCADP = async (
     }
   });
   
-  console.log(`🎯 FFC Enhancement: ${enhanced} matched, ${notFound} using Tank01 fallback`);
   
   return enhancedPlayers;
 };

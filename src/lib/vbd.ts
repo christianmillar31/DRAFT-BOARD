@@ -118,10 +118,6 @@ export const replacementRank = (
     const baselines = BASELINE_RANKS[rosterType];
     const rank = baselines[pos] || 30;
     
-    // DEBUG: Log replacement ranks
-    if (pos === 'RB' || pos === 'WR') {
-      console.log(`📊 REPLACEMENT RANK for ${pos}: ${rank} (roster type: ${rosterType})`);
-    }
     
     return rank;
   }
@@ -199,7 +195,6 @@ export const calculateDynamicFlexWeights = (leagueSettings: any): Record<Pos, nu
   const superflexCount = roster.SUPERFLEX || 
     (leagueSettings.scoring?.superflex || leagueSettings.flexType === 'superflex' ? 1 : 0);
   
-  console.log('🔧 CALCULATING PROPORTIONAL FLEX WEIGHTS:', { roster, flexCount, superflexCount });
   
   // CRITICAL FIX: Use effective roster requirements, not historical usage
   // Based on 4for4's "core roster" methodology for non-standard formats
@@ -262,12 +257,6 @@ export const calculateDynamicFlexWeights = (leagueSettings: any): Record<Pos, nu
     });
   }
   
-  console.log('✅ PROPORTIONAL FLEX WEIGHTS CALCULATED:', {
-    original: baseFlexWeights,
-    adjusted: adjustedWeights, 
-    final: finalWeights,
-    format: `${dedicatedSlots.QB}QB/${dedicatedSlots.RB}RB/${dedicatedSlots.WR}WR/${dedicatedSlots.TE}TE/${flexCount}FLEX`
-  });
   
   return finalWeights;
 };
@@ -366,12 +355,6 @@ export const calculateVBDWithBreakdown = (
   // Step 4: Replacement level with CORRECTED flex allocation
   const replPoints = replacementPointsMemoized(position, teams, starters, flex, flexWeights);
   
-  console.log(`🎯 VBD CALCULATION for ${position}:`, {
-    finalPoints,
-    replPoints, 
-    rawVBD: finalPoints - replPoints,
-    weights: flexWeights
-  });
   
   // Step 5: Final VBD - allow negative values
   const vbd = finalPoints - replPoints;
@@ -535,33 +518,10 @@ export const calculateDynamicReplacement = (
     
     // SURGICAL DEBUG: Enhanced logging for WR position
     if (pos === 'WR') {
-      console.log(`🎯 CORRECTED WR REPLACEMENT CALCULATION:`, {
-        rosterWR: roster.WR,
-        flexSlots: flexSlots,
-        effectiveStarters: effectiveStarters.toFixed(1),
-        effectiveReplacementRank,
-        replacementIndex,
-        oldBaselineRank: baselineRank,
-        difference: effectiveReplacementRank - baselineRank,
-        availableWRs: positionPlayers.length,
-        replacementPlayer: positionPlayers[replacementIndex]?.name,
-        replacementADP: positionPlayers[replacementIndex]?.adp
-      });
     }
     
           // SURGICAL DEBUG: Log detailed WR replacement calculation
       if (pos === 'WR') {
-        console.log(`🎯 WR REPLACEMENT CALCULATION:`, {
-          baselineRank: baselineRank,
-          alreadyDrafted: alreadyDrafted,
-          replacementIndex: replacementIndex,
-          positionPlayersCount: positionPlayers.length,
-          totalNeeded: totalNeeded,
-          firstAvailablePlayer: positionPlayers[0]?.name,
-          firstAvailablePoints: positionPlayers[0]?.projectedPoints,
-          replacementPlayer: positionPlayers[replacementIndex]?.name,
-          replacementPoints: positionPlayers[replacementIndex]?.projectedPoints
-        });
       }
     
     // Use actual projections if available, otherwise use tiered estimate with CORRECTED rank
@@ -571,13 +531,6 @@ export const calculateDynamicReplacement = (
       
       // SURGICAL DEBUG: Log the actual replacement player selection for WR
       if (pos === 'WR') {
-        console.log(`🎯 WR REPLACEMENT PLAYER SELECTED:`, {
-          replacementIndex: replacementIndex,
-          replacementPlayer: baselinePlayer.name,
-          replacementPoints: baselinePlayer.projectedPoints,
-          fallbackPoints: projPointsTiered(pos, baselineRank),
-          finalReplacementValue: replacement[pos]
-        });
       }
     } else if (positionPlayers.length > 0) {
       // Not enough players left, use last available (scarcity!)
@@ -634,13 +587,6 @@ export const calculateDynamicVBD = (
   
   // SURGICAL DEBUG: Log dynamic replacement for WR position
   if (position === 'WR') {
-    console.log(`🎯 DYNAMIC REPLACEMENT DEBUG for ${position}:`, {
-      dynamicReplacement: dynamicReplacement,
-      staticReplacement: staticReplacement,
-      draftedCount: draftState.draftedPlayers.size,
-      availablePlayers: availablePlayers.filter(p => p.position === 'WR' && !draftState.draftedPlayers.has(p.id)).length,
-      replacementValues: dynamicReplacements
-    });
   }
   
   // Calculate scarcity bonus (how much more valuable due to draft state)
@@ -691,13 +637,6 @@ export const calculateDynamicVBD = (
   
   // DEBUG: Log VBD changes for elite players
   if (eliteBonus > 0) {
-    console.log('🎯 ELITE VBD TRANSFORMATION:', {
-      playerName: player.name,
-      vbdBefore: vbdBeforeEliteBonus,
-      eliteBonus: eliteBonus,
-      vbdAfter: vbd,
-      currentPick: draftState.currentPick
-    });
   }
   
   // Phase 2: Position Run Adjustment
@@ -781,42 +720,20 @@ export const calculateEliteFallBonus = (
   
   // DEBUG: Log all elite fall calculations
   if (player.name.includes('Chase') || adpDeviation >= 2) {
-    console.log('🎯 ELITE FALL DEBUG:', {
-      playerName: player.name,
-      playerADP: player.adp,
-      currentPick: currentPick,
-      adpDeviation: adpDeviation,
-      condition1: player.adp <= 6,
-      condition2: adpDeviation >= 2,
-      meetsEliteConditions: player.adp <= 6 && adpDeviation >= 2
-    });
   }
   
   // Tiered bonuses based on consensus value
   if (player.adp <= 6 && adpDeviation >= 2) {
     // True elite (Chase, Jefferson, CMC tier)
     const bonus = adpDeviation * 5 + 20;
-    console.log('🚀 ELITE FALL BONUS APPLIED:', {
-      playerName: player.name,
-      bonus: bonus,
-      formula: `${adpDeviation} * 5 + 20`
-    });
     return bonus;
   } else if (player.adp <= 12 && adpDeviation >= 4) {
     // First round talent falling
     const bonus = adpDeviation * 3 + 10;
-    console.log('📈 FIRST ROUND FALL BONUS:', {
-      playerName: player.name,
-      bonus: bonus
-    });
     return bonus;
   } else if (player.adp <= 24 && adpDeviation >= 8) {
     // Second round value
     const bonus = adpDeviation * 2;
-    console.log('📊 SECOND ROUND FALL BONUS:', {
-      playerName: player.name,
-      bonus: bonus
-    });
     return bonus;
   }
   return 0;

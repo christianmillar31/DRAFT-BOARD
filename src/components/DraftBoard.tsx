@@ -374,12 +374,9 @@ export function DraftBoard({ leagueSettings, onSettingsChange }: DraftBoardProps
     const positionMultiplier = multipliers[scoringFormat][player.position as keyof typeof multipliers['PPR']] || 1.0;
     const finalVBD = vbdValue * positionMultiplier;
     
-    // DEBUG: Log detailed calculation for key players
-    if (player.name?.includes('Achane') || 
-        player.name?.includes('Jefferson') || 
-        player.name?.includes('Lamb') ||
-        player.name?.includes('Chase')) {
-      console.log(`🎯 DETAILED VBD CALCULATION for ${player.name}:`, {
+    // DEBUG: Log detailed calculation ONLY for Achane
+    if (player.name?.includes('Achane')) {
+      console.log(`🎯 ACHANE VBD CALCULATION:`, {
         position: player.position,
         adp: player.adp,
         projectedPoints: player.projectedPoints,
