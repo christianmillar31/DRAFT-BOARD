@@ -100,40 +100,6 @@ export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSetting
 
   return (
     <div className="space-y-6">
-      {/* Quick Setup Presets */}
-      <Card className="gradient-card">
-        <CardHeader>
-          <CardTitle className="flex items-center space-x-2">
-            <Settings className="h-5 w-5" />
-            <span>Quick Setup</span>
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {Object.entries(presets).map(([key, preset]) => (
-              <Button
-                key={key}
-                variant="outline"
-                className="h-auto p-4 flex flex-col items-center space-y-2"
-                onClick={() => onSettingsChange?.({ 
-                  roster: preset.roster,
-                  rounds: preset.rounds,
-                  scoringType: key === 'ppr' ? 'PPR' : 
-                               key === 'halfppr' ? 'Half-PPR' :
-                               key === 'standard' ? 'Standard' : 
-                               key === 'superflex' ? 'Superflex' : 'Dynasty'
-                })}
-              >
-                <span className="font-semibold">{preset.name}</span>
-                <span className="text-xs text-muted-foreground text-center">
-                  {preset.rounds} rounds, {Object.values(preset.roster).reduce((a, b) => a + b, 0)} roster spots
-                </span>
-              </Button>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
       {/* League Setup */}
       <Card className="gradient-card">
         <CardHeader>
@@ -448,33 +414,6 @@ export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSetting
         </CardContent>
       </Card>
 
-      {/* Position Targets */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Position Targets</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {['QB', 'RB', 'WR', 'TE', 'K', 'DST'].map((position) => (
-              <div key={position} className="space-y-2">
-                <Label>{position}</Label>
-                <Input 
-                  type="number" 
-                  defaultValue={
-                    position === 'QB' ? '2' :
-                    position === 'RB' ? '4' :
-                    position === 'WR' ? '5' :
-                    position === 'TE' ? '2' :
-                    '1'
-                  }
-                  min="0"
-                  max="8"
-                />
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

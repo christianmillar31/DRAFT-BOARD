@@ -183,8 +183,8 @@ const Index = () => {
                       <h3 className="text-lg font-semibold mb-3 text-primary">Sort Options Explained</h3>
                       <div className="grid md:grid-cols-2 gap-3">
                         <div className="p-3 border rounded-lg">
-                          <h4 className="font-semibold mb-1">ADP</h4>
-                          <p className="text-xs text-muted-foreground">Average Draft Position - where players typically get drafted</p>
+                          <h4 className="font-semibold mb-1">ADP (Format-Specific)</h4>
+                          <p className="text-xs text-muted-foreground">Average Draft Position from real drafts in your scoring format (PPR/Standard/Half-PPR)</p>
                         </div>
                         <div className="p-3 border rounded-lg">
                           <h4 className="font-semibold mb-1 text-green-400">Dynamic VBD</h4>
@@ -192,11 +192,32 @@ const Index = () => {
                         </div>
                         <div className="p-3 border rounded-lg">
                           <h4 className="font-semibold mb-1">Projected Points</h4>
-                          <p className="text-xs text-muted-foreground">Raw projected fantasy points for the season</p>
+                          <p className="text-xs text-muted-foreground">Season-long fantasy point projections based on your scoring settings</p>
                         </div>
                         <div className="p-3 border rounded-lg">
                           <h4 className="font-semibold mb-1">Best Value</h4>
-                          <p className="text-xs text-muted-foreground">Cross-position VBD rankings to find optimal picks</p>
+                          <p className="text-xs text-muted-foreground">Same as Dynamic VBD - finds the highest value player available across all positions</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Data Sources */}
+                    <div>
+                      <h3 className="text-lg font-semibold mb-3 text-primary">Data Sources</h3>
+                      <div className="p-4 rounded-lg bg-muted/50">
+                        <div className="space-y-2 text-sm">
+                          <div className="flex items-start gap-2">
+                            <div className="text-blue-500">•</div>
+                            <p className="text-foreground"><strong>ADP Data:</strong> Format-specific averages from Fantasy Football Calculator (FFC) based on thousands of real mock drafts</p>
+                          </div>
+                          <div className="flex items-start gap-2">
+                            <div className="text-blue-500">•</div>
+                            <p className="text-foreground"><strong>Projections:</strong> Professional analyst projections from Tank01 API, updated regularly</p>
+                          </div>
+                          <div className="flex items-start gap-2">
+                            <div className="text-blue-500">•</div>
+                            <p className="text-foreground"><strong>VBD Calculations:</strong> Custom algorithms that adapt to your league's roster settings and scoring format</p>
+                          </div>
                         </div>
                       </div>
                     </div>

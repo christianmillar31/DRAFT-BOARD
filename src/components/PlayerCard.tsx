@@ -117,7 +117,6 @@ export function PlayerCard({ player, onDraft, onDraftByOthers, isDrafted, isReco
             <Badge className={getPositionColor(player.position)}>
               {player.position}
             </Badge>
-            <span className="text-xs text-muted-foreground">#{player.rank}</span>
           </div>
         </div>
       </CardHeader>
