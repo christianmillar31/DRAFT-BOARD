@@ -172,14 +172,13 @@ export function DraftSettings({ leagueSettings, onSettingsChange }: DraftSetting
               <Select 
                 value={leagueSettings.draftType} 
                 onValueChange={(value) => onSettingsChange?.({ draftType: value })}
+                disabled
               >
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="Snake">Snake Draft</SelectItem>
-                  <SelectItem value="Linear">Linear Draft</SelectItem>
-                  <SelectItem value="Auction">Auction Draft</SelectItem>
                 </SelectContent>
               </Select>
             </div>
