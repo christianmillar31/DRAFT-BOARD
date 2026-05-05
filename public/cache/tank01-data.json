@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-05-04T10:19:07.562Z",
-  "lastUpdated": "5/4/2026, 3:19:07 AM",
+  "timestamp": "2026-05-05T10:07:26.983Z",
+  "lastUpdated": "5/5/2026, 3:07:26 AM",
   "data": {
     "players": [],
     "adp": [
       {
         "posADP": "RB1",
-        "overallADP": "1.9",
+        "overallADP": "2.0",
         "playerID": "4430807",
         "longName": "Bijan Robinson"
       },
       {
         "posADP": "WR1",
-        "overallADP": "2.0",
+        "overallADP": "2.1",
         "playerID": "4362628",
         "longName": "Ja'Marr Chase"
       },
       {
         "posADP": "RB2",
-        "overallADP": "2.4",
+        "overallADP": "2.5",
         "playerID": "4429795",
         "longName": "Jahmyr Gibbs"
       },
       {
         "posADP": "WR2",
-        "overallADP": "4.4",
+        "overallADP": "4.1",
         "playerID": "4426515",
         "longName": "Puka Nacua"
       },
       {
         "posADP": "WR3",
-        "overallADP": "5.0",
+        "overallADP": "4.9",
         "playerID": "4430878",
         "longName": "Jaxon Smith-Njigba"
       },
@@ -48,19 +48,19 @@
       },
       {
         "posADP": "WR5",
-        "overallADP": "8.4",
+        "overallADP": "8.3",
         "playerID": "4241389",
         "longName": "CeeDee Lamb"
       },
       {
         "posADP": "RB4",
-        "overallADP": "9.1",
+        "overallADP": "9.0",
         "playerID": "4242335",
         "longName": "Jonathan Taylor"
       },
       {
         "posADP": "RB5",
-        "overallADP": "10.9",
+        "overallADP": "11.0",
         "playerID": "4379399",
         "longName": "James Cook III"
       },
@@ -72,13 +72,13 @@
       },
       {
         "posADP": "RB6",
-        "overallADP": "14.8",
+        "overallADP": "14.6",
         "playerID": "4429160",
         "longName": "De'Von Achane"
       },
       {
         "posADP": "WR7",
-        "overallADP": "14.8",
+        "overallADP": "14.9",
         "playerID": "4426502",
         "longName": "Drake London"
       },
@@ -89,16 +89,16 @@
         "longName": "Ashton Jeanty"
       },
       {
-        "posADP": "RB8",
-        "overallADP": "18.1",
-        "playerID": "4362238",
-        "longName": "Chase Brown"
-      },
-      {
         "posADP": "WR8",
-        "overallADP": "18.5",
+        "overallADP": "18.2",
         "playerID": "4428331",
         "longName": "Rashee Rice"
+      },
+      {
+        "posADP": "RB8",
+        "overallADP": "18.3",
+        "playerID": "4362238",
+        "longName": "Chase Brown"
       },
       {
         "posADP": "WR9",
@@ -108,409 +108,409 @@
       },
       {
         "posADP": "TE1",
-        "overallADP": "19.4",
+        "overallADP": "19.1",
         "playerID": "4361307",
         "longName": "Trey McBride"
       },
       {
-        "posADP": "WR10",
-        "overallADP": "19.9",
-        "playerID": "4595348",
-        "longName": "Malik Nabers"
-      },
-      {
         "posADP": "RB9",
-        "overallADP": "20.0",
-        "playerID": "4685382",
-        "longName": "Omarion Hampton"
-      },
-      {
-        "posADP": "RB10",
-        "overallADP": "20.1",
+        "overallADP": "19.5",
         "playerID": "3929630",
         "longName": "Saquon Barkley"
       },
       {
+        "posADP": "WR10",
+        "overallADP": "19.7",
+        "playerID": "4595348",
+        "longName": "Malik Nabers"
+      },
+      {
+        "posADP": "RB10",
+        "overallADP": "20.6",
+        "playerID": "4685382",
+        "longName": "Omarion Hampton"
+      },
+      {
         "posADP": "TE2",
-        "overallADP": "20.9",
+        "overallADP": "21.0",
         "playerID": "4432665",
         "longName": "Brock Bowers"
       },
       {
         "posADP": "WR11",
-        "overallADP": "22.2",
+        "overallADP": "22.4",
         "playerID": "4426354",
         "longName": "George Pickens"
       },
       {
         "posADP": "RB11",
-        "overallADP": "23.1",
+        "overallADP": "23.7",
         "playerID": "4567048",
         "longName": "Kenneth Walker III"
       },
       {
         "posADP": "QB1",
-        "overallADP": "27.5",
+        "overallADP": "27.4",
         "playerID": "3918298",
         "longName": "Josh Allen"
       },
       {
         "posADP": "WR12",
-        "overallADP": "28.1",
-        "playerID": "4361370",
-        "longName": "Chris Olave"
-      },
-      {
-        "posADP": "WR13",
-        "overallADP": "28.2",
+        "overallADP": "27.8",
         "playerID": "4047646",
         "longName": "A.J. Brown"
       },
       {
-        "posADP": "RB12",
-        "overallADP": "28.9",
-        "playerID": "4870808",
-        "longName": "Jeremiyah Love"
+        "posADP": "WR13",
+        "overallADP": "28.3",
+        "playerID": "4361370",
+        "longName": "Chris Olave"
       },
       {
-        "posADP": "RB13",
-        "overallADP": "29.2",
+        "posADP": "RB12",
+        "overallADP": "29.0",
         "playerID": "3043078",
         "longName": "Derrick Henry"
       },
       {
+        "posADP": "RB13",
+        "overallADP": "29.3",
+        "playerID": "4870808",
+        "longName": "Jeremiyah Love"
+      },
+      {
         "posADP": "RB14",
-        "overallADP": "31.5",
+        "overallADP": "31.1",
         "playerID": "4047365",
         "longName": "Josh Jacobs"
       },
       {
         "posADP": "QB2",
-        "overallADP": "32.7",
+        "overallADP": "32.2",
         "playerID": "3916387",
         "longName": "Lamar Jackson"
       },
       {
         "posADP": "WR14",
-        "overallADP": "33.6",
+        "overallADP": "33.7",
         "playerID": "4685472",
         "longName": "Tetairoa McMillan"
       },
       {
         "posADP": "WR15",
-        "overallADP": "34.0",
+        "overallADP": "33.7",
         "playerID": "4239993",
         "longName": "Tee Higgins"
       },
       {
         "posADP": "WR16",
-        "overallADP": "34.9",
+        "overallADP": "34.6",
         "playerID": "4241478",
         "longName": "DeVonta Smith"
       },
       {
         "posADP": "RB15",
-        "overallADP": "38.2",
+        "overallADP": "38.5",
         "playerID": "4361579",
         "longName": "Javonte Williams"
       },
       {
-        "posADP": "WR17",
-        "overallADP": "39.4",
-        "playerID": "4569618",
-        "longName": "Garrett Wilson"
-      },
-      {
         "posADP": "TE3",
-        "overallADP": "39.6",
+        "overallADP": "39.1",
         "playerID": "4723086",
         "longName": "Colston Loveland"
       },
       {
+        "posADP": "WR17",
+        "overallADP": "39.3",
+        "playerID": "4569618",
+        "longName": "Garrett Wilson"
+      },
+      {
         "posADP": "QB3",
-        "overallADP": "39.8",
+        "overallADP": "40.0",
         "playerID": "4431452",
         "longName": "Drake Maye"
       },
       {
         "posADP": "RB16",
-        "overallADP": "40.2",
-        "playerID": "4430737",
-        "longName": "Kyren Williams"
-      },
-      {
-        "posADP": "RB17",
-        "overallADP": "41.0",
+        "overallADP": "40.9",
         "playerID": "4427366",
         "longName": "Breece Hall"
       },
       {
+        "posADP": "RB17",
+        "overallADP": "40.9",
+        "playerID": "4430737",
+        "longName": "Kyren Williams"
+      },
+      {
         "posADP": "RB18",
-        "overallADP": "41.4",
+        "overallADP": "41.3",
         "playerID": "4239996",
         "longName": "Travis Etienne Jr."
       },
       {
         "posADP": "WR18",
-        "overallADP": "42.8",
-        "playerID": "4685278",
-        "longName": "Luther Burden III"
+        "overallADP": "42.6",
+        "playerID": "16800",
+        "longName": "Davante Adams"
       },
       {
         "posADP": "WR19",
-        "overallADP": "43.0",
+        "overallADP": "42.9",
         "playerID": "4429615",
         "longName": "Zay Flowers"
       },
       {
         "posADP": "WR20",
         "overallADP": "43.0",
-        "playerID": "16800",
-        "longName": "Davante Adams"
+        "playerID": "4685278",
+        "longName": "Luther Burden III"
       },
       {
         "posADP": "WR21",
-        "overallADP": "44.2",
+        "overallADP": "44.5",
         "playerID": "4612826",
         "longName": "Ladd McConkey"
       },
       {
         "posADP": "QB4",
-        "overallADP": "45.6",
+        "overallADP": "46.4",
         "playerID": "3915511",
         "longName": "Joe Burrow"
       },
       {
         "posADP": "WR22",
-        "overallADP": "45.8",
-        "playerID": "4372016",
-        "longName": "Jaylen Waddle"
-      },
-      {
-        "posADP": "WR23",
         "overallADP": "46.4",
         "playerID": "3121422",
         "longName": "Terry McLaurin"
       },
       {
+        "posADP": "WR23",
+        "overallADP": "46.4",
+        "playerID": "4372016",
+        "longName": "Jaylen Waddle"
+      },
+      {
         "posADP": "RB19",
-        "overallADP": "48.1",
+        "overallADP": "48.5",
         "playerID": "4596448",
         "longName": "Bucky Irving"
       },
       {
         "posADP": "WR24",
-        "overallADP": "50.5",
+        "overallADP": "49.7",
         "playerID": "4567750",
         "longName": "Emeka Egbuka"
       },
       {
         "posADP": "RB20",
-        "overallADP": "51.7",
+        "overallADP": "52.4",
         "playerID": "4696981",
         "longName": "Cam Skattebo"
       },
       {
         "posADP": "WR25",
-        "overallADP": "53.3",
-        "playerID": "16737",
-        "longName": "Mike Evans"
-      },
-      {
-        "posADP": "WR26",
-        "overallADP": "53.8",
+        "overallADP": "53.4",
         "playerID": "4426388",
         "longName": "Jameson Williams"
       },
       {
+        "posADP": "WR26",
+        "overallADP": "53.6",
+        "playerID": "16737",
+        "longName": "Mike Evans"
+      },
+      {
         "posADP": "QB5",
-        "overallADP": "55.5",
+        "overallADP": "54.7",
         "playerID": "4426348",
         "longName": "Jayden Daniels"
       },
       {
         "posADP": "RB21",
-        "overallADP": "57.2",
+        "overallADP": "57.3",
         "playerID": "4432710",
         "longName": "TreVeyon Henderson"
       },
       {
         "posADP": "WR27",
-        "overallADP": "58.0",
+        "overallADP": "57.7",
         "playerID": "4248528",
         "longName": "Christian Watson"
       },
       {
         "posADP": "RB22",
-        "overallADP": "58.5",
+        "overallADP": "58.4",
         "playerID": "4035538",
         "longName": "David Montgomery"
       },
       {
         "posADP": "RB23",
         "overallADP": "58.8",
-        "playerID": "4685702",
-        "longName": "Quinshon Judkins"
-      },
-      {
-        "posADP": "RB24",
-        "overallADP": "58.8",
         "playerID": "4259545",
         "longName": "D'Andre Swift"
       },
       {
+        "posADP": "RB24",
+        "overallADP": "59.1",
+        "playerID": "4685702",
+        "longName": "Quinshon Judkins"
+      },
+      {
         "posADP": "WR28",
-        "overallADP": "58.9",
+        "overallADP": "59.5",
         "playerID": "3915416",
         "longName": "DJ Moore"
       },
       {
-        "posADP": "TE4",
-        "overallADP": "60.0",
-        "playerID": "4572680",
-        "longName": "Tucker Kraft"
-      },
-      {
-        "posADP": "TE5",
-        "overallADP": "60.3",
-        "playerID": "4431459",
-        "longName": "Tyler Warren"
-      },
-      {
         "posADP": "QB6",
-        "overallADP": "60.7",
+        "overallADP": "60.3",
         "playerID": "4040715",
         "longName": "Jalen Hurts"
       },
       {
+        "posADP": "TE4",
+        "overallADP": "60.4",
+        "playerID": "4431459",
+        "longName": "Tyler Warren"
+      },
+      {
+        "posADP": "TE5",
+        "overallADP": "60.5",
+        "playerID": "4572680",
+        "longName": "Tucker Kraft"
+      },
+      {
         "posADP": "RB25",
-        "overallADP": "62.5",
+        "overallADP": "62.3",
         "playerID": "4882093",
         "longName": "Bhayshul Tuten"
       },
       {
         "posADP": "WR29",
-        "overallADP": "63.6",
+        "overallADP": "63.5",
         "playerID": "4431299",
         "longName": "Rome Odunze"
       },
       {
         "posADP": "RB26",
-        "overallADP": "70.1",
+        "overallADP": "68.9",
         "playerID": "4685512",
         "longName": "Jadarian Price"
       },
       {
         "posADP": "WR30",
-        "overallADP": "72.0",
+        "overallADP": "71.6",
         "playerID": "4871023",
         "longName": "Carnell Tate"
       },
       {
         "posADP": "RB27",
-        "overallADP": "72.5",
+        "overallADP": "72.4",
         "playerID": "4241416",
         "longName": "Chuba Hubbard"
       },
       {
         "posADP": "QB7",
-        "overallADP": "74.4",
+        "overallADP": "74.0",
         "playerID": "4038941",
         "longName": "Justin Herbert"
       },
       {
         "posADP": "WR31",
-        "overallADP": "75.0",
+        "overallADP": "74.8",
         "playerID": "4432708",
         "longName": "Marvin Harrison Jr."
       },
       {
+        "posADP": "WR32",
+        "overallADP": "75.3",
+        "playerID": "4360078",
+        "longName": "Alec Pierce"
+      },
+      {
         "posADP": "RB28",
-        "overallADP": "75.6",
+        "overallADP": "75.3",
         "playerID": "4569987",
         "longName": "Jaylen Warren"
       },
       {
         "posADP": "QB8",
-        "overallADP": "75.7",
-        "playerID": "4689114",
-        "longName": "Jaxson Dart"
-      },
-      {
-        "posADP": "QB9",
-        "overallADP": "75.9",
+        "overallADP": "76.8",
         "playerID": "4431611",
         "longName": "Caleb Williams"
       },
       {
-        "posADP": "WR32",
-        "overallADP": "76.0",
-        "playerID": "4360078",
-        "longName": "Alec Pierce"
+        "posADP": "QB9",
+        "overallADP": "77.2",
+        "playerID": "4689114",
+        "longName": "Jaxson Dart"
       },
       {
         "posADP": "WR33",
-        "overallADP": "78.5",
-        "playerID": "4880281",
-        "longName": "Jordyn Tyson"
-      },
-      {
-        "posADP": "WR34",
-        "overallADP": "78.6",
+        "overallADP": "78.3",
         "playerID": "3128429",
         "longName": "Courtland Sutton"
       },
       {
+        "posADP": "WR34",
+        "overallADP": "78.8",
+        "playerID": "4880281",
+        "longName": "Jordyn Tyson"
+      },
+      {
         "posADP": "WR35",
-        "overallADP": "79.0",
+        "overallADP": "79.1",
         "playerID": "4047650",
         "longName": "DK Metcalf"
       },
       {
         "posADP": "TE6",
-        "overallADP": "80.2",
+        "overallADP": "79.4",
         "playerID": "5083076",
         "longName": "Harold Fannin Jr."
       },
       {
-        "posADP": "WR36",
-        "overallADP": "81.4",
-        "playerID": "3116165",
-        "longName": "Chris Godwin Jr."
-      },
-      {
         "posADP": "QB10",
-        "overallADP": "81.6",
+        "overallADP": "79.7",
         "playerID": "4360310",
         "longName": "Trevor Lawrence"
       },
       {
         "posADP": "RB29",
-        "overallADP": "81.7",
+        "overallADP": "81.3",
         "playerID": "4568490",
         "longName": "RJ Harvey"
       },
       {
-        "posADP": "TE7",
-        "overallADP": "81.9",
-        "playerID": "4430027",
-        "longName": "Sam LaPorta"
-      },
-      {
         "posADP": "RB30",
-        "overallADP": "82.3",
+        "overallADP": "82.4",
         "playerID": "4038815",
         "longName": "Rico Dowdle"
       },
       {
-        "posADP": "WR37",
+        "posADP": "WR36",
         "overallADP": "82.5",
+        "playerID": "3116165",
+        "longName": "Chris Godwin Jr."
+      },
+      {
+        "posADP": "TE7",
+        "overallADP": "82.6",
+        "playerID": "4430027",
+        "longName": "Sam LaPorta"
+      },
+      {
+        "posADP": "WR37",
+        "overallADP": "82.9",
         "playerID": "4360761",
         "longName": "Michael Wilson"
       },
       {
         "posADP": "RB31",
-        "overallADP": "83.4",
+        "overallADP": "83.2",
         "playerID": "4569173",
         "longName": "Rhamondre Stevenson"
       },
@@ -522,157 +522,157 @@
       },
       {
         "posADP": "RB32",
-        "overallADP": "84.9",
+        "overallADP": "84.6",
         "playerID": "3916148",
         "longName": "Tony Pollard"
       },
       {
         "posADP": "QB11",
-        "overallADP": "85.5",
+        "overallADP": "85.0",
         "playerID": "2577417",
         "longName": "Dak Prescott"
       },
       {
         "posADP": "RB33",
-        "overallADP": "87.2",
+        "overallADP": "87.5",
         "playerID": "4608686",
         "longName": "Kyle Monangai"
       },
       {
         "posADP": "WR38",
-        "overallADP": "87.8",
+        "overallADP": "87.9",
         "playerID": "4870795",
         "longName": "Makai Lemon"
       },
       {
         "posADP": "WR39",
-        "overallADP": "89.4",
+        "overallADP": "90.1",
         "playerID": "4432773",
         "longName": "Brian Thomas Jr."
       },
       {
         "posADP": "WR40",
-        "overallADP": "93.3",
-        "playerID": "4432620",
-        "longName": "Parker Washington"
-      },
-      {
-        "posADP": "WR41",
         "overallADP": "93.8",
         "playerID": "3916433",
         "longName": "Jakobi Meyers"
       },
       {
+        "posADP": "WR41",
+        "overallADP": "94.5",
+        "playerID": "4432620",
+        "longName": "Parker Washington"
+      },
+      {
         "posADP": "QB12",
-        "overallADP": "94.7",
+        "overallADP": "95.0",
         "playerID": "4361741",
         "longName": "Brock Purdy"
       },
       {
         "posADP": "RB34",
-        "overallADP": "96.5",
+        "overallADP": "95.9",
         "playerID": "4429096",
         "longName": "Blake Corum"
       },
       {
         "posADP": "RB35",
-        "overallADP": "99.4",
+        "overallADP": "99.5",
         "playerID": "4241985",
         "longName": "J.K. Dobbins"
       },
       {
+        "posADP": "QB13",
+        "overallADP": "100.4",
+        "playerID": "12483",
+        "longName": "Matthew Stafford"
+      },
+      {
         "posADP": "WR42",
         "overallADP": "101.0",
-        "playerID": "4429205",
-        "longName": "Jordan Addison"
+        "playerID": "4428209",
+        "longName": "Ricky Pearsall"
       },
       {
         "posADP": "TE9",
-        "overallADP": "101.0",
+        "overallADP": "101.1",
         "playerID": "4595342",
         "longName": "Oronde Gadsden"
       },
       {
         "posADP": "WR43",
-        "overallADP": "101.2",
-        "playerID": "4428209",
-        "longName": "Ricky Pearsall"
-      },
-      {
-        "posADP": "QB13",
-        "overallADP": "101.3",
-        "playerID": "12483",
-        "longName": "Matthew Stafford"
+        "overallADP": "101.5",
+        "playerID": "4429205",
+        "longName": "Jordan Addison"
       },
       {
         "posADP": "QB14",
-        "overallADP": "101.9",
-        "playerID": "4426338",
-        "longName": "Bo Nix"
-      },
-      {
-        "posADP": "QB15",
-        "overallADP": "102.7",
+        "overallADP": "101.6",
         "playerID": "3139477",
         "longName": "Patrick Mahomes"
       },
       {
+        "posADP": "QB15",
+        "overallADP": "102.1",
+        "playerID": "4426338",
+        "longName": "Bo Nix"
+      },
+      {
         "posADP": "RB36",
-        "overallADP": "104.3",
+        "overallADP": "103.8",
         "playerID": "4575131",
         "longName": "Jacory Croskey-Merritt"
       },
       {
         "posADP": "WR44",
-        "overallADP": "105.7",
+        "overallADP": "104.8",
         "playerID": "4035687",
         "longName": "Michael Pittman Jr."
       },
       {
         "posADP": "TE10",
-        "overallADP": "107.2",
+        "overallADP": "107.7",
         "playerID": "4385690",
         "longName": "Dalton Kincaid"
       },
       {
         "posADP": "WR45",
-        "overallADP": "107.5",
+        "overallADP": "108.0",
         "playerID": "4362249",
         "longName": "Jayden Reed"
       },
       {
         "posADP": "WR46",
-        "overallADP": "110.0",
+        "overallADP": "109.9",
         "playerID": "4569587",
         "longName": "Wan'Dale Robinson"
       },
       {
         "posADP": "TE11",
-        "overallADP": "111.0",
+        "overallADP": "110.5",
         "playerID": "15847",
         "longName": "Travis Kelce"
       },
       {
-        "posADP": "WR47",
-        "overallADP": "111.1",
-        "playerID": "4688813",
-        "longName": "Josh Downs"
-      },
-      {
         "posADP": "RB37",
-        "overallADP": "112.3",
+        "overallADP": "111.2",
         "playerID": "3042519",
         "longName": "Aaron Jones Sr."
       },
       {
+        "posADP": "WR47",
+        "overallADP": "111.9",
+        "playerID": "4688813",
+        "longName": "Josh Downs"
+      },
+      {
         "posADP": "RB38",
-        "overallADP": "113.2",
+        "overallADP": "113.3",
         "playerID": "4371733",
         "longName": "Kenneth Gainwell"
       },
       {
         "posADP": "QB16",
-        "overallADP": "114.8",
+        "overallADP": "115.8",
         "playerID": "3917315",
         "longName": "Kyler Murray"
       },
@@ -684,81 +684,81 @@
       },
       {
         "posADP": "TE13",
-        "overallADP": "117.7",
+        "overallADP": "117.2",
         "playerID": "3040151",
         "longName": "George Kittle"
       },
       {
         "posADP": "QB17",
-        "overallADP": "118.4",
+        "overallADP": "117.8",
         "playerID": "3046779",
         "longName": "Jared Goff"
       },
       {
-        "posADP": "RB39",
-        "overallADP": "118.9",
-        "playerID": "4697815",
-        "longName": "Rachaad White"
-      },
-      {
-        "posADP": "TE14",
-        "overallADP": "119.1",
-        "playerID": "4361050",
-        "longName": "Isaiah Likely"
-      },
-      {
         "posADP": "WR48",
-        "overallADP": "119.9",
+        "overallADP": "118.5",
         "playerID": "4429025",
         "longName": "Quentin Johnston"
       },
       {
+        "posADP": "TE14",
+        "overallADP": "118.9",
+        "playerID": "4361050",
+        "longName": "Isaiah Likely"
+      },
+      {
+        "posADP": "RB39",
+        "overallADP": "119.7",
+        "playerID": "4697815",
+        "longName": "Rachaad White"
+      },
+      {
         "posADP": "TE15",
-        "overallADP": "122.4",
+        "overallADP": "121.9",
         "playerID": "3121023",
         "longName": "Dallas Goedert"
       },
       {
         "posADP": "QB18",
-        "overallADP": "123.7",
+        "overallADP": "122.6",
         "playerID": "4036378",
         "longName": "Jordan Love"
       },
       {
         "posADP": "RB40",
-        "overallADP": "124.2",
+        "overallADP": "123.7",
         "playerID": "4360569",
         "longName": "Jordan Mason"
       },
       {
-        "posADP": "RB41",
-        "overallADP": "124.2",
-        "playerID": "4362619",
-        "longName": "Chris Rodriguez Jr."
-      },
-      {
         "posADP": "WR49",
-        "overallADP": "124.4",
+        "overallADP": "123.9",
         "playerID": "4361432",
         "longName": "Romeo Doubs"
       },
       {
-        "posADP": "QB19",
-        "overallADP": "124.7",
-        "playerID": "3052587",
-        "longName": "Baker Mayfield"
+        "posADP": "RB41",
+        "overallADP": "124.0",
+        "playerID": "4362619",
+        "longName": "Chris Rodriguez Jr."
       },
       {
-        "posADP": "QB20",
-        "overallADP": "124.8",
+        "posADP": "QB19",
+        "overallADP": "124.9",
         "playerID": "4360689",
         "longName": "Tyler Shough"
       },
       {
         "posADP": "RB42",
-        "overallADP": "125.5",
+        "overallADP": "125.1",
         "playerID": "4373626",
         "longName": "Tyler Allgeier"
+      },
+      {
+        "posADP": "QB20",
+        "overallADP": "125.9",
+        "playerID": "3052587",
+        "longName": "Baker Mayfield"
       },
       {
         "posADP": "WR50",
@@ -768,142 +768,142 @@
       },
       {
         "posADP": "WR51",
-        "overallADP": "128.3",
+        "overallADP": "128.5",
         "playerID": "4373678",
         "longName": "Khalil Shakir"
       },
       {
         "posADP": "RB43",
+        "overallADP": "128.5",
+        "playerID": "4360516",
+        "longName": "Tyrone Tracy Jr."
+      },
+      {
+        "posADP": "RB44",
         "overallADP": "128.6",
         "playerID": "4426385",
         "longName": "Zach Charbonnet"
       },
       {
-        "posADP": "RB44",
-        "overallADP": "128.6",
-        "playerID": "4360516",
-        "longName": "Tyrone Tracy Jr."
-      },
-      {
         "posADP": "QB21",
-        "overallADP": "130.1",
+        "overallADP": "128.9",
         "playerID": "4242512",
         "longName": "Malik Willis"
       },
       {
         "posADP": "WR52",
-        "overallADP": "132.1",
-        "playerID": "4683062",
-        "longName": "Xavier Worthy"
-      },
-      {
-        "posADP": "WR53",
-        "overallADP": "134.3",
-        "playerID": "4701936",
-        "longName": "Matthew Golden"
-      },
-      {
-        "posADP": "WR54",
-        "overallADP": "135.1",
-        "playerID": "4695883",
-        "longName": "Jalen Coker"
-      },
-      {
-        "posADP": "WR55",
-        "overallADP": "135.5",
+        "overallADP": "131.8",
         "playerID": "4870653",
         "longName": "KC Concepcion"
       },
       {
+        "posADP": "WR53",
+        "overallADP": "132.4",
+        "playerID": "4683062",
+        "longName": "Xavier Worthy"
+      },
+      {
+        "posADP": "WR54",
+        "overallADP": "134.4",
+        "playerID": "4701936",
+        "longName": "Matthew Golden"
+      },
+      {
+        "posADP": "WR55",
+        "overallADP": "134.5",
+        "playerID": "4695883",
+        "longName": "Jalen Coker"
+      },
+      {
         "posADP": "RB45",
-        "overallADP": "135.7",
+        "overallADP": "135.4",
         "playerID": "4678008",
         "longName": "Jonathon Brooks"
       },
       {
         "posADP": "RB46",
-        "overallADP": "138.8",
+        "overallADP": "137.4",
         "playerID": "4429059",
         "longName": "Woody Marks"
       },
       {
-        "posADP": "TE16",
-        "overallADP": "141.4",
-        "playerID": "3116365",
-        "longName": "Mark Andrews"
-      },
-      {
         "posADP": "RB47",
-        "overallADP": "142.2",
+        "overallADP": "142.0",
         "playerID": "4428557",
         "longName": "Tyjae Spears"
       },
       {
+        "posADP": "TE16",
+        "overallADP": "142.2",
+        "playerID": "3116365",
+        "longName": "Mark Andrews"
+      },
+      {
         "posADP": "QB22",
-        "overallADP": "144.5",
+        "overallADP": "144.9",
         "playerID": "4432577",
         "longName": "C.J. Stroud"
       },
       {
+        "posADP": "QB23",
+        "overallADP": "145.8",
+        "playerID": "3912547",
+        "longName": "Sam Darnold"
+      },
+      {
         "posADP": "WR56",
-        "overallADP": "144.6",
+        "overallADP": "146.7",
         "playerID": "2976212",
         "longName": "Stefon Diggs"
       },
       {
         "posADP": "TE17",
-        "overallADP": "146.7",
-        "playerID": "4430539",
-        "longName": "Brenton Strange"
-      },
-      {
-        "posADP": "QB23",
         "overallADP": "146.9",
-        "playerID": "3912547",
-        "longName": "Sam Darnold"
-      },
-      {
-        "posADP": "RB48",
-        "overallADP": "147.1",
-        "playerID": "4361529",
-        "longName": "Isiah Pacheco"
-      },
-      {
-        "posADP": "RB49",
-        "overallADP": "147.7",
-        "playerID": "5081397",
-        "longName": "Dylan Sampson"
-      },
-      {
-        "posADP": "TE18",
-        "overallADP": "148.3",
         "playerID": "3929645",
         "longName": "Juwan Johnson"
       },
       {
+        "posADP": "RB48",
+        "overallADP": "147.3",
+        "playerID": "5081397",
+        "longName": "Dylan Sampson"
+      },
+      {
+        "posADP": "RB49",
+        "overallADP": "147.7",
+        "playerID": "4361529",
+        "longName": "Isiah Pacheco"
+      },
+      {
         "posADP": "RB50",
-        "overallADP": "149.5",
+        "overallADP": "149.4",
         "playerID": "4596334",
         "longName": "Keaton Mitchell"
       },
       {
+        "posADP": "TE18",
+        "overallADP": "150.3",
+        "playerID": "4430539",
+        "longName": "Brenton Strange"
+      },
+      {
         "posADP": "TE19",
-        "overallADP": "151.0",
+        "overallADP": "151.4",
         "playerID": "3046439",
         "longName": "Hunter Henry"
       },
       {
-        "posADP": "RB51",
-        "overallADP": "151.1",
-        "playerID": "4702555",
-        "longName": "Jonah Coleman"
-      },
-      {
         "posADP": "DST1",
-        "overallADP": "151.6",
+        "overallADP": "151.4",
         "teamAbv": "HOU",
         "teamID": "13",
         "longName": "Houston Texans DST"
+      },
+      {
+        "posADP": "RB51",
+        "overallADP": "151.7",
+        "playerID": "4702555",
+        "longName": "Jonah Coleman"
       },
       {
         "posADP": "QB24",
@@ -912,170 +912,170 @@
         "longName": "Bryce Young"
       },
       {
-        "posADP": "RB52",
-        "overallADP": "154.8",
-        "playerID": "3054850",
-        "longName": "Alvin Kamara"
-      },
-      {
         "posADP": "WR57",
-        "overallADP": "156.6",
+        "overallADP": "156.3",
         "playerID": "4032473",
         "longName": "Rashid Shaheed"
       },
       {
         "posADP": "WR58",
-        "overallADP": "156.9",
+        "overallADP": "156.8",
         "playerID": "3886598",
         "longName": "Jauan Jennings"
       },
       {
+        "posADP": "RB52",
+        "overallADP": "157.5",
+        "playerID": "3054850",
+        "longName": "Alvin Kamara"
+      },
+      {
         "posADP": "RB53",
-        "overallADP": "160.7",
+        "overallADP": "160.2",
         "playerID": "4241474",
         "longName": "Brian Robinson Jr."
       },
       {
-        "posADP": "WR59",
-        "overallADP": "161.1",
-        "playerID": "3126486",
-        "longName": "Deebo Samuel"
+        "posADP": "RB54",
+        "overallADP": "161.5",
+        "playerID": "4685247",
+        "longName": "Braelon Allen"
       },
       {
         "posADP": "DST2",
-        "overallADP": "162.1",
+        "overallADP": "161.9",
         "teamAbv": "DEN",
         "teamID": "10",
         "longName": "Denver Broncos DST"
       },
       {
-        "posADP": "RB54",
-        "overallADP": "162.2",
-        "playerID": "4685247",
-        "longName": "Braelon Allen"
-      },
-      {
-        "posADP": "WR60",
-        "overallADP": "163.5",
-        "playerID": "4723820",
-        "longName": "Omar Cooper Jr."
-      },
-      {
         "posADP": "RB55",
-        "overallADP": "163.6",
+        "overallADP": "162.4",
         "playerID": "3045147",
         "longName": "James Conner"
       },
       {
+        "posADP": "WR59",
+        "overallADP": "162.5",
+        "playerID": "3126486",
+        "longName": "Deebo Samuel"
+      },
+      {
+        "posADP": "WR60",
+        "overallADP": "162.6",
+        "playerID": "4723820",
+        "longName": "Omar Cooper Jr."
+      },
+      {
+        "posADP": "RB56",
+        "overallADP": "164.3",
+        "playerID": "4887558",
+        "longName": "Emanuel Wilson"
+      },
+      {
         "posADP": "DST3",
-        "overallADP": "164.9",
+        "overallADP": "165.0",
         "teamAbv": "SEA",
         "teamID": "29",
         "longName": "Seattle Seahawks DST"
       },
       {
-        "posADP": "RB56",
-        "overallADP": "165.8",
-        "playerID": "4887558",
-        "longName": "Emanuel Wilson"
-      },
-      {
-        "posADP": "RB57",
-        "overallADP": "167.5",
-        "playerID": "4429013",
-        "longName": "Tank Bigsby"
-      },
-      {
         "posADP": "WR61",
-        "overallADP": "167.6",
+        "overallADP": "166.4",
         "playerID": "4832800",
         "longName": "Denzel Boston"
       },
       {
+        "posADP": "RB57",
+        "overallADP": "167.6",
+        "playerID": "4429013",
+        "longName": "Tank Bigsby"
+      },
+      {
         "posADP": "RB58",
-        "overallADP": "170.1",
+        "overallADP": "169.6",
         "playerID": "4686658",
         "longName": "Mike Washington Jr."
       },
       {
         "posADP": "WR62",
-        "overallADP": "171.5",
+        "overallADP": "171.3",
         "playerID": "4430834",
         "longName": "Jalen McMillan"
       },
       {
         "posADP": "QB25",
-        "overallADP": "171.5",
+        "overallADP": "172.1",
         "playerID": "4688380",
         "longName": "Cam Ward"
       },
       {
         "posADP": "DST4",
-        "overallADP": "171.7",
+        "overallADP": "172.2",
         "teamAbv": "LAR",
         "teamID": "19",
         "longName": "Los Angeles Rams DST"
       },
       {
-        "posADP": "WR63",
-        "overallADP": "171.9",
-        "playerID": "4685415",
-        "longName": "Travis Hunter"
-      },
-      {
         "posADP": "DST5",
-        "overallADP": "172.4",
+        "overallADP": "172.3",
         "teamAbv": "PHI",
         "teamID": "27",
         "longName": "Philadelphia Eagles DST"
       },
       {
-        "posADP": "WR64",
+        "posADP": "WR63",
         "overallADP": "172.5",
         "playerID": "4360438",
         "longName": "Brandon Aiyuk"
       },
       {
-        "posADP": "TE20",
-        "overallADP": "174.7",
-        "playerID": "4360635",
-        "longName": "Chig Okonkwo"
+        "posADP": "WR64",
+        "overallADP": "173.0",
+        "playerID": "4685415",
+        "longName": "Travis Hunter"
       },
       {
         "posADP": "WR65",
-        "overallADP": "174.9",
+        "overallADP": "174.6",
         "playerID": "4241463",
         "longName": "Jerry Jeudy"
       },
       {
         "posADP": "RB59",
-        "overallADP": "176.1",
+        "overallADP": "175.4",
         "playerID": "4685555",
         "longName": "Nicholas Singleton"
       },
       {
+        "posADP": "TE20",
+        "overallADP": "175.5",
+        "playerID": "4360635",
+        "longName": "Chig Okonkwo"
+      },
+      {
         "posADP": "RB60",
+        "overallADP": "178.8",
+        "playerID": "4685246",
+        "longName": "Kaytron Allen"
+      },
+      {
+        "posADP": "WR66",
+        "overallADP": "178.8",
+        "playerID": "4429022",
+        "longName": "Kayshon Boutte"
+      },
+      {
+        "posADP": "RB61",
         "overallADP": "178.9",
         "playerID": "4832955",
         "longName": "Emmett Johnson"
       },
       {
-        "posADP": "WR66",
-        "overallADP": "179.5",
-        "playerID": "4429022",
-        "longName": "Kayshon Boutte"
-      },
-      {
-        "posADP": "WR67",
-        "overallADP": "180.2",
-        "playerID": "3116406",
-        "longName": "Tyreek Hill"
-      },
-      {
-        "posADP": "RB61",
-        "overallADP": "180.4",
-        "playerID": "4685246",
-        "longName": "Kaytron Allen"
+        "posADP": "TE21",
+        "overallADP": "181.3",
+        "playerID": "5083315",
+        "longName": "Kenyon Sadiq"
       },
       {
         "posADP": "DST6",
@@ -1085,41 +1085,35 @@
         "longName": "New England Patriots DST"
       },
       {
+        "posADP": "WR67",
+        "overallADP": "181.9",
+        "playerID": "3116406",
+        "longName": "Tyreek Hill"
+      },
+      {
         "posADP": "QB26",
-        "overallADP": "182.4",
+        "overallADP": "182.7",
         "playerID": "3917792",
         "longName": "Daniel Jones"
       },
       {
         "posADP": "WR68",
-        "overallADP": "183.9",
-        "playerID": "4597500",
-        "longName": "Adonai Mitchell"
-      },
-      {
-        "posADP": "TE21",
-        "overallADP": "184.5",
-        "playerID": "3117256",
-        "longName": "Dalton Schultz"
-      },
-      {
-        "posADP": "DST7",
-        "overallADP": "185.1",
-        "teamAbv": "MIN",
-        "teamID": "21",
-        "longName": "Minnesota Vikings DST"
-      },
-      {
-        "posADP": "WR69",
-        "overallADP": "185.2",
+        "overallADP": "182.9",
         "playerID": "4686612",
         "longName": "Tre' Harris"
       },
       {
-        "posADP": "K1",
-        "overallADP": "185.5",
-        "playerID": "3953687",
-        "longName": "Brandon Aubrey"
+        "posADP": "WR69",
+        "overallADP": "184.7",
+        "playerID": "4597500",
+        "longName": "Adonai Mitchell"
+      },
+      {
+        "posADP": "DST7",
+        "overallADP": "185.0",
+        "teamAbv": "MIN",
+        "teamID": "21",
+        "longName": "Minnesota Vikings DST"
       },
       {
         "posADP": "DST8",
@@ -1129,69 +1123,87 @@
         "longName": "New York Giants DST"
       },
       {
+        "posADP": "K1",
+        "overallADP": "185.6",
+        "playerID": "3953687",
+        "longName": "Brandon Aubrey"
+      },
+      {
         "posADP": "TE22",
-        "overallADP": "185.8",
-        "playerID": "5083315",
-        "longName": "Kenyon Sadiq"
+        "overallADP": "186.0",
+        "playerID": "3117256",
+        "longName": "Dalton Schultz"
       },
       {
         "posADP": "DST9",
-        "overallADP": "186.9",
+        "overallADP": "186.0",
         "teamAbv": "JAX",
         "teamID": "15",
         "longName": "Jacksonville Jaguars DST"
       },
       {
         "posADP": "DST10",
-        "overallADP": "187.1",
-        "teamAbv": "PIT",
-        "teamID": "26",
-        "longName": "Pittsburgh Steelers DST"
-      },
-      {
-        "posADP": "DST11",
-        "overallADP": "187.5",
+        "overallADP": "187.8",
         "teamAbv": "LAC",
         "teamID": "18",
         "longName": "Los Angeles Chargers DST"
       },
       {
+        "posADP": "DST11",
+        "overallADP": "187.9",
+        "teamAbv": "PIT",
+        "teamID": "26",
+        "longName": "Pittsburgh Steelers DST"
+      },
+      {
         "posADP": "RB62",
-        "overallADP": "188.7",
+        "overallADP": "189.4",
         "playerID": "4429501",
         "longName": "Ray Davis"
       },
       {
         "posADP": "WR70",
-        "overallADP": "190.9",
+        "overallADP": "192.0",
         "playerID": "4428718",
         "longName": "Tre Tucker"
       },
       {
-        "posADP": "RB63",
-        "overallADP": "192.3",
-        "playerID": "4430968",
-        "longName": "Kimani Vidal"
-      },
-      {
-        "posADP": "K2",
-        "overallADP": "193.1",
-        "playerID": "2971573",
-        "longName": "Ka'imi Fairbairn"
-      },
-      {
         "posADP": "DST12",
-        "overallADP": "193.2",
+        "overallADP": "192.8",
         "teamAbv": "CLE",
         "teamID": "8",
         "longName": "Cleveland Browns DST"
       },
       {
+        "posADP": "K2",
+        "overallADP": "192.9",
+        "playerID": "2971573",
+        "longName": "Ka'imi Fairbairn"
+      },
+      {
+        "posADP": "QB27",
+        "overallADP": "193.3",
+        "playerID": "2578570",
+        "longName": "Jacoby Brissett"
+      },
+      {
         "posADP": "DST13",
-        "overallADP": "193.7",
+        "overallADP": "193.4",
         "teamAbv": "GB",
         "teamID": "12",
         "longName": "Green Bay Packers DST"
+      },
+      {
+        "posADP": "WR71",
+        "overallADP": "194.5",
+        "playerID": "5081432",
+        "longName": "Antonio Williams"
+      },
+      {
+        "posADP": "RB63",
+        "overallADP": "194.6",
+        "playerID": "4430968",
+        "longName": "Kimani Vidal"
       },
       {
         "posADP": "K3",
@@ -1200,58 +1212,40 @@
         "longName": "Cameron Dicker"
       },
       {
-        "posADP": "QB27",
-        "overallADP": "195.4",
-        "playerID": "2578570",
-        "longName": "Jacoby Brissett"
-      },
-      {
         "posADP": "TE23",
-        "overallADP": "196.0",
+        "overallADP": "196.2",
         "playerID": "4036133",
         "longName": "T.J. Hockenson"
       },
       {
-        "posADP": "WR71",
-        "overallADP": "197.0",
-        "playerID": "5081432",
-        "longName": "Antonio Williams"
-      },
-      {
         "posADP": "K4",
-        "overallADP": "198.1",
+        "overallADP": "197.8",
         "playerID": "4686361",
         "longName": "Cam Little"
       },
       {
         "posADP": "TE24",
-        "overallADP": "198.8",
+        "overallADP": "199.6",
         "playerID": "4576297",
         "longName": "AJ Barner"
       },
       {
         "posADP": "K5",
-        "overallADP": "199.9",
+        "overallADP": "199.8",
         "playerID": "2473037",
         "longName": "Jason Myers"
       },
       {
         "posADP": "WR72",
-        "overallADP": "200.1",
-        "playerID": "4586312",
-        "longName": "Jaylin Noel"
-      },
-      {
-        "posADP": "WR73",
-        "overallADP": "200.3",
+        "overallADP": "200.4",
         "playerID": "4431280",
         "longName": "Troy Franklin"
       },
       {
-        "posADP": "RB64",
-        "overallADP": "203.5",
-        "playerID": "4430871",
-        "longName": "Sean Tucker"
+        "posADP": "WR73",
+        "overallADP": "201.9",
+        "playerID": "4586312",
+        "longName": "Jaylin Noel"
       },
       {
         "posADP": "DST14",
@@ -1268,127 +1262,127 @@
         "longName": "Washington Commanders DST"
       },
       {
+        "posADP": "RB64",
+        "overallADP": "205.0",
+        "playerID": "4430871",
+        "longName": "Sean Tucker"
+      },
+      {
         "posADP": "WR74",
-        "overallADP": "205.7",
+        "overallADP": "206.7",
         "playerID": "5123663",
         "longName": "Isaac TeSlaa"
       },
       {
-        "posADP": "K6",
-        "overallADP": "206.3",
-        "playerID": "4697745",
-        "longName": "Tyler Loop"
-      },
-      {
-        "posADP": "WR75",
-        "overallADP": "206.3",
-        "playerID": "4382466",
-        "longName": "Jalen Nailor"
-      },
-      {
-        "posADP": "WR76",
-        "overallADP": "208.8",
-        "playerID": "5083754",
-        "longName": "Ryan Flournoy"
-      },
-      {
-        "posADP": "K7",
-        "overallADP": "209.8",
-        "playerID": "4034949",
-        "longName": "Eddy Pineiro"
-      },
-      {
         "posADP": "RB65",
-        "overallADP": "210.4",
+        "overallADP": "207.9",
         "playerID": "4682745",
         "longName": "Jaylen Wright"
       },
       {
-        "posADP": "WR77",
+        "posADP": "K6",
+        "overallADP": "207.9",
+        "playerID": "4697745",
+        "longName": "Tyler Loop"
+      },
+      {
+        "posADP": "K7",
         "overallADP": "210.9",
+        "playerID": "4034949",
+        "longName": "Eddy Pineiro"
+      },
+      {
+        "posADP": "WR75",
+        "overallADP": "211.4",
         "playerID": "4600981",
         "longName": "Pat Bryant"
       },
       {
-        "posADP": "K8",
-        "overallADP": "212.9",
-        "playerID": "4360234",
-        "longName": "Evan McPherson"
+        "posADP": "WR76",
+        "overallADP": "211.9",
+        "playerID": "5083754",
+        "longName": "Ryan Flournoy"
+      },
+      {
+        "posADP": "WR77",
+        "overallADP": "212.4",
+        "playerID": "3925357",
+        "longName": "Calvin Ridley"
       },
       {
         "posADP": "DST16",
-        "overallADP": "213.6",
+        "overallADP": "212.7",
         "teamAbv": "KC",
         "teamID": "16",
         "longName": "Kansas City Chiefs DST"
       },
       {
+        "posADP": "K8",
+        "overallADP": "213.9",
+        "playerID": "4360234",
+        "longName": "Evan McPherson"
+      },
+      {
         "posADP": "DST17",
-        "overallADP": "214.8",
+        "overallADP": "214.1",
         "teamAbv": "BAL",
         "teamID": "3",
         "longName": "Baltimore Ravens DST"
       },
       {
         "posADP": "WR78",
-        "overallADP": "215.1",
-        "playerID": "3925357",
-        "longName": "Calvin Ridley"
-      },
-      {
-        "posADP": "RB66",
-        "overallADP": "216.9",
-        "playerID": "4832846",
-        "longName": "Demond Claiborne"
+        "overallADP": "214.5",
+        "playerID": "4382466",
+        "longName": "Jalen Nailor"
       },
       {
         "posADP": "WR79",
-        "overallADP": "218.1",
+        "overallADP": "215.6",
         "playerID": "4428850",
         "longName": "Dontayvion Wicks"
       },
       {
         "posADP": "WR80",
-        "overallADP": "218.2",
+        "overallADP": "216.6",
         "playerID": "4040655",
         "longName": "Darnell Mooney"
       },
       {
+        "posADP": "RB66",
+        "overallADP": "217.8",
+        "playerID": "4832846",
+        "longName": "Demond Claiborne"
+      },
+      {
         "posADP": "K9",
-        "overallADP": "218.9",
-        "playerID": "17427",
-        "longName": "Cairo Santos"
+        "overallADP": "220.2",
+        "playerID": "3150744",
+        "longName": "Chase McLaughlin"
       },
       {
         "posADP": "WR81",
-        "overallADP": "220.5",
+        "overallADP": "220.3",
         "playerID": "4431268",
         "longName": "Chimere Dike"
       },
       {
         "posADP": "K10",
-        "overallADP": "221.2",
-        "playerID": "3150744",
-        "longName": "Chase McLaughlin"
-      },
-      {
-        "posADP": "DST18",
-        "overallADP": "223.3",
-        "teamAbv": "BUF",
-        "teamID": "4",
-        "longName": "Buffalo Bills DST"
-      },
-      {
-        "posADP": "WR82",
-        "overallADP": "224.7",
-        "playerID": "4366031",
-        "longName": "Tank Dell"
+        "overallADP": "220.7",
+        "playerID": "17427",
+        "longName": "Cairo Santos"
       },
       {
         "posADP": "K11",
-        "overallADP": "225.0",
+        "overallADP": "225.7",
         "playerID": "4569923",
         "longName": "Andy Borregales"
+      },
+      {
+        "posADP": "DST18",
+        "overallADP": "226.0",
+        "teamAbv": "BUF",
+        "teamID": "4",
+        "longName": "Buffalo Bills DST"
       },
       {
         "posADP": "K12",
@@ -1397,66 +1391,59 @@
         "longName": "Chad Ryland"
       },
       {
-        "posADP": "DST19",
-        "overallADP": "226.1",
-        "teamAbv": "DET",
-        "teamID": "11",
-        "longName": "Detroit Lions DST"
+        "posADP": "WR82",
+        "overallADP": "227.3",
+        "playerID": "4366031",
+        "longName": "Tank Dell"
       },
       {
         "posADP": "TE25",
-        "overallADP": "226.2",
+        "overallADP": "227.5",
         "playerID": "4570037",
         "longName": "Terrance Ferguson"
       },
       {
         "posADP": "WR83",
-        "overallADP": "228.6",
+        "overallADP": "228.1",
         "playerID": "4685261",
         "longName": "Germie Bernard"
       },
       {
-        "posADP": "WR84",
+        "posADP": "DST19",
         "overallADP": "229.2",
+        "teamAbv": "DET",
+        "teamID": "11",
+        "longName": "Detroit Lions DST"
+      },
+      {
+        "posADP": "WR84",
+        "overallADP": "229.3",
         "playerID": "4869961",
         "longName": "Chris Bell"
       },
       {
         "posADP": "RB67",
-        "overallADP": "229.6",
+        "overallADP": "230.3",
         "playerID": "4711533",
         "longName": "Ollie Gordon II"
       },
       {
         "posADP": "TE26",
-        "overallADP": "231.3",
+        "overallADP": "231.0",
         "playerID": "4686728",
         "longName": "Gunnar Helm"
       },
       {
         "posADP": "K13",
-        "overallADP": "231.8",
+        "overallADP": "231.9",
         "playerID": "4689936",
         "longName": "Jake Bates"
       },
       {
-        "posADP": "DST20",
-        "overallADP": "232.8",
-        "teamAbv": "CHI",
-        "teamID": "6",
-        "longName": "Chicago Bears DST"
-      },
-      {
         "posADP": "K14",
-        "overallADP": "233.4",
+        "overallADP": "232.8",
         "playerID": "3055899",
         "longName": "Harrison Butker"
-      },
-      {
-        "posADP": "RB68",
-        "overallADP": "233.4",
-        "playerID": "4241457",
-        "longName": "Najee Harris"
       },
       {
         "posADP": "TE27",
@@ -1465,83 +1452,77 @@
         "longName": "Greg Dulcich"
       },
       {
-        "posADP": "TE28",
-        "overallADP": "236.5",
-        "playerID": "3123076",
-        "longName": "David Njoku"
-      },
-      {
-        "posADP": "TE29",
-        "overallADP": "236.6",
-        "playerID": "4243331",
-        "longName": "Cade Otton"
-      },
-      {
-        "posADP": "WR85",
-        "overallADP": "236.7",
-        "playerID": "4569603",
-        "longName": "Malik Washington"
-      },
-      {
-        "posADP": "RB69",
-        "overallADP": "236.7",
-        "playerID": "4696044",
-        "longName": "Kaelon Black"
-      },
-      {
         "posADP": "K15",
         "overallADP": "237.3",
         "playerID": "4259619",
         "longName": "Blake Grupe"
       },
       {
-        "posADP": "RB70",
-        "overallADP": "238.5",
-        "playerID": "4819231",
-        "longName": "Kaleb Johnson"
-      },
-      {
-        "posADP": "WR86",
-        "overallADP": "239.4",
-        "playerID": "4883647",
-        "longName": "Elic Ayomanor"
-      },
-      {
-        "posADP": "K16",
-        "overallADP": "239.8",
-        "playerID": "17372",
-        "longName": "Chris Boswell"
-      },
-      {
-        "posADP": "TE30",
-        "overallADP": "240.4",
+        "posADP": "TE28",
+        "overallADP": "237.4",
         "playerID": "4431574",
         "longName": "Eli Stowers"
       },
       {
-        "posADP": "DST21",
+        "posADP": "WR85",
+        "overallADP": "237.4",
+        "playerID": "4883647",
+        "longName": "Elic Ayomanor"
+      },
+      {
+        "posADP": "TE29",
+        "overallADP": "237.6",
+        "playerID": "3123076",
+        "longName": "David Njoku"
+      },
+      {
+        "posADP": "TE30",
+        "overallADP": "238.3",
+        "playerID": "4243331",
+        "longName": "Cade Otton"
+      },
+      {
+        "posADP": "RB68",
+        "overallADP": "238.9",
+        "playerID": "4241457",
+        "longName": "Najee Harris"
+      },
+      {
+        "posADP": "RB69",
+        "overallADP": "239.3",
+        "playerID": "4819231",
+        "longName": "Kaleb Johnson"
+      },
+      {
+        "posADP": "K16",
+        "overallADP": "239.5",
+        "playerID": "17372",
+        "longName": "Chris Boswell"
+      },
+      {
+        "posADP": "DST20",
         "overallADP": "240.5",
         "teamAbv": "MIA",
         "teamID": "20",
         "longName": "Miami Dolphins DST"
       },
       {
-        "posADP": "RB71",
-        "overallADP": "240.6",
-        "playerID": "4682652",
-        "longName": "Devin Neal"
+        "posADP": "K17",
+        "overallADP": "241.1",
+        "playerID": "4567104",
+        "longName": "Will Reichard"
       },
       {
-        "posADP": "WR87",
-        "overallADP": "240.7",
+        "posADP": "WR86",
+        "overallADP": "241.4",
         "playerID": "4870612",
         "longName": "Zachariah Branch"
       },
       {
-        "posADP": "K17",
-        "overallADP": "240.8",
-        "playerID": "4567104",
-        "longName": "Will Reichard"
+        "posADP": "WR87",
+        "overallADP": "241.4",
+        "playerID": "4569603",
+        "longName": "Malik Washington"
       },
       {
         "posADP": "WR88",
@@ -1550,96 +1531,90 @@
         "longName": "Kyle Williams"
       },
       {
-        "posADP": "K18",
-        "overallADP": "242.2",
-        "playerID": "4574716",
-        "longName": "Harrison Mevis"
+        "posADP": "RB70",
+        "overallADP": "242.4",
+        "playerID": "4696044",
+        "longName": "Kaelon Black"
+      },
+      {
+        "posADP": "RB71",
+        "overallADP": "242.8",
+        "playerID": "4682652",
+        "longName": "Devin Neal"
       },
       {
         "posADP": "WR89",
-        "overallADP": "242.3",
-        "playerID": "4360939",
-        "longName": "Rashod Bateman"
-      },
-      {
-        "posADP": "QB28",
-        "overallADP": "242.9",
-        "playerID": "4837248",
-        "longName": "Fernando Mendoza"
-      },
-      {
-        "posADP": "WR90",
-        "overallADP": "244.0",
+        "overallADP": "243.3",
         "playerID": "4710714",
         "longName": "De'Zhaun Stribling"
       },
       {
+        "posADP": "K18",
+        "overallADP": "244.8",
+        "playerID": "4574716",
+        "longName": "Harrison Mevis"
+      },
+      {
+        "posADP": "WR90",
+        "overallADP": "244.9",
+        "playerID": "4360939",
+        "longName": "Rashod Bateman"
+      },
+      {
+        "posADP": "DST21",
+        "overallADP": "245.3",
+        "teamAbv": "CHI",
+        "teamID": "6",
+        "longName": "Chicago Bears DST"
+      },
+      {
         "posADP": "RB72",
-        "overallADP": "244.2",
+        "overallADP": "245.8",
         "playerID": "4429275",
         "longName": "Trey Benson"
       },
       {
+        "posADP": "QB28",
+        "overallADP": "246.0",
+        "playerID": "4837248",
+        "longName": "Fernando Mendoza"
+      },
+      {
         "posADP": "DST22",
-        "overallADP": "247.4",
+        "overallADP": "246.7",
         "teamAbv": "ATL",
         "teamID": "2",
         "longName": "Atlanta Falcons DST"
       },
       {
-        "posADP": "TE31",
-        "overallADP": "248.2",
-        "playerID": "4361411",
-        "longName": "Pat Freiermuth"
-      },
-      {
-        "posADP": "RB73",
-        "overallADP": "248.2",
-        "playerID": "4599739",
-        "longName": "Kendre Miller"
-      },
-      {
-        "posADP": "TE32",
-        "overallADP": "248.5",
-        "playerID": "4242557",
-        "longName": "Colby Parkinson"
-      },
-      {
         "posADP": "WR91",
-        "overallADP": "248.9",
-        "playerID": "3895856",
-        "longName": "Christian Kirk"
-      },
-      {
-        "posADP": "TE33",
-        "overallADP": "249.5",
-        "playerID": "4808766",
-        "longName": "Mason Taylor"
-      },
-      {
-        "posADP": "WR92",
-        "overallADP": "249.6",
-        "playerID": "5088338",
-        "longName": "Elijah Sarratt"
-      },
-      {
-        "posADP": "WR93",
-        "overallADP": "250.1",
+        "overallADP": "247.9",
         "playerID": "4870847",
         "longName": "Ja'Kobi Lane"
       },
       {
-        "posADP": "WR94",
-        "overallADP": "251.2",
-        "playerID": "5091739",
-        "longName": "Chris Brazzell II"
+        "posADP": "TE31",
+        "overallADP": "248.6",
+        "playerID": "4361411",
+        "longName": "Pat Freiermuth"
       },
       {
-        "posADP": "DST23",
-        "overallADP": "251.2",
-        "teamAbv": "SF",
-        "teamID": "28",
-        "longName": "San Francisco 49ers DST"
+        "posADP": "TE32",
+        "overallADP": "249.5",
+        "playerID": "4242557",
+        "longName": "Colby Parkinson"
+      },
+      {
+        "posADP": "RB73",
+        "overallADP": "249.7",
+        "playerID": "4599739",
+        "longName": "Kendre Miller"
+      },
+      {
+        "posADP": "TE33",
+        "overallADP": "250.9",
+        "playerID": "4808766",
+        "longName": "Mason Taylor"
       },
       {
         "posADP": "K19",
@@ -1648,174 +1623,193 @@
         "longName": "Jake Elliott"
       },
       {
-        "posADP": "DST24",
+        "posADP": "WR92",
+        "overallADP": "252.1",
+        "playerID": "5088338",
+        "longName": "Elijah Sarratt"
+      },
+      {
+        "posADP": "RB74",
+        "overallADP": "252.5",
+        "playerID": "4685526",
+        "longName": "Adam Randall"
+      },
+      {
+        "posADP": "DST23",
         "overallADP": "252.5",
         "teamAbv": "CIN",
         "teamID": "7",
         "longName": "Cincinnati Bengals DST"
       },
       {
-        "posADP": "TE34",
-        "overallADP": "254.5",
-        "playerID": "3051876",
-        "longName": "Evan Engram"
+        "posADP": "DST24",
+        "overallADP": "252.8",
+        "teamAbv": "SF",
+        "teamID": "28",
+        "longName": "San Francisco 49ers DST"
       },
       {
-        "posADP": "RB74",
-        "overallADP": "254.5",
-        "playerID": "4685279",
-        "longName": "Jaydon Blue"
+        "posADP": "WR93",
+        "overallADP": "253.7",
+        "playerID": "3895856",
+        "longName": "Christian Kirk"
       },
       {
-        "posADP": "WR95",
-        "overallADP": "254.6",
-        "playerID": "4682648",
-        "longName": "Malachi Fields"
-      },
-      {
-        "posADP": "WR96",
-        "overallADP": "254.6",
+        "posADP": "WR94",
+        "overallADP": "255.8",
         "playerID": "4597703",
         "longName": "Tory Horton"
       },
       {
-        "posADP": "RB75",
-        "overallADP": "255.4",
-        "playerID": "4685526",
-        "longName": "Adam Randall"
+        "posADP": "WR95",
+        "overallADP": "256.2",
+        "playerID": "5091739",
+        "longName": "Chris Brazzell II"
       },
       {
-        "posADP": "WR97",
-        "overallADP": "256.0",
+        "posADP": "TE34",
+        "overallADP": "256.5",
+        "playerID": "3051876",
+        "longName": "Evan Engram"
+      },
+      {
+        "posADP": "RB75",
+        "overallADP": "258.2",
+        "playerID": "4695404",
+        "longName": "Isaiah Davis"
+      },
+      {
+        "posADP": "WR96",
+        "overallADP": "258.8",
         "playerID": "4686472",
         "longName": "Marvin Mims Jr."
       },
       {
         "posADP": "RB76",
-        "overallADP": "257.1",
+        "overallADP": "258.9",
         "playerID": "4685397",
         "longName": "Jordan James"
       },
       {
-        "posADP": "RB77",
-        "overallADP": "257.6",
-        "playerID": "4695404",
-        "longName": "Isaiah Davis"
+        "posADP": "WR97",
+        "overallADP": "259.4",
+        "playerID": "4682648",
+        "longName": "Malachi Fields"
       },
       {
         "posADP": "WR98",
-        "overallADP": "258.9",
+        "overallADP": "259.7",
         "playerID": "4683153",
         "longName": "Skyler Bell"
       },
       {
         "posADP": "WR99",
-        "overallADP": "259.4",
+        "overallADP": "259.8",
         "playerID": "4635008",
         "longName": "Keon Coleman"
       },
       {
+        "posADP": "RB77",
+        "overallADP": "260.6",
+        "playerID": "4685279",
+        "longName": "Jaydon Blue"
+      },
+      {
         "posADP": "TE35",
-        "overallADP": "259.8",
+        "overallADP": "260.9",
         "playerID": "4429148",
         "longName": "Theo Johnson"
       },
       {
         "posADP": "QB29",
-        "overallADP": "261.7",
+        "overallADP": "261.9",
         "playerID": "15864",
         "longName": "Geno Smith"
       },
       {
         "posADP": "TE36",
+        "overallADP": "262.6",
+        "playerID": "4259147",
+        "longName": "Jake Tonges"
+      },
+      {
+        "posADP": "TE37",
         "overallADP": "262.7",
         "playerID": "3116164",
         "longName": "Mike Gesicki"
       },
       {
-        "posADP": "TE37",
-        "overallADP": "263.2",
-        "playerID": "4259147",
-        "longName": "Jake Tonges"
-      },
-      {
         "posADP": "RB78",
-        "overallADP": "263.3",
+        "overallADP": "262.8",
         "playerID": "3116385",
         "longName": "Joe Mixon"
       },
       {
         "posADP": "WR100",
-        "overallADP": "263.4",
+        "overallADP": "263.0",
         "playerID": "2977187",
         "longName": "Cooper Kupp"
       },
       {
-        "posADP": "K20",
-        "overallADP": "264.1",
-        "playerID": "2985659",
-        "longName": "Wil Lutz"
-      },
-      {
-        "posADP": "WR101",
-        "overallADP": "264.2",
-        "playerID": "2991662",
-        "longName": "Mack Hollins"
-      },
-      {
         "posADP": "QB30",
-        "overallADP": "264.6",
+        "overallADP": "263.8",
         "playerID": "8439",
         "longName": "Aaron Rodgers"
       },
       {
-        "posADP": "WR102",
-        "overallADP": "264.8",
-        "playerID": "4603186",
-        "longName": "Jack Bech"
-      },
-      {
-        "posADP": "QB31",
-        "overallADP": "264.8",
-        "playerID": "4360423",
-        "longName": "Michael Penix Jr."
-      },
-      {
-        "posADP": "K21",
-        "overallADP": "265.4",
+        "posADP": "K20",
+        "overallADP": "264.5",
         "playerID": "5208518",
         "longName": "Charlie Smyth"
       },
       {
+        "posADP": "WR101",
+        "overallADP": "264.5",
+        "playerID": "2991662",
+        "longName": "Mack Hollins"
+      },
+      {
+        "posADP": "K21",
+        "overallADP": "264.7",
+        "playerID": "2985659",
+        "longName": "Wil Lutz"
+      },
+      {
+        "posADP": "QB31",
+        "overallADP": "265.3",
+        "playerID": "4360423",
+        "longName": "Michael Penix Jr."
+      },
+      {
+        "posADP": "WR102",
+        "overallADP": "265.7",
+        "playerID": "4603186",
+        "longName": "Jack Bech"
+      },
+      {
         "posADP": "DST25",
-        "overallADP": "266.2",
+        "overallADP": "266.9",
         "teamAbv": "IND",
         "teamID": "14",
         "longName": "Indianapolis Colts DST"
       },
       {
-        "posADP": "WR103",
-        "overallADP": "267.8",
-        "playerID": "15818",
-        "longName": "Keenan Allen"
-      },
-      {
         "posADP": "RB79",
-        "overallADP": "268.1",
+        "overallADP": "268.2",
         "playerID": "4596602",
         "longName": "Brashard Smith"
-      },
-      {
-        "posADP": "RB80",
-        "overallADP": "268.7",
-        "playerID": "3149687",
-        "longName": "Chris Brooks"
       },
       {
         "posADP": "K22",
         "overallADP": "270.8",
         "playerID": "3043234",
         "longName": "Zane Gonzalez"
+      },
+      {
+        "posADP": "WR103",
+        "overallADP": "270.9",
+        "playerID": "15818",
+        "longName": "Keenan Allen"
       },
       {
         "posADP": "DST26",
@@ -1825,16 +1819,16 @@
         "longName": "Tampa Bay Buccaneers DST"
       },
       {
-        "posADP": "RB81",
+        "posADP": "RB80",
         "overallADP": "272.1",
         "playerID": "3915411",
         "longName": "Ty Johnson"
       },
       {
-        "posADP": "RB82",
-        "overallADP": "272.6",
-        "playerID": "4038441",
-        "longName": "Justice Hill"
+        "posADP": "RB81",
+        "overallADP": "272.3",
+        "playerID": "3149687",
+        "longName": "Chris Brooks"
       },
       {
         "posADP": "K23",
@@ -1843,120 +1837,120 @@
         "longName": "Joey Slye"
       },
       {
+        "posADP": "RB82",
+        "overallADP": "274.1",
+        "playerID": "4038441",
+        "longName": "Justice Hill"
+      },
+      {
         "posADP": "RB83",
-        "overallADP": "273.5",
+        "overallADP": "275.0",
         "playerID": "4874509",
         "longName": "DJ Giddens"
       },
       {
-        "posADP": "RB84",
-        "overallADP": "273.9",
-        "playerID": "4362478",
-        "longName": "Emari Demercado"
+        "posADP": "WR104",
+        "overallADP": "276.3",
+        "playerID": "4430034",
+        "longName": "Xavier Legette"
       },
       {
         "posADP": "DST27",
-        "overallADP": "274.0",
-        "teamAbv": "NO",
-        "teamID": "23",
-        "longName": "New Orleans Saints DST"
-      },
-      {
-        "posADP": "WR104",
-        "overallADP": "275.7",
-        "playerID": "4361409",
-        "longName": "Jahan Dotson"
-      },
-      {
-        "posADP": "DST28",
         "overallADP": "276.3",
         "teamAbv": "CAR",
         "teamID": "5",
         "longName": "Carolina Panthers DST"
       },
       {
-        "posADP": "WR105",
-        "overallADP": "277.2",
-        "playerID": "4430034",
-        "longName": "Xavier Legette"
-      },
-      {
-        "posADP": "WR106",
-        "overallADP": "277.4",
-        "playerID": "3916945",
-        "longName": "Darius Slayton"
+        "posADP": "RB84",
+        "overallADP": "276.4",
+        "playerID": "4429023",
+        "longName": "MarShawn Lloyd"
       },
       {
         "posADP": "RB85",
-        "overallADP": "277.5",
+        "overallADP": "276.6",
         "playerID": "4040761",
         "longName": "Devin Singletary"
       },
       {
         "posADP": "RB86",
-        "overallADP": "278.1",
-        "playerID": "4722893",
-        "longName": "Jaleel McLaughlin"
+        "overallADP": "277.4",
+        "playerID": "4362478",
+        "longName": "Emari Demercado"
       },
       {
-        "posADP": "WR107",
-        "overallADP": "278.4",
+        "posADP": "DST28",
+        "overallADP": "278.9",
+        "teamAbv": "NO",
+        "teamID": "23",
+        "longName": "New Orleans Saints DST"
+      },
+      {
+        "posADP": "WR105",
+        "overallADP": "279.1",
         "playerID": "5220680",
         "longName": "Ted Hurst"
       },
       {
+        "posADP": "WR106",
+        "overallADP": "279.1",
+        "playerID": "3916945",
+        "longName": "Darius Slayton"
+      },
+      {
         "posADP": "RB87",
-        "overallADP": "278.5",
-        "playerID": "4429023",
-        "longName": "MarShawn Lloyd"
+        "overallADP": "281.0",
+        "playerID": "4722893",
+        "longName": "Jaleel McLaughlin"
       },
       {
         "posADP": "RB88",
-        "overallADP": "279.9",
+        "overallADP": "281.7",
         "playerID": "4372019",
         "longName": "Jerome Ford"
       },
       {
+        "posADP": "K24",
+        "overallADP": "282.5",
+        "playerID": "16339",
+        "longName": "Brandon McManus"
+      },
+      {
+        "posADP": "RB89",
+        "overallADP": "282.8",
+        "playerID": "4372561",
+        "longName": "Isaac Guerendo"
+      },
+      {
+        "posADP": "WR107",
+        "overallADP": "283.4",
+        "playerID": "4361409",
+        "longName": "Jahan Dotson"
+      },
+      {
         "posADP": "QB32",
-        "overallADP": "280.8",
+        "overallADP": "283.7",
         "playerID": "4432762",
         "longName": "Shedeur Sanders"
       },
       {
         "posADP": "WR108",
-        "overallADP": "282.0",
-        "playerID": "4569559",
-        "longName": "Devaughn Vele"
-      },
-      {
-        "posADP": "RB89",
-        "overallADP": "282.1",
-        "playerID": "4429835",
-        "longName": "George Holani"
-      },
-      {
-        "posADP": "WR109",
-        "overallADP": "283.8",
-        "playerID": "4362921",
-        "longName": "Tyquan Thornton"
-      },
-      {
-        "posADP": "WR110",
         "overallADP": "284.2",
         "playerID": "4567156",
         "longName": "Treylon Burks"
       },
       {
-        "posADP": "RB90",
-        "overallADP": "284.4",
-        "playerID": "4372561",
-        "longName": "Isaac Guerendo"
+        "posADP": "WR109",
+        "overallADP": "284.7",
+        "playerID": "4569559",
+        "longName": "Devaughn Vele"
       },
       {
-        "posADP": "RB91",
-        "overallADP": "284.4",
-        "playerID": "3116389",
-        "longName": "Samaje Perine"
+        "posADP": "RB90",
+        "overallADP": "284.9",
+        "playerID": "4429835",
+        "longName": "George Holani"
       },
       {
         "posADP": "TE38",
@@ -1965,82 +1959,76 @@
         "longName": "John Bates"
       },
       {
+        "posADP": "WR110",
+        "overallADP": "286.2",
+        "playerID": "4362921",
+        "longName": "Tyquan Thornton"
+      },
+      {
         "posADP": "WR111",
         "overallADP": "286.7",
         "playerID": "4360797",
         "longName": "Tutu Atwell"
       },
       {
-        "posADP": "RB92",
+        "posADP": "RB91",
         "overallADP": "287.0",
         "playerID": "5081508",
         "longName": "Eli Heidenreich"
       },
       {
+        "posADP": "RB92",
+        "overallADP": "287.4",
+        "playerID": "3116389",
+        "longName": "Samaje Perine"
+      },
+      {
         "posADP": "RB93",
-        "overallADP": "288.8",
+        "overallADP": "287.5",
+        "playerID": "4911851",
+        "longName": "LeQuint Allen Jr."
+      },
+      {
+        "posADP": "RB94",
+        "overallADP": "288.2",
         "playerID": "4240603",
         "longName": "Malik Davis"
       },
       {
         "posADP": "WR112",
-        "overallADP": "289.6",
-        "playerID": "4685553",
-        "longName": "Brenen Thompson"
-      },
-      {
-        "posADP": "RB94",
-        "overallADP": "290.8",
-        "playerID": "4911851",
-        "longName": "LeQuint Allen Jr."
-      },
-      {
-        "posADP": "WR113",
-        "overallADP": "291.2",
-        "playerID": "4241372",
-        "longName": "Hollywood Brown"
-      },
-      {
-        "posADP": "WR114",
-        "overallADP": "292.0",
+        "overallADP": "291.7",
         "playerID": "4368003",
         "longName": "Andrei Iosivas"
       },
       {
-        "posADP": "WR115",
+        "posADP": "WR113",
         "overallADP": "292.2",
         "playerID": "4685307",
         "longName": "Kevin Coleman Jr."
       },
       {
-        "posADP": "WR116",
+        "posADP": "WR114",
         "overallADP": "292.4",
         "playerID": "4808839",
         "longName": "Isaiah Bond"
       },
       {
+        "posADP": "WR115",
+        "overallADP": "293.1",
+        "playerID": "4241372",
+        "longName": "Hollywood Brown"
+      },
+      {
         "posADP": "QB33",
-        "overallADP": "292.5",
+        "overallADP": "293.5",
         "playerID": "3122840",
         "longName": "Deshaun Watson"
       },
       {
-        "posADP": "WR117",
-        "overallADP": "293.5",
+        "posADP": "WR116",
+        "overallADP": "293.6",
         "playerID": "4249417",
         "longName": "Jalen Tolbert"
-      },
-      {
-        "posADP": "QB34",
-        "overallADP": "294.2",
-        "playerID": "4241479",
-        "longName": "Tua Tagovailoa"
-      },
-      {
-        "posADP": "QB35",
-        "overallADP": "296.4",
-        "playerID": "14880",
-        "longName": "Kirk Cousins"
       },
       {
         "posADP": "TE39",
@@ -2049,28 +2037,34 @@
         "longName": "Tyler Higbee"
       },
       {
-        "posADP": "WR118",
-        "overallADP": "297.0",
-        "playerID": "4242433",
-        "longName": "Joshua Palmer"
+        "posADP": "QB34",
+        "overallADP": "296.9",
+        "playerID": "4241479",
+        "longName": "Tua Tagovailoa"
       },
       {
-        "posADP": "QB36",
-        "overallADP": "298.0",
-        "playerID": "4433970",
-        "longName": "J.J. McCarthy"
-      },
-      {
-        "posADP": "WR119",
+        "posADP": "WR117",
         "overallADP": "298.0",
         "playerID": "3929785",
         "longName": "Nick Westbrook-Ikhine"
       },
       {
-        "posADP": "WR120",
+        "posADP": "QB35",
+        "overallADP": "299.5",
+        "playerID": "14880",
+        "longName": "Kirk Cousins"
+      },
+      {
+        "posADP": "QB36",
+        "overallADP": "299.8",
+        "playerID": "4433970",
+        "longName": "J.J. McCarthy"
+      },
+      {
+        "posADP": "WR118",
         "overallADP": "302.0",
-        "playerID": "5082630",
-        "longName": "Jalen Royals"
+        "playerID": "4608810",
+        "longName": "Tez Johnson"
       },
       {
         "posADP": "TE40",
@@ -2079,88 +2073,88 @@
         "longName": "Tommy Myers"
       },
       {
-        "posADP": "RB95",
-        "overallADP": "303.7",
-        "playerID": "3059915",
-        "longName": "Kareem Hunt"
-      },
-      {
-        "posADP": "WR121",
-        "overallADP": "303.8",
-        "playerID": "4608810",
-        "longName": "Tez Johnson"
-      },
-      {
-        "posADP": "WR122",
-        "overallADP": "304.2",
+        "posADP": "WR119",
+        "overallADP": "303.5",
         "playerID": "4710855",
         "longName": "Konata Mumpfield"
       },
       {
-        "posADP": "RB96",
-        "overallADP": "304.3",
-        "playerID": "4686468",
-        "longName": "Seth McGowan"
+        "posADP": "WR120",
+        "overallADP": "304.0",
+        "playerID": "5082630",
+        "longName": "Jalen Royals"
       },
       {
-        "posADP": "WR123",
+        "posADP": "RB95",
         "overallADP": "304.3",
+        "playerID": "3059915",
+        "longName": "Kareem Hunt"
+      },
+      {
+        "posADP": "RB96",
+        "overallADP": "304.7",
+        "playerID": "4685350",
+        "longName": "Trevor Etienne"
+      },
+      {
+        "posADP": "WR121",
+        "overallADP": "305.0",
         "playerID": "4432775",
         "longName": "Dont'e Thornton Jr."
       },
       {
         "posADP": "RB97",
-        "overallADP": "305.7",
+        "overallADP": "305.6",
         "playerID": "4569682",
         "longName": "Audric Estime"
       },
       {
-        "posADP": "WR124",
-        "overallADP": "306.2",
+        "posADP": "WR122",
+        "overallADP": "305.7",
         "playerID": "4426948",
         "longName": "Luke McCaffrey"
       },
       {
-        "posADP": "WR125",
-        "overallADP": "306.6",
+        "posADP": "RB98",
+        "overallADP": "305.9",
+        "playerID": "4686468",
+        "longName": "Seth McGowan"
+      },
+      {
+        "posADP": "WR123",
+        "overallADP": "308.0",
         "playerID": "4869645",
         "longName": "Caleb Douglas"
       },
       {
-        "posADP": "RB98",
-        "overallADP": "306.7",
-        "playerID": "4685350",
-        "longName": "Trevor Etienne"
-      },
-      {
-        "posADP": "WR126",
-        "overallADP": "307.2",
+        "posADP": "WR124",
+        "overallADP": "311.3",
         "playerID": "4431487",
         "longName": "Savion Williams"
       },
       {
-        "posADP": "QB37",
-        "overallADP": "309.4",
-        "playerID": "4241464",
-        "longName": "Mac Jones"
-      },
-      {
-        "posADP": "WR127",
-        "overallADP": "309.7",
-        "playerID": "4686422",
-        "longName": "Xavier Hutchinson"
-      },
-      {
         "posADP": "RB99",
-        "overallADP": "311.1",
+        "overallADP": "311.8",
         "playerID": "4429299",
         "longName": "Tahj Brooks"
       },
       {
         "posADP": "RB100",
-        "overallADP": "314.8",
+        "overallADP": "312.0",
         "playerID": "4710341",
         "longName": "Jarquez Hunter"
+      },
+      {
+        "posADP": "QB37",
+        "overallADP": "313.0",
+        "playerID": "4241464",
+        "longName": "Mac Jones"
+      },
+      {
+        "posADP": "WR125",
+        "overallADP": "313.6",
+        "playerID": "4243389",
+        "longName": "Calvin Austin III"
       },
       {
         "posADP": "QB38",
@@ -2170,7 +2164,7 @@
       },
       {
         "posADP": "RB101",
-        "overallADP": "315.0",
+        "overallADP": "315.2",
         "playerID": "4240657",
         "longName": "Michael Carter"
       },
@@ -2181,52 +2175,46 @@
         "longName": "Max Klare"
       },
       {
-        "posADP": "WR128",
+        "posADP": "RB102",
+        "overallADP": "316.6",
+        "playerID": "4427728",
+        "longName": "Bam Knight"
+      },
+      {
+        "posADP": "WR126",
         "overallADP": "317.0",
         "playerID": "4912218",
         "longName": "Cyrus Allen"
       },
       {
-        "posADP": "QB39",
-        "overallADP": "317.4",
-        "playerID": "4685522",
-        "longName": "Ty Simpson"
+        "posADP": "WR127",
+        "overallADP": "317.0",
+        "playerID": "4686422",
+        "longName": "Xavier Hutchinson"
       },
       {
-        "posADP": "RB102",
-        "overallADP": "317.7",
-        "playerID": "4427728",
-        "longName": "Bam Knight"
-      },
-      {
-        "posADP": "WR129",
+        "posADP": "WR128",
         "overallADP": "318.2",
         "playerID": "3676833",
         "longName": "KaVontae Turpin"
       },
       {
-        "posADP": "WR130",
-        "overallADP": "318.4",
+        "posADP": "WR129",
+        "overallADP": "318.3",
         "playerID": "4369863",
         "longName": "Cedric Tillman"
       },
       {
-        "posADP": "RB103",
-        "overallADP": "318.6",
-        "playerID": "3068267",
-        "longName": "Austin Ekeler"
-      },
-      {
-        "posADP": "RB104",
-        "overallADP": "319.0",
-        "playerID": "4431545",
-        "longName": "Will Shipley"
-      },
-      {
-        "posADP": "WR131",
+        "posADP": "WR130",
         "overallADP": "319.2",
         "playerID": "4879276",
         "longName": "Bryce Lance"
+      },
+      {
+        "posADP": "RB103",
+        "overallADP": "319.8",
+        "playerID": "4431545",
+        "longName": "Will Shipley"
       },
       {
         "posADP": "TE42",
@@ -2235,13 +2223,19 @@
         "longName": "Darren Waller"
       },
       {
-        "posADP": "WR132",
-        "overallADP": "320.5",
-        "playerID": "4243389",
-        "longName": "Calvin Austin III"
+        "posADP": "RB104",
+        "overallADP": "319.9",
+        "playerID": "3068267",
+        "longName": "Austin Ekeler"
       },
       {
-        "posADP": "QB40",
+        "posADP": "WR131",
+        "overallADP": "321.4",
+        "playerID": "4685553",
+        "longName": "Brenen Thompson"
+      },
+      {
+        "posADP": "QB39",
         "overallADP": "321.5",
         "playerID": "4362887",
         "longName": "Justin Fields"
@@ -2254,7 +2248,7 @@
       },
       {
         "posADP": "RB105",
-        "overallADP": "322.2",
+        "overallADP": "322.3",
         "playerID": "3128720",
         "longName": "Nick Chubb"
       },
@@ -2277,10 +2271,16 @@
         "longName": "Ja'Tavion Sanders"
       },
       {
-        "posADP": "WR133",
+        "posADP": "WR132",
         "overallADP": "325.0",
         "playerID": "2973405",
         "longName": "Kalif Raymond"
+      },
+      {
+        "posADP": "WR133",
+        "overallADP": "325.6",
+        "playerID": "4242433",
+        "longName": "Joshua Palmer"
       },
       {
         "posADP": "TE47",
@@ -2290,15 +2290,15 @@
       },
       {
         "posADP": "WR134",
-        "overallADP": "328.0",
+        "overallADP": "329.4",
         "playerID": "3917914",
         "longName": "Olamide Zaccheaus"
       },
       {
-        "posADP": "RB106",
-        "overallADP": "331.5",
-        "playerID": "4601080",
-        "longName": "Raheim Sanders"
+        "posADP": "QB40",
+        "overallADP": "332.4",
+        "playerID": "4685522",
+        "longName": "Ty Simpson"
       },
       {
         "posADP": "TE48",
@@ -2307,22 +2307,28 @@
         "longName": "Darnell Washington"
       },
       {
+        "posADP": "RB106",
+        "overallADP": "334.6",
+        "playerID": "4601080",
+        "longName": "Raheim Sanders"
+      },
+      {
         "posADP": "RB107",
-        "overallADP": "333.0",
+        "overallADP": "335.7",
+        "playerID": "4360238",
+        "longName": "Dameon Pierce"
+      },
+      {
+        "posADP": "RB108",
+        "overallADP": "336.8",
         "playerID": "4429939",
         "longName": "Jawhar Jordan"
       },
       {
-        "posADP": "RB108",
-        "overallADP": "335.0",
+        "posADP": "RB109",
+        "overallADP": "337.0",
         "playerID": "4427600",
         "longName": "Terrell Jennings"
-      },
-      {
-        "posADP": "RB109",
-        "overallADP": "336.5",
-        "playerID": "4360238",
-        "longName": "Dameon Pierce"
       },
       {
         "posADP": "TE49",
@@ -2331,10 +2337,10 @@
         "longName": "Ben Sinnott"
       },
       {
-        "posADP": "RB110",
-        "overallADP": "338.0",
-        "playerID": "4360294",
-        "longName": "Antonio Gibson"
+        "posADP": "WR135",
+        "overallADP": "338.2",
+        "playerID": "4602667",
+        "longName": "Jaylin Lane"
       },
       {
         "posADP": "TE50",
@@ -2343,28 +2349,28 @@
         "longName": "Daniel Bellinger"
       },
       {
-        "posADP": "WR135",
-        "overallADP": "339.0",
-        "playerID": "4602667",
-        "longName": "Jaylin Lane"
+        "posADP": "WR136",
+        "overallADP": "338.5",
+        "playerID": "4567096",
+        "longName": "John Metchie III"
       },
       {
-        "posADP": "WR136",
+        "posADP": "WR137",
         "overallADP": "339.3",
         "playerID": "3045523",
         "longName": "Kendrick Bourne"
       },
       {
-        "posADP": "WR137",
-        "overallADP": "340.0",
-        "playerID": "4427095",
-        "longName": "DeMario Douglas"
+        "posADP": "RB110",
+        "overallADP": "339.7",
+        "playerID": "4360294",
+        "longName": "Antonio Gibson"
       },
       {
         "posADP": "WR138",
-        "overallADP": "342.3",
-        "playerID": "4567096",
-        "longName": "John Metchie III"
+        "overallADP": "340.0",
+        "playerID": "4427095",
+        "longName": "DeMario Douglas"
       },
       {
         "posADP": "TE51",
@@ -2391,6 +2397,12 @@
         "longName": "Cole Kmet"
       },
       {
+        "posADP": "QB41",
+        "overallADP": "348.3",
+        "playerID": "4430841",
+        "longName": "Carson Beck"
+      },
+      {
         "posADP": "RB111",
         "overallADP": "350.0",
         "playerID": "4431562",
@@ -2401,12 +2413,6 @@
         "overallADP": "350.2",
         "playerID": "3930086",
         "longName": "Dawson Knox"
-      },
-      {
-        "posADP": "QB41",
-        "overallADP": "350.5",
-        "playerID": "4430841",
-        "longName": "Carson Beck"
       },
       {
         "posADP": "QB42",
