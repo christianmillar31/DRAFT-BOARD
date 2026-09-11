@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-09-10T12:49:27.687Z",
-  "lastUpdated": "9/10/2026, 5:49:27 AM",
+  "timestamp": "2026-09-11T12:44:03.994Z",
+  "lastUpdated": "9/11/2026, 5:44:03 AM",
   "data": {
     "players": [
       {
@@ -113,10 +113,10 @@
         "rotoWirePlayerIDFull": "drue-tranquill-13814",
         "cbsLongName": "Drue Tranquill",
         "injury": {
-          "injReturnDate": "20260914",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "16",
         "pos": "LB",
@@ -4818,7 +4818,7 @@
         "fRefID": "CowiJa00",
         "firstName": "Jacob",
         "weight": "171",
-        "jerseyNum": "6",
+        "jerseyNum": "4",
         "draftInfo": {
           "round": "4",
           "pick": "135",
@@ -4849,7 +4849,7 @@
         "rotoWirePlayerID": "17008",
         "height": "5'9\"",
         "cbsPlayerIDFull": "3133200/jacob-cowing/",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4575665",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jacob-cowing.php"
@@ -5011,7 +5011,7 @@
         "cbsLongName": "Jonathan Greenard",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Greenard (pectoral) was limited during Wednesday's practice, Tim McManus of ESPN.com reports.",
+          "description": "Sep 10: Greenard (pectoral) did not participate at practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -7928,6 +7928,7 @@
       {
         "espnID": "4599158",
         "espnName": "Al-Jay Henderson",
+        "fantasyProsPlayerID": "28118",
         "lastName": "Henderson",
         "espnIDFull": "4599158/al-jay-henderson",
         "firstName": "Al-Jay",
@@ -7953,7 +7954,8 @@
         "rotoWirePlayerID": "20148",
         "height": "6'0\"",
         "playerID": "4599158",
-        "exp": "R"
+        "exp": "R",
+        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/al-jay-henderson.php"
       },
       {
         "espnID": "4714157",
@@ -8240,7 +8242,7 @@
         "cbsLongName": "A.J. Brown",
         "injury": {
           "injReturnDate": "20260920",
-          "description": "Sep 9: Coach Mike Vrabel didn't have an update on Brown (ankle) after Wednesday's loss at Seattle in which the wide receiver left early due to injury, Taylor Kyles of CLNSMedia.com reports.",
+          "description": "Sep 10: Brown is expected to miss four weeks with the ankle injury he suffered in Monday night's loss to the Seahawks, Ian Rapoport of ESPN and NFL Network reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -9353,10 +9355,10 @@
         "rotoWirePlayerIDFull": "tatum-bethune-17961",
         "cbsLongName": "Tatum Bethune",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260920",
+          "description": "Sep 10: Bethune (coach's decision) is officially inactive for Thursday's game against the Rams, Matt Maiocco of NBC Sports Bay Area reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "28",
         "pos": "LB",
@@ -9585,7 +9587,7 @@
         "rotoWirePlayerID": "16108",
         "height": "5'9\"",
         "cbsPlayerIDFull": "2804793/ronnie-rivers/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4243003",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/ronnie-rivers.php"
@@ -9923,7 +9925,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/40282",
         "bDay": "12/2/1999",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4361748.png",
-        "isFreeAgent": "True",
+        "isFreeAgent": "False",
         "rotoWirePlayerIDFull": "anthony-johnson-17429",
         "cbsLongName": "Anthony Johnson Jr.",
         "injury": {
@@ -10779,7 +10781,7 @@
         "rotoWirePlayerID": "16758",
         "height": "6'2\"",
         "cbsPlayerIDFull": "3123718/byron-young/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4875196",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/byron-young-edge.php"
@@ -12094,7 +12096,7 @@
         "rotoWirePlayerID": "11892",
         "height": "6'4\"",
         "cbsPlayerIDFull": "2818265/george-kittle",
-        "lastGamePlayed": "20260111_SF@PHI",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3040151",
         "exp": "10",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/george-kittle.php"
@@ -13604,7 +13606,7 @@
         "rotoWirePlayerID": "15602",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2803737/garret-wallow",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4241807",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/garret-wallow.php"
@@ -13639,7 +13641,7 @@
         "cbsLongName": "Josh Jacobs",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 4: Jacobs' next court date has been moved up from Nov. 17 to Sept. 10, Michael Gross of Fox 11 Green Bay reports. Jacobs is expected to be represented by his attorney and won't personally appear at the hearing.",
+          "description": "Sep 10: Jacobs (personal) appeared in court in Green Bay on Thursday and pleaded no contest to misdemeanor charges of battery and criminal damage to property, Matt Schneidman of The Athletic reports.",
           "injDate": "",
           "designation": "Out"
         },
@@ -14533,10 +14535,10 @@
         "rotoWirePlayerIDFull": "jake-tonges-16418",
         "cbsLongName": "Jake Tonges",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260920",
+          "description": "Sep 10: Tonges (knee) will not return to Thursday's game against the Rams, Brooke Evans of the 49ers' official website reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "28",
         "pos": "TE",
@@ -16876,7 +16878,7 @@
         "rotoWirePlayerID": "19753",
         "height": "6'4\"",
         "cbsPlayerIDFull": "28925085/jaden-dugger/",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "5086161",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jaden-dugger.php"
@@ -16964,7 +16966,7 @@
         "rotoWirePlayerID": "15566",
         "height": "6'5\"",
         "cbsPlayerIDFull": "2260977/luke-farrell",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4040612",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/luke-farrell.php"
@@ -17791,7 +17793,7 @@
         "rotoWirePlayerID": "17279",
         "height": "6'3\"",
         "cbsPlayerIDFull": "2960956/desjuan-johnson/",
-        "lastGamePlayed": "20260815_LAR@KC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4362294",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/desjuan-johnson.php"
@@ -18662,7 +18664,7 @@
         "rotoWirePlayerID": "16003",
         "height": "5'11\"",
         "cbsPlayerIDFull": "3121359/trent-mcduffie/",
-        "lastGamePlayed": "20260822_NO@LAR",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4426405",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/trent-mcduffie.php"
@@ -21307,7 +21309,7 @@
         "cbsLongName": "Zachariah Branch",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Branch (hamstring) was limited in Wednesday's practice, Daniel Flick of The Atlanta Journal-Constitution reports.",
+          "description": "Sep 10: Branch (hamstring) remained limited at practice Thursday, Tori McElhaney of the Falcons' official site reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -22404,7 +22406,7 @@
         "rotoWirePlayerID": "10918",
         "height": "6'4\"",
         "cbsPlayerIDFull": "1860889/jake-brendel",
-        "lastGamePlayed": "20240922_SF@LAR",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "2577185",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jake-brendel.php"
@@ -26198,7 +26200,7 @@
         "cbsLongName": "Alvin Kamara",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Kamara (knee) returned to practice Wednesday, Mike Triplett of NewOrleans.Football reports.",
+          "description": "Sep 10: Kamara (knee) remained limited at practice Thursday, Mike Triplett of NewOrleans.Football reports.",
           "injDate": "20240501",
           "designation": "Questionable"
         },
@@ -27995,7 +27997,7 @@
         "rotoWirePlayerID": "17109",
         "height": "6'5\"",
         "cbsPlayerIDFull": "2807441/keion-white/",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4243493",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/keion-white.php"
@@ -28265,7 +28267,7 @@
         "rotoWirePlayerID": "19506",
         "height": "6'2\"",
         "cbsPlayerIDFull": "28909233/gracen-halton/",
-        "lastGamePlayed": "20260813_TEN@SF",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4685369",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/gracen-halton.php"
@@ -28429,7 +28431,7 @@
         "rotoWirePlayerID": "19607",
         "height": "5'9\"",
         "cbsPlayerIDFull": "3162599/kaelon-black/",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4696044",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/kaelon-black.php"
@@ -28993,10 +28995,10 @@
         "rotoWirePlayerIDFull": "enrique-cruz-19480",
         "cbsLongName": "Enrique Cruz Jr.",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260920",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "28",
         "pos": "OT",
@@ -29560,7 +29562,7 @@
         "cbsLongName": "Garrett Williams",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Williams (Achilles) was a limited participant in practice for the second day in a row Thursday, Zach Gershman of the Cardinals' official site reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -30468,7 +30470,7 @@
         "rotoWirePlayerID": "17688",
         "height": "6'1\"",
         "cbsPlayerIDFull": "3122843/jordan-whittington/",
-        "lastGamePlayed": "20260822_NO@LAR",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4569382",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jordan-whittington.php"
@@ -31148,7 +31150,7 @@
         "cbsLongName": "Will Kacmarek",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Kacmarek (calf) was limited during Wednesday's practice, David Furones of the South Florida Sun Sentinel reports.",
+          "description": "Sep 10: Kacmarek (calf) was a limited participant in practice for the second day in a row Thursday, C. Isaiah Smalls II of the Miami Herald reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -32252,7 +32254,7 @@
         "cbsLongName": "Dadrion Taylor-Demerson",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Aug 22: Taylor-Demerson is questionable to return to Saturday's preseason game against the Cowboys due to a rib injury.",
+          "description": "Sep 10: Taylor-Demerson (ribs) did not participate in practice Thursday, Zach Gershman of the Cardinals' official site reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -32380,7 +32382,7 @@
         "cbsLongName": "Brenen Thompson",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Thompson (undisclosed) was a limited participant in Wednesday's practice.",
+          "description": "Sep 10: Thompson (hip) was a limited participant at practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -33585,7 +33587,7 @@
         "rotoWirePlayerID": "14463",
         "height": "6'7\"",
         "cbsPlayerIDFull": "2867522/colby-parkinson",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4242557",
         "exp": "7",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/colby-parkinson.php"
@@ -37229,7 +37231,7 @@
         "rotoWirePlayerID": "18385",
         "height": "6'0\"",
         "cbsPlayerIDFull": "3122957/jaylen-mccollough",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4427120",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jaylen-mccollough.php"
@@ -37348,10 +37350,10 @@
         "rotoWirePlayerIDFull": "kamren-curl-14381",
         "cbsLongName": "Kamren Curl",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260921",
+          "description": "Sep 10: Curl (ankle) is questionable to return to Thursday's game against the 49ers, Gary Klein of the Los Angeles Times reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "19",
         "pos": "S",
@@ -37361,7 +37363,7 @@
         "rotoWirePlayerID": "14381",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2866171/kamren-curl/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4242154",
         "exp": "7",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/kamren-curl.php"
@@ -39093,10 +39095,10 @@
         "rotoWirePlayerIDFull": "jude-bowry-19391",
         "cbsLongName": "Jude Bowry",
         "injury": {
-          "injReturnDate": "20260913",
-          "description": "Aug 24: Bowry (foot) did not participate at the Bills' training camp practice Monday, Alaina Getzenberg of ESPN.com reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "4",
         "pos": "OT",
@@ -41084,7 +41086,7 @@
         "rotoWirePlayerID": "13429",
         "height": "6'0\"",
         "cbsPlayerIDFull": "2139735/deebo-samuel",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3126486",
         "exp": "8",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/deebo-samuel.php"
@@ -41213,7 +41215,7 @@
         "rotoWirePlayerID": "17474",
         "height": "5'8\"",
         "cbsPlayerIDFull": "2965588/tanner-ingle",
-        "lastGamePlayed": "20260827_LAR@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4361651",
         "exp": "1",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tanner-ingle.php"
@@ -42449,7 +42451,7 @@
         "cbsLongName": "LeQuint Allen",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Allen was present for Wednesday's practice but was a non-participant due to a hip injury, Ryan O'Halloran of The Florida Times-Union reports.",
+          "description": "Sep 10: Allen (hip) was a limited practice participant Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -42588,10 +42590,10 @@
         "rotoWirePlayerIDFull": "shemar-stewart-18655",
         "cbsLongName": "Shemar Stewart",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260913",
+          "description": "Sep 10: Stewart (knee) was a limited participant at practice Thursday, Jay Morrison of SI.com reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "7",
         "pos": "DE",
@@ -42728,7 +42730,7 @@
         "rotoWirePlayerID": "17081",
         "height": "6'1\"",
         "cbsPlayerIDFull": "26694679/konata-mumpfield",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4710855",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/konata-mumpfield.php"
@@ -42762,10 +42764,10 @@
         "rotoWirePlayerIDFull": "jordan-watkins-18647",
         "cbsLongName": "Jordan Watkins",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260920",
+          "description": "Sep 10: Watkins (coach's decision) is officially inactive for Thursday's game against the Rams, Matt Maiocco of NBC Sports Bay Area reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "28",
         "pos": "WR",
@@ -43472,7 +43474,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/42431",
         "bDay": "4/12/2002",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5278708.png",
-        "isFreeAgent": "False",
+        "isFreeAgent": "True",
         "rotoWirePlayerIDFull": "melvin-smith-19005",
         "cbsLongName": "Melvin Smith Jr.",
         "injury": {
@@ -45304,10 +45306,10 @@
         "rotoWirePlayerIDFull": "luke-wattenberg-16088",
         "cbsLongName": "Luke Wattenberg",
         "injury": {
-          "injReturnDate": "20260914",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "10",
         "pos": "C",
@@ -45464,7 +45466,7 @@
         "fRefID": "PattJa03",
         "firstName": "Jarrett",
         "weight": "310",
-        "jerseyNum": "54",
+        "jerseyNum": "58",
         "draftInfo": {
           "round": "6",
           "pick": "201",
@@ -45901,7 +45903,7 @@
         "rotoWirePlayerID": "16790",
         "height": "6'2\"",
         "cbsPlayerIDFull": "3121687/puka-nacua/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4426515",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/puka-nacua.php"
@@ -46866,7 +46868,7 @@
         "cbsLongName": "Christian Rozeboom",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Rozeboom (foot) was a limited participant in Wednesday's practice, Brianna Dix of the Buccaneers' official site reports.",
+          "description": "Sep 10: Rozeboom (foot) was a limited participant at the Buccaneers' practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -47005,10 +47007,10 @@
         "rotoWirePlayerIDFull": "dashawn-hand-12821",
         "cbsLongName": "Da'Shawn Hand",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260913",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "2",
         "pos": "DT",
@@ -47321,7 +47323,7 @@
         "cbsLongName": "Sean Tucker",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Tucker (hamstring) did not practice Wednesday.",
+          "description": "Sep 10: Tucker (hamstring) practiced on a limited basis Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -47389,7 +47391,7 @@
         "fRefID": "RobiDe01",
         "firstName": "Demarcus",
         "weight": "202",
-        "jerseyNum": "7",
+        "jerseyNum": "11",
         "draftInfo": {
           "round": "4",
           "pick": "126",
@@ -47421,7 +47423,7 @@
         "rotoWirePlayerID": "11163",
         "height": "6'1\"",
         "cbsPlayerIDFull": "2061095/demarcus-robinson",
-        "lastGamePlayed": "20260117_SF@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3043116",
         "exp": "11",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/demarcus-robinson.php"
@@ -49899,10 +49901,10 @@
         "rotoWirePlayerIDFull": "ben-sims-17012",
         "cbsLongName": "Ben Sims",
         "injury": {
-          "injReturnDate": "20261011",
-          "description": "Sep 1: Sims (undisclosed) reverted to the Dolphins' injured reserve Tuesday, per the NFL's transaction log.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": ""
         },
         "teamID": "20",
         "pos": "TE",
@@ -51054,7 +51056,7 @@
         "cbsLongName": "Jakobi Meyers",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Meyers (hand) was spotted practicing Wednesday while wearing a non-contact jersey, Ryan O'Halloran of The Florida Times-Union reports.",
+          "description": "Sep 10: Meyers (thumb) was a limited participant in Thursday's practice.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -53209,7 +53211,7 @@
         "fRefID": "StriDe01",
         "firstName": "De'Zhaun",
         "weight": "207",
-        "jerseyNum": "15",
+        "jerseyNum": "7",
         "draftInfo": {
           "round": "2",
           "pick": "33",
@@ -53228,10 +53230,10 @@
         "rotoWirePlayerIDFull": "dezhaun-stribling-19330",
         "cbsLongName": "De'Zhaun Stribling",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260920",
+          "description": "Sep 10: Stribling (ankle) has been ruled out for the remainder of Thursday's game against the Rams, Matt Maiocco of NBC Sports Bay Area reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "28",
         "pos": "WR",
@@ -53381,7 +53383,7 @@
         "rotoWirePlayerID": "17808",
         "height": "5'10\"",
         "cbsPlayerIDFull": "3167563/malik-mustapha/",
-        "lastGamePlayed": "20260117_SF@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4696211",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/malik-mustapha.php"
@@ -53630,10 +53632,10 @@
         "rotoWirePlayerIDFull": "alohi-gilman-14521",
         "cbsLongName": "Alohi Gilman",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Aug 22: Gilman has been ruled out for the rest of Saturday's preseason game against the Buccaneers due to a back injury.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "16",
         "pos": "S",
@@ -54202,7 +54204,7 @@
         "cbsLongName": "Jacory Croskey-Merritt",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Croskey-Merritt practiced in a limited capacity Wednesday due to a groin injury.",
+          "description": "Sep 10: Croskey-Merritt (groin) practiced in a limited capacity Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -54289,7 +54291,7 @@
         "cbsLongName": "Oscar Delp",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Delp (hamstring) did not participate in Wednesday's practice.",
+          "description": "Sep 10: Delp (hamstring) did not participate at practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -54826,10 +54828,10 @@
         "rotoWirePlayerIDFull": "jawaan-taylor-13480",
         "cbsLongName": "Jawaan Taylor",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260913",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "2",
         "pos": "OT",
@@ -54879,14 +54881,14 @@
           "designation": ""
         },
         "teamID": "28",
-        "pos": "CB",
+        "pos": "S",
         "school": "Jacksonville State",
         "cbsPlayerID": "2083380",
         "longName": "Siran Neal",
         "rotoWirePlayerID": "12817",
         "height": "6'0\"",
         "cbsPlayerIDFull": "2083380/siran-neal",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3057524",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/siran-neal.php"
@@ -54921,7 +54923,7 @@
         "cbsLongName": "Jeremiyah Love",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Love (ankle) was a limited practice participant Wednesday, Bo Brack of GoPHNX.com reports.",
+          "description": "Sep 10: Love (ankle) remained a limited practice participant Thursday, Bo Brack of GoPHNX.com reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -56344,7 +56346,7 @@
         "cbsLongName": "Devontez Walker",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Walker (groin) was limited at practice Wednesday.",
+          "description": "Sep 10: Walker (groin) was listed as a limited participant at the Ravens' walkthrough practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -57490,7 +57492,7 @@
         "rotoWirePlayerID": "9253",
         "height": "6'5\"",
         "cbsPlayerIDFull": "1824909/mike-evans",
-        "lastGamePlayed": "20260103_CAR@TB",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "16737",
         "exp": "13",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/mike-evans.php"
@@ -61488,10 +61490,10 @@
         "rotoWirePlayerIDFull": "trey-smith-15438",
         "cbsLongName": "Trey Smith",
         "injury": {
-          "injReturnDate": "20260914",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "16",
         "pos": "G",
@@ -62023,6 +62025,7 @@
       {
         "espnID": "12803",
         "espnName": "D.J. Johnson",
+        "fantasyProsPlayerID": "25290",
         "lastName": "Johnson",
         "espnIDFull": "12803/dj-johnson",
         "firstName": "D.J.",
@@ -62052,7 +62055,8 @@
         "height": "6'1\"",
         "cbsPlayerIDFull": "2864665/dj-johnson",
         "playerID": "12803",
-        "exp": "3"
+        "exp": "3",
+        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/dj-johnson-edge.php"
       },
       {
         "espnID": "4428383",
@@ -65500,7 +65504,7 @@
         "rotoWirePlayerID": "15904",
         "height": "6'3\"",
         "cbsPlayerIDFull": "2867156/nate-landman/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4243181",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/nathan-landman.php"
@@ -66319,7 +66323,7 @@
         "cbsLongName": "Jonathon Brooks",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Brooks (groin) was listed as a limited participant in Wednesday's practice.",
+          "description": "Sep 10: Brooks (groin) was a limited participant in Thursday's practice.",
           "injDate": "20240801",
           "designation": "Questionable"
         },
@@ -67648,7 +67652,7 @@
         "rotoWirePlayerID": "17690",
         "height": "5'8\"",
         "cbsPlayerIDFull": "3169252/blake-corum/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4429096",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/blake-corum.php"
@@ -68013,7 +68017,7 @@
         "rotoWirePlayerID": "12788",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2079166/obo-okoronkwo/",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3052667",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/obo-okoronkwo.php"
@@ -68395,7 +68399,7 @@
         "cbsLongName": "Kayden McDonald",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: McDonald (ankle) didn't participate in practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -70257,7 +70261,7 @@
         "cbsLongName": "Tim Patrick",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Patrick (groin) did not practice Wednesday, Rich Cimini of ESPN.com reports.",
+          "description": "Sep 10: Patrick (groin) did not participate at practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -70596,10 +70600,10 @@
         "rotoWirePlayerIDFull": "travis-bell-17411",
         "cbsLongName": "Travis Bell",
         "injury": {
-          "injReturnDate": "20270215",
-          "description": "Aug 31: Bell (eye) reverted to Cleveland's injured reserve Monday, per the NFL's transaction log.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": ""
         },
         "teamID": "8",
         "pos": "DT",
@@ -71307,7 +71311,7 @@
         "rotoWirePlayerID": "15807",
         "height": "5'9\"",
         "cbsPlayerIDFull": "3121836/kyren-williams/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4430737",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/kyren-williams.php"
@@ -72071,7 +72075,7 @@
         "cbsLongName": "K'Lavon Chaisson",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Chaisson (knee) was a limited participant at the Commanders' practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -73262,7 +73266,7 @@
         "rotoWirePlayerID": "17199",
         "height": "5'11\"",
         "cbsPlayerIDFull": "3168790/jiayir-brown/",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4693644",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jiayir-brown.php"
@@ -73379,10 +73383,10 @@
         "rotoWirePlayerIDFull": "r-mason-thomas-19416",
         "cbsLongName": "R Mason Thomas",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Sep 3: Thomas (hamstring) did not participate at practice Thursday, Pete Sweeney of The Kansas City Star reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "16",
         "pos": "DE",
@@ -75051,7 +75055,7 @@
         "espnIDFull": "4693371/james-thompson-jr",
         "firstName": "James",
         "weight": "308",
-        "jerseyNum": "75",
+        "jerseyNum": "96",
         "cbsShortName": "J. Thompson Jr.",
         "team": "SF",
         "yahooPlayerID": "42968",
@@ -75064,10 +75068,10 @@
         "rotoWirePlayerIDFull": "james-thompson-19611",
         "cbsLongName": "James Thompson Jr.",
         "injury": {
-          "injReturnDate": "20260910",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "28",
         "pos": "DT",
@@ -75077,7 +75081,7 @@
         "rotoWirePlayerID": "19611",
         "height": "6'6\"",
         "cbsPlayerIDFull": "3175784/james-thompson-jr",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4693371",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/james-thompson-jr.php"
@@ -75379,7 +75383,7 @@
         "rotoWirePlayerID": "14447",
         "height": "6'1\"",
         "cbsPlayerIDFull": "2180264/ashtyn-davis",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3858271",
         "exp": "7",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/ashtyn-davis.php"
@@ -77187,7 +77191,7 @@
         "cbsLongName": "Rome Odunze",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Odunze (calf) was limited in Wednesday's practice.",
+          "description": "Sep 10: Odunze (calf) was listed as a limited participant for Thursday's practice.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -77416,7 +77420,7 @@
         "rotoWirePlayerID": "15809",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2242763/jack-jones",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4035686",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jack-jones.php"
@@ -79792,7 +79796,7 @@
         "rotoWirePlayerID": "12582",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2221833/eddy-pineiro",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4034949",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/eddy-pineiro.php"
@@ -82752,7 +82756,7 @@
         "rotoWirePlayerID": "18497",
         "height": "6'5\"",
         "cbsPlayerIDFull": "26701481/terrance-ferguson",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4570037",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/terrance-ferguson.php"
@@ -82798,7 +82802,7 @@
         "rotoWirePlayerID": "16871",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2871628/stetson-bennett/",
-        "lastGamePlayed": "20260822_NO@LAR",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4259553",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/stetson-bennett.php"
@@ -82930,7 +82934,7 @@
         "rotoWirePlayerID": "10854",
         "height": "6'6\"",
         "cbsPlayerIDFull": "1853103/tyler-higbee",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "2573401",
         "exp": "11",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tyler-higbee.php"
@@ -84402,7 +84406,7 @@
         "rotoWirePlayerID": "11690",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2136743/christian-mccaffrey",
-        "lastGamePlayed": "20260117_SF@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3117251",
         "exp": "10",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/christian-mccaffrey.php"
@@ -84435,10 +84439,10 @@
         "rotoWirePlayerIDFull": "rueben-bain-19395",
         "cbsLongName": "Rueben Bain Jr.",
         "injury": {
-          "injReturnDate": "20260913",
-          "description": "Sep 9: Bain (shoulder) was a limited participant in Wednesday's practice, Brianna Dix of the Buccaneers' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "30",
         "pos": "LB",
@@ -85346,10 +85350,10 @@
         "rotoWirePlayerIDFull": "kurtis-rourke-18565",
         "cbsLongName": "Kurtis Rourke",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260920",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "28",
         "pos": "QB",
@@ -86980,10 +86984,10 @@
         "rotoWirePlayerIDFull": "tua-tagovailoa-14465",
         "cbsLongName": "Tua Tagovailoa",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260913",
+          "description": "Sep 10: Tagovailoa (oblique) is considered day-to-day due to the strained oblique that he suffered during Thursday's practice, Ian Rapoport of ESPN and NFL Network reports.",
           "injDate": "20240501",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "2",
         "pos": "QB",
@@ -90977,10 +90981,10 @@
         "rotoWirePlayerIDFull": "dj-turner-16857",
         "cbsLongName": "DJ Turner",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260913",
+          "description": "Sep 10: Turner was limited in practice Thursday due to a hamstring issue, Jay Morrison of SI.com reports.",
           "injDate": "20240501",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "7",
         "pos": "CB",
@@ -93430,7 +93434,7 @@
         "rotoWirePlayerID": "15834",
         "height": "6'1\"",
         "cbsPlayerIDFull": "2961306/brock-purdy",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4361741",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/brock-purdy.php"
@@ -93623,7 +93627,7 @@
         "rotoWirePlayerIDFull": "brandon-aiyuk-14386",
         "cbsLongName": "Brandon Aiyuk",
         "injury": {
-          "injReturnDate": "20260910",
+          "injReturnDate": "20260920",
           "description": "Jul 25: San Francisco general manager John Lynch told reporters Saturday that Aiyuk (knee) will remain on the 49ers' reserve/left squad list, Adam Schefter of ESPN reports.",
           "injDate": "20240801",
           "designation": "Out"
@@ -95609,7 +95613,7 @@
         "cbsLongName": "Jalen McMillan",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: McMillan (knee) practiced in a limited capacity Wednesday.",
+          "description": "Sep 10: McMillan (knee) was a limited practice participant Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -97564,10 +97568,10 @@
         "rotoWirePlayerIDFull": "max-klare-19278",
         "cbsLongName": "Max Klare",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260921",
+          "description": "Sep 10: Klare (coach's decision) is inactive for Thursday's season-opener versus San Francisco in Melbourne, Australia, Nate Atkins of The Athletic reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "19",
         "pos": "TE",
@@ -99992,10 +99996,10 @@
         "rotoWirePlayerIDFull": "daron-payne-12618",
         "cbsLongName": "Daron Payne",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260913",
+          "description": "Sep 10: Payne (knee) was a limited participant at the Commanders' practice Thursday.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "32",
         "pos": "DT",
@@ -101413,7 +101417,7 @@
         "cbsLongName": "Keaton Mitchell",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Mitchell (hamstring) was limited in Wednesday's practice.",
+          "description": "Sep 10: Mitchell (hamstring) was a limited participant in Thursday's practice.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -103105,9 +103109,9 @@
         "cbsLongName": "Alfred Collins",
         "injury": {
           "injReturnDate": "20270215",
-          "description": "Sep 9: Collins will miss the entire 2026 season after suffering a torn patellar tendon during Tuesday's practice, Nick Wagoner of ESPN.com reports.",
+          "description": "Sep 10: San Francisco placed Collins (knee) on injured reserve Thursday.",
           "injDate": "",
-          "designation": "Out"
+          "designation": "Injured Reserve"
         },
         "teamID": "28",
         "pos": "DT",
@@ -103807,6 +103811,7 @@
         "espnID": "4876658",
         "espnName": "Travis Burke",
         "sleeperBotID": "13495",
+        "fantasyProsPlayerID": "28366",
         "lastName": "Burke",
         "espnIDFull": "4876658/travis-burke",
         "fRefID": "BurkTr01",
@@ -103845,7 +103850,8 @@
         "height": "6'9\"",
         "cbsPlayerIDFull": "26734445/travis-burke/",
         "playerID": "4876658",
-        "exp": "R"
+        "exp": "R",
+        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/travis-burgess.php"
       },
       {
         "espnID": "4598574",
@@ -103962,9 +103968,9 @@
         "cbsLongName": "Brock Bowers",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Bowers underwent a meniscus trim procedure Tuesday and is expected to miss \"a game or two,\" Adam Schefter of ESPN reports.",
+          "description": "Sep 10: Bowers (knee) remained a non-participant in Thursday's practice, Anthony Galaviz of The Fresno Bee reports.",
           "injDate": "",
-          "designation": "Doubtful"
+          "designation": "Out"
         },
         "teamID": "17",
         "pos": "TE",
@@ -104490,10 +104496,10 @@
         "rotoWirePlayerIDFull": "cj-daniels-19316",
         "cbsLongName": "CJ Daniels",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260921",
+          "description": "Sep 10: Daniels (coach's decision) is a healthy scratch for Thursday's matchup versus San Francisco in Melbourne, Australia, Nate Atkins of The Athletic reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "19",
         "pos": "WR",
@@ -104919,10 +104925,10 @@
         "rotoWirePlayerIDFull": "zay-flowers-16919",
         "cbsLongName": "Zay Flowers",
         "injury": {
-          "injReturnDate": "20260913",
-          "description": "Sep 9: The Ravens listed Flowers as a limited participant in Wednesday's practice due to a hamstring injury.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "20240501",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "3",
         "pos": "WR",
@@ -106404,10 +106410,10 @@
         "rotoWirePlayerIDFull": "tutu-atwell-15229",
         "cbsLongName": "Tutu Atwell",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260921",
+          "description": "Sep 10: Atwell (coach's decision) is inactive for Thursday's tilt against the 49ers in Melbourne, Australia, Nate Atkins of The Athletic reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "19",
         "pos": "WR",
@@ -106921,10 +106927,10 @@
         "rotoWirePlayerIDFull": "riley-moss-17104",
         "cbsLongName": "Riley Moss",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Aug 31: Moss (ribs) was back at practice with the Broncos on Monday, Zac Stevens of TheDNVR.com reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "10",
         "pos": "CB",
@@ -107059,7 +107065,7 @@
         "rotoWirePlayerID": "18662",
         "height": "6'1\"",
         "cbsPlayerIDFull": "26702426/josaiah-stewart",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4682983",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/josaiah-stewart.php"
@@ -108041,7 +108047,7 @@
         "rotoWirePlayerID": "13418",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2954080/khadarel-hodge",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3047876",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/khadarel-hodge.php"
@@ -108934,7 +108940,7 @@
         "cbsLongName": "T.J. Sanders",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Sanders (knee) did not participate at practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -109804,10 +109810,10 @@
         "rotoWirePlayerIDFull": "xavier-woods-12007",
         "cbsLongName": "Xavier Woods",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260913",
+          "description": "Sep 10: Woods (groin) was a limited participant at practice Thursday.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "6",
         "pos": "S",
@@ -111651,10 +111657,10 @@
         "rotoWirePlayerIDFull": "jordan-james-18485",
         "cbsLongName": "Jordan James",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260920",
+          "description": "Sep 10: James (coach's decision) is officially inactive for Thursday's game against the Rams, Matt Maiocco of NBC Sports Bay Area reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "28",
         "pos": "RB",
@@ -112960,7 +112966,7 @@
         "rotoWirePlayerID": "17134",
         "height": "6'3\"",
         "cbsPlayerIDFull": "29106475/ethan-evans/",
-        "lastGamePlayed": "20260827_LAR@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "5125875",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/ethan-evans.php"
@@ -113119,7 +113125,7 @@
         "cbsLongName": "Javon Hargrave",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Hargrave (knee) was a limited participant at the Packers' practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -113178,7 +113184,7 @@
         "rotoWirePlayerID": "18702",
         "height": "6'1\"",
         "cbsPlayerIDFull": "3164056/cj-west",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4686308",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/cj-west.php"
@@ -113225,7 +113231,7 @@
         "rotoWirePlayerID": "12769",
         "height": "6'3\"",
         "cbsPlayerIDFull": "2142098/fred-warner",
-        "lastGamePlayed": "20251012_SF@TB",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3138826",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/fred-warner.php"
@@ -114615,7 +114621,7 @@
         "cbsLongName": "Devonte Wyatt",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Wyatt (ankle) was a limited participant at the Packers' practice Thursday.",
           "injDate": "20240501",
           "designation": "Questionable"
         },
@@ -116344,7 +116350,7 @@
         "rotoWirePlayerID": "5971",
         "height": "6'3\"",
         "cbsPlayerIDFull": "1114942/matthew-stafford",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "12483",
         "exp": "18",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/matthew-stafford.php"
@@ -117187,10 +117193,10 @@
         "rotoWirePlayerIDFull": "jaylen-watson-16074",
         "cbsLongName": "Jaylen Watson",
         "injury": {
-          "injReturnDate": "20260910",
-          "description": "Sep 9: Watson (toe) was a limited participant on the Rams' estimated practice report.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "19",
         "pos": "CB",
@@ -117200,7 +117206,7 @@
         "rotoWirePlayerID": "16074",
         "height": "6'2\"",
         "cbsPlayerIDFull": "3176898/jaylen-watson",
-        "lastGamePlayed": "20251221_KC@TEN",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4697639",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jaylen-watson.php"
@@ -118401,10 +118407,10 @@
         "rotoWirePlayerIDFull": "andrew-ogletree-16277",
         "cbsLongName": "Andrew Ogletree",
         "injury": {
-          "injReturnDate": "20260913",
-          "description": "Sep 9: Ogletree (neck) was limited at Wednesday's practice.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "14",
         "pos": "TE",
@@ -120270,7 +120276,7 @@
         "rotoWirePlayerID": "18605",
         "height": "5'9\"",
         "cbsPlayerIDFull": "3161516/upton-stout",
-        "lastGamePlayed": "20260117_SF@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4565200",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/upton-stout.php"
@@ -120917,7 +120923,7 @@
         "cbsLongName": "Eli Stowers",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Stowers (hamstring) was a limited participant in Wednesday's practice.",
+          "description": "Sep 10: Stowers (hamstring) practiced in a limited capacity Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -122639,10 +122645,10 @@
         "rotoWirePlayerIDFull": "ljarius-sneed-14688",
         "cbsLongName": "L'Jarius Sneed",
         "injury": {
-          "injReturnDate": "20260914",
+          "injReturnDate": "",
           "description": "",
           "injDate": "20240501",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "16",
         "pos": "CB",
@@ -123831,10 +123837,10 @@
         "rotoWirePlayerIDFull": "ty-simpson-19275",
         "cbsLongName": "Ty Simpson",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260921",
+          "description": "Sep 10: Simpson is inactive as the Rams' emergency third quarterback for Thursday's matchup against San Francisco in Melbourne, Australia, Nate Atkins of The Athletic reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "19",
         "pos": "QB",
@@ -124887,10 +124893,10 @@
         "rotoWirePlayerIDFull": "kendal-daniels-19542",
         "cbsLongName": "Kendal Daniels",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260913",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "2",
         "pos": "LB",
@@ -125482,10 +125488,10 @@
         "rotoWirePlayerIDFull": "ashton-gillotte-18667",
         "cbsLongName": "Ashton Gillotte",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Aug 20: Gillotte has a ruptured plantar fascia, but the injury is not considered serious, Matt Derrick of ChiefsDigest.com reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "16",
         "pos": "DE",
@@ -125808,7 +125814,7 @@
         "fRefID": "KareKh00",
         "firstName": "Khalid",
         "weight": "268",
-        "jerseyNum": "",
+        "jerseyNum": "54",
         "draftInfo": {
           "round": "5",
           "pick": "147",
@@ -125832,14 +125838,14 @@
           "designation": ""
         },
         "teamID": "28",
-        "pos": "DL",
+        "pos": "DE",
         "school": "Notre Dame",
         "cbsPlayerID": "2240621",
         "longName": "Khalid Kareem",
         "rotoWirePlayerID": "14684",
         "height": "6'4\"",
         "cbsPlayerIDFull": "2240621/khalid-kareem/",
-        "lastGamePlayed": "20260828_NYG@NYJ",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4039029",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/khalid-kareem.php"
@@ -129444,7 +129450,7 @@
         "rotoWirePlayerID": "17799",
         "height": "6'2\"",
         "cbsPlayerIDFull": "1703029/tyler-davis/",
-        "lastGamePlayed": "20260118_LAR@CHI",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4568217",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tyler-davis-dt.php"
@@ -132629,10 +132635,10 @@
         "rotoWirePlayerIDFull": "bobby-brown-15591",
         "cbsLongName": "Bobby Brown III",
         "injury": {
-          "injReturnDate": "20260913",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "5",
         "pos": "DT",
@@ -132894,7 +132900,7 @@
         "rotoWirePlayerID": "17467",
         "height": "5'9\"",
         "cbsPlayerIDFull": "1113461/xavier-smith/",
-        "lastGamePlayed": "20260815_LAR@KC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4386544",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/xavier-smith.php"
@@ -133625,7 +133631,7 @@
         "rotoWirePlayerID": "9455",
         "height": "6'1\"",
         "cbsPlayerIDFull": "1893167/davante-adams",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "16800",
         "exp": "13",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/davante-adams.php"
@@ -133701,7 +133707,7 @@
         "cbsLongName": "Tyson Bagent",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Bagent (back) did not participate at practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -134943,7 +134949,7 @@
         "rotoWirePlayerID": "17921",
         "height": "6'0\"",
         "cbsPlayerIDFull": "3162619/harrison-mevis",
-        "lastGamePlayed": "20260827_LAR@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4574716",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/harrison-mevis.php"
@@ -137635,7 +137641,7 @@
         "rotoWirePlayerID": "13421",
         "height": "6'4\"",
         "cbsPlayerIDFull": "2260972/nick-bosa",
-        "lastGamePlayed": "20250921_ARI@SF",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4040605",
         "exp": "8",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/nick-bosa.php"
@@ -140272,7 +140278,7 @@
         "rotoWirePlayerID": "15284",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2251363/osa-odighizuwa",
-        "lastGamePlayed": "20260104_DAL@NYG",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4035840",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/osa-odighizuwa.php"
@@ -142986,7 +142992,7 @@
         "cbsLongName": "Patrick Jones II",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Jones (back) is not expected to play in Sunday's regular-season opener against the Bears, Joe Person of The Athletic reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -143636,10 +143642,10 @@
         "rotoWirePlayerIDFull": "davis-allen-17030",
         "cbsLongName": "Davis Allen",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260921",
+          "description": "Sep 10: Allen is getting examined for a possible concussion and is questionable to return to Thursday's matchup with the 49ers.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "19",
         "pos": "TE",
@@ -143649,7 +143655,7 @@
         "rotoWirePlayerID": "17030",
         "height": "6'6\"",
         "cbsPlayerIDFull": "3123267/davis-allen/",
-        "lastGamePlayed": "20260104_ARI@LAR",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4426553",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/davis-allen.php"
@@ -144028,7 +144034,7 @@
         "rotoWirePlayerID": "17722",
         "height": "6'0\"",
         "cbsPlayerIDFull": "26699035/kamren-kinchens/",
-        "lastGamePlayed": "20260822_NO@LAR",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4596363",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/kamren-kinchens.php"
@@ -144301,7 +144307,7 @@
         "rotoWirePlayerID": "17981",
         "height": "6'0\"",
         "cbsPlayerIDFull": "3126504/renardo-green/",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4427325",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/renardo-green.php"
@@ -146059,10 +146065,10 @@
         "rotoWirePlayerIDFull": "rj-mickens-18627",
         "cbsLongName": "R.J. Mickens",
         "injury": {
-          "injReturnDate": "20260913",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "18",
         "pos": "S",
@@ -147259,7 +147265,7 @@
         "rotoWirePlayerID": "15012",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2141005/corliss-waitman",
-        "lastGamePlayed": "20260827_SF@LV",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3125280",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/corliss-waitman.php"
@@ -149491,7 +149497,7 @@
         "cbsLongName": "Audric Estime",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Estime (thigh) did not participate in Wednesday's practice.",
+          "description": "Sep 10: Estime (thigh) did not participate at practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -150197,7 +150203,7 @@
         "rotoWirePlayerID": "18913",
         "height": "6'1\"",
         "cbsPlayerIDFull": "3168182/shaun-dolac",
-        "lastGamePlayed": "20260104_ARI@LAR",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4693848",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/shaun-dolac.php"
@@ -150579,7 +150585,7 @@
         "cbsLongName": "Odafe Oweh",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 7: Oweh (calf) took part in the Commanders' walk-through session Monday, JP Finlay of NBC Sports Washington reports.",
+          "description": "Sep 10: Oweh (calf) was a limited participant at the Commanders' practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -151632,10 +151638,10 @@
         "rotoWirePlayerIDFull": "ephesians-prysock-19588",
         "cbsLongName": "Ephesians Prysock",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260920",
+          "description": "Sep 10: Prysock (coach's decision) is officially inactive for Thursday's game against the Rams, Matt Maiocco of NBC Sports Bay Area reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "28",
         "pos": "CB",
@@ -152821,7 +152827,7 @@
         "rotoWirePlayerID": "18634",
         "height": "5'11\"",
         "cbsPlayerIDFull": "3175295/marques-sigle",
-        "lastGamePlayed": "20260813_TEN@SF",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4693337",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/marques-sigle.php"
@@ -153122,7 +153128,7 @@
         "rotoWirePlayerID": "17775",
         "height": "6'5\"",
         "cbsPlayerIDFull": "2964525/braden-fiske/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4362245",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/braden-fiske.php"
@@ -154024,7 +154030,7 @@
         "rotoWirePlayerID": "13804",
         "height": "6'0\"",
         "cbsPlayerIDFull": "2185496/dre-greenlaw",
-        "lastGamePlayed": "20260125_NE@DEN",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3916903",
         "exp": "8",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/dre-greenlaw.php"
@@ -155302,7 +155308,7 @@
         "cbsLongName": "Justin Madubuike",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Madubuike (neck) was considered to be a limited participant at the Ravens' walkthrough practice Thursday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -155614,9 +155620,9 @@
         "fRefID": "JoneJa12",
         "firstName": "Jaylon",
         "weight": "190",
-        "jerseyNum": "33",
+        "jerseyNum": "",
         "cbsShortName": "J. Jones",
-        "team": "CHI",
+        "team": "TEN",
         "yahooPlayerID": "34367",
         "age": "28",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4047655/jaylon-jones",
@@ -155632,7 +155638,7 @@
           "injDate": "",
           "designation": ""
         },
-        "teamID": "6",
+        "teamID": "31",
         "pos": "CB",
         "school": "Ole Miss",
         "cbsPlayerID": "2260180",
@@ -155818,7 +155824,7 @@
         "rotoWirePlayerID": "12492",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2925442/poona-ford",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "3125114",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/poona-ford.php"
@@ -157185,10 +157191,10 @@
         "rotoWirePlayerIDFull": "aj-haulcy-19572",
         "cbsLongName": "A.J. Haulcy",
         "injury": {
-          "injReturnDate": "20260913",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "14",
         "pos": "S",
@@ -157309,10 +157315,10 @@
         "rotoWirePlayerIDFull": "marvin-mims-16849",
         "cbsLongName": "Marvin Mims",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Aug 31: Mims (foot) was not spotted at the Broncos' practice Monday, Parker Gabriel of The Denver Post reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "10",
         "pos": "WR",
@@ -157666,7 +157672,7 @@
         "rotoWirePlayerID": "18690",
         "height": "6'3\"",
         "cbsPlayerIDFull": "3169617/ty-hamilton",
-        "lastGamePlayed": "20260815_LAR@KC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4431118",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/ty-hamilton.php"
@@ -158038,9 +158044,9 @@
         "cbsLongName": "Sam Darnold",
         "injury": {
           "injReturnDate": "20260920",
-          "description": "Sep 9: Darnold underwent a CT scan on his hip and is expected to undergo an MRI on Thursday after the quarterback didn't return to Wednesday's win against the Patriots, Adam Schefter of ESPN.com reports.",
+          "description": "Sep 10: Darnold (hip) received \"really, really good news\" regarding his injury, according to coach Mike McDonald, ESPN.com reports. \"His hip is intact, and it's good,\" McDonald said Thursday.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Doubtful"
         },
         "teamID": "29",
         "pos": "QB",
@@ -158587,7 +158593,7 @@
         "rotoWirePlayerID": "16146",
         "height": "6'1\"",
         "cbsPlayerIDFull": "2874690/quentin-lake/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4249128",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/quentin-lake.php"
@@ -158787,7 +158793,7 @@
         "cbsLongName": "Malik Nabers",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Nabers (knee) participated in drills at Wednesday's practice, Connor Hughes of SNY.tv reports.",
+          "description": "Sep 10: Nabers (knee) logged another full practice Thursday, Connor Hughes of SNY.tv reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -159373,7 +159379,7 @@
         "rotoWirePlayerID": "17157",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2864982/kobie-turner/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4250621",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/kobie-turner.php"
@@ -160273,7 +160279,7 @@
         "cbsLongName": "Alec Pierce",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Pierce was a limited participant in Wednesday's practice due to a heel injury.",
+          "description": "Sep 10: Pierce (heel) was a limited participant at Thursday's practice.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -161242,7 +161248,7 @@
         "rotoWirePlayerID": "15192",
         "height": "5'10\"",
         "cbsPlayerIDFull": "2867301/deommodore-lenoir",
-        "lastGamePlayed": "20260820_SF@LAC",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4242488",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/deommodore-lenoir.php"
@@ -161679,7 +161685,7 @@
         "cbsLongName": "Teven Jenkins",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "",
+          "description": "Sep 10: Jenkins (back) did not participate at the Browns' practice Thursday, Daniel Oyefusi of ESPN.com reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -164482,10 +164488,10 @@
         "rotoWirePlayerIDFull": "patrick-mahomes-11839",
         "cbsLongName": "Patrick Mahomes",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Sep 8: Kansas City head coach Andy Reid said Tuesday that Mahomes (knee) has a \"pretty good chance\" to start next Monday's season opener versus the Broncos, Sam McDowell of The Kansas City Star reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "16",
         "pos": "QB",
@@ -164882,7 +164888,7 @@
         "rotoWirePlayerID": "17914",
         "height": "6'1\"",
         "cbsPlayerIDFull": "3122472/omar-speights",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260910_SF@LAR",
         "playerID": "4428550",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/omar-speights.php"
@@ -164963,7 +164969,7 @@
         "cbsLongName": "Ty Johnson",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 9: Johnson (lower leg) isn't participating in Wednesday's practice, Joe Buscaglia of The Athletic reports.",
+          "description": "Sep 10: Johnson (hamstring) didn't practice Thursday, Matt Parrino of The Syracuse Post-Standard reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -168466,7 +168472,7 @@
       },
       {
         "posADP": "WR1",
-        "overallADP": "2.6",
+        "overallADP": "2.5",
         "playerID": "4362628",
         "longName": "Ja'Marr Chase"
       },
@@ -168556,13 +168562,13 @@
       },
       {
         "posADP": "RB9",
-        "overallADP": "19.4",
+        "overallADP": "19.3",
         "playerID": "4567048",
         "longName": "Kenneth Walker III"
       },
       {
         "posADP": "RB10",
-        "overallADP": "19.5",
+        "overallADP": "19.4",
         "playerID": "3043078",
         "longName": "Derrick Henry"
       },
@@ -168580,7 +168586,7 @@
       },
       {
         "posADP": "WR10",
-        "overallADP": "22.8",
+        "overallADP": "22.7",
         "playerID": "4361370",
         "longName": "Chris Olave"
       },
@@ -168616,25 +168622,25 @@
       },
       {
         "posADP": "WR14",
-        "overallADP": "31.9",
+        "overallADP": "31.8",
         "playerID": "4429615",
         "longName": "Zay Flowers"
       },
       {
         "posADP": "WR15",
-        "overallADP": "33.0",
+        "overallADP": "33.1",
         "playerID": "4428331",
         "longName": "Rashee Rice"
       },
       {
         "posADP": "TE2",
-        "overallADP": "33.2",
+        "overallADP": "33.3",
         "playerID": "4432665",
         "longName": "Brock Bowers"
       },
       {
         "posADP": "RB13",
-        "overallADP": "33.6",
+        "overallADP": "33.5",
         "playerID": "4361579",
         "longName": "Javonte Williams"
       },
@@ -168657,20 +168663,20 @@
         "longName": "Tee Higgins"
       },
       {
-        "posADP": "QB2",
-        "overallADP": "37.2",
-        "playerID": "3916387",
-        "longName": "Lamar Jackson"
-      },
-      {
         "posADP": "RB15",
-        "overallADP": "37.3",
+        "overallADP": "37.2",
         "playerID": "4427366",
         "longName": "Breece Hall"
       },
       {
+        "posADP": "QB2",
+        "overallADP": "37.3",
+        "playerID": "3916387",
+        "longName": "Lamar Jackson"
+      },
+      {
         "posADP": "WR17",
-        "overallADP": "38.3",
+        "overallADP": "38.2",
         "playerID": "4372016",
         "longName": "Jaylen Waddle"
       },
@@ -168700,21 +168706,21 @@
       },
       {
         "posADP": "WR21",
-        "overallADP": "42.2",
+        "overallADP": "42.3",
         "playerID": "4567750",
         "longName": "Emeka Egbuka"
-      },
-      {
-        "posADP": "RB17",
-        "overallADP": "42.3",
-        "playerID": "4239996",
-        "longName": "Travis Etienne Jr."
       },
       {
         "posADP": "QB3",
         "overallADP": "42.3",
         "playerID": "4431452",
         "longName": "Drake Maye"
+      },
+      {
+        "posADP": "RB17",
+        "overallADP": "42.3",
+        "playerID": "4239996",
+        "longName": "Travis Etienne Jr."
       },
       {
         "posADP": "RB18",
@@ -168724,7 +168730,7 @@
       },
       {
         "posADP": "WR22",
-        "overallADP": "49.6",
+        "overallADP": "49.5",
         "playerID": "4685278",
         "longName": "Luther Burden III"
       },
@@ -168742,31 +168748,31 @@
       },
       {
         "posADP": "TE4",
-        "overallADP": "51.2",
+        "overallADP": "51.1",
         "playerID": "4431459",
         "longName": "Tyler Warren"
       },
       {
         "posADP": "WR24",
-        "overallADP": "51.3",
+        "overallADP": "51.4",
         "playerID": "3121422",
         "longName": "Terry McLaurin"
       },
       {
         "posADP": "WR25",
-        "overallADP": "51.9",
+        "overallADP": "51.8",
         "playerID": "4426388",
         "longName": "Jameson Williams"
       },
       {
         "posADP": "RB19",
-        "overallADP": "52.2",
+        "overallADP": "52.1",
         "playerID": "4596448",
         "longName": "Bucky Irving"
       },
       {
         "posADP": "WR26",
-        "overallADP": "53.1",
+        "overallADP": "53.2",
         "playerID": "3915416",
         "longName": "DJ Moore"
       },
@@ -168796,7 +168802,7 @@
       },
       {
         "posADP": "QB5",
-        "overallADP": "58.1",
+        "overallADP": "58.2",
         "playerID": "4040715",
         "longName": "Jalen Hurts"
       },
@@ -168808,7 +168814,7 @@
       },
       {
         "posADP": "WR28",
-        "overallADP": "60.2",
+        "overallADP": "60.3",
         "playerID": "4431299",
         "longName": "Rome Odunze"
       },
@@ -168820,7 +168826,7 @@
       },
       {
         "posADP": "RB24",
-        "overallADP": "61.2",
+        "overallADP": "61.1",
         "playerID": "4882093",
         "longName": "Bhayshul Tuten"
       },
@@ -168844,13 +168850,13 @@
       },
       {
         "posADP": "QB7",
-        "overallADP": "66.6",
+        "overallADP": "66.8",
         "playerID": "4431611",
         "longName": "Caleb Williams"
       },
       {
         "posADP": "RB26",
-        "overallADP": "70.5",
+        "overallADP": "70.6",
         "playerID": "4569987",
         "longName": "Jaylen Warren"
       },
@@ -168862,7 +168868,7 @@
       },
       {
         "posADP": "TE5",
-        "overallADP": "71.4",
+        "overallADP": "71.5",
         "playerID": "4572680",
         "longName": "Tucker Kraft"
       },
@@ -168874,13 +168880,13 @@
       },
       {
         "posADP": "WR31",
-        "overallADP": "72.6",
+        "overallADP": "72.7",
         "playerID": "4432708",
         "longName": "Marvin Harrison Jr."
       },
       {
         "posADP": "QB9",
-        "overallADP": "75.3",
+        "overallADP": "75.2",
         "playerID": "4360310",
         "longName": "Trevor Lawrence"
       },
@@ -168892,13 +168898,13 @@
       },
       {
         "posADP": "RB28",
-        "overallADP": "78.4",
+        "overallADP": "78.5",
         "playerID": "4038815",
         "longName": "Rico Dowdle"
       },
       {
         "posADP": "QB10",
-        "overallADP": "78.6",
+        "overallADP": "78.7",
         "playerID": "2577417",
         "longName": "Dak Prescott"
       },
@@ -168928,7 +168934,7 @@
       },
       {
         "posADP": "WR35",
-        "overallADP": "82.1",
+        "overallADP": "82.2",
         "playerID": "4432773",
         "longName": "Brian Thomas Jr."
       },
@@ -168946,7 +168952,7 @@
       },
       {
         "posADP": "RB30",
-        "overallADP": "85.7",
+        "overallADP": "85.6",
         "playerID": "4678008",
         "longName": "Jonathon Brooks"
       },
@@ -168958,7 +168964,7 @@
       },
       {
         "posADP": "WR37",
-        "overallADP": "88.4",
+        "overallADP": "88.2",
         "playerID": "4429025",
         "longName": "Quentin Johnston"
       },
@@ -168976,7 +168982,7 @@
       },
       {
         "posADP": "RB33",
-        "overallADP": "91.9",
+        "overallADP": "91.8",
         "playerID": "4429096",
         "longName": "Blake Corum"
       },
@@ -168987,26 +168993,26 @@
         "longName": "Michael Wilson"
       },
       {
-        "posADP": "RB34",
-        "overallADP": "93.3",
-        "playerID": "4241416",
-        "longName": "Chuba Hubbard"
-      },
-      {
         "posADP": "WR39",
         "overallADP": "93.3",
         "playerID": "4035687",
         "longName": "Michael Pittman Jr."
       },
       {
+        "posADP": "RB34",
+        "overallADP": "93.4",
+        "playerID": "4241416",
+        "longName": "Chuba Hubbard"
+      },
+      {
         "posADP": "TE9",
-        "overallADP": "94.4",
+        "overallADP": "94.3",
         "playerID": "3040151",
         "longName": "George Kittle"
       },
       {
         "posADP": "WR40",
-        "overallADP": "94.8",
+        "overallADP": "94.7",
         "playerID": "4360078",
         "longName": "Alec Pierce"
       },
@@ -169018,13 +169024,13 @@
       },
       {
         "posADP": "WR41",
-        "overallADP": "96.9",
+        "overallADP": "96.8",
         "playerID": "2976212",
         "longName": "Stefon Diggs"
       },
       {
         "posADP": "QB12",
-        "overallADP": "98.3",
+        "overallADP": "98.4",
         "playerID": "4426338",
         "longName": "Bo Nix"
       },
@@ -169042,7 +169048,7 @@
       },
       {
         "posADP": "RB36",
-        "overallADP": "101.4",
+        "overallADP": "101.5",
         "playerID": "4568490",
         "longName": "RJ Harvey"
       },
@@ -169060,19 +169066,19 @@
       },
       {
         "posADP": "WR43",
-        "overallADP": "102.2",
+        "overallADP": "102.3",
         "playerID": "4362249",
         "longName": "Jayden Reed"
       },
       {
         "posADP": "QB14",
-        "overallADP": "103.3",
+        "overallADP": "103.4",
         "playerID": "3139477",
         "longName": "Patrick Mahomes"
       },
       {
         "posADP": "TE10",
-        "overallADP": "104.5",
+        "overallADP": "104.6",
         "playerID": "15847",
         "longName": "Travis Kelce"
       },
@@ -169083,16 +169089,16 @@
         "longName": "Jared Goff"
       },
       {
-        "posADP": "WR44",
-        "overallADP": "105.3",
-        "playerID": "4569587",
-        "longName": "Wan'Dale Robinson"
-      },
-      {
         "posADP": "RB38",
-        "overallADP": "105.4",
+        "overallADP": "105.3",
         "playerID": "4371733",
         "longName": "Kenny Gainwell"
+      },
+      {
+        "posADP": "WR44",
+        "overallADP": "105.4",
+        "playerID": "4569587",
+        "longName": "Wan'Dale Robinson"
       },
       {
         "posADP": "WR45",
@@ -169108,7 +169114,7 @@
       },
       {
         "posADP": "TE11",
-        "overallADP": "109.2",
+        "overallADP": "109.1",
         "playerID": "4385690",
         "longName": "Dalton Kincaid"
       },
@@ -169120,7 +169126,7 @@
       },
       {
         "posADP": "RB40",
-        "overallADP": "113.9",
+        "overallADP": "113.8",
         "playerID": "4697815",
         "longName": "Rachaad White"
       },
@@ -169132,7 +169138,7 @@
       },
       {
         "posADP": "WR46",
-        "overallADP": "115.3",
+        "overallADP": "115.1",
         "playerID": "4710714",
         "longName": "De'Zhaun Stribling"
       },
@@ -169150,19 +169156,19 @@
       },
       {
         "posADP": "WR48",
-        "overallADP": "117.2",
+        "overallADP": "117.3",
         "playerID": "4870795",
         "longName": "Makai Lemon"
       },
       {
         "posADP": "WR49",
-        "overallADP": "118.4",
+        "overallADP": "118.5",
         "playerID": "3916433",
         "longName": "Jakobi Meyers"
       },
       {
         "posADP": "TE13",
-        "overallADP": "118.8",
+        "overallADP": "118.9",
         "playerID": "4361050",
         "longName": "Isaiah Likely"
       },
@@ -169174,13 +169180,13 @@
       },
       {
         "posADP": "QB18",
-        "overallADP": "121.1",
+        "overallADP": "121.2",
         "playerID": "4036378",
         "longName": "Jordan Love"
       },
       {
         "posADP": "WR50",
-        "overallADP": "122.8",
+        "overallADP": "122.6",
         "playerID": "4701936",
         "longName": "Matthew Golden"
       },
@@ -169204,13 +169210,13 @@
       },
       {
         "posADP": "TE14",
-        "overallADP": "128.2",
+        "overallADP": "128.4",
         "playerID": "3116365",
         "longName": "Mark Andrews"
       },
       {
         "posADP": "TE15",
-        "overallADP": "128.8",
+        "overallADP": "128.7",
         "playerID": "3929645",
         "longName": "Juwan Johnson"
       },
@@ -169246,7 +169252,7 @@
       },
       {
         "posADP": "WR53",
-        "overallADP": "131.3",
+        "overallADP": "131.4",
         "playerID": "4695883",
         "longName": "Jalen Coker"
       },
@@ -169258,13 +169264,13 @@
       },
       {
         "posADP": "WR54",
-        "overallADP": "135.7",
+        "overallADP": "135.8",
         "playerID": "4373678",
         "longName": "Khalil Shakir"
       },
       {
         "posADP": "RB45",
-        "overallADP": "137.6",
+        "overallADP": "137.9",
         "playerID": "4047365",
         "longName": "Josh Jacobs"
       },
@@ -169288,25 +169294,25 @@
       },
       {
         "posADP": "RB48",
-        "overallADP": "142.5",
+        "overallADP": "142.4",
         "playerID": "4702555",
         "longName": "Jonah Coleman"
       },
       {
         "posADP": "RB49",
-        "overallADP": "142.8",
+        "overallADP": "142.7",
         "playerID": "4596334",
         "longName": "Keaton Mitchell"
       },
       {
         "posADP": "WR56",
-        "overallADP": "143.9",
+        "overallADP": "143.8",
         "playerID": "4032473",
         "longName": "Rashid Shaheed"
       },
       {
         "posADP": "WR57",
-        "overallADP": "148.6",
+        "overallADP": "148.9",
         "playerID": "4880281",
         "longName": "Jordyn Tyson"
       },
@@ -169324,13 +169330,13 @@
       },
       {
         "posADP": "RB50",
-        "overallADP": "153.9",
+        "overallADP": "154.0",
         "playerID": "5081397",
         "longName": "Dylan Sampson"
       },
       {
         "posADP": "RB51",
-        "overallADP": "154.1",
+        "overallADP": "154.2",
         "playerID": "4426385",
         "longName": "Zach Charbonnet"
       },
@@ -169342,19 +169348,19 @@
       },
       {
         "posADP": "TE17",
-        "overallADP": "154.8",
+        "overallADP": "154.9",
         "playerID": "4430539",
         "longName": "Brenton Strange"
       },
       {
         "posADP": "QB24",
-        "overallADP": "155.7",
+        "overallADP": "155.6",
         "playerID": "3917792",
         "longName": "Daniel Jones"
       },
       {
         "posADP": "WR58",
-        "overallADP": "156.2",
+        "overallADP": "156.0",
         "playerID": "4428718",
         "longName": "Tre Tucker"
       },
@@ -169366,14 +169372,14 @@
       },
       {
         "posADP": "DST1",
-        "overallADP": "157.0",
+        "overallADP": "157.1",
         "teamAbv": "HOU",
         "teamID": "13",
         "longName": "Houston Texans DST"
       },
       {
         "posADP": "TE18",
-        "overallADP": "158.7",
+        "overallADP": "158.8",
         "playerID": "3046439",
         "longName": "Hunter Henry"
       },
@@ -169385,7 +169391,7 @@
       },
       {
         "posADP": "TE19",
-        "overallADP": "163.5",
+        "overallADP": "163.6",
         "playerID": "3117256",
         "longName": "Dalton Schultz"
       },
@@ -169398,7 +169404,7 @@
       },
       {
         "posADP": "TE20",
-        "overallADP": "166.3",
+        "overallADP": "166.1",
         "playerID": "4360635",
         "longName": "Chig Okonkwo"
       },
@@ -169416,7 +169422,7 @@
       },
       {
         "posADP": "DST3",
-        "overallADP": "167.9",
+        "overallADP": "168.0",
         "teamAbv": "DEN",
         "teamID": "10",
         "longName": "Denver Broncos DST"
@@ -169442,19 +169448,19 @@
       },
       {
         "posADP": "WR61",
-        "overallADP": "170.7",
+        "overallADP": "170.4",
         "playerID": "4597500",
         "longName": "Adonai Mitchell"
       },
       {
         "posADP": "WR62",
-        "overallADP": "174.0",
+        "overallADP": "174.2",
         "playerID": "4430834",
         "longName": "Jalen McMillan"
       },
       {
         "posADP": "QB25",
-        "overallADP": "176.0",
+        "overallADP": "176.2",
         "playerID": "4688380",
         "longName": "Cam Ward"
       },
@@ -169473,7 +169479,7 @@
       },
       {
         "posADP": "RB57",
-        "overallADP": "177.6",
+        "overallADP": "177.8",
         "playerID": "4360516",
         "longName": "Tyrone Tracy Jr."
       },
@@ -169490,16 +169496,16 @@
         "longName": "Keenan Allen"
       },
       {
-        "posADP": "WR66",
-        "overallADP": "182.8",
-        "playerID": "3886598",
-        "longName": "Jauan Jennings"
-      },
-      {
         "posADP": "TE21",
-        "overallADP": "183.0",
+        "overallADP": "182.6",
         "playerID": "4570037",
         "longName": "Terrance Ferguson"
+      },
+      {
+        "posADP": "WR66",
+        "overallADP": "182.7",
+        "playerID": "3886598",
+        "longName": "Jauan Jennings"
       },
       {
         "posADP": "K1",
@@ -169509,7 +169515,7 @@
       },
       {
         "posADP": "WR67",
-        "overallADP": "183.4",
+        "overallADP": "183.7",
         "playerID": "4382466",
         "longName": "Jalen Nailor"
       },
@@ -169527,13 +169533,13 @@
       },
       {
         "posADP": "QB26",
-        "overallADP": "186.1",
+        "overallADP": "186.3",
         "playerID": "4685720",
         "longName": "Bryce Young"
       },
       {
         "posADP": "WR69",
-        "overallADP": "187.6",
+        "overallADP": "187.4",
         "playerID": "5083754",
         "longName": "Ryan Flournoy"
       },
@@ -169553,26 +169559,26 @@
       },
       {
         "posADP": "WR70",
-        "overallADP": "190.1",
+        "overallADP": "190.2",
         "playerID": "4600981",
         "longName": "Pat Bryant"
       },
       {
         "posADP": "DST8",
-        "overallADP": "190.1",
+        "overallADP": "190.2",
         "teamAbv": "NE",
         "teamID": "22",
         "longName": "New England Patriots DST"
       },
       {
         "posADP": "TE22",
-        "overallADP": "190.5",
+        "overallADP": "190.6",
         "playerID": "4036133",
         "longName": "T.J. Hockenson"
       },
       {
         "posADP": "WR71",
-        "overallADP": "191.2",
+        "overallADP": "191.3",
         "playerID": "4723820",
         "longName": "Omar Cooper Jr."
       },
@@ -169597,45 +169603,45 @@
       },
       {
         "posADP": "TE23",
-        "overallADP": "193.1",
+        "overallADP": "193.2",
         "playerID": "4576297",
         "longName": "AJ Barner"
       },
       {
         "posADP": "DST10",
-        "overallADP": "193.5",
+        "overallADP": "193.6",
         "teamAbv": "LAC",
         "teamID": "18",
         "longName": "Los Angeles Chargers DST"
       },
       {
         "posADP": "WR72",
-        "overallADP": "194.0",
+        "overallADP": "194.1",
         "playerID": "4569603",
         "longName": "Malik Washington"
       },
       {
         "posADP": "DST11",
-        "overallADP": "196.0",
+        "overallADP": "196.1",
         "teamAbv": "BAL",
         "teamID": "3",
         "longName": "Baltimore Ravens DST"
       },
       {
         "posADP": "RB59",
-        "overallADP": "196.3",
+        "overallADP": "196.2",
         "playerID": "4696044",
         "longName": "Kaelon Black"
       },
       {
         "posADP": "WR73",
-        "overallADP": "197.2",
+        "overallADP": "197.0",
         "playerID": "4870847",
         "longName": "Ja'Kobi Lane"
       },
       {
         "posADP": "RB60",
-        "overallADP": "197.9",
+        "overallADP": "197.7",
         "playerID": "4430968",
         "longName": "Kimani Vidal"
       },
@@ -169653,13 +169659,13 @@
       },
       {
         "posADP": "RB61",
-        "overallADP": "201.9",
+        "overallADP": "201.7",
         "playerID": "4240603",
         "longName": "Malik Davis"
       },
       {
         "posADP": "RB62",
-        "overallADP": "205.6",
+        "overallADP": "205.8",
         "playerID": "4430871",
         "longName": "Sean Tucker"
       },
@@ -169671,13 +169677,13 @@
       },
       {
         "posADP": "WR75",
-        "overallADP": "207.9",
+        "overallADP": "208.1",
         "playerID": "4586312",
         "longName": "Jaylin Noel"
       },
       {
         "posADP": "RB63",
-        "overallADP": "208.7",
+        "overallADP": "208.4",
         "playerID": "4685555",
         "longName": "Nicholas Singleton"
       },
@@ -169696,15 +169702,15 @@
       },
       {
         "posADP": "WR77",
-        "overallADP": "209.9",
-        "playerID": "4685415",
-        "longName": "Travis Hunter"
+        "overallADP": "209.7",
+        "playerID": "4869961",
+        "longName": "Chris Bell"
       },
       {
         "posADP": "WR78",
-        "overallADP": "210.1",
-        "playerID": "4869961",
-        "longName": "Chris Bell"
+        "overallADP": "209.9",
+        "playerID": "4685415",
+        "longName": "Travis Hunter"
       },
       {
         "posADP": "K6",
@@ -169714,25 +169720,25 @@
       },
       {
         "posADP": "QB27",
-        "overallADP": "211.6",
+        "overallADP": "211.5",
         "playerID": "2578570",
         "longName": "Jacoby Brissett"
       },
       {
         "posADP": "TE24",
-        "overallADP": "211.8",
+        "overallADP": "211.7",
         "playerID": "5083315",
         "longName": "Kenyon Sadiq"
       },
       {
         "posADP": "WR79",
-        "overallADP": "212.5",
+        "overallADP": "212.3",
         "playerID": "4682648",
         "longName": "Malachi Fields"
       },
       {
         "posADP": "DST13",
-        "overallADP": "212.5",
+        "overallADP": "212.6",
         "teamAbv": "GB",
         "teamID": "12",
         "longName": "Green Bay Packers DST"
@@ -169750,28 +169756,34 @@
         "longName": "Najee Harris"
       },
       {
-        "posADP": "RB65",
-        "overallADP": "214.6",
-        "playerID": "4361529",
-        "longName": "Isiah Pacheco"
-      },
-      {
         "posADP": "TE25",
-        "overallADP": "214.9",
+        "overallADP": "214.8",
         "playerID": "4367209",
         "longName": "Greg Dulcich"
       },
       {
+        "posADP": "RB65",
+        "overallADP": "215.0",
+        "playerID": "4361529",
+        "longName": "Isiah Pacheco"
+      },
+      {
         "posADP": "RB66",
-        "overallADP": "217.7",
+        "overallADP": "217.4",
         "playerID": "4429835",
         "longName": "George Holani"
       },
       {
         "posADP": "WR80",
-        "overallADP": "218.3",
+        "overallADP": "218.2",
         "playerID": "4360939",
         "longName": "Rashod Bateman"
+      },
+      {
+        "posADP": "RB67",
+        "overallADP": "218.9",
+        "playerID": "4685246",
+        "longName": "Kaytron Allen"
       },
       {
         "posADP": "K8",
@@ -169780,14 +169792,8 @@
         "longName": "Evan McPherson"
       },
       {
-        "posADP": "RB67",
-        "overallADP": "219.0",
-        "playerID": "4685246",
-        "longName": "Kaytron Allen"
-      },
-      {
         "posADP": "K9",
-        "overallADP": "219.3",
+        "overallADP": "219.2",
         "playerID": "4689936",
         "longName": "Jake Bates"
       },
@@ -169799,27 +169805,9 @@
       },
       {
         "posADP": "RB68",
-        "overallADP": "219.9",
+        "overallADP": "219.8",
         "playerID": "4038441",
         "longName": "Justice Hill"
-      },
-      {
-        "posADP": "TE26",
-        "overallADP": "222.3",
-        "playerID": "4595342",
-        "longName": "Oronde Gadsden"
-      },
-      {
-        "posADP": "TE27",
-        "overallADP": "222.4",
-        "playerID": "4361411",
-        "longName": "Pat Freiermuth"
-      },
-      {
-        "posADP": "WR81",
-        "overallADP": "222.4",
-        "playerID": "5123663",
-        "longName": "Isaac TeSlaa"
       },
       {
         "posADP": "DST14",
@@ -169829,15 +169817,33 @@
         "longName": "Detroit Lions DST"
       },
       {
+        "posADP": "TE26",
+        "overallADP": "222.5",
+        "playerID": "4361411",
+        "longName": "Pat Freiermuth"
+      },
+      {
+        "posADP": "TE27",
+        "overallADP": "222.5",
+        "playerID": "4595342",
+        "longName": "Oronde Gadsden"
+      },
+      {
+        "posADP": "WR81",
+        "overallADP": "222.5",
+        "playerID": "5123663",
+        "longName": "Isaac TeSlaa"
+      },
+      {
         "posADP": "DST15",
-        "overallADP": "224.0",
+        "overallADP": "223.9",
         "teamAbv": "BUF",
         "teamID": "4",
         "longName": "Buffalo Bills DST"
       },
       {
         "posADP": "WR82",
-        "overallADP": "225.7",
+        "overallADP": "225.6",
         "playerID": "4912218",
         "longName": "Cyrus Allen"
       },
@@ -169855,7 +169861,7 @@
       },
       {
         "posADP": "WR83",
-        "overallADP": "227.8",
+        "overallADP": "227.6",
         "playerID": "4870612",
         "longName": "Zachariah Branch"
       },
@@ -169867,52 +169873,52 @@
       },
       {
         "posADP": "RB69",
-        "overallADP": "228.1",
+        "overallADP": "228.0",
         "playerID": "4819231",
         "longName": "Kaleb Johnson"
       },
       {
         "posADP": "K11",
-        "overallADP": "228.2",
+        "overallADP": "228.3",
         "playerID": "17427",
         "longName": "Cairo Santos"
       },
       {
         "posADP": "TE29",
-        "overallADP": "229.0",
+        "overallADP": "228.8",
         "playerID": "4243331",
         "longName": "Cade Otton"
       },
       {
         "posADP": "WR85",
-        "overallADP": "229.0",
+        "overallADP": "228.8",
         "playerID": "2977187",
         "longName": "Cooper Kupp"
       },
       {
         "posADP": "RB70",
-        "overallADP": "229.6",
+        "overallADP": "229.8",
         "playerID": "4682745",
         "longName": "Jaylen Wright"
       },
       {
-        "posADP": "DST16",
-        "overallADP": "230.8",
-        "teamAbv": "CLE",
-        "teamID": "8",
-        "longName": "Cleveland Browns DST"
-      },
-      {
         "posADP": "K12",
         "overallADP": "231.0",
-        "playerID": "4569923",
-        "longName": "Andy Borregales"
+        "playerID": "4574716",
+        "longName": "Harrison Mevis"
       },
       {
         "posADP": "K13",
         "overallADP": "231.1",
-        "playerID": "4574716",
-        "longName": "Harrison Mevis"
+        "playerID": "4569923",
+        "longName": "Andy Borregales"
+      },
+      {
+        "posADP": "DST16",
+        "overallADP": "231.1",
+        "teamAbv": "CLE",
+        "teamID": "8",
+        "longName": "Cleveland Browns DST"
       },
       {
         "posADP": "WR86",
@@ -169922,19 +169928,19 @@
       },
       {
         "posADP": "WR87",
-        "overallADP": "232.7",
+        "overallADP": "232.5",
         "playerID": "4685261",
         "longName": "Germie Bernard"
       },
       {
         "posADP": "WR88",
-        "overallADP": "234.2",
+        "overallADP": "234.3",
         "playerID": "5081432",
         "longName": "Antonio Williams"
       },
       {
         "posADP": "RB71",
-        "overallADP": "234.4",
+        "overallADP": "234.9",
         "playerID": "4887558",
         "longName": "Emanuel Wilson"
       },
@@ -169946,39 +169952,33 @@
       },
       {
         "posADP": "QB29",
-        "overallADP": "237.4",
+        "overallADP": "237.2",
         "playerID": "15864",
         "longName": "Geno Smith"
       },
       {
         "posADP": "RB73",
-        "overallADP": "237.4",
+        "overallADP": "237.2",
         "playerID": "3116389",
         "longName": "Samaje Perine"
       },
       {
         "posADP": "WR89",
-        "overallADP": "238.2",
+        "overallADP": "238.5",
         "playerID": "4431280",
         "longName": "Troy Franklin"
       },
       {
         "posADP": "WR90",
-        "overallADP": "239.7",
+        "overallADP": "239.5",
         "playerID": "5220680",
         "longName": "Ted Hurst III"
       },
       {
         "posADP": "RB74",
-        "overallADP": "241.1",
+        "overallADP": "240.9",
         "playerID": "3149687",
         "longName": "Chris Brooks"
-      },
-      {
-        "posADP": "WR91",
-        "overallADP": "242.0",
-        "playerID": "4366031",
-        "longName": "Tank Dell"
       },
       {
         "posADP": "K14",
@@ -169987,8 +169987,14 @@
         "longName": "Chris Boswell"
       },
       {
+        "posADP": "WR91",
+        "overallADP": "242.3",
+        "playerID": "4366031",
+        "longName": "Tank Dell"
+      },
+      {
         "posADP": "RB75",
-        "overallADP": "245.0",
+        "overallADP": "245.1",
         "playerID": "4832846",
         "longName": "Demond Claiborne"
       },
@@ -170000,7 +170006,7 @@
       },
       {
         "posADP": "K16",
-        "overallADP": "245.7",
+        "overallADP": "245.8",
         "playerID": "3055899",
         "longName": "Harrison Butker"
       },
@@ -170011,28 +170017,28 @@
         "longName": "David Njoku"
       },
       {
-        "posADP": "RB76",
-        "overallADP": "249.4",
-        "playerID": "4686468",
-        "longName": "Seth McGowan"
-      },
-      {
         "posADP": "TE31",
-        "overallADP": "249.6",
+        "overallADP": "249.4",
         "playerID": "3051876",
         "longName": "Evan Engram"
       },
       {
-        "posADP": "RB77",
-        "overallADP": "250.9",
-        "playerID": "4711533",
-        "longName": "Ollie Gordon II"
+        "posADP": "RB76",
+        "overallADP": "249.6",
+        "playerID": "4686468",
+        "longName": "Seth McGowan"
       },
       {
         "posADP": "WR92",
-        "overallADP": "251.0",
+        "overallADP": "250.9",
         "playerID": "4635008",
         "longName": "Keon Coleman"
+      },
+      {
+        "posADP": "RB77",
+        "overallADP": "251.0",
+        "playerID": "4711533",
+        "longName": "Ollie Gordon II"
       },
       {
         "posADP": "WR93",
@@ -170048,7 +170054,7 @@
       },
       {
         "posADP": "RB78",
-        "overallADP": "257.3",
+        "overallADP": "257.6",
         "playerID": "4685397",
         "longName": "Jordan James"
       },
@@ -170091,13 +170097,13 @@
       },
       {
         "posADP": "RB80",
-        "overallADP": "262.3",
+        "overallADP": "262.2",
         "playerID": "4695404",
         "longName": "Isaiah Davis"
       },
       {
         "posADP": "WR95",
-        "overallADP": "262.6",
+        "overallADP": "262.7",
         "playerID": "4883647",
         "longName": "Elic Ayomanor"
       },
@@ -170109,7 +170115,7 @@
       },
       {
         "posADP": "RB81",
-        "overallADP": "263.9",
+        "overallADP": "263.8",
         "playerID": "4599739",
         "longName": "Kendre Miller"
       },
@@ -170122,9 +170128,16 @@
       },
       {
         "posADP": "WR96",
-        "overallADP": "264.4",
+        "overallADP": "264.5",
         "playerID": "4431268",
         "longName": "Chimere Dike"
+      },
+      {
+        "posADP": "DST19",
+        "overallADP": "265.2",
+        "teamAbv": "SF",
+        "teamID": "28",
+        "longName": "San Francisco 49ers DST"
       },
       {
         "posADP": "K18",
@@ -170133,15 +170146,8 @@
         "longName": "Jason Sanders"
       },
       {
-        "posADP": "DST19",
-        "overallADP": "265.3",
-        "teamAbv": "SF",
-        "teamID": "28",
-        "longName": "San Francisco 49ers DST"
-      },
-      {
         "posADP": "TE36",
-        "overallADP": "266.4",
+        "overallADP": "266.6",
         "playerID": "3116164",
         "longName": "Mike Gesicki"
       },
@@ -170165,7 +170171,7 @@
       },
       {
         "posADP": "QB30",
-        "overallADP": "268.8",
+        "overallADP": "268.7",
         "playerID": "4837248",
         "longName": "Fernando Mendoza"
       },
@@ -170176,14 +170182,8 @@
         "longName": "Kyle Williams"
       },
       {
-        "posADP": "RB82",
-        "overallADP": "271.4",
-        "playerID": "4911851",
-        "longName": "LeQuint Allen Jr."
-      },
-      {
         "posADP": "TE37",
-        "overallADP": "271.5",
+        "overallADP": "271.4",
         "playerID": "4808766",
         "longName": "Mason Taylor"
       },
@@ -170200,6 +170200,12 @@
         "teamAbv": "NYG",
         "teamID": "24",
         "longName": "New York Giants DST"
+      },
+      {
+        "posADP": "RB82",
+        "overallADP": "271.9",
+        "playerID": "4911851",
+        "longName": "LeQuint Allen Jr."
       },
       {
         "posADP": "DST22",
@@ -170240,22 +170246,22 @@
       },
       {
         "posADP": "WR104",
-        "overallADP": "278.7",
+        "overallADP": "278.8",
         "playerID": "5088338",
         "longName": "Elijah Sarratt"
-      },
-      {
-        "posADP": "DST23",
-        "overallADP": "280.6",
-        "teamAbv": "ATL",
-        "teamID": "2",
-        "longName": "Atlanta Falcons DST"
       },
       {
         "posADP": "RB83",
         "overallADP": "280.8",
         "playerID": "4596602",
         "longName": "Brashard Smith"
+      },
+      {
+        "posADP": "DST23",
+        "overallADP": "280.9",
+        "teamAbv": "ATL",
+        "teamID": "2",
+        "longName": "Atlanta Falcons DST"
       },
       {
         "posADP": "TE38",
@@ -170283,7 +170289,7 @@
       },
       {
         "posADP": "DST24",
-        "overallADP": "282.6",
+        "overallADP": "282.4",
         "teamAbv": "CHI",
         "teamID": "6",
         "longName": "Chicago Bears DST"
@@ -170332,7 +170338,7 @@
       },
       {
         "posADP": "WR107",
-        "overallADP": "285.5",
+        "overallADP": "285.7",
         "playerID": "3895856",
         "longName": "Christian Kirk"
       },
@@ -170363,7 +170369,7 @@
       },
       {
         "posADP": "WR109",
-        "overallADP": "289.8",
+        "overallADP": "289.9",
         "playerID": "4241372",
         "longName": "Hollywood Brown"
       },
@@ -170393,7 +170399,7 @@
       },
       {
         "posADP": "QB34",
-        "overallADP": "291.2",
+        "overallADP": "291.5",
         "playerID": "3122840",
         "longName": "Deshaun Watson"
       },
@@ -170411,7 +170417,7 @@
       },
       {
         "posADP": "RB90",
-        "overallADP": "292.0",
+        "overallADP": "292.2",
         "playerID": "4362478",
         "longName": "Emari Demercado"
       },
@@ -170429,7 +170435,7 @@
       },
       {
         "posADP": "K23",
-        "overallADP": "294.1",
+        "overallADP": "294.2",
         "playerID": "5208518",
         "longName": "Charlie Smyth"
       },
@@ -170485,7 +170491,7 @@
       },
       {
         "posADP": "QB35",
-        "overallADP": "301.1",
+        "overallADP": "301.2",
         "playerID": "4432762",
         "longName": "Shedeur Sanders"
       },
@@ -170739,7 +170745,7 @@
       },
       {
         "posADP": "QB36",
-        "overallADP": "332.9",
+        "overallADP": "333.5",
         "playerID": "4430841",
         "longName": "Carson Beck"
       },
@@ -171185,12 +171191,6 @@
         "longName": "Brandon McManus"
       },
       {
-        "posADP": "QB43",
-        "overallADP": "389.5",
-        "playerID": "4685413",
-        "longName": "Cade Klubnik"
-      },
-      {
         "posADP": "WR151",
         "overallADP": "389.6",
         "playerID": "4372414",
@@ -171221,10 +171221,16 @@
         "longName": "Reggie Gilliam"
       },
       {
-        "posADP": "QB44",
+        "posADP": "QB43",
         "overallADP": "393.2",
         "playerID": "2969939",
         "longName": "Jameis Winston"
+      },
+      {
+        "posADP": "QB44",
+        "overallADP": "393.6",
+        "playerID": "4685413",
+        "longName": "Cade Klubnik"
       },
       {
         "posADP": "K38",
