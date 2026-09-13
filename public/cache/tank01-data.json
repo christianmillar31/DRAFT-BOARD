@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-09-12T12:04:00.067Z",
-  "lastUpdated": "9/12/2026, 5:04:00 AM",
+  "timestamp": "2026-09-13T13:13:52.501Z",
+  "lastUpdated": "9/13/2026, 6:13:52 AM",
   "data": {
     "players": [
       {
@@ -15503,7 +15503,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/43040",
         "bDay": "1/11/2003",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5151144.png",
-        "isFreeAgent": "False",
+        "isFreeAgent": "True",
         "rotoWirePlayerIDFull": "lardarius-webb-19838",
         "cbsLongName": "Lardarius Webb",
         "injury": {
@@ -18656,7 +18656,7 @@
         },
         "team": "LAR",
         "yahooPlayerID": "33976",
-        "age": "25",
+        "age": "26",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4426405/trent-mcduffie",
         "yahooLink": "https://sports.yahoo.com/nfl/players/33976",
         "bDay": "9/13/2000",
@@ -23663,7 +23663,7 @@
         },
         "team": "CIN",
         "yahooPlayerID": "40989",
-        "age": "25",
+        "age": "26",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4427834/erick-all-jr",
         "yahooLink": "https://sports.yahoo.com/nfl/players/40989",
         "bDay": "9/13/2000",
@@ -26217,7 +26217,7 @@
         "cbsLongName": "Alvin Kamara",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 11: Coach Kellen Moore said Friday that Kamara (knee) will be questionable for Sunday's game in Pittsburgh, Mike Triplett of NewOrleans.Football reports.",
+          "description": "Sep 13: Kamara (knee), who is listed as questionable for Sunday's game in Detroit, isn't in line to play in the season opener and is instead slated to make his 2026 debut Week 2 at Baltimore, Nick Underhill of NewOrleans.Football reports.",
           "injDate": "20240501",
           "designation": "Questionable"
         },
@@ -27731,10 +27731,10 @@
         "rotoWirePlayerIDFull": "chamarri-conner-16671",
         "cbsLongName": "Chamarri Conner",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Sep 8: Conner (knee) is not expected to be available for Monday night's contest against the Broncos, Charles Goldman of AtoZSports.com reports.",
+          "injReturnDate": "20260920",
+          "description": "Sep 12: Connor (knee) has been ruled out ahead of Monday's game against the Broncos, Matt Derrick of ChiefsDigest.com reports.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "16",
         "pos": "S",
@@ -31464,7 +31464,7 @@
         "cbsShortName": "J. Johnson",
         "team": "NO",
         "yahooPlayerID": "33113",
-        "age": "29",
+        "age": "30",
         "espnLink": "https://www.espn.com/nfl/player/_/id/3929645/juwan-johnson",
         "yahooLink": "https://sports.yahoo.com/nfl/players/33113",
         "bDay": "9/13/1996",
@@ -34390,7 +34390,7 @@
         "cbsShortName": "E. Mascarenas-Arnold",
         "team": "CLE",
         "yahooPlayerID": "42477",
-        "age": "23",
+        "age": "24",
         "espnLink": "https://www.espn.com/nfl/player/_/id/5085888/easton-mascarenas-arnold",
         "yahooLink": "https://sports.yahoo.com/nfl/players/42477",
         "bDay": "9/13/2002",
@@ -46234,7 +46234,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/33429",
         "bDay": "3/2/1998",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4039020.png",
-        "isFreeAgent": "True",
+        "isFreeAgent": "False",
         "rotoWirePlayerIDFull": "levi-onwuzurike-15195",
         "cbsLongName": "Levi Onwuzurike",
         "injury": {
@@ -52381,7 +52381,7 @@
         "cbsShortName": "T. Reeder",
         "team": "NYJ",
         "yahooPlayerID": "32135",
-        "age": "31",
+        "age": "32",
         "espnLink": "https://www.espn.com/nfl/player/_/id/3116177/troy-reeder",
         "yahooLink": "https://sports.yahoo.com/nfl/players/32135",
         "bDay": "9/13/1994",
@@ -53028,7 +53028,7 @@
         "cbsShortName": "M. Moore",
         "team": "NYJ",
         "yahooPlayerID": "41895",
-        "age": "24",
+        "age": "25",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4692024/malachi-moore",
         "yahooLink": "https://sports.yahoo.com/nfl/players/41895",
         "bDay": "9/13/2001",
@@ -54958,7 +54958,7 @@
         "cbsLongName": "Jeremiyah Love",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 11: Love (ankle) is listed as questionable for Sunday's game at the Chargers, Theo Mackie of The Arizona Republic reports.",
+          "description": "Sep 13: Love (ankle) remains listed as questionable but is expected to play in Sunday's game at the Chargers, Ian Rapoport of NFL Network reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -56594,7 +56594,7 @@
         "cbsShortName": "R. Leonard",
         "team": "IND",
         "yahooPlayerID": "41968",
-        "age": "23",
+        "age": "24",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4683423/riley-leonard",
         "yahooLink": "https://sports.yahoo.com/nfl/players/41968",
         "bDay": "9/13/2002",
@@ -59316,7 +59316,7 @@
         "cbsLongName": "Joey Porter Jr.",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 11: Porter (back) is listed as questionable for Sunday's game against the Falcons, Adam Caplan of SiriusXM NFL Radio reports.",
+          "description": "Sep 13: Porter (back) remains listed as questionable for Sunday's game against the Falcons but isn't expected to play, Ian Rapoport and Adam Schefter of ESPN report.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -62065,13 +62065,11 @@
       {
         "espnID": "12803",
         "espnName": "D.J. Johnson",
-        "fantasyProsPlayerID": "25290",
         "lastName": "Johnson",
         "espnIDFull": "12803/dj-johnson",
         "firstName": "D.J.",
         "weight": "191",
         "jerseyNum": "",
-        "cbsShortName": "D. Johnson",
         "team": "WSH",
         "yahooPlayerID": "9609",
         "age": "40",
@@ -62080,7 +62078,6 @@
         "bDay": "11/7/1985",
         "espnHeadshot": "https://a.espncdn.com/combiner/i?img=/i/headshots/nophoto.png&w=200&h=146",
         "isFreeAgent": "False",
-        "cbsLongName": "DJ Johnson",
         "injury": {
           "injReturnDate": "",
           "description": "",
@@ -62090,13 +62087,10 @@
         "teamID": "32",
         "pos": "CB",
         "school": "",
-        "cbsPlayerID": "2864665",
         "longName": "D.J. Johnson",
         "height": "6'1\"",
-        "cbsPlayerIDFull": "2864665/dj-johnson",
         "playerID": "12803",
-        "exp": "3",
-        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/dj-johnson-edge.php"
+        "exp": "3"
       },
       {
         "espnID": "4428383",
@@ -69493,7 +69487,7 @@
         },
         "team": "IND",
         "yahooPlayerID": "41040",
-        "age": "24",
+        "age": "25",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4601021/jaylon-carlies",
         "yahooLink": "https://sports.yahoo.com/nfl/players/41040",
         "bDay": "9/13/2001",
@@ -70305,10 +70299,10 @@
         "rotoWirePlayerIDFull": "tim-patrick-12061",
         "cbsLongName": "Tim Patrick",
         "injury": {
-          "injReturnDate": "20260920",
-          "description": "Sep 11: Patrick (groin) has been ruled out ahead of Sunday's game against the Titans, Brian Costello of the New York Post reports.",
+          "injReturnDate": "20261011",
+          "description": "Sep 12: The Jets placed Patrick (groin) on injured reserve Saturday, Zack Rosenblatt of The Athletic reports.",
           "injDate": "",
-          "designation": "Out"
+          "designation": "Injured Reserve"
         },
         "teamID": "25",
         "pos": "WR",
@@ -74478,10 +74472,10 @@
         "rotoWirePlayerIDFull": "josh-simmons-18778",
         "cbsLongName": "Josh Simmons",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Sep 8: Simmons (back) is in danger of missing Kansas City's matchup versus the Broncos on Monday, Matt McMullen of the team's official site reports.",
+          "injReturnDate": "20260920",
+          "description": "Sep 12: Simmons (back) has been ruled out ahead of Monday's game against the Broncos, Matt Derrick of ChiefsDigest.com reports.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "16",
         "pos": "OT",
@@ -77248,7 +77242,7 @@
         "cbsLongName": "Rome Odunze",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 11: Odunze (calf) is listed as questionable for Sunday's game at Carolina.",
+          "description": "Sep 13: Odunze (calf), who is listed as questionable for Sunday's game at Carolina, is expected to play, Ian Rapoport of NFL Network reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -79834,7 +79828,7 @@
         "cbsShortName": "E. Pineiro",
         "team": "SF",
         "yahooPlayerID": "31482",
-        "age": "30",
+        "age": "31",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4034949/eddy-pineiro",
         "yahooLink": "https://sports.yahoo.com/nfl/players/31482",
         "bDay": "9/13/1995",
@@ -82219,7 +82213,7 @@
         "cbsShortName": "E. Gregory",
         "team": "NE",
         "yahooPlayerID": "42053",
-        "age": "25",
+        "age": "26",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4567171/eric-gregory",
         "yahooLink": "https://sports.yahoo.com/nfl/players/42053",
         "bDay": "9/13/2000",
@@ -83714,10 +83708,10 @@
         "rotoWirePlayerIDFull": "cameron-williams-18504",
         "cbsLongName": "Cameron Williams",
         "injury": {
-          "injReturnDate": "20260920",
-          "description": "Sep 11: Williams (ankle) has been ruled out ahead of Sunday's game against the Steelers, Tori McElhaney of the Falcons' official site reports.",
+          "injReturnDate": "20261011",
+          "description": "Sep 12: The Falcons placed Williams (ankle) on injured reserve Saturday, Will McFadden of the team's official site reports.",
           "injDate": "",
-          "designation": "Out"
+          "designation": "Injured Reserve"
         },
         "teamID": "2",
         "pos": "OL",
@@ -86088,7 +86082,7 @@
         "cbsShortName": "J. McLaughlin",
         "team": "CLE",
         "yahooPlayerID": "40696",
-        "age": "25",
+        "age": "26",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4722893/jaleel-mclaughlin",
         "yahooLink": "https://sports.yahoo.com/nfl/players/40696",
         "bDay": "9/13/2000",
@@ -87132,7 +87126,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/40654",
         "bDay": "11/6/1999",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4372418.png",
-        "isFreeAgent": "False",
+        "isFreeAgent": "True",
         "rotoWirePlayerIDFull": "keidron-smith-16806",
         "cbsLongName": "Keidron Smith",
         "injury": {
@@ -88498,7 +88492,7 @@
         "jerseyNum": "84",
         "team": "JAX",
         "yahooPlayerID": "42957",
-        "age": "23",
+        "age": "24",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4872477/alex-bullock",
         "yahooLink": "https://sports.yahoo.com/nfl/players/42957",
         "bDay": "9/13/2002",
@@ -94671,7 +94665,7 @@
         "cbsShortName": "R. Matiscik",
         "team": "JAX",
         "yahooPlayerID": "33129",
-        "age": "29",
+        "age": "30",
         "espnLink": "https://www.espn.com/nfl/player/_/id/3928931/ross-matiscik",
         "yahooLink": "https://sports.yahoo.com/nfl/players/33129",
         "bDay": "9/13/1996",
@@ -96315,7 +96309,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/42902",
         "bDay": "3/19/2002",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4431580.png",
-        "isFreeAgent": "True",
+        "isFreeAgent": "False",
         "rotoWirePlayerIDFull": "miller-moss-19271",
         "cbsLongName": "Miller Moss",
         "injury": {
@@ -102841,10 +102835,10 @@
         "rotoWirePlayerIDFull": "cooper-rush-11841",
         "cbsLongName": "Cooper Rush",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260913",
+          "description": "Sep 12: Rush (back) experienced back spasms Saturday but still will start Sunday's game at Pittsburgh, Adam Schefter of ESPN reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "2",
         "pos": "QB",
@@ -105133,7 +105127,7 @@
         "fRefID": "RossDA03",
         "firstName": "D'Angelo",
         "weight": "190",
-        "jerseyNum": "20",
+        "jerseyNum": "37",
         "team": "CLE",
         "yahooPlayerID": "32223",
         "age": "32",
@@ -109912,7 +109906,7 @@
         "cbsLongName": "Xavier Woods",
         "injury": {
           "injReturnDate": "20260913",
-          "description": "Sep 11: Woods (groin) is questionable for Sunday's game against the Panthers.",
+          "description": "Sep 13: Woods (groin), who is listed as questionable for Sunday's contest against the Panthers, is viewed as a game-time decision, Jeremy Fowler of ESPN.com reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -121030,10 +121024,10 @@
         "rotoWirePlayerIDFull": "eli-stowers-18539",
         "cbsLongName": "Eli Stowers",
         "injury": {
-          "injReturnDate": "20260913",
-          "description": "Sep 11: Stowers (hamstring) is listed as questionable for Sunday's game versus the Commanders.",
+          "injReturnDate": "20261011",
+          "description": "Sep 12: The Eagles placed Stowers (quadriceps/hamstring) on injured reserve Saturday.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Injured Reserve"
         },
         "teamID": "27",
         "pos": "TE",
@@ -121983,7 +121977,7 @@
         "cbsShortName": "D. Hankins",
         "team": "CHI",
         "yahooPlayerID": "42403",
-        "age": "25",
+        "age": "26",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4575667/deion-hankins",
         "yahooLink": "https://sports.yahoo.com/nfl/players/42403",
         "bDay": "9/13/2000",
@@ -134043,10 +134037,10 @@
         "rotoWirePlayerIDFull": "kene-nwangwu-15579",
         "cbsLongName": "Kene Nwangwu",
         "injury": {
-          "injReturnDate": "20260913",
-          "description": "Sep 11: Nwangwu (back) is doubtful for Sunday's game against the Titans, Zack Rosenblatt of The Athletic reports.",
+          "injReturnDate": "20260920",
+          "description": "Sep 12: Nwangwu (back) has been ruled out ahead of Sunday's game against the Titans.",
           "injDate": "",
-          "designation": "Doubtful"
+          "designation": "Out"
         },
         "teamID": "25",
         "pos": "RB",
@@ -136103,7 +136097,7 @@
         },
         "team": "ARI",
         "yahooPlayerID": "40906",
-        "age": "24",
+        "age": "25",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4569480/darius-robinson",
         "yahooLink": "https://sports.yahoo.com/nfl/players/40906",
         "bDay": "9/13/2001",
@@ -141299,7 +141293,7 @@
         "cbsShortName": "C. Bojorquez",
         "team": "CLE",
         "yahooPlayerID": "31727",
-        "age": "29",
+        "age": "30",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4039396/corey-bojorquez",
         "yahooLink": "https://sports.yahoo.com/nfl/players/31727",
         "bDay": "9/13/1996",
@@ -143809,10 +143803,10 @@
         "rotoWirePlayerIDFull": "austin-ajiake-17301",
         "cbsLongName": "Austin Jackson",
         "injury": {
-          "injReturnDate": "20260913",
-          "description": "Sep 11: Ajiake (hamstring) is questionable for Sunday's game against the Ravens, Nathan Brown of The Indianapolis Star reports.",
+          "injReturnDate": "20260920",
+          "description": "Sep 12: Ajiake (hamstring) has been downgraded to out for Sunday's game with the Ravens.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "14",
         "pos": "LB",
@@ -144909,7 +144903,7 @@
         "cbsShortName": "D. Waller",
         "team": "CAR",
         "yahooPlayerID": "28592",
-        "age": "33",
+        "age": "34",
         "espnLink": "https://www.espn.com/nfl/player/_/id/2576925/darren-waller",
         "yahooLink": "https://sports.yahoo.com/nfl/players/28592",
         "bDay": "9/13/1992",
@@ -149630,10 +149624,10 @@
         "rotoWirePlayerIDFull": "audric-estime-17788",
         "cbsLongName": "Audric Estime",
         "injury": {
-          "injReturnDate": "20260920",
-          "description": "Sep 11: Estime (thigh) has been ruled out for Sunday's game against the Lions.",
+          "injReturnDate": "20261011",
+          "description": "Sep 12: The Saints placed Estime (thigh) on injured reserve Saturday, Ross Jackson of WWL Louisiana reports.",
           "injDate": "",
-          "designation": "Out"
+          "designation": "Injured Reserve"
         },
         "teamID": "23",
         "pos": "RB",
@@ -151600,7 +151594,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/42239",
         "bDay": "11/28/2001",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569680.png",
-        "isFreeAgent": "True",
+        "isFreeAgent": "False",
         "rotoWirePlayerIDFull": "jamon-dumas-johnson-18737",
         "cbsLongName": "Jamon Dumas-Johnson",
         "injury": {
@@ -155354,10 +155348,10 @@
         "rotoWirePlayerIDFull": "malik-davis-15828",
         "cbsLongName": "Malik Davis",
         "injury": {
-          "injReturnDate": "20261008",
-          "description": "Sep 11: Davis is slated to have surgery on his injured hip Saturday and is expected to be placed on IR, Todd Archer of ESPN.com reports.",
+          "injReturnDate": "20270215",
+          "description": "Sep 12: The Cowboys placed Davis (hip) on injured reserve Saturday, Adam Schefter of ESPN reports.",
           "injDate": "",
-          "designation": "Out"
+          "designation": "Injured Reserve"
         },
         "teamID": "9",
         "pos": "RB",
@@ -160149,10 +160143,10 @@
         "rotoWirePlayerIDFull": "chris-jones-11074",
         "cbsLongName": "Chris Jones",
         "injury": {
-          "injReturnDate": "20260914",
-          "description": "Sep 11: Jones was a limited participant in Friday's practice due to a calf injury.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "16",
         "pos": "DT",
@@ -160366,7 +160360,7 @@
         "cbsShortName": "J. Covington",
         "team": "KC",
         "yahooPlayerID": "42109",
-        "age": "24",
+        "age": "25",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4431048/jacobe-covington",
         "yahooLink": "https://sports.yahoo.com/nfl/players/42109",
         "bDay": "9/13/2001",
@@ -168621,7 +168615,7 @@
       },
       {
         "posADP": "WR1",
-        "overallADP": "2.6",
+        "overallADP": "2.5",
         "playerID": "4362628",
         "longName": "Ja'Marr Chase"
       },
@@ -168711,13 +168705,13 @@
       },
       {
         "posADP": "RB9",
-        "overallADP": "19.4",
+        "overallADP": "19.3",
         "playerID": "4567048",
         "longName": "Kenneth Walker III"
       },
       {
         "posADP": "RB10",
-        "overallADP": "19.5",
+        "overallADP": "19.4",
         "playerID": "3043078",
         "longName": "Derrick Henry"
       },
@@ -168735,7 +168729,7 @@
       },
       {
         "posADP": "WR10",
-        "overallADP": "22.8",
+        "overallADP": "22.7",
         "playerID": "4361370",
         "longName": "Chris Olave"
       },
@@ -168771,25 +168765,25 @@
       },
       {
         "posADP": "WR14",
-        "overallADP": "31.9",
+        "overallADP": "31.8",
         "playerID": "4429615",
         "longName": "Zay Flowers"
       },
       {
         "posADP": "WR15",
-        "overallADP": "33.0",
+        "overallADP": "33.1",
         "playerID": "4428331",
         "longName": "Rashee Rice"
       },
       {
         "posADP": "TE2",
-        "overallADP": "33.2",
+        "overallADP": "33.3",
         "playerID": "4432665",
         "longName": "Brock Bowers"
       },
       {
         "posADP": "RB13",
-        "overallADP": "33.6",
+        "overallADP": "33.5",
         "playerID": "4361579",
         "longName": "Javonte Williams"
       },
@@ -168812,20 +168806,20 @@
         "longName": "Tee Higgins"
       },
       {
-        "posADP": "QB2",
-        "overallADP": "37.2",
-        "playerID": "3916387",
-        "longName": "Lamar Jackson"
-      },
-      {
         "posADP": "RB15",
-        "overallADP": "37.3",
+        "overallADP": "37.2",
         "playerID": "4427366",
         "longName": "Breece Hall"
       },
       {
+        "posADP": "QB2",
+        "overallADP": "37.3",
+        "playerID": "3916387",
+        "longName": "Lamar Jackson"
+      },
+      {
         "posADP": "WR17",
-        "overallADP": "38.3",
+        "overallADP": "38.2",
         "playerID": "4372016",
         "longName": "Jaylen Waddle"
       },
@@ -168855,21 +168849,21 @@
       },
       {
         "posADP": "WR21",
-        "overallADP": "42.2",
+        "overallADP": "42.3",
         "playerID": "4567750",
         "longName": "Emeka Egbuka"
-      },
-      {
-        "posADP": "RB17",
-        "overallADP": "42.3",
-        "playerID": "4239996",
-        "longName": "Travis Etienne Jr."
       },
       {
         "posADP": "QB3",
         "overallADP": "42.3",
         "playerID": "4431452",
         "longName": "Drake Maye"
+      },
+      {
+        "posADP": "RB17",
+        "overallADP": "42.3",
+        "playerID": "4239996",
+        "longName": "Travis Etienne Jr."
       },
       {
         "posADP": "RB18",
@@ -168879,7 +168873,7 @@
       },
       {
         "posADP": "WR22",
-        "overallADP": "49.6",
+        "overallADP": "49.5",
         "playerID": "4685278",
         "longName": "Luther Burden III"
       },
@@ -168897,31 +168891,31 @@
       },
       {
         "posADP": "TE4",
-        "overallADP": "51.2",
+        "overallADP": "51.1",
         "playerID": "4431459",
         "longName": "Tyler Warren"
       },
       {
         "posADP": "WR24",
-        "overallADP": "51.3",
+        "overallADP": "51.4",
         "playerID": "3121422",
         "longName": "Terry McLaurin"
       },
       {
         "posADP": "WR25",
-        "overallADP": "51.9",
+        "overallADP": "51.8",
         "playerID": "4426388",
         "longName": "Jameson Williams"
       },
       {
         "posADP": "RB19",
-        "overallADP": "52.2",
+        "overallADP": "52.1",
         "playerID": "4596448",
         "longName": "Bucky Irving"
       },
       {
         "posADP": "WR26",
-        "overallADP": "53.1",
+        "overallADP": "53.2",
         "playerID": "3915416",
         "longName": "DJ Moore"
       },
@@ -168951,7 +168945,7 @@
       },
       {
         "posADP": "QB5",
-        "overallADP": "58.1",
+        "overallADP": "58.2",
         "playerID": "4040715",
         "longName": "Jalen Hurts"
       },
@@ -168963,7 +168957,7 @@
       },
       {
         "posADP": "WR28",
-        "overallADP": "60.2",
+        "overallADP": "60.3",
         "playerID": "4431299",
         "longName": "Rome Odunze"
       },
@@ -168975,7 +168969,7 @@
       },
       {
         "posADP": "RB24",
-        "overallADP": "61.2",
+        "overallADP": "61.1",
         "playerID": "4882093",
         "longName": "Bhayshul Tuten"
       },
@@ -168999,13 +168993,13 @@
       },
       {
         "posADP": "QB7",
-        "overallADP": "66.6",
+        "overallADP": "66.8",
         "playerID": "4431611",
         "longName": "Caleb Williams"
       },
       {
         "posADP": "RB26",
-        "overallADP": "70.5",
+        "overallADP": "70.6",
         "playerID": "4569987",
         "longName": "Jaylen Warren"
       },
@@ -169017,7 +169011,7 @@
       },
       {
         "posADP": "TE5",
-        "overallADP": "71.4",
+        "overallADP": "71.5",
         "playerID": "4572680",
         "longName": "Tucker Kraft"
       },
@@ -169029,13 +169023,13 @@
       },
       {
         "posADP": "WR31",
-        "overallADP": "72.6",
+        "overallADP": "72.7",
         "playerID": "4432708",
         "longName": "Marvin Harrison Jr."
       },
       {
         "posADP": "QB9",
-        "overallADP": "75.3",
+        "overallADP": "75.2",
         "playerID": "4360310",
         "longName": "Trevor Lawrence"
       },
@@ -169047,13 +169041,13 @@
       },
       {
         "posADP": "RB28",
-        "overallADP": "78.4",
+        "overallADP": "78.5",
         "playerID": "4038815",
         "longName": "Rico Dowdle"
       },
       {
         "posADP": "QB10",
-        "overallADP": "78.6",
+        "overallADP": "78.7",
         "playerID": "2577417",
         "longName": "Dak Prescott"
       },
@@ -169083,7 +169077,7 @@
       },
       {
         "posADP": "WR35",
-        "overallADP": "82.1",
+        "overallADP": "82.2",
         "playerID": "4432773",
         "longName": "Brian Thomas Jr."
       },
@@ -169101,7 +169095,7 @@
       },
       {
         "posADP": "RB30",
-        "overallADP": "85.7",
+        "overallADP": "85.6",
         "playerID": "4678008",
         "longName": "Jonathon Brooks"
       },
@@ -169113,7 +169107,7 @@
       },
       {
         "posADP": "WR37",
-        "overallADP": "88.4",
+        "overallADP": "88.2",
         "playerID": "4429025",
         "longName": "Quentin Johnston"
       },
@@ -169131,7 +169125,7 @@
       },
       {
         "posADP": "RB33",
-        "overallADP": "91.9",
+        "overallADP": "91.8",
         "playerID": "4429096",
         "longName": "Blake Corum"
       },
@@ -169142,26 +169136,26 @@
         "longName": "Michael Wilson"
       },
       {
-        "posADP": "RB34",
-        "overallADP": "93.3",
-        "playerID": "4241416",
-        "longName": "Chuba Hubbard"
-      },
-      {
         "posADP": "WR39",
         "overallADP": "93.3",
         "playerID": "4035687",
         "longName": "Michael Pittman Jr."
       },
       {
+        "posADP": "RB34",
+        "overallADP": "93.4",
+        "playerID": "4241416",
+        "longName": "Chuba Hubbard"
+      },
+      {
         "posADP": "TE9",
-        "overallADP": "94.4",
+        "overallADP": "94.3",
         "playerID": "3040151",
         "longName": "George Kittle"
       },
       {
         "posADP": "WR40",
-        "overallADP": "94.8",
+        "overallADP": "94.7",
         "playerID": "4360078",
         "longName": "Alec Pierce"
       },
@@ -169173,13 +169167,13 @@
       },
       {
         "posADP": "WR41",
-        "overallADP": "96.9",
+        "overallADP": "96.8",
         "playerID": "2976212",
         "longName": "Stefon Diggs"
       },
       {
         "posADP": "QB12",
-        "overallADP": "98.3",
+        "overallADP": "98.4",
         "playerID": "4426338",
         "longName": "Bo Nix"
       },
@@ -169197,7 +169191,7 @@
       },
       {
         "posADP": "RB36",
-        "overallADP": "101.4",
+        "overallADP": "101.5",
         "playerID": "4568490",
         "longName": "RJ Harvey"
       },
@@ -169215,19 +169209,19 @@
       },
       {
         "posADP": "WR43",
-        "overallADP": "102.2",
+        "overallADP": "102.3",
         "playerID": "4362249",
         "longName": "Jayden Reed"
       },
       {
         "posADP": "QB14",
-        "overallADP": "103.3",
+        "overallADP": "103.4",
         "playerID": "3139477",
         "longName": "Patrick Mahomes"
       },
       {
         "posADP": "TE10",
-        "overallADP": "104.5",
+        "overallADP": "104.6",
         "playerID": "15847",
         "longName": "Travis Kelce"
       },
@@ -169238,16 +169232,16 @@
         "longName": "Jared Goff"
       },
       {
-        "posADP": "WR44",
-        "overallADP": "105.3",
-        "playerID": "4569587",
-        "longName": "Wan'Dale Robinson"
-      },
-      {
         "posADP": "RB38",
-        "overallADP": "105.4",
+        "overallADP": "105.3",
         "playerID": "4371733",
         "longName": "Kenny Gainwell"
+      },
+      {
+        "posADP": "WR44",
+        "overallADP": "105.4",
+        "playerID": "4569587",
+        "longName": "Wan'Dale Robinson"
       },
       {
         "posADP": "WR45",
@@ -169263,7 +169257,7 @@
       },
       {
         "posADP": "TE11",
-        "overallADP": "109.2",
+        "overallADP": "109.1",
         "playerID": "4385690",
         "longName": "Dalton Kincaid"
       },
@@ -169275,7 +169269,7 @@
       },
       {
         "posADP": "RB40",
-        "overallADP": "113.9",
+        "overallADP": "113.8",
         "playerID": "4697815",
         "longName": "Rachaad White"
       },
@@ -169287,7 +169281,7 @@
       },
       {
         "posADP": "WR46",
-        "overallADP": "115.3",
+        "overallADP": "115.1",
         "playerID": "4710714",
         "longName": "De'Zhaun Stribling"
       },
@@ -169305,19 +169299,19 @@
       },
       {
         "posADP": "WR48",
-        "overallADP": "117.2",
+        "overallADP": "117.3",
         "playerID": "4870795",
         "longName": "Makai Lemon"
       },
       {
         "posADP": "WR49",
-        "overallADP": "118.4",
+        "overallADP": "118.5",
         "playerID": "3916433",
         "longName": "Jakobi Meyers"
       },
       {
         "posADP": "TE13",
-        "overallADP": "118.8",
+        "overallADP": "118.9",
         "playerID": "4361050",
         "longName": "Isaiah Likely"
       },
@@ -169329,13 +169323,13 @@
       },
       {
         "posADP": "QB18",
-        "overallADP": "121.1",
+        "overallADP": "121.2",
         "playerID": "4036378",
         "longName": "Jordan Love"
       },
       {
         "posADP": "WR50",
-        "overallADP": "122.8",
+        "overallADP": "122.6",
         "playerID": "4701936",
         "longName": "Matthew Golden"
       },
@@ -169359,13 +169353,13 @@
       },
       {
         "posADP": "TE14",
-        "overallADP": "128.2",
+        "overallADP": "128.4",
         "playerID": "3116365",
         "longName": "Mark Andrews"
       },
       {
         "posADP": "TE15",
-        "overallADP": "128.8",
+        "overallADP": "128.7",
         "playerID": "3929645",
         "longName": "Juwan Johnson"
       },
@@ -169401,7 +169395,7 @@
       },
       {
         "posADP": "WR53",
-        "overallADP": "131.3",
+        "overallADP": "131.4",
         "playerID": "4695883",
         "longName": "Jalen Coker"
       },
@@ -169413,13 +169407,13 @@
       },
       {
         "posADP": "WR54",
-        "overallADP": "135.7",
+        "overallADP": "135.8",
         "playerID": "4373678",
         "longName": "Khalil Shakir"
       },
       {
         "posADP": "RB45",
-        "overallADP": "137.6",
+        "overallADP": "137.9",
         "playerID": "4047365",
         "longName": "Josh Jacobs"
       },
@@ -169443,25 +169437,25 @@
       },
       {
         "posADP": "RB48",
-        "overallADP": "142.5",
+        "overallADP": "142.4",
         "playerID": "4702555",
         "longName": "Jonah Coleman"
       },
       {
         "posADP": "RB49",
-        "overallADP": "142.8",
+        "overallADP": "142.7",
         "playerID": "4596334",
         "longName": "Keaton Mitchell"
       },
       {
         "posADP": "WR56",
-        "overallADP": "143.9",
+        "overallADP": "143.8",
         "playerID": "4032473",
         "longName": "Rashid Shaheed"
       },
       {
         "posADP": "WR57",
-        "overallADP": "148.6",
+        "overallADP": "148.9",
         "playerID": "4880281",
         "longName": "Jordyn Tyson"
       },
@@ -169479,13 +169473,13 @@
       },
       {
         "posADP": "RB50",
-        "overallADP": "153.9",
+        "overallADP": "154.0",
         "playerID": "5081397",
         "longName": "Dylan Sampson"
       },
       {
         "posADP": "RB51",
-        "overallADP": "154.1",
+        "overallADP": "154.2",
         "playerID": "4426385",
         "longName": "Zach Charbonnet"
       },
@@ -169497,19 +169491,19 @@
       },
       {
         "posADP": "TE17",
-        "overallADP": "154.8",
+        "overallADP": "154.9",
         "playerID": "4430539",
         "longName": "Brenton Strange"
       },
       {
         "posADP": "QB24",
-        "overallADP": "155.7",
+        "overallADP": "155.6",
         "playerID": "3917792",
         "longName": "Daniel Jones"
       },
       {
         "posADP": "WR58",
-        "overallADP": "156.2",
+        "overallADP": "156.0",
         "playerID": "4428718",
         "longName": "Tre Tucker"
       },
@@ -169521,14 +169515,14 @@
       },
       {
         "posADP": "DST1",
-        "overallADP": "157.0",
+        "overallADP": "157.1",
         "teamAbv": "HOU",
         "teamID": "13",
         "longName": "Houston Texans DST"
       },
       {
         "posADP": "TE18",
-        "overallADP": "158.7",
+        "overallADP": "158.8",
         "playerID": "3046439",
         "longName": "Hunter Henry"
       },
@@ -169540,7 +169534,7 @@
       },
       {
         "posADP": "TE19",
-        "overallADP": "163.5",
+        "overallADP": "163.6",
         "playerID": "3117256",
         "longName": "Dalton Schultz"
       },
@@ -169553,7 +169547,7 @@
       },
       {
         "posADP": "TE20",
-        "overallADP": "166.3",
+        "overallADP": "166.1",
         "playerID": "4360635",
         "longName": "Chig Okonkwo"
       },
@@ -169571,7 +169565,7 @@
       },
       {
         "posADP": "DST3",
-        "overallADP": "167.9",
+        "overallADP": "168.0",
         "teamAbv": "DEN",
         "teamID": "10",
         "longName": "Denver Broncos DST"
@@ -169597,19 +169591,19 @@
       },
       {
         "posADP": "WR61",
-        "overallADP": "170.7",
+        "overallADP": "170.4",
         "playerID": "4597500",
         "longName": "Adonai Mitchell"
       },
       {
         "posADP": "WR62",
-        "overallADP": "174.0",
+        "overallADP": "174.2",
         "playerID": "4430834",
         "longName": "Jalen McMillan"
       },
       {
         "posADP": "QB25",
-        "overallADP": "176.0",
+        "overallADP": "176.2",
         "playerID": "4688380",
         "longName": "Cam Ward"
       },
@@ -169628,7 +169622,7 @@
       },
       {
         "posADP": "RB57",
-        "overallADP": "177.6",
+        "overallADP": "177.8",
         "playerID": "4360516",
         "longName": "Tyrone Tracy Jr."
       },
@@ -169645,16 +169639,16 @@
         "longName": "Keenan Allen"
       },
       {
-        "posADP": "WR66",
-        "overallADP": "182.8",
-        "playerID": "3886598",
-        "longName": "Jauan Jennings"
-      },
-      {
         "posADP": "TE21",
-        "overallADP": "183.0",
+        "overallADP": "182.6",
         "playerID": "4570037",
         "longName": "Terrance Ferguson"
+      },
+      {
+        "posADP": "WR66",
+        "overallADP": "182.7",
+        "playerID": "3886598",
+        "longName": "Jauan Jennings"
       },
       {
         "posADP": "K1",
@@ -169664,7 +169658,7 @@
       },
       {
         "posADP": "WR67",
-        "overallADP": "183.4",
+        "overallADP": "183.7",
         "playerID": "4382466",
         "longName": "Jalen Nailor"
       },
@@ -169682,13 +169676,13 @@
       },
       {
         "posADP": "QB26",
-        "overallADP": "186.1",
+        "overallADP": "186.3",
         "playerID": "4685720",
         "longName": "Bryce Young"
       },
       {
         "posADP": "WR69",
-        "overallADP": "187.6",
+        "overallADP": "187.4",
         "playerID": "5083754",
         "longName": "Ryan Flournoy"
       },
@@ -169708,26 +169702,26 @@
       },
       {
         "posADP": "WR70",
-        "overallADP": "190.1",
+        "overallADP": "190.2",
         "playerID": "4600981",
         "longName": "Pat Bryant"
       },
       {
         "posADP": "DST8",
-        "overallADP": "190.1",
+        "overallADP": "190.2",
         "teamAbv": "NE",
         "teamID": "22",
         "longName": "New England Patriots DST"
       },
       {
         "posADP": "TE22",
-        "overallADP": "190.5",
+        "overallADP": "190.6",
         "playerID": "4036133",
         "longName": "T.J. Hockenson"
       },
       {
         "posADP": "WR71",
-        "overallADP": "191.2",
+        "overallADP": "191.3",
         "playerID": "4723820",
         "longName": "Omar Cooper Jr."
       },
@@ -169752,45 +169746,45 @@
       },
       {
         "posADP": "TE23",
-        "overallADP": "193.1",
+        "overallADP": "193.2",
         "playerID": "4576297",
         "longName": "AJ Barner"
       },
       {
         "posADP": "DST10",
-        "overallADP": "193.5",
+        "overallADP": "193.6",
         "teamAbv": "LAC",
         "teamID": "18",
         "longName": "Los Angeles Chargers DST"
       },
       {
         "posADP": "WR72",
-        "overallADP": "194.0",
+        "overallADP": "194.1",
         "playerID": "4569603",
         "longName": "Malik Washington"
       },
       {
         "posADP": "DST11",
-        "overallADP": "196.0",
+        "overallADP": "196.1",
         "teamAbv": "BAL",
         "teamID": "3",
         "longName": "Baltimore Ravens DST"
       },
       {
         "posADP": "RB59",
-        "overallADP": "196.3",
+        "overallADP": "196.2",
         "playerID": "4696044",
         "longName": "Kaelon Black"
       },
       {
         "posADP": "WR73",
-        "overallADP": "197.2",
+        "overallADP": "197.0",
         "playerID": "4870847",
         "longName": "Ja'Kobi Lane"
       },
       {
         "posADP": "RB60",
-        "overallADP": "197.9",
+        "overallADP": "197.7",
         "playerID": "4430968",
         "longName": "Kimani Vidal"
       },
@@ -169808,13 +169802,13 @@
       },
       {
         "posADP": "RB61",
-        "overallADP": "201.9",
+        "overallADP": "201.7",
         "playerID": "4240603",
         "longName": "Malik Davis"
       },
       {
         "posADP": "RB62",
-        "overallADP": "205.6",
+        "overallADP": "205.8",
         "playerID": "4430871",
         "longName": "Sean Tucker"
       },
@@ -169826,13 +169820,13 @@
       },
       {
         "posADP": "WR75",
-        "overallADP": "207.9",
+        "overallADP": "208.1",
         "playerID": "4586312",
         "longName": "Jaylin Noel"
       },
       {
         "posADP": "RB63",
-        "overallADP": "208.7",
+        "overallADP": "208.4",
         "playerID": "4685555",
         "longName": "Nicholas Singleton"
       },
@@ -169851,15 +169845,15 @@
       },
       {
         "posADP": "WR77",
-        "overallADP": "209.9",
-        "playerID": "4685415",
-        "longName": "Travis Hunter"
+        "overallADP": "209.7",
+        "playerID": "4869961",
+        "longName": "Chris Bell"
       },
       {
         "posADP": "WR78",
-        "overallADP": "210.1",
-        "playerID": "4869961",
-        "longName": "Chris Bell"
+        "overallADP": "209.9",
+        "playerID": "4685415",
+        "longName": "Travis Hunter"
       },
       {
         "posADP": "K6",
@@ -169869,25 +169863,25 @@
       },
       {
         "posADP": "QB27",
-        "overallADP": "211.6",
+        "overallADP": "211.5",
         "playerID": "2578570",
         "longName": "Jacoby Brissett"
       },
       {
         "posADP": "TE24",
-        "overallADP": "211.8",
+        "overallADP": "211.7",
         "playerID": "5083315",
         "longName": "Kenyon Sadiq"
       },
       {
         "posADP": "WR79",
-        "overallADP": "212.5",
+        "overallADP": "212.3",
         "playerID": "4682648",
         "longName": "Malachi Fields"
       },
       {
         "posADP": "DST13",
-        "overallADP": "212.5",
+        "overallADP": "212.6",
         "teamAbv": "GB",
         "teamID": "12",
         "longName": "Green Bay Packers DST"
@@ -169905,28 +169899,34 @@
         "longName": "Najee Harris"
       },
       {
-        "posADP": "RB65",
-        "overallADP": "214.6",
-        "playerID": "4361529",
-        "longName": "Isiah Pacheco"
-      },
-      {
         "posADP": "TE25",
-        "overallADP": "214.9",
+        "overallADP": "214.8",
         "playerID": "4367209",
         "longName": "Greg Dulcich"
       },
       {
+        "posADP": "RB65",
+        "overallADP": "215.0",
+        "playerID": "4361529",
+        "longName": "Isiah Pacheco"
+      },
+      {
         "posADP": "RB66",
-        "overallADP": "217.7",
+        "overallADP": "217.4",
         "playerID": "4429835",
         "longName": "George Holani"
       },
       {
         "posADP": "WR80",
-        "overallADP": "218.3",
+        "overallADP": "218.2",
         "playerID": "4360939",
         "longName": "Rashod Bateman"
+      },
+      {
+        "posADP": "RB67",
+        "overallADP": "218.9",
+        "playerID": "4685246",
+        "longName": "Kaytron Allen"
       },
       {
         "posADP": "K8",
@@ -169935,14 +169935,8 @@
         "longName": "Evan McPherson"
       },
       {
-        "posADP": "RB67",
-        "overallADP": "219.0",
-        "playerID": "4685246",
-        "longName": "Kaytron Allen"
-      },
-      {
         "posADP": "K9",
-        "overallADP": "219.3",
+        "overallADP": "219.2",
         "playerID": "4689936",
         "longName": "Jake Bates"
       },
@@ -169954,27 +169948,9 @@
       },
       {
         "posADP": "RB68",
-        "overallADP": "219.9",
+        "overallADP": "219.8",
         "playerID": "4038441",
         "longName": "Justice Hill"
-      },
-      {
-        "posADP": "TE26",
-        "overallADP": "222.3",
-        "playerID": "4595342",
-        "longName": "Oronde Gadsden"
-      },
-      {
-        "posADP": "TE27",
-        "overallADP": "222.4",
-        "playerID": "4361411",
-        "longName": "Pat Freiermuth"
-      },
-      {
-        "posADP": "WR81",
-        "overallADP": "222.4",
-        "playerID": "5123663",
-        "longName": "Isaac TeSlaa"
       },
       {
         "posADP": "DST14",
@@ -169984,15 +169960,33 @@
         "longName": "Detroit Lions DST"
       },
       {
+        "posADP": "TE26",
+        "overallADP": "222.5",
+        "playerID": "4361411",
+        "longName": "Pat Freiermuth"
+      },
+      {
+        "posADP": "TE27",
+        "overallADP": "222.5",
+        "playerID": "4595342",
+        "longName": "Oronde Gadsden"
+      },
+      {
+        "posADP": "WR81",
+        "overallADP": "222.5",
+        "playerID": "5123663",
+        "longName": "Isaac TeSlaa"
+      },
+      {
         "posADP": "DST15",
-        "overallADP": "224.0",
+        "overallADP": "223.9",
         "teamAbv": "BUF",
         "teamID": "4",
         "longName": "Buffalo Bills DST"
       },
       {
         "posADP": "WR82",
-        "overallADP": "225.7",
+        "overallADP": "225.6",
         "playerID": "4912218",
         "longName": "Cyrus Allen"
       },
@@ -170010,7 +170004,7 @@
       },
       {
         "posADP": "WR83",
-        "overallADP": "227.8",
+        "overallADP": "227.6",
         "playerID": "4870612",
         "longName": "Zachariah Branch"
       },
@@ -170022,52 +170016,52 @@
       },
       {
         "posADP": "RB69",
-        "overallADP": "228.1",
+        "overallADP": "228.0",
         "playerID": "4819231",
         "longName": "Kaleb Johnson"
       },
       {
         "posADP": "K11",
-        "overallADP": "228.2",
+        "overallADP": "228.3",
         "playerID": "17427",
         "longName": "Cairo Santos"
       },
       {
         "posADP": "TE29",
-        "overallADP": "229.0",
+        "overallADP": "228.8",
         "playerID": "4243331",
         "longName": "Cade Otton"
       },
       {
         "posADP": "WR85",
-        "overallADP": "229.0",
+        "overallADP": "228.8",
         "playerID": "2977187",
         "longName": "Cooper Kupp"
       },
       {
         "posADP": "RB70",
-        "overallADP": "229.6",
+        "overallADP": "229.8",
         "playerID": "4682745",
         "longName": "Jaylen Wright"
       },
       {
-        "posADP": "DST16",
-        "overallADP": "230.8",
-        "teamAbv": "CLE",
-        "teamID": "8",
-        "longName": "Cleveland Browns DST"
-      },
-      {
         "posADP": "K12",
         "overallADP": "231.0",
-        "playerID": "4569923",
-        "longName": "Andy Borregales"
+        "playerID": "4574716",
+        "longName": "Harrison Mevis"
       },
       {
         "posADP": "K13",
         "overallADP": "231.1",
-        "playerID": "4574716",
-        "longName": "Harrison Mevis"
+        "playerID": "4569923",
+        "longName": "Andy Borregales"
+      },
+      {
+        "posADP": "DST16",
+        "overallADP": "231.1",
+        "teamAbv": "CLE",
+        "teamID": "8",
+        "longName": "Cleveland Browns DST"
       },
       {
         "posADP": "WR86",
@@ -170077,19 +170071,19 @@
       },
       {
         "posADP": "WR87",
-        "overallADP": "232.7",
+        "overallADP": "232.5",
         "playerID": "4685261",
         "longName": "Germie Bernard"
       },
       {
         "posADP": "WR88",
-        "overallADP": "234.2",
+        "overallADP": "234.3",
         "playerID": "5081432",
         "longName": "Antonio Williams"
       },
       {
         "posADP": "RB71",
-        "overallADP": "234.4",
+        "overallADP": "234.9",
         "playerID": "4887558",
         "longName": "Emanuel Wilson"
       },
@@ -170101,39 +170095,33 @@
       },
       {
         "posADP": "QB29",
-        "overallADP": "237.4",
+        "overallADP": "237.2",
         "playerID": "15864",
         "longName": "Geno Smith"
       },
       {
         "posADP": "RB73",
-        "overallADP": "237.4",
+        "overallADP": "237.2",
         "playerID": "3116389",
         "longName": "Samaje Perine"
       },
       {
         "posADP": "WR89",
-        "overallADP": "238.2",
+        "overallADP": "238.5",
         "playerID": "4431280",
         "longName": "Troy Franklin"
       },
       {
         "posADP": "WR90",
-        "overallADP": "239.7",
+        "overallADP": "239.5",
         "playerID": "5220680",
         "longName": "Ted Hurst III"
       },
       {
         "posADP": "RB74",
-        "overallADP": "241.1",
+        "overallADP": "240.9",
         "playerID": "3149687",
         "longName": "Chris Brooks"
-      },
-      {
-        "posADP": "WR91",
-        "overallADP": "242.0",
-        "playerID": "4366031",
-        "longName": "Tank Dell"
       },
       {
         "posADP": "K14",
@@ -170142,8 +170130,14 @@
         "longName": "Chris Boswell"
       },
       {
+        "posADP": "WR91",
+        "overallADP": "242.3",
+        "playerID": "4366031",
+        "longName": "Tank Dell"
+      },
+      {
         "posADP": "RB75",
-        "overallADP": "245.0",
+        "overallADP": "245.1",
         "playerID": "4832846",
         "longName": "Demond Claiborne"
       },
@@ -170155,7 +170149,7 @@
       },
       {
         "posADP": "K16",
-        "overallADP": "245.7",
+        "overallADP": "245.8",
         "playerID": "3055899",
         "longName": "Harrison Butker"
       },
@@ -170166,28 +170160,28 @@
         "longName": "David Njoku"
       },
       {
-        "posADP": "RB76",
-        "overallADP": "249.4",
-        "playerID": "4686468",
-        "longName": "Seth McGowan"
-      },
-      {
         "posADP": "TE31",
-        "overallADP": "249.6",
+        "overallADP": "249.4",
         "playerID": "3051876",
         "longName": "Evan Engram"
       },
       {
-        "posADP": "RB77",
-        "overallADP": "250.9",
-        "playerID": "4711533",
-        "longName": "Ollie Gordon II"
+        "posADP": "RB76",
+        "overallADP": "249.6",
+        "playerID": "4686468",
+        "longName": "Seth McGowan"
       },
       {
         "posADP": "WR92",
-        "overallADP": "251.0",
+        "overallADP": "250.9",
         "playerID": "4635008",
         "longName": "Keon Coleman"
+      },
+      {
+        "posADP": "RB77",
+        "overallADP": "251.0",
+        "playerID": "4711533",
+        "longName": "Ollie Gordon II"
       },
       {
         "posADP": "WR93",
@@ -170203,7 +170197,7 @@
       },
       {
         "posADP": "RB78",
-        "overallADP": "257.3",
+        "overallADP": "257.6",
         "playerID": "4685397",
         "longName": "Jordan James"
       },
@@ -170246,13 +170240,13 @@
       },
       {
         "posADP": "RB80",
-        "overallADP": "262.3",
+        "overallADP": "262.2",
         "playerID": "4695404",
         "longName": "Isaiah Davis"
       },
       {
         "posADP": "WR95",
-        "overallADP": "262.6",
+        "overallADP": "262.7",
         "playerID": "4883647",
         "longName": "Elic Ayomanor"
       },
@@ -170264,7 +170258,7 @@
       },
       {
         "posADP": "RB81",
-        "overallADP": "263.9",
+        "overallADP": "263.8",
         "playerID": "4599739",
         "longName": "Kendre Miller"
       },
@@ -170277,9 +170271,16 @@
       },
       {
         "posADP": "WR96",
-        "overallADP": "264.4",
+        "overallADP": "264.5",
         "playerID": "4431268",
         "longName": "Chimere Dike"
+      },
+      {
+        "posADP": "DST19",
+        "overallADP": "265.2",
+        "teamAbv": "SF",
+        "teamID": "28",
+        "longName": "San Francisco 49ers DST"
       },
       {
         "posADP": "K18",
@@ -170288,15 +170289,8 @@
         "longName": "Jason Sanders"
       },
       {
-        "posADP": "DST19",
-        "overallADP": "265.3",
-        "teamAbv": "SF",
-        "teamID": "28",
-        "longName": "San Francisco 49ers DST"
-      },
-      {
         "posADP": "TE36",
-        "overallADP": "266.4",
+        "overallADP": "266.6",
         "playerID": "3116164",
         "longName": "Mike Gesicki"
       },
@@ -170320,7 +170314,7 @@
       },
       {
         "posADP": "QB30",
-        "overallADP": "268.8",
+        "overallADP": "268.7",
         "playerID": "4837248",
         "longName": "Fernando Mendoza"
       },
@@ -170331,14 +170325,8 @@
         "longName": "Kyle Williams"
       },
       {
-        "posADP": "RB82",
-        "overallADP": "271.4",
-        "playerID": "4911851",
-        "longName": "LeQuint Allen Jr."
-      },
-      {
         "posADP": "TE37",
-        "overallADP": "271.5",
+        "overallADP": "271.4",
         "playerID": "4808766",
         "longName": "Mason Taylor"
       },
@@ -170355,6 +170343,12 @@
         "teamAbv": "NYG",
         "teamID": "24",
         "longName": "New York Giants DST"
+      },
+      {
+        "posADP": "RB82",
+        "overallADP": "271.9",
+        "playerID": "4911851",
+        "longName": "LeQuint Allen Jr."
       },
       {
         "posADP": "DST22",
@@ -170395,22 +170389,22 @@
       },
       {
         "posADP": "WR104",
-        "overallADP": "278.7",
+        "overallADP": "278.8",
         "playerID": "5088338",
         "longName": "Elijah Sarratt"
-      },
-      {
-        "posADP": "DST23",
-        "overallADP": "280.6",
-        "teamAbv": "ATL",
-        "teamID": "2",
-        "longName": "Atlanta Falcons DST"
       },
       {
         "posADP": "RB83",
         "overallADP": "280.8",
         "playerID": "4596602",
         "longName": "Brashard Smith"
+      },
+      {
+        "posADP": "DST23",
+        "overallADP": "280.9",
+        "teamAbv": "ATL",
+        "teamID": "2",
+        "longName": "Atlanta Falcons DST"
       },
       {
         "posADP": "TE38",
@@ -170438,7 +170432,7 @@
       },
       {
         "posADP": "DST24",
-        "overallADP": "282.6",
+        "overallADP": "282.4",
         "teamAbv": "CHI",
         "teamID": "6",
         "longName": "Chicago Bears DST"
@@ -170487,7 +170481,7 @@
       },
       {
         "posADP": "WR107",
-        "overallADP": "285.5",
+        "overallADP": "285.7",
         "playerID": "3895856",
         "longName": "Christian Kirk"
       },
@@ -170518,7 +170512,7 @@
       },
       {
         "posADP": "WR109",
-        "overallADP": "289.8",
+        "overallADP": "289.9",
         "playerID": "4241372",
         "longName": "Hollywood Brown"
       },
@@ -170548,7 +170542,7 @@
       },
       {
         "posADP": "QB34",
-        "overallADP": "291.2",
+        "overallADP": "291.5",
         "playerID": "3122840",
         "longName": "Deshaun Watson"
       },
@@ -170566,7 +170560,7 @@
       },
       {
         "posADP": "RB90",
-        "overallADP": "292.0",
+        "overallADP": "292.2",
         "playerID": "4362478",
         "longName": "Emari Demercado"
       },
@@ -170584,7 +170578,7 @@
       },
       {
         "posADP": "K23",
-        "overallADP": "294.1",
+        "overallADP": "294.2",
         "playerID": "5208518",
         "longName": "Charlie Smyth"
       },
@@ -170640,7 +170634,7 @@
       },
       {
         "posADP": "QB35",
-        "overallADP": "301.1",
+        "overallADP": "301.2",
         "playerID": "4432762",
         "longName": "Shedeur Sanders"
       },
@@ -170894,7 +170888,7 @@
       },
       {
         "posADP": "QB36",
-        "overallADP": "332.9",
+        "overallADP": "333.5",
         "playerID": "4430841",
         "longName": "Carson Beck"
       },
@@ -171340,12 +171334,6 @@
         "longName": "Brandon McManus"
       },
       {
-        "posADP": "QB43",
-        "overallADP": "389.5",
-        "playerID": "4685413",
-        "longName": "Cade Klubnik"
-      },
-      {
         "posADP": "WR151",
         "overallADP": "389.6",
         "playerID": "4372414",
@@ -171376,10 +171364,16 @@
         "longName": "Reggie Gilliam"
       },
       {
-        "posADP": "QB44",
+        "posADP": "QB43",
         "overallADP": "393.2",
         "playerID": "2969939",
         "longName": "Jameis Winston"
+      },
+      {
+        "posADP": "QB44",
+        "overallADP": "393.6",
+        "playerID": "4685413",
+        "longName": "Cade Klubnik"
       },
       {
         "posADP": "K38",
@@ -177479,38 +177473,6 @@
           }
         },
         {
-          "twoPointConversion": "0",
-          "Rushing": {
-            "rushYds": "1",
-            "carries": "0",
-            "rushTD": "0"
-          },
-          "Passing": {
-            "passAttempts": "0",
-            "passTD": "0",
-            "passYds": "0",
-            "int": "0",
-            "passCompletions": "0"
-          },
-          "Receiving": {
-            "receptions": "1",
-            "targets": "1",
-            "recTD": "0",
-            "recYds": "9"
-          },
-          "fumblesLost": "0",
-          "pos": "WR",
-          "teamID": "4",
-          "team": "BUF",
-          "longName": "Dante Pettis",
-          "playerID": "3127306",
-          "fantasyPointsDefault": {
-            "standard": "1.0",
-            "PPR": "2.0",
-            "halfPPR": "1.5"
-          }
-        },
-        {
           "twoPointConversion": "0.0",
           "Rushing": {
             "rushYds": "1.8",
@@ -177705,9 +177667,9 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "173",
-            "carries": "40.2",
-            "rushTD": "1.5"
+            "rushYds": "127",
+            "carries": "30.2",
+            "rushTD": "1.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -177717,10 +177679,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.3",
-            "targets": "24.3",
+            "receptions": "13.6",
+            "targets": "16.8",
             "recTD": "1.0",
-            "recYds": "125"
+            "recYds": "98.8"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -177729,9 +177691,9 @@
           "longName": "Chris Brooks",
           "playerID": "3149687",
           "fantasyPointsDefault": {
-            "standard": "44.9",
-            "PPR": "62.2",
-            "halfPPR": "53.55"
+            "standard": "35.28",
+            "PPR": "48.88",
+            "halfPPR": "42.08"
           }
         },
         {
@@ -178043,8 +178005,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "132",
-            "carries": "31.2",
+            "rushYds": "128",
+            "carries": "30.2",
             "rushTD": "1.2"
           },
           "Passing": {
@@ -178055,10 +178017,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "15.3",
-            "targets": "25.6",
+            "receptions": "14.9",
+            "targets": "24.6",
             "recTD": "0.9",
-            "recYds": "148"
+            "recYds": "143"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -178067,9 +178029,9 @@
           "longName": "Ty Johnson",
           "playerID": "3915411",
           "fantasyPointsDefault": {
-            "standard": "40.7",
-            "PPR": "56.0",
-            "halfPPR": "48.35"
+            "standard": "39.8",
+            "PPR": "54.7",
+            "halfPPR": "47.25"
           }
         },
         {
@@ -179089,7 +179051,7 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "17",
+            "rushYds": "20",
             "carries": "4",
             "rushTD": "0"
           },
@@ -179101,10 +179063,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "18",
-            "targets": "24",
+            "receptions": "17",
+            "targets": "22",
             "recTD": "1",
-            "recYds": "167"
+            "recYds": "151"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -179113,9 +179075,9 @@
           "longName": "Greg Dortch",
           "playerID": "4037235",
           "fantasyPointsDefault": {
-            "standard": "24.4",
-            "PPR": "42.4",
-            "halfPPR": "33.4"
+            "standard": "23.1",
+            "PPR": "40.1",
+            "halfPPR": "31.6"
           }
         },
         {
@@ -179569,9 +179531,9 @@
         {
           "twoPointConversion": "0.0",
           "Rushing": {
-            "rushYds": "287",
-            "carries": "70.4",
-            "rushTD": "3.1"
+            "rushYds": "396",
+            "carries": "96.4",
+            "rushTD": "4.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -179581,21 +179543,21 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "8.7",
-            "targets": "9.7",
-            "recTD": "0.2",
-            "recYds": "70.2"
+            "receptions": "12.4",
+            "targets": "16.7",
+            "recTD": "0.5",
+            "recYds": "99.6"
           },
-          "fumblesLost": "0.1",
+          "fumblesLost": "0.6",
           "pos": "RB",
           "teamID": "12",
           "team": "GB",
           "longName": "Josh Jacobs",
           "playerID": "4047365",
           "fantasyPointsDefault": {
-            "standard": "55.42",
-            "PPR": "64.12",
-            "halfPPR": "59.77"
+            "standard": "76.56",
+            "PPR": "88.96",
+            "halfPPR": "82.76"
           }
         },
         {
@@ -179985,9 +179947,9 @@
         {
           "twoPointConversion": "0.2",
           "Rushing": {
-            "rushYds": "296",
-            "carries": "68.8",
-            "rushTD": "2.5"
+            "rushYds": "219",
+            "carries": "52.1",
+            "rushTD": "1.8"
           },
           "Passing": {
             "passAttempts": "0",
@@ -179997,10 +179959,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.9",
-            "targets": "13.9",
+            "receptions": "7.5",
+            "targets": "8.9",
             "recTD": "0.2",
-            "recYds": "82.3"
+            "recYds": "62.6"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -180009,15 +179971,15 @@
           "longName": "Malik Davis",
           "playerID": "4240603",
           "fantasyPointsDefault": {
-            "standard": "54.23",
-            "PPR": "64.13",
-            "halfPPR": "59.18"
+            "standard": "40.36",
+            "PPR": "47.86",
+            "halfPPR": "44.11"
           }
         },
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "18",
+            "rushYds": "19",
             "carries": "4",
             "rushTD": "0"
           },
@@ -180041,9 +180003,9 @@
           "longName": "DeeJay Dallas",
           "playerID": "4240631",
           "fantasyPointsDefault": {
-            "standard": "2.0",
-            "PPR": "2.0",
-            "halfPPR": "2.0"
+            "standard": "2.1",
+            "PPR": "2.1",
+            "halfPPR": "2.1"
           }
         },
         {
@@ -180672,7 +180634,7 @@
             "receptions": "2",
             "targets": "3",
             "recTD": "0",
-            "recYds": "24"
+            "recYds": "23"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -180681,9 +180643,9 @@
           "longName": "Cody White",
           "playerID": "4241983",
           "fantasyPointsDefault": {
-            "standard": "2.4",
-            "PPR": "4.4",
-            "halfPPR": "3.4"
+            "standard": "2.3",
+            "PPR": "4.3",
+            "halfPPR": "3.3"
           }
         },
         {
@@ -180701,10 +180663,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.5",
-            "targets": "23.5",
+            "receptions": "17.8",
+            "targets": "24.5",
             "recTD": "0.7",
-            "recYds": "93.4"
+            "recYds": "96.4"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -180713,9 +180675,9 @@
           "longName": "J.K. Dobbins",
           "playerID": "4241985",
           "fantasyPointsDefault": {
-            "standard": "121.54",
-            "PPR": "139.04",
-            "halfPPR": "130.29"
+            "standard": "121.84",
+            "PPR": "139.64",
+            "halfPPR": "130.74"
           }
         },
         {
@@ -182973,9 +182935,9 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "130",
-            "carries": "21.3",
-            "rushTD": "0.7"
+            "rushYds": "274",
+            "carries": "44.3",
+            "rushTD": "1.2"
           },
           "Passing": {
             "passAttempts": "0",
@@ -182985,10 +182947,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "11",
-            "recTD": "0.2",
-            "recYds": "75.7"
+            "receptions": "12.8",
+            "targets": "18",
+            "recTD": "0.7",
+            "recYds": "98.2"
           },
           "fumblesLost": "0",
           "pos": "RB",
@@ -182997,9 +182959,9 @@
           "longName": "Emari Demercado",
           "playerID": "4362478",
           "fantasyPointsDefault": {
-            "standard": "25.97",
-            "PPR": "35.77",
-            "halfPPR": "30.87"
+            "standard": "48.62",
+            "PPR": "61.42",
+            "halfPPR": "55.02"
           }
         },
         {
@@ -183919,7 +183881,7 @@
           "Receiving": {
             "receptions": "35.9",
             "targets": "45.7",
-            "recTD": "2.2",
+            "recTD": "1.9",
             "recYds": "296"
           },
           "fumblesLost": "1.1",
@@ -183929,9 +183891,9 @@
           "longName": "James Cook III",
           "playerID": "4379399",
           "fantasyPointsDefault": {
-            "standard": "231.2",
-            "PPR": "267.1",
-            "halfPPR": "249.15"
+            "standard": "229.4",
+            "PPR": "265.3",
+            "halfPPR": "247.35"
           }
         },
         {
@@ -185235,9 +185197,9 @@
         {
           "twoPointConversion": "0.4",
           "Rushing": {
-            "rushYds": "743",
-            "carries": "182",
-            "rushTD": "6.7"
+            "rushYds": "714",
+            "carries": "174",
+            "rushTD": "6.3"
           },
           "Passing": {
             "passAttempts": "0",
@@ -185247,10 +185209,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "31.8",
-            "targets": "39.5",
-            "recTD": "1.9",
-            "recYds": "221"
+            "receptions": "29.8",
+            "targets": "35.5",
+            "recTD": "1.6",
+            "recYds": "206"
           },
           "fumblesLost": "1.0",
           "pos": "RB",
@@ -185259,9 +185221,9 @@
           "longName": "MarShawn Lloyd",
           "playerID": "4429023",
           "fantasyPointsDefault": {
-            "standard": "147.8",
-            "PPR": "179.6",
-            "halfPPR": "163.7"
+            "standard": "139.2",
+            "PPR": "169.0",
+            "halfPPR": "154.1"
           }
         },
         {
@@ -185553,6 +185515,38 @@
           }
         },
         {
+          "twoPointConversion": "0",
+          "Rushing": {
+            "rushYds": "11",
+            "carries": "3",
+            "rushTD": "0"
+          },
+          "Passing": {
+            "passAttempts": "0",
+            "passTD": "0",
+            "passYds": "0",
+            "int": "0",
+            "passCompletions": "0"
+          },
+          "Receiving": {
+            "receptions": "0",
+            "targets": "0",
+            "recTD": "0",
+            "recYds": "1"
+          },
+          "fumblesLost": "0",
+          "pos": "RB",
+          "teamID": "9",
+          "team": "DAL",
+          "longName": "Israel Abanikanda",
+          "playerID": "4429202",
+          "fantasyPointsDefault": {
+            "standard": "1.2",
+            "PPR": "1.2",
+            "halfPPR": "1.2"
+          }
+        },
+        {
           "twoPointConversion": "0.1",
           "Rushing": {
             "rushYds": "32.9",
@@ -185695,10 +185689,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "13.2",
-            "targets": "15.3",
+            "receptions": "12.9",
+            "targets": "14.3",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "109"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -185707,9 +185701,9 @@
           "longName": "Ray Davis",
           "playerID": "4429501",
           "fantasyPointsDefault": {
-            "standard": "63.2",
-            "PPR": "76.4",
-            "halfPPR": "69.8"
+            "standard": "62.9",
+            "PPR": "75.8",
+            "halfPPR": "69.35"
           }
         },
         {
@@ -186050,7 +186044,7 @@
             "receptions": "54.4",
             "targets": "79.7",
             "recTD": "3.9",
-            "recYds": "610"
+            "recYds": "611"
           },
           "fumblesLost": "0.1",
           "pos": "TE",
@@ -186059,9 +186053,9 @@
           "longName": "Brenton Strange",
           "playerID": "4430539",
           "fantasyPointsDefault": {
-            "standard": "84.5",
-            "PPR": "138.9",
-            "halfPPR": "111.7"
+            "standard": "84.6",
+            "PPR": "139.0",
+            "halfPPR": "111.8"
           }
         },
         {
@@ -187733,10 +187727,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "42.1",
-            "targets": "51.1",
+            "receptions": "43.1",
+            "targets": "53.1",
             "recTD": "2.4",
-            "recYds": "330"
+            "recYds": "338"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -187745,9 +187739,9 @@
           "longName": "RJ Harvey",
           "playerID": "4568490",
           "fantasyPointsDefault": {
-            "standard": "116.9",
-            "PPR": "159.0",
-            "halfPPR": "137.95"
+            "standard": "117.7",
+            "PPR": "160.8",
+            "halfPPR": "139.25"
           }
         },
         {
@@ -191027,10 +191021,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "35.9",
-            "targets": "45.8",
+            "receptions": "36.6",
+            "targets": "47.3",
             "recTD": "1.8",
-            "recYds": "312"
+            "recYds": "319"
           },
           "fumblesLost": "0.9",
           "pos": "RB",
@@ -191039,9 +191033,9 @@
           "longName": "Cam Skattebo",
           "playerID": "4696981",
           "fantasyPointsDefault": {
-            "standard": "176.6",
-            "PPR": "212.5",
-            "halfPPR": "194.55"
+            "standard": "177.3",
+            "PPR": "213.9",
+            "halfPPR": "195.6"
           }
         },
         {
@@ -191883,8 +191877,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "278",
-            "carries": "75.7",
+            "rushYds": "252",
+            "carries": "68.3",
             "rushTD": "2.4"
           },
           "Passing": {
@@ -191895,10 +191889,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "9.7",
+            "receptions": "9.2",
+            "targets": "8.2",
             "recTD": "0.4",
-            "recYds": "87.8"
+            "recYds": "83.8"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -191907,9 +191901,9 @@
           "longName": "Kaleb Johnson",
           "playerID": "4819231",
           "fantasyPointsDefault": {
-            "standard": "53.38",
-            "PPR": "63.18",
-            "halfPPR": "58.28"
+            "standard": "50.38",
+            "PPR": "59.58",
+            "halfPPR": "54.98"
           }
         },
         {
@@ -192731,7 +192725,7 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "30.5",
+            "receptions": "30.8",
             "targets": "43.2",
             "recTD": "1.6",
             "recYds": "243"
@@ -192744,8 +192738,8 @@
           "playerID": "4882093",
           "fantasyPointsDefault": {
             "standard": "145.4",
-            "PPR": "175.9",
-            "halfPPR": "160.65"
+            "PPR": "176.2",
+            "halfPPR": "160.8"
           }
         },
         {
@@ -192894,7 +192888,7 @@
             "receptions": "15.7",
             "targets": "23.0",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "113"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -192903,9 +192897,9 @@
           "longName": "LeQuint Allen Jr.",
           "playerID": "4911851",
           "fantasyPointsDefault": {
-            "standard": "24.03",
-            "PPR": "39.73",
-            "halfPPR": "31.88"
+            "standard": "24.13",
+            "PPR": "39.83",
+            "halfPPR": "31.98"
           }
         },
         {
@@ -196745,38 +196739,6 @@
           }
         },
         {
-          "twoPointConversion": "0",
-          "Rushing": {
-            "rushYds": "1",
-            "carries": "0",
-            "rushTD": "0"
-          },
-          "Passing": {
-            "passAttempts": "0",
-            "passTD": "0",
-            "passYds": "0",
-            "int": "0",
-            "passCompletions": "0"
-          },
-          "Receiving": {
-            "receptions": "1",
-            "targets": "1",
-            "recTD": "0",
-            "recYds": "9"
-          },
-          "fumblesLost": "0",
-          "pos": "WR",
-          "teamID": "4",
-          "team": "BUF",
-          "longName": "Dante Pettis",
-          "playerID": "3127306",
-          "fantasyPointsDefault": {
-            "standard": "1.0",
-            "PPR": "2.0",
-            "halfPPR": "1.5"
-          }
-        },
-        {
           "twoPointConversion": "0.0",
           "Rushing": {
             "rushYds": "1.8",
@@ -196971,9 +196933,9 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "173",
-            "carries": "40.2",
-            "rushTD": "1.5"
+            "rushYds": "127",
+            "carries": "30.2",
+            "rushTD": "1.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -196983,10 +196945,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.3",
-            "targets": "24.3",
+            "receptions": "13.6",
+            "targets": "16.8",
             "recTD": "1.0",
-            "recYds": "125"
+            "recYds": "98.8"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -196995,9 +196957,9 @@
           "longName": "Chris Brooks",
           "playerID": "3149687",
           "fantasyPointsDefault": {
-            "standard": "44.9",
-            "PPR": "62.2",
-            "halfPPR": "53.55"
+            "standard": "35.28",
+            "PPR": "48.88",
+            "halfPPR": "42.08"
           }
         },
         {
@@ -197309,8 +197271,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "132",
-            "carries": "31.2",
+            "rushYds": "128",
+            "carries": "30.2",
             "rushTD": "1.2"
           },
           "Passing": {
@@ -197321,10 +197283,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "15.3",
-            "targets": "25.6",
+            "receptions": "14.9",
+            "targets": "24.6",
             "recTD": "0.9",
-            "recYds": "148"
+            "recYds": "143"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -197333,9 +197295,9 @@
           "longName": "Ty Johnson",
           "playerID": "3915411",
           "fantasyPointsDefault": {
-            "standard": "40.7",
-            "PPR": "56.0",
-            "halfPPR": "48.35"
+            "standard": "39.8",
+            "PPR": "54.7",
+            "halfPPR": "47.25"
           }
         },
         {
@@ -198355,7 +198317,7 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "17",
+            "rushYds": "20",
             "carries": "4",
             "rushTD": "0"
           },
@@ -198367,10 +198329,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "18",
-            "targets": "24",
+            "receptions": "17",
+            "targets": "22",
             "recTD": "1",
-            "recYds": "167"
+            "recYds": "151"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -198379,9 +198341,9 @@
           "longName": "Greg Dortch",
           "playerID": "4037235",
           "fantasyPointsDefault": {
-            "standard": "24.4",
-            "PPR": "42.4",
-            "halfPPR": "33.4"
+            "standard": "23.1",
+            "PPR": "40.1",
+            "halfPPR": "31.6"
           }
         },
         {
@@ -198835,9 +198797,9 @@
         {
           "twoPointConversion": "0.0",
           "Rushing": {
-            "rushYds": "287",
-            "carries": "70.4",
-            "rushTD": "3.1"
+            "rushYds": "396",
+            "carries": "96.4",
+            "rushTD": "4.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -198847,21 +198809,21 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "8.7",
-            "targets": "9.7",
-            "recTD": "0.2",
-            "recYds": "70.2"
+            "receptions": "12.4",
+            "targets": "16.7",
+            "recTD": "0.5",
+            "recYds": "99.6"
           },
-          "fumblesLost": "0.1",
+          "fumblesLost": "0.6",
           "pos": "RB",
           "teamID": "12",
           "team": "GB",
           "longName": "Josh Jacobs",
           "playerID": "4047365",
           "fantasyPointsDefault": {
-            "standard": "55.42",
-            "PPR": "64.12",
-            "halfPPR": "59.77"
+            "standard": "76.56",
+            "PPR": "88.96",
+            "halfPPR": "82.76"
           }
         },
         {
@@ -199251,9 +199213,9 @@
         {
           "twoPointConversion": "0.2",
           "Rushing": {
-            "rushYds": "296",
-            "carries": "68.8",
-            "rushTD": "2.5"
+            "rushYds": "219",
+            "carries": "52.1",
+            "rushTD": "1.8"
           },
           "Passing": {
             "passAttempts": "0",
@@ -199263,10 +199225,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.9",
-            "targets": "13.9",
+            "receptions": "7.5",
+            "targets": "8.9",
             "recTD": "0.2",
-            "recYds": "82.3"
+            "recYds": "62.6"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -199275,15 +199237,15 @@
           "longName": "Malik Davis",
           "playerID": "4240603",
           "fantasyPointsDefault": {
-            "standard": "54.23",
-            "PPR": "64.13",
-            "halfPPR": "59.18"
+            "standard": "40.36",
+            "PPR": "47.86",
+            "halfPPR": "44.11"
           }
         },
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "18",
+            "rushYds": "19",
             "carries": "4",
             "rushTD": "0"
           },
@@ -199307,9 +199269,9 @@
           "longName": "DeeJay Dallas",
           "playerID": "4240631",
           "fantasyPointsDefault": {
-            "standard": "2.0",
-            "PPR": "2.0",
-            "halfPPR": "2.0"
+            "standard": "2.1",
+            "PPR": "2.1",
+            "halfPPR": "2.1"
           }
         },
         {
@@ -199938,7 +199900,7 @@
             "receptions": "2",
             "targets": "3",
             "recTD": "0",
-            "recYds": "24"
+            "recYds": "23"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -199947,9 +199909,9 @@
           "longName": "Cody White",
           "playerID": "4241983",
           "fantasyPointsDefault": {
-            "standard": "2.4",
-            "PPR": "4.4",
-            "halfPPR": "3.4"
+            "standard": "2.3",
+            "PPR": "4.3",
+            "halfPPR": "3.3"
           }
         },
         {
@@ -199967,10 +199929,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.5",
-            "targets": "23.5",
+            "receptions": "17.8",
+            "targets": "24.5",
             "recTD": "0.7",
-            "recYds": "93.4"
+            "recYds": "96.4"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -199979,9 +199941,9 @@
           "longName": "J.K. Dobbins",
           "playerID": "4241985",
           "fantasyPointsDefault": {
-            "standard": "121.54",
-            "PPR": "139.04",
-            "halfPPR": "130.29"
+            "standard": "121.84",
+            "PPR": "139.64",
+            "halfPPR": "130.74"
           }
         },
         {
@@ -202239,9 +202201,9 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "130",
-            "carries": "21.3",
-            "rushTD": "0.7"
+            "rushYds": "274",
+            "carries": "44.3",
+            "rushTD": "1.2"
           },
           "Passing": {
             "passAttempts": "0",
@@ -202251,10 +202213,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "11",
-            "recTD": "0.2",
-            "recYds": "75.7"
+            "receptions": "12.8",
+            "targets": "18",
+            "recTD": "0.7",
+            "recYds": "98.2"
           },
           "fumblesLost": "0",
           "pos": "RB",
@@ -202263,9 +202225,9 @@
           "longName": "Emari Demercado",
           "playerID": "4362478",
           "fantasyPointsDefault": {
-            "standard": "25.97",
-            "PPR": "35.77",
-            "halfPPR": "30.87"
+            "standard": "48.62",
+            "PPR": "61.42",
+            "halfPPR": "55.02"
           }
         },
         {
@@ -203185,7 +203147,7 @@
           "Receiving": {
             "receptions": "35.9",
             "targets": "45.7",
-            "recTD": "2.2",
+            "recTD": "1.9",
             "recYds": "296"
           },
           "fumblesLost": "1.1",
@@ -203195,9 +203157,9 @@
           "longName": "James Cook III",
           "playerID": "4379399",
           "fantasyPointsDefault": {
-            "standard": "231.2",
-            "PPR": "267.1",
-            "halfPPR": "249.15"
+            "standard": "229.4",
+            "PPR": "265.3",
+            "halfPPR": "247.35"
           }
         },
         {
@@ -204501,9 +204463,9 @@
         {
           "twoPointConversion": "0.4",
           "Rushing": {
-            "rushYds": "743",
-            "carries": "182",
-            "rushTD": "6.7"
+            "rushYds": "714",
+            "carries": "174",
+            "rushTD": "6.3"
           },
           "Passing": {
             "passAttempts": "0",
@@ -204513,10 +204475,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "31.8",
-            "targets": "39.5",
-            "recTD": "1.9",
-            "recYds": "221"
+            "receptions": "29.8",
+            "targets": "35.5",
+            "recTD": "1.6",
+            "recYds": "206"
           },
           "fumblesLost": "1.0",
           "pos": "RB",
@@ -204525,9 +204487,9 @@
           "longName": "MarShawn Lloyd",
           "playerID": "4429023",
           "fantasyPointsDefault": {
-            "standard": "147.8",
-            "PPR": "179.6",
-            "halfPPR": "163.7"
+            "standard": "139.2",
+            "PPR": "169.0",
+            "halfPPR": "154.1"
           }
         },
         {
@@ -204819,6 +204781,38 @@
           }
         },
         {
+          "twoPointConversion": "0",
+          "Rushing": {
+            "rushYds": "11",
+            "carries": "3",
+            "rushTD": "0"
+          },
+          "Passing": {
+            "passAttempts": "0",
+            "passTD": "0",
+            "passYds": "0",
+            "int": "0",
+            "passCompletions": "0"
+          },
+          "Receiving": {
+            "receptions": "0",
+            "targets": "0",
+            "recTD": "0",
+            "recYds": "1"
+          },
+          "fumblesLost": "0",
+          "pos": "RB",
+          "teamID": "9",
+          "team": "DAL",
+          "longName": "Israel Abanikanda",
+          "playerID": "4429202",
+          "fantasyPointsDefault": {
+            "standard": "1.2",
+            "PPR": "1.2",
+            "halfPPR": "1.2"
+          }
+        },
+        {
           "twoPointConversion": "0.1",
           "Rushing": {
             "rushYds": "32.9",
@@ -204961,10 +204955,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "13.2",
-            "targets": "15.3",
+            "receptions": "12.9",
+            "targets": "14.3",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "109"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -204973,9 +204967,9 @@
           "longName": "Ray Davis",
           "playerID": "4429501",
           "fantasyPointsDefault": {
-            "standard": "63.2",
-            "PPR": "76.4",
-            "halfPPR": "69.8"
+            "standard": "62.9",
+            "PPR": "75.8",
+            "halfPPR": "69.35"
           }
         },
         {
@@ -205316,7 +205310,7 @@
             "receptions": "54.4",
             "targets": "79.7",
             "recTD": "3.9",
-            "recYds": "610"
+            "recYds": "611"
           },
           "fumblesLost": "0.1",
           "pos": "TE",
@@ -205325,9 +205319,9 @@
           "longName": "Brenton Strange",
           "playerID": "4430539",
           "fantasyPointsDefault": {
-            "standard": "84.5",
-            "PPR": "138.9",
-            "halfPPR": "111.7"
+            "standard": "84.6",
+            "PPR": "139.0",
+            "halfPPR": "111.8"
           }
         },
         {
@@ -206999,10 +206993,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "42.1",
-            "targets": "51.1",
+            "receptions": "43.1",
+            "targets": "53.1",
             "recTD": "2.4",
-            "recYds": "330"
+            "recYds": "338"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -207011,9 +207005,9 @@
           "longName": "RJ Harvey",
           "playerID": "4568490",
           "fantasyPointsDefault": {
-            "standard": "116.9",
-            "PPR": "159.0",
-            "halfPPR": "137.95"
+            "standard": "117.7",
+            "PPR": "160.8",
+            "halfPPR": "139.25"
           }
         },
         {
@@ -210293,10 +210287,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "35.9",
-            "targets": "45.8",
+            "receptions": "36.6",
+            "targets": "47.3",
             "recTD": "1.8",
-            "recYds": "312"
+            "recYds": "319"
           },
           "fumblesLost": "0.9",
           "pos": "RB",
@@ -210305,9 +210299,9 @@
           "longName": "Cam Skattebo",
           "playerID": "4696981",
           "fantasyPointsDefault": {
-            "standard": "176.6",
-            "PPR": "212.5",
-            "halfPPR": "194.55"
+            "standard": "177.3",
+            "PPR": "213.9",
+            "halfPPR": "195.6"
           }
         },
         {
@@ -211149,8 +211143,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "278",
-            "carries": "75.7",
+            "rushYds": "252",
+            "carries": "68.3",
             "rushTD": "2.4"
           },
           "Passing": {
@@ -211161,10 +211155,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "9.7",
+            "receptions": "9.2",
+            "targets": "8.2",
             "recTD": "0.4",
-            "recYds": "87.8"
+            "recYds": "83.8"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -211173,9 +211167,9 @@
           "longName": "Kaleb Johnson",
           "playerID": "4819231",
           "fantasyPointsDefault": {
-            "standard": "53.38",
-            "PPR": "63.18",
-            "halfPPR": "58.28"
+            "standard": "50.38",
+            "PPR": "59.58",
+            "halfPPR": "54.98"
           }
         },
         {
@@ -211997,7 +211991,7 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "30.5",
+            "receptions": "30.8",
             "targets": "43.2",
             "recTD": "1.6",
             "recYds": "243"
@@ -212010,8 +212004,8 @@
           "playerID": "4882093",
           "fantasyPointsDefault": {
             "standard": "145.4",
-            "PPR": "175.9",
-            "halfPPR": "160.65"
+            "PPR": "176.2",
+            "halfPPR": "160.8"
           }
         },
         {
@@ -212160,7 +212154,7 @@
             "receptions": "15.7",
             "targets": "23.0",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "113"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -212169,9 +212163,9 @@
           "longName": "LeQuint Allen Jr.",
           "playerID": "4911851",
           "fantasyPointsDefault": {
-            "standard": "24.03",
-            "PPR": "39.73",
-            "halfPPR": "31.88"
+            "standard": "24.13",
+            "PPR": "39.83",
+            "halfPPR": "31.98"
           }
         },
         {
@@ -216011,38 +216005,6 @@
           }
         },
         {
-          "twoPointConversion": "0",
-          "Rushing": {
-            "rushYds": "1",
-            "carries": "0",
-            "rushTD": "0"
-          },
-          "Passing": {
-            "passAttempts": "0",
-            "passTD": "0",
-            "passYds": "0",
-            "int": "0",
-            "passCompletions": "0"
-          },
-          "Receiving": {
-            "receptions": "1",
-            "targets": "1",
-            "recTD": "0",
-            "recYds": "9"
-          },
-          "fumblesLost": "0",
-          "pos": "WR",
-          "teamID": "4",
-          "team": "BUF",
-          "longName": "Dante Pettis",
-          "playerID": "3127306",
-          "fantasyPointsDefault": {
-            "standard": "1.0",
-            "PPR": "2.0",
-            "halfPPR": "1.5"
-          }
-        },
-        {
           "twoPointConversion": "0.0",
           "Rushing": {
             "rushYds": "1.8",
@@ -216237,9 +216199,9 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "173",
-            "carries": "40.2",
-            "rushTD": "1.5"
+            "rushYds": "127",
+            "carries": "30.2",
+            "rushTD": "1.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -216249,10 +216211,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.3",
-            "targets": "24.3",
+            "receptions": "13.6",
+            "targets": "16.8",
             "recTD": "1.0",
-            "recYds": "125"
+            "recYds": "98.8"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -216261,9 +216223,9 @@
           "longName": "Chris Brooks",
           "playerID": "3149687",
           "fantasyPointsDefault": {
-            "standard": "44.9",
-            "PPR": "62.2",
-            "halfPPR": "53.55"
+            "standard": "35.28",
+            "PPR": "48.88",
+            "halfPPR": "42.08"
           }
         },
         {
@@ -216575,8 +216537,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "132",
-            "carries": "31.2",
+            "rushYds": "128",
+            "carries": "30.2",
             "rushTD": "1.2"
           },
           "Passing": {
@@ -216587,10 +216549,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "15.3",
-            "targets": "25.6",
+            "receptions": "14.9",
+            "targets": "24.6",
             "recTD": "0.9",
-            "recYds": "148"
+            "recYds": "143"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -216599,9 +216561,9 @@
           "longName": "Ty Johnson",
           "playerID": "3915411",
           "fantasyPointsDefault": {
-            "standard": "40.7",
-            "PPR": "56.0",
-            "halfPPR": "48.35"
+            "standard": "39.8",
+            "PPR": "54.7",
+            "halfPPR": "47.25"
           }
         },
         {
@@ -217621,7 +217583,7 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "17",
+            "rushYds": "20",
             "carries": "4",
             "rushTD": "0"
           },
@@ -217633,10 +217595,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "18",
-            "targets": "24",
+            "receptions": "17",
+            "targets": "22",
             "recTD": "1",
-            "recYds": "167"
+            "recYds": "151"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -217645,9 +217607,9 @@
           "longName": "Greg Dortch",
           "playerID": "4037235",
           "fantasyPointsDefault": {
-            "standard": "24.4",
-            "PPR": "42.4",
-            "halfPPR": "33.4"
+            "standard": "23.1",
+            "PPR": "40.1",
+            "halfPPR": "31.6"
           }
         },
         {
@@ -218101,9 +218063,9 @@
         {
           "twoPointConversion": "0.0",
           "Rushing": {
-            "rushYds": "287",
-            "carries": "70.4",
-            "rushTD": "3.1"
+            "rushYds": "396",
+            "carries": "96.4",
+            "rushTD": "4.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -218113,21 +218075,21 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "8.7",
-            "targets": "9.7",
-            "recTD": "0.2",
-            "recYds": "70.2"
+            "receptions": "12.4",
+            "targets": "16.7",
+            "recTD": "0.5",
+            "recYds": "99.6"
           },
-          "fumblesLost": "0.1",
+          "fumblesLost": "0.6",
           "pos": "RB",
           "teamID": "12",
           "team": "GB",
           "longName": "Josh Jacobs",
           "playerID": "4047365",
           "fantasyPointsDefault": {
-            "standard": "55.42",
-            "PPR": "64.12",
-            "halfPPR": "59.77"
+            "standard": "76.56",
+            "PPR": "88.96",
+            "halfPPR": "82.76"
           }
         },
         {
@@ -218517,9 +218479,9 @@
         {
           "twoPointConversion": "0.2",
           "Rushing": {
-            "rushYds": "296",
-            "carries": "68.8",
-            "rushTD": "2.5"
+            "rushYds": "219",
+            "carries": "52.1",
+            "rushTD": "1.8"
           },
           "Passing": {
             "passAttempts": "0",
@@ -218529,10 +218491,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.9",
-            "targets": "13.9",
+            "receptions": "7.5",
+            "targets": "8.9",
             "recTD": "0.2",
-            "recYds": "82.3"
+            "recYds": "62.6"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -218541,15 +218503,15 @@
           "longName": "Malik Davis",
           "playerID": "4240603",
           "fantasyPointsDefault": {
-            "standard": "54.23",
-            "PPR": "64.13",
-            "halfPPR": "59.18"
+            "standard": "40.36",
+            "PPR": "47.86",
+            "halfPPR": "44.11"
           }
         },
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "18",
+            "rushYds": "19",
             "carries": "4",
             "rushTD": "0"
           },
@@ -218573,9 +218535,9 @@
           "longName": "DeeJay Dallas",
           "playerID": "4240631",
           "fantasyPointsDefault": {
-            "standard": "2.0",
-            "PPR": "2.0",
-            "halfPPR": "2.0"
+            "standard": "2.1",
+            "PPR": "2.1",
+            "halfPPR": "2.1"
           }
         },
         {
@@ -219204,7 +219166,7 @@
             "receptions": "2",
             "targets": "3",
             "recTD": "0",
-            "recYds": "24"
+            "recYds": "23"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -219213,9 +219175,9 @@
           "longName": "Cody White",
           "playerID": "4241983",
           "fantasyPointsDefault": {
-            "standard": "2.4",
-            "PPR": "4.4",
-            "halfPPR": "3.4"
+            "standard": "2.3",
+            "PPR": "4.3",
+            "halfPPR": "3.3"
           }
         },
         {
@@ -219233,10 +219195,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.5",
-            "targets": "23.5",
+            "receptions": "17.8",
+            "targets": "24.5",
             "recTD": "0.7",
-            "recYds": "93.4"
+            "recYds": "96.4"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -219245,9 +219207,9 @@
           "longName": "J.K. Dobbins",
           "playerID": "4241985",
           "fantasyPointsDefault": {
-            "standard": "121.54",
-            "PPR": "139.04",
-            "halfPPR": "130.29"
+            "standard": "121.84",
+            "PPR": "139.64",
+            "halfPPR": "130.74"
           }
         },
         {
@@ -221505,9 +221467,9 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "130",
-            "carries": "21.3",
-            "rushTD": "0.7"
+            "rushYds": "274",
+            "carries": "44.3",
+            "rushTD": "1.2"
           },
           "Passing": {
             "passAttempts": "0",
@@ -221517,10 +221479,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "11",
-            "recTD": "0.2",
-            "recYds": "75.7"
+            "receptions": "12.8",
+            "targets": "18",
+            "recTD": "0.7",
+            "recYds": "98.2"
           },
           "fumblesLost": "0",
           "pos": "RB",
@@ -221529,9 +221491,9 @@
           "longName": "Emari Demercado",
           "playerID": "4362478",
           "fantasyPointsDefault": {
-            "standard": "25.97",
-            "PPR": "35.77",
-            "halfPPR": "30.87"
+            "standard": "48.62",
+            "PPR": "61.42",
+            "halfPPR": "55.02"
           }
         },
         {
@@ -222451,7 +222413,7 @@
           "Receiving": {
             "receptions": "35.9",
             "targets": "45.7",
-            "recTD": "2.2",
+            "recTD": "1.9",
             "recYds": "296"
           },
           "fumblesLost": "1.1",
@@ -222461,9 +222423,9 @@
           "longName": "James Cook III",
           "playerID": "4379399",
           "fantasyPointsDefault": {
-            "standard": "231.2",
-            "PPR": "267.1",
-            "halfPPR": "249.15"
+            "standard": "229.4",
+            "PPR": "265.3",
+            "halfPPR": "247.35"
           }
         },
         {
@@ -223767,9 +223729,9 @@
         {
           "twoPointConversion": "0.4",
           "Rushing": {
-            "rushYds": "743",
-            "carries": "182",
-            "rushTD": "6.7"
+            "rushYds": "714",
+            "carries": "174",
+            "rushTD": "6.3"
           },
           "Passing": {
             "passAttempts": "0",
@@ -223779,10 +223741,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "31.8",
-            "targets": "39.5",
-            "recTD": "1.9",
-            "recYds": "221"
+            "receptions": "29.8",
+            "targets": "35.5",
+            "recTD": "1.6",
+            "recYds": "206"
           },
           "fumblesLost": "1.0",
           "pos": "RB",
@@ -223791,9 +223753,9 @@
           "longName": "MarShawn Lloyd",
           "playerID": "4429023",
           "fantasyPointsDefault": {
-            "standard": "147.8",
-            "PPR": "179.6",
-            "halfPPR": "163.7"
+            "standard": "139.2",
+            "PPR": "169.0",
+            "halfPPR": "154.1"
           }
         },
         {
@@ -224085,6 +224047,38 @@
           }
         },
         {
+          "twoPointConversion": "0",
+          "Rushing": {
+            "rushYds": "11",
+            "carries": "3",
+            "rushTD": "0"
+          },
+          "Passing": {
+            "passAttempts": "0",
+            "passTD": "0",
+            "passYds": "0",
+            "int": "0",
+            "passCompletions": "0"
+          },
+          "Receiving": {
+            "receptions": "0",
+            "targets": "0",
+            "recTD": "0",
+            "recYds": "1"
+          },
+          "fumblesLost": "0",
+          "pos": "RB",
+          "teamID": "9",
+          "team": "DAL",
+          "longName": "Israel Abanikanda",
+          "playerID": "4429202",
+          "fantasyPointsDefault": {
+            "standard": "1.2",
+            "PPR": "1.2",
+            "halfPPR": "1.2"
+          }
+        },
+        {
           "twoPointConversion": "0.1",
           "Rushing": {
             "rushYds": "32.9",
@@ -224227,10 +224221,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "13.2",
-            "targets": "15.3",
+            "receptions": "12.9",
+            "targets": "14.3",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "109"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -224239,9 +224233,9 @@
           "longName": "Ray Davis",
           "playerID": "4429501",
           "fantasyPointsDefault": {
-            "standard": "63.2",
-            "PPR": "76.4",
-            "halfPPR": "69.8"
+            "standard": "62.9",
+            "PPR": "75.8",
+            "halfPPR": "69.35"
           }
         },
         {
@@ -224582,7 +224576,7 @@
             "receptions": "54.4",
             "targets": "79.7",
             "recTD": "3.9",
-            "recYds": "610"
+            "recYds": "611"
           },
           "fumblesLost": "0.1",
           "pos": "TE",
@@ -224591,9 +224585,9 @@
           "longName": "Brenton Strange",
           "playerID": "4430539",
           "fantasyPointsDefault": {
-            "standard": "84.5",
-            "PPR": "138.9",
-            "halfPPR": "111.7"
+            "standard": "84.6",
+            "PPR": "139.0",
+            "halfPPR": "111.8"
           }
         },
         {
@@ -226265,10 +226259,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "42.1",
-            "targets": "51.1",
+            "receptions": "43.1",
+            "targets": "53.1",
             "recTD": "2.4",
-            "recYds": "330"
+            "recYds": "338"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -226277,9 +226271,9 @@
           "longName": "RJ Harvey",
           "playerID": "4568490",
           "fantasyPointsDefault": {
-            "standard": "116.9",
-            "PPR": "159.0",
-            "halfPPR": "137.95"
+            "standard": "117.7",
+            "PPR": "160.8",
+            "halfPPR": "139.25"
           }
         },
         {
@@ -229559,10 +229553,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "35.9",
-            "targets": "45.8",
+            "receptions": "36.6",
+            "targets": "47.3",
             "recTD": "1.8",
-            "recYds": "312"
+            "recYds": "319"
           },
           "fumblesLost": "0.9",
           "pos": "RB",
@@ -229571,9 +229565,9 @@
           "longName": "Cam Skattebo",
           "playerID": "4696981",
           "fantasyPointsDefault": {
-            "standard": "176.6",
-            "PPR": "212.5",
-            "halfPPR": "194.55"
+            "standard": "177.3",
+            "PPR": "213.9",
+            "halfPPR": "195.6"
           }
         },
         {
@@ -230415,8 +230409,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "278",
-            "carries": "75.7",
+            "rushYds": "252",
+            "carries": "68.3",
             "rushTD": "2.4"
           },
           "Passing": {
@@ -230427,10 +230421,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "9.7",
+            "receptions": "9.2",
+            "targets": "8.2",
             "recTD": "0.4",
-            "recYds": "87.8"
+            "recYds": "83.8"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -230439,9 +230433,9 @@
           "longName": "Kaleb Johnson",
           "playerID": "4819231",
           "fantasyPointsDefault": {
-            "standard": "53.38",
-            "PPR": "63.18",
-            "halfPPR": "58.28"
+            "standard": "50.38",
+            "PPR": "59.58",
+            "halfPPR": "54.98"
           }
         },
         {
@@ -231263,7 +231257,7 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "30.5",
+            "receptions": "30.8",
             "targets": "43.2",
             "recTD": "1.6",
             "recYds": "243"
@@ -231276,8 +231270,8 @@
           "playerID": "4882093",
           "fantasyPointsDefault": {
             "standard": "145.4",
-            "PPR": "175.9",
-            "halfPPR": "160.65"
+            "PPR": "176.2",
+            "halfPPR": "160.8"
           }
         },
         {
@@ -231426,7 +231420,7 @@
             "receptions": "15.7",
             "targets": "23.0",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "113"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -231435,9 +231429,9 @@
           "longName": "LeQuint Allen Jr.",
           "playerID": "4911851",
           "fantasyPointsDefault": {
-            "standard": "24.03",
-            "PPR": "39.73",
-            "halfPPR": "31.88"
+            "standard": "24.13",
+            "PPR": "39.83",
+            "halfPPR": "31.98"
           }
         },
         {
@@ -235277,38 +235271,6 @@
           }
         },
         {
-          "twoPointConversion": "0",
-          "Rushing": {
-            "rushYds": "1",
-            "carries": "0",
-            "rushTD": "0"
-          },
-          "Passing": {
-            "passAttempts": "0",
-            "passTD": "0",
-            "passYds": "0",
-            "int": "0",
-            "passCompletions": "0"
-          },
-          "Receiving": {
-            "receptions": "1",
-            "targets": "1",
-            "recTD": "0",
-            "recYds": "9"
-          },
-          "fumblesLost": "0",
-          "pos": "WR",
-          "teamID": "4",
-          "team": "BUF",
-          "longName": "Dante Pettis",
-          "playerID": "3127306",
-          "fantasyPointsDefault": {
-            "standard": "1.0",
-            "PPR": "2.0",
-            "halfPPR": "1.5"
-          }
-        },
-        {
           "twoPointConversion": "0.0",
           "Rushing": {
             "rushYds": "1.8",
@@ -235503,9 +235465,9 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "173",
-            "carries": "40.2",
-            "rushTD": "1.5"
+            "rushYds": "127",
+            "carries": "30.2",
+            "rushTD": "1.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -235515,10 +235477,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.3",
-            "targets": "24.3",
+            "receptions": "13.6",
+            "targets": "16.8",
             "recTD": "1.0",
-            "recYds": "125"
+            "recYds": "98.8"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -235527,9 +235489,9 @@
           "longName": "Chris Brooks",
           "playerID": "3149687",
           "fantasyPointsDefault": {
-            "standard": "44.9",
-            "PPR": "62.2",
-            "halfPPR": "53.55"
+            "standard": "35.28",
+            "PPR": "48.88",
+            "halfPPR": "42.08"
           }
         },
         {
@@ -235841,8 +235803,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "132",
-            "carries": "31.2",
+            "rushYds": "128",
+            "carries": "30.2",
             "rushTD": "1.2"
           },
           "Passing": {
@@ -235853,10 +235815,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "15.3",
-            "targets": "25.6",
+            "receptions": "14.9",
+            "targets": "24.6",
             "recTD": "0.9",
-            "recYds": "148"
+            "recYds": "143"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -235865,9 +235827,9 @@
           "longName": "Ty Johnson",
           "playerID": "3915411",
           "fantasyPointsDefault": {
-            "standard": "40.7",
-            "PPR": "56.0",
-            "halfPPR": "48.35"
+            "standard": "39.8",
+            "PPR": "54.7",
+            "halfPPR": "47.25"
           }
         },
         {
@@ -236887,7 +236849,7 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "17",
+            "rushYds": "20",
             "carries": "4",
             "rushTD": "0"
           },
@@ -236899,10 +236861,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "18",
-            "targets": "24",
+            "receptions": "17",
+            "targets": "22",
             "recTD": "1",
-            "recYds": "167"
+            "recYds": "151"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -236911,9 +236873,9 @@
           "longName": "Greg Dortch",
           "playerID": "4037235",
           "fantasyPointsDefault": {
-            "standard": "24.4",
-            "PPR": "42.4",
-            "halfPPR": "33.4"
+            "standard": "23.1",
+            "PPR": "40.1",
+            "halfPPR": "31.6"
           }
         },
         {
@@ -237367,9 +237329,9 @@
         {
           "twoPointConversion": "0.0",
           "Rushing": {
-            "rushYds": "287",
-            "carries": "70.4",
-            "rushTD": "3.1"
+            "rushYds": "396",
+            "carries": "96.4",
+            "rushTD": "4.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -237379,21 +237341,21 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "8.7",
-            "targets": "9.7",
-            "recTD": "0.2",
-            "recYds": "70.2"
+            "receptions": "12.4",
+            "targets": "16.7",
+            "recTD": "0.5",
+            "recYds": "99.6"
           },
-          "fumblesLost": "0.1",
+          "fumblesLost": "0.6",
           "pos": "RB",
           "teamID": "12",
           "team": "GB",
           "longName": "Josh Jacobs",
           "playerID": "4047365",
           "fantasyPointsDefault": {
-            "standard": "55.42",
-            "PPR": "64.12",
-            "halfPPR": "59.77"
+            "standard": "76.56",
+            "PPR": "88.96",
+            "halfPPR": "82.76"
           }
         },
         {
@@ -237783,9 +237745,9 @@
         {
           "twoPointConversion": "0.2",
           "Rushing": {
-            "rushYds": "296",
-            "carries": "68.8",
-            "rushTD": "2.5"
+            "rushYds": "219",
+            "carries": "52.1",
+            "rushTD": "1.8"
           },
           "Passing": {
             "passAttempts": "0",
@@ -237795,10 +237757,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.9",
-            "targets": "13.9",
+            "receptions": "7.5",
+            "targets": "8.9",
             "recTD": "0.2",
-            "recYds": "82.3"
+            "recYds": "62.6"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -237807,15 +237769,15 @@
           "longName": "Malik Davis",
           "playerID": "4240603",
           "fantasyPointsDefault": {
-            "standard": "54.23",
-            "PPR": "64.13",
-            "halfPPR": "59.18"
+            "standard": "40.36",
+            "PPR": "47.86",
+            "halfPPR": "44.11"
           }
         },
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "18",
+            "rushYds": "19",
             "carries": "4",
             "rushTD": "0"
           },
@@ -237839,9 +237801,9 @@
           "longName": "DeeJay Dallas",
           "playerID": "4240631",
           "fantasyPointsDefault": {
-            "standard": "2.0",
-            "PPR": "2.0",
-            "halfPPR": "2.0"
+            "standard": "2.1",
+            "PPR": "2.1",
+            "halfPPR": "2.1"
           }
         },
         {
@@ -238470,7 +238432,7 @@
             "receptions": "2",
             "targets": "3",
             "recTD": "0",
-            "recYds": "24"
+            "recYds": "23"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -238479,9 +238441,9 @@
           "longName": "Cody White",
           "playerID": "4241983",
           "fantasyPointsDefault": {
-            "standard": "2.4",
-            "PPR": "4.4",
-            "halfPPR": "3.4"
+            "standard": "2.3",
+            "PPR": "4.3",
+            "halfPPR": "3.3"
           }
         },
         {
@@ -238499,10 +238461,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.5",
-            "targets": "23.5",
+            "receptions": "17.8",
+            "targets": "24.5",
             "recTD": "0.7",
-            "recYds": "93.4"
+            "recYds": "96.4"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -238511,9 +238473,9 @@
           "longName": "J.K. Dobbins",
           "playerID": "4241985",
           "fantasyPointsDefault": {
-            "standard": "121.54",
-            "PPR": "139.04",
-            "halfPPR": "130.29"
+            "standard": "121.84",
+            "PPR": "139.64",
+            "halfPPR": "130.74"
           }
         },
         {
@@ -240771,9 +240733,9 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "130",
-            "carries": "21.3",
-            "rushTD": "0.7"
+            "rushYds": "274",
+            "carries": "44.3",
+            "rushTD": "1.2"
           },
           "Passing": {
             "passAttempts": "0",
@@ -240783,10 +240745,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "11",
-            "recTD": "0.2",
-            "recYds": "75.7"
+            "receptions": "12.8",
+            "targets": "18",
+            "recTD": "0.7",
+            "recYds": "98.2"
           },
           "fumblesLost": "0",
           "pos": "RB",
@@ -240795,9 +240757,9 @@
           "longName": "Emari Demercado",
           "playerID": "4362478",
           "fantasyPointsDefault": {
-            "standard": "25.97",
-            "PPR": "35.77",
-            "halfPPR": "30.87"
+            "standard": "48.62",
+            "PPR": "61.42",
+            "halfPPR": "55.02"
           }
         },
         {
@@ -241717,7 +241679,7 @@
           "Receiving": {
             "receptions": "35.9",
             "targets": "45.7",
-            "recTD": "2.2",
+            "recTD": "1.9",
             "recYds": "296"
           },
           "fumblesLost": "1.1",
@@ -241727,9 +241689,9 @@
           "longName": "James Cook III",
           "playerID": "4379399",
           "fantasyPointsDefault": {
-            "standard": "231.2",
-            "PPR": "267.1",
-            "halfPPR": "249.15"
+            "standard": "229.4",
+            "PPR": "265.3",
+            "halfPPR": "247.35"
           }
         },
         {
@@ -243033,9 +242995,9 @@
         {
           "twoPointConversion": "0.4",
           "Rushing": {
-            "rushYds": "743",
-            "carries": "182",
-            "rushTD": "6.7"
+            "rushYds": "714",
+            "carries": "174",
+            "rushTD": "6.3"
           },
           "Passing": {
             "passAttempts": "0",
@@ -243045,10 +243007,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "31.8",
-            "targets": "39.5",
-            "recTD": "1.9",
-            "recYds": "221"
+            "receptions": "29.8",
+            "targets": "35.5",
+            "recTD": "1.6",
+            "recYds": "206"
           },
           "fumblesLost": "1.0",
           "pos": "RB",
@@ -243057,9 +243019,9 @@
           "longName": "MarShawn Lloyd",
           "playerID": "4429023",
           "fantasyPointsDefault": {
-            "standard": "147.8",
-            "PPR": "179.6",
-            "halfPPR": "163.7"
+            "standard": "139.2",
+            "PPR": "169.0",
+            "halfPPR": "154.1"
           }
         },
         {
@@ -243351,6 +243313,38 @@
           }
         },
         {
+          "twoPointConversion": "0",
+          "Rushing": {
+            "rushYds": "11",
+            "carries": "3",
+            "rushTD": "0"
+          },
+          "Passing": {
+            "passAttempts": "0",
+            "passTD": "0",
+            "passYds": "0",
+            "int": "0",
+            "passCompletions": "0"
+          },
+          "Receiving": {
+            "receptions": "0",
+            "targets": "0",
+            "recTD": "0",
+            "recYds": "1"
+          },
+          "fumblesLost": "0",
+          "pos": "RB",
+          "teamID": "9",
+          "team": "DAL",
+          "longName": "Israel Abanikanda",
+          "playerID": "4429202",
+          "fantasyPointsDefault": {
+            "standard": "1.2",
+            "PPR": "1.2",
+            "halfPPR": "1.2"
+          }
+        },
+        {
           "twoPointConversion": "0.1",
           "Rushing": {
             "rushYds": "32.9",
@@ -243493,10 +243487,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "13.2",
-            "targets": "15.3",
+            "receptions": "12.9",
+            "targets": "14.3",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "109"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -243505,9 +243499,9 @@
           "longName": "Ray Davis",
           "playerID": "4429501",
           "fantasyPointsDefault": {
-            "standard": "63.2",
-            "PPR": "76.4",
-            "halfPPR": "69.8"
+            "standard": "62.9",
+            "PPR": "75.8",
+            "halfPPR": "69.35"
           }
         },
         {
@@ -243848,7 +243842,7 @@
             "receptions": "54.4",
             "targets": "79.7",
             "recTD": "3.9",
-            "recYds": "610"
+            "recYds": "611"
           },
           "fumblesLost": "0.1",
           "pos": "TE",
@@ -243857,9 +243851,9 @@
           "longName": "Brenton Strange",
           "playerID": "4430539",
           "fantasyPointsDefault": {
-            "standard": "84.5",
-            "PPR": "138.9",
-            "halfPPR": "111.7"
+            "standard": "84.6",
+            "PPR": "139.0",
+            "halfPPR": "111.8"
           }
         },
         {
@@ -245531,10 +245525,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "42.1",
-            "targets": "51.1",
+            "receptions": "43.1",
+            "targets": "53.1",
             "recTD": "2.4",
-            "recYds": "330"
+            "recYds": "338"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -245543,9 +245537,9 @@
           "longName": "RJ Harvey",
           "playerID": "4568490",
           "fantasyPointsDefault": {
-            "standard": "116.9",
-            "PPR": "159.0",
-            "halfPPR": "137.95"
+            "standard": "117.7",
+            "PPR": "160.8",
+            "halfPPR": "139.25"
           }
         },
         {
@@ -248825,10 +248819,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "35.9",
-            "targets": "45.8",
+            "receptions": "36.6",
+            "targets": "47.3",
             "recTD": "1.8",
-            "recYds": "312"
+            "recYds": "319"
           },
           "fumblesLost": "0.9",
           "pos": "RB",
@@ -248837,9 +248831,9 @@
           "longName": "Cam Skattebo",
           "playerID": "4696981",
           "fantasyPointsDefault": {
-            "standard": "176.6",
-            "PPR": "212.5",
-            "halfPPR": "194.55"
+            "standard": "177.3",
+            "PPR": "213.9",
+            "halfPPR": "195.6"
           }
         },
         {
@@ -249681,8 +249675,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "278",
-            "carries": "75.7",
+            "rushYds": "252",
+            "carries": "68.3",
             "rushTD": "2.4"
           },
           "Passing": {
@@ -249693,10 +249687,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "9.7",
+            "receptions": "9.2",
+            "targets": "8.2",
             "recTD": "0.4",
-            "recYds": "87.8"
+            "recYds": "83.8"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -249705,9 +249699,9 @@
           "longName": "Kaleb Johnson",
           "playerID": "4819231",
           "fantasyPointsDefault": {
-            "standard": "53.38",
-            "PPR": "63.18",
-            "halfPPR": "58.28"
+            "standard": "50.38",
+            "PPR": "59.58",
+            "halfPPR": "54.98"
           }
         },
         {
@@ -250529,7 +250523,7 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "30.5",
+            "receptions": "30.8",
             "targets": "43.2",
             "recTD": "1.6",
             "recYds": "243"
@@ -250542,8 +250536,8 @@
           "playerID": "4882093",
           "fantasyPointsDefault": {
             "standard": "145.4",
-            "PPR": "175.9",
-            "halfPPR": "160.65"
+            "PPR": "176.2",
+            "halfPPR": "160.8"
           }
         },
         {
@@ -250692,7 +250686,7 @@
             "receptions": "15.7",
             "targets": "23.0",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "113"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -250701,9 +250695,9 @@
           "longName": "LeQuint Allen Jr.",
           "playerID": "4911851",
           "fantasyPointsDefault": {
-            "standard": "24.03",
-            "PPR": "39.73",
-            "halfPPR": "31.88"
+            "standard": "24.13",
+            "PPR": "39.83",
+            "halfPPR": "31.98"
           }
         },
         {
@@ -254543,38 +254537,6 @@
           }
         },
         {
-          "twoPointConversion": "0",
-          "Rushing": {
-            "rushYds": "1",
-            "carries": "0",
-            "rushTD": "0"
-          },
-          "Passing": {
-            "passAttempts": "0",
-            "passTD": "0",
-            "passYds": "0",
-            "int": "0",
-            "passCompletions": "0"
-          },
-          "Receiving": {
-            "receptions": "1",
-            "targets": "1",
-            "recTD": "0",
-            "recYds": "9"
-          },
-          "fumblesLost": "0",
-          "pos": "WR",
-          "teamID": "4",
-          "team": "BUF",
-          "longName": "Dante Pettis",
-          "playerID": "3127306",
-          "fantasyPointsDefault": {
-            "standard": "1.0",
-            "PPR": "2.0",
-            "halfPPR": "1.5"
-          }
-        },
-        {
           "twoPointConversion": "0.0",
           "Rushing": {
             "rushYds": "1.8",
@@ -254769,9 +254731,9 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "173",
-            "carries": "40.2",
-            "rushTD": "1.5"
+            "rushYds": "127",
+            "carries": "30.2",
+            "rushTD": "1.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -254781,10 +254743,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.3",
-            "targets": "24.3",
+            "receptions": "13.6",
+            "targets": "16.8",
             "recTD": "1.0",
-            "recYds": "125"
+            "recYds": "98.8"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -254793,9 +254755,9 @@
           "longName": "Chris Brooks",
           "playerID": "3149687",
           "fantasyPointsDefault": {
-            "standard": "44.9",
-            "PPR": "62.2",
-            "halfPPR": "53.55"
+            "standard": "35.28",
+            "PPR": "48.88",
+            "halfPPR": "42.08"
           }
         },
         {
@@ -255107,8 +255069,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "132",
-            "carries": "31.2",
+            "rushYds": "128",
+            "carries": "30.2",
             "rushTD": "1.2"
           },
           "Passing": {
@@ -255119,10 +255081,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "15.3",
-            "targets": "25.6",
+            "receptions": "14.9",
+            "targets": "24.6",
             "recTD": "0.9",
-            "recYds": "148"
+            "recYds": "143"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -255131,9 +255093,9 @@
           "longName": "Ty Johnson",
           "playerID": "3915411",
           "fantasyPointsDefault": {
-            "standard": "40.7",
-            "PPR": "56.0",
-            "halfPPR": "48.35"
+            "standard": "39.8",
+            "PPR": "54.7",
+            "halfPPR": "47.25"
           }
         },
         {
@@ -256153,7 +256115,7 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "17",
+            "rushYds": "20",
             "carries": "4",
             "rushTD": "0"
           },
@@ -256165,10 +256127,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "18",
-            "targets": "24",
+            "receptions": "17",
+            "targets": "22",
             "recTD": "1",
-            "recYds": "167"
+            "recYds": "151"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -256177,9 +256139,9 @@
           "longName": "Greg Dortch",
           "playerID": "4037235",
           "fantasyPointsDefault": {
-            "standard": "24.4",
-            "PPR": "42.4",
-            "halfPPR": "33.4"
+            "standard": "23.1",
+            "PPR": "40.1",
+            "halfPPR": "31.6"
           }
         },
         {
@@ -256633,9 +256595,9 @@
         {
           "twoPointConversion": "0.0",
           "Rushing": {
-            "rushYds": "287",
-            "carries": "70.4",
-            "rushTD": "3.1"
+            "rushYds": "396",
+            "carries": "96.4",
+            "rushTD": "4.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -256645,21 +256607,21 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "8.7",
-            "targets": "9.7",
-            "recTD": "0.2",
-            "recYds": "70.2"
+            "receptions": "12.4",
+            "targets": "16.7",
+            "recTD": "0.5",
+            "recYds": "99.6"
           },
-          "fumblesLost": "0.1",
+          "fumblesLost": "0.6",
           "pos": "RB",
           "teamID": "12",
           "team": "GB",
           "longName": "Josh Jacobs",
           "playerID": "4047365",
           "fantasyPointsDefault": {
-            "standard": "55.42",
-            "PPR": "64.12",
-            "halfPPR": "59.77"
+            "standard": "76.56",
+            "PPR": "88.96",
+            "halfPPR": "82.76"
           }
         },
         {
@@ -257049,9 +257011,9 @@
         {
           "twoPointConversion": "0.2",
           "Rushing": {
-            "rushYds": "296",
-            "carries": "68.8",
-            "rushTD": "2.5"
+            "rushYds": "219",
+            "carries": "52.1",
+            "rushTD": "1.8"
           },
           "Passing": {
             "passAttempts": "0",
@@ -257061,10 +257023,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.9",
-            "targets": "13.9",
+            "receptions": "7.5",
+            "targets": "8.9",
             "recTD": "0.2",
-            "recYds": "82.3"
+            "recYds": "62.6"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -257073,15 +257035,15 @@
           "longName": "Malik Davis",
           "playerID": "4240603",
           "fantasyPointsDefault": {
-            "standard": "54.23",
-            "PPR": "64.13",
-            "halfPPR": "59.18"
+            "standard": "40.36",
+            "PPR": "47.86",
+            "halfPPR": "44.11"
           }
         },
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "18",
+            "rushYds": "19",
             "carries": "4",
             "rushTD": "0"
           },
@@ -257105,9 +257067,9 @@
           "longName": "DeeJay Dallas",
           "playerID": "4240631",
           "fantasyPointsDefault": {
-            "standard": "2.0",
-            "PPR": "2.0",
-            "halfPPR": "2.0"
+            "standard": "2.1",
+            "PPR": "2.1",
+            "halfPPR": "2.1"
           }
         },
         {
@@ -257736,7 +257698,7 @@
             "receptions": "2",
             "targets": "3",
             "recTD": "0",
-            "recYds": "24"
+            "recYds": "23"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -257745,9 +257707,9 @@
           "longName": "Cody White",
           "playerID": "4241983",
           "fantasyPointsDefault": {
-            "standard": "2.4",
-            "PPR": "4.4",
-            "halfPPR": "3.4"
+            "standard": "2.3",
+            "PPR": "4.3",
+            "halfPPR": "3.3"
           }
         },
         {
@@ -257765,10 +257727,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.5",
-            "targets": "23.5",
+            "receptions": "17.8",
+            "targets": "24.5",
             "recTD": "0.7",
-            "recYds": "93.4"
+            "recYds": "96.4"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -257777,9 +257739,9 @@
           "longName": "J.K. Dobbins",
           "playerID": "4241985",
           "fantasyPointsDefault": {
-            "standard": "121.54",
-            "PPR": "139.04",
-            "halfPPR": "130.29"
+            "standard": "121.84",
+            "PPR": "139.64",
+            "halfPPR": "130.74"
           }
         },
         {
@@ -260037,9 +259999,9 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "130",
-            "carries": "21.3",
-            "rushTD": "0.7"
+            "rushYds": "274",
+            "carries": "44.3",
+            "rushTD": "1.2"
           },
           "Passing": {
             "passAttempts": "0",
@@ -260049,10 +260011,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "11",
-            "recTD": "0.2",
-            "recYds": "75.7"
+            "receptions": "12.8",
+            "targets": "18",
+            "recTD": "0.7",
+            "recYds": "98.2"
           },
           "fumblesLost": "0",
           "pos": "RB",
@@ -260061,9 +260023,9 @@
           "longName": "Emari Demercado",
           "playerID": "4362478",
           "fantasyPointsDefault": {
-            "standard": "25.97",
-            "PPR": "35.77",
-            "halfPPR": "30.87"
+            "standard": "48.62",
+            "PPR": "61.42",
+            "halfPPR": "55.02"
           }
         },
         {
@@ -260983,7 +260945,7 @@
           "Receiving": {
             "receptions": "35.9",
             "targets": "45.7",
-            "recTD": "2.2",
+            "recTD": "1.9",
             "recYds": "296"
           },
           "fumblesLost": "1.1",
@@ -260993,9 +260955,9 @@
           "longName": "James Cook III",
           "playerID": "4379399",
           "fantasyPointsDefault": {
-            "standard": "231.2",
-            "PPR": "267.1",
-            "halfPPR": "249.15"
+            "standard": "229.4",
+            "PPR": "265.3",
+            "halfPPR": "247.35"
           }
         },
         {
@@ -262299,9 +262261,9 @@
         {
           "twoPointConversion": "0.4",
           "Rushing": {
-            "rushYds": "743",
-            "carries": "182",
-            "rushTD": "6.7"
+            "rushYds": "714",
+            "carries": "174",
+            "rushTD": "6.3"
           },
           "Passing": {
             "passAttempts": "0",
@@ -262311,10 +262273,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "31.8",
-            "targets": "39.5",
-            "recTD": "1.9",
-            "recYds": "221"
+            "receptions": "29.8",
+            "targets": "35.5",
+            "recTD": "1.6",
+            "recYds": "206"
           },
           "fumblesLost": "1.0",
           "pos": "RB",
@@ -262323,9 +262285,9 @@
           "longName": "MarShawn Lloyd",
           "playerID": "4429023",
           "fantasyPointsDefault": {
-            "standard": "147.8",
-            "PPR": "179.6",
-            "halfPPR": "163.7"
+            "standard": "139.2",
+            "PPR": "169.0",
+            "halfPPR": "154.1"
           }
         },
         {
@@ -262617,6 +262579,38 @@
           }
         },
         {
+          "twoPointConversion": "0",
+          "Rushing": {
+            "rushYds": "11",
+            "carries": "3",
+            "rushTD": "0"
+          },
+          "Passing": {
+            "passAttempts": "0",
+            "passTD": "0",
+            "passYds": "0",
+            "int": "0",
+            "passCompletions": "0"
+          },
+          "Receiving": {
+            "receptions": "0",
+            "targets": "0",
+            "recTD": "0",
+            "recYds": "1"
+          },
+          "fumblesLost": "0",
+          "pos": "RB",
+          "teamID": "9",
+          "team": "DAL",
+          "longName": "Israel Abanikanda",
+          "playerID": "4429202",
+          "fantasyPointsDefault": {
+            "standard": "1.2",
+            "PPR": "1.2",
+            "halfPPR": "1.2"
+          }
+        },
+        {
           "twoPointConversion": "0.1",
           "Rushing": {
             "rushYds": "32.9",
@@ -262759,10 +262753,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "13.2",
-            "targets": "15.3",
+            "receptions": "12.9",
+            "targets": "14.3",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "109"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -262771,9 +262765,9 @@
           "longName": "Ray Davis",
           "playerID": "4429501",
           "fantasyPointsDefault": {
-            "standard": "63.2",
-            "PPR": "76.4",
-            "halfPPR": "69.8"
+            "standard": "62.9",
+            "PPR": "75.8",
+            "halfPPR": "69.35"
           }
         },
         {
@@ -263114,7 +263108,7 @@
             "receptions": "54.4",
             "targets": "79.7",
             "recTD": "3.9",
-            "recYds": "610"
+            "recYds": "611"
           },
           "fumblesLost": "0.1",
           "pos": "TE",
@@ -263123,9 +263117,9 @@
           "longName": "Brenton Strange",
           "playerID": "4430539",
           "fantasyPointsDefault": {
-            "standard": "84.5",
-            "PPR": "138.9",
-            "halfPPR": "111.7"
+            "standard": "84.6",
+            "PPR": "139.0",
+            "halfPPR": "111.8"
           }
         },
         {
@@ -264797,10 +264791,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "42.1",
-            "targets": "51.1",
+            "receptions": "43.1",
+            "targets": "53.1",
             "recTD": "2.4",
-            "recYds": "330"
+            "recYds": "338"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -264809,9 +264803,9 @@
           "longName": "RJ Harvey",
           "playerID": "4568490",
           "fantasyPointsDefault": {
-            "standard": "116.9",
-            "PPR": "159.0",
-            "halfPPR": "137.95"
+            "standard": "117.7",
+            "PPR": "160.8",
+            "halfPPR": "139.25"
           }
         },
         {
@@ -268091,10 +268085,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "35.9",
-            "targets": "45.8",
+            "receptions": "36.6",
+            "targets": "47.3",
             "recTD": "1.8",
-            "recYds": "312"
+            "recYds": "319"
           },
           "fumblesLost": "0.9",
           "pos": "RB",
@@ -268103,9 +268097,9 @@
           "longName": "Cam Skattebo",
           "playerID": "4696981",
           "fantasyPointsDefault": {
-            "standard": "176.6",
-            "PPR": "212.5",
-            "halfPPR": "194.55"
+            "standard": "177.3",
+            "PPR": "213.9",
+            "halfPPR": "195.6"
           }
         },
         {
@@ -268947,8 +268941,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "278",
-            "carries": "75.7",
+            "rushYds": "252",
+            "carries": "68.3",
             "rushTD": "2.4"
           },
           "Passing": {
@@ -268959,10 +268953,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "9.7",
+            "receptions": "9.2",
+            "targets": "8.2",
             "recTD": "0.4",
-            "recYds": "87.8"
+            "recYds": "83.8"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -268971,9 +268965,9 @@
           "longName": "Kaleb Johnson",
           "playerID": "4819231",
           "fantasyPointsDefault": {
-            "standard": "53.38",
-            "PPR": "63.18",
-            "halfPPR": "58.28"
+            "standard": "50.38",
+            "PPR": "59.58",
+            "halfPPR": "54.98"
           }
         },
         {
@@ -269795,7 +269789,7 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "30.5",
+            "receptions": "30.8",
             "targets": "43.2",
             "recTD": "1.6",
             "recYds": "243"
@@ -269808,8 +269802,8 @@
           "playerID": "4882093",
           "fantasyPointsDefault": {
             "standard": "145.4",
-            "PPR": "175.9",
-            "halfPPR": "160.65"
+            "PPR": "176.2",
+            "halfPPR": "160.8"
           }
         },
         {
@@ -269958,7 +269952,7 @@
             "receptions": "15.7",
             "targets": "23.0",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "113"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -269967,9 +269961,9 @@
           "longName": "LeQuint Allen Jr.",
           "playerID": "4911851",
           "fantasyPointsDefault": {
-            "standard": "24.03",
-            "PPR": "39.73",
-            "halfPPR": "31.88"
+            "standard": "24.13",
+            "PPR": "39.83",
+            "halfPPR": "31.98"
           }
         },
         {
@@ -273809,38 +273803,6 @@
           }
         },
         {
-          "twoPointConversion": "0",
-          "Rushing": {
-            "rushYds": "1",
-            "carries": "0",
-            "rushTD": "0"
-          },
-          "Passing": {
-            "passAttempts": "0",
-            "passTD": "0",
-            "passYds": "0",
-            "int": "0",
-            "passCompletions": "0"
-          },
-          "Receiving": {
-            "receptions": "1",
-            "targets": "1",
-            "recTD": "0",
-            "recYds": "9"
-          },
-          "fumblesLost": "0",
-          "pos": "WR",
-          "teamID": "4",
-          "team": "BUF",
-          "longName": "Dante Pettis",
-          "playerID": "3127306",
-          "fantasyPointsDefault": {
-            "standard": "1.0",
-            "PPR": "2.0",
-            "halfPPR": "1.5"
-          }
-        },
-        {
           "twoPointConversion": "0.0",
           "Rushing": {
             "rushYds": "1.8",
@@ -274035,9 +273997,9 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "173",
-            "carries": "40.2",
-            "rushTD": "1.5"
+            "rushYds": "127",
+            "carries": "30.2",
+            "rushTD": "1.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -274047,10 +274009,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.3",
-            "targets": "24.3",
+            "receptions": "13.6",
+            "targets": "16.8",
             "recTD": "1.0",
-            "recYds": "125"
+            "recYds": "98.8"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -274059,9 +274021,9 @@
           "longName": "Chris Brooks",
           "playerID": "3149687",
           "fantasyPointsDefault": {
-            "standard": "44.9",
-            "PPR": "62.2",
-            "halfPPR": "53.55"
+            "standard": "35.28",
+            "PPR": "48.88",
+            "halfPPR": "42.08"
           }
         },
         {
@@ -274373,8 +274335,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "132",
-            "carries": "31.2",
+            "rushYds": "128",
+            "carries": "30.2",
             "rushTD": "1.2"
           },
           "Passing": {
@@ -274385,10 +274347,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "15.3",
-            "targets": "25.6",
+            "receptions": "14.9",
+            "targets": "24.6",
             "recTD": "0.9",
-            "recYds": "148"
+            "recYds": "143"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -274397,9 +274359,9 @@
           "longName": "Ty Johnson",
           "playerID": "3915411",
           "fantasyPointsDefault": {
-            "standard": "40.7",
-            "PPR": "56.0",
-            "halfPPR": "48.35"
+            "standard": "39.8",
+            "PPR": "54.7",
+            "halfPPR": "47.25"
           }
         },
         {
@@ -275419,7 +275381,7 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "17",
+            "rushYds": "20",
             "carries": "4",
             "rushTD": "0"
           },
@@ -275431,10 +275393,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "18",
-            "targets": "24",
+            "receptions": "17",
+            "targets": "22",
             "recTD": "1",
-            "recYds": "167"
+            "recYds": "151"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -275443,9 +275405,9 @@
           "longName": "Greg Dortch",
           "playerID": "4037235",
           "fantasyPointsDefault": {
-            "standard": "24.4",
-            "PPR": "42.4",
-            "halfPPR": "33.4"
+            "standard": "23.1",
+            "PPR": "40.1",
+            "halfPPR": "31.6"
           }
         },
         {
@@ -275899,9 +275861,9 @@
         {
           "twoPointConversion": "0.0",
           "Rushing": {
-            "rushYds": "287",
-            "carries": "70.4",
-            "rushTD": "3.1"
+            "rushYds": "396",
+            "carries": "96.4",
+            "rushTD": "4.1"
           },
           "Passing": {
             "passAttempts": "0",
@@ -275911,21 +275873,21 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "8.7",
-            "targets": "9.7",
-            "recTD": "0.2",
-            "recYds": "70.2"
+            "receptions": "12.4",
+            "targets": "16.7",
+            "recTD": "0.5",
+            "recYds": "99.6"
           },
-          "fumblesLost": "0.1",
+          "fumblesLost": "0.6",
           "pos": "RB",
           "teamID": "12",
           "team": "GB",
           "longName": "Josh Jacobs",
           "playerID": "4047365",
           "fantasyPointsDefault": {
-            "standard": "55.42",
-            "PPR": "64.12",
-            "halfPPR": "59.77"
+            "standard": "76.56",
+            "PPR": "88.96",
+            "halfPPR": "82.76"
           }
         },
         {
@@ -276315,9 +276277,9 @@
         {
           "twoPointConversion": "0.2",
           "Rushing": {
-            "rushYds": "296",
-            "carries": "68.8",
-            "rushTD": "2.5"
+            "rushYds": "219",
+            "carries": "52.1",
+            "rushTD": "1.8"
           },
           "Passing": {
             "passAttempts": "0",
@@ -276327,10 +276289,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.9",
-            "targets": "13.9",
+            "receptions": "7.5",
+            "targets": "8.9",
             "recTD": "0.2",
-            "recYds": "82.3"
+            "recYds": "62.6"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -276339,15 +276301,15 @@
           "longName": "Malik Davis",
           "playerID": "4240603",
           "fantasyPointsDefault": {
-            "standard": "54.23",
-            "PPR": "64.13",
-            "halfPPR": "59.18"
+            "standard": "40.36",
+            "PPR": "47.86",
+            "halfPPR": "44.11"
           }
         },
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "18",
+            "rushYds": "19",
             "carries": "4",
             "rushTD": "0"
           },
@@ -276371,9 +276333,9 @@
           "longName": "DeeJay Dallas",
           "playerID": "4240631",
           "fantasyPointsDefault": {
-            "standard": "2.0",
-            "PPR": "2.0",
-            "halfPPR": "2.0"
+            "standard": "2.1",
+            "PPR": "2.1",
+            "halfPPR": "2.1"
           }
         },
         {
@@ -277002,7 +276964,7 @@
             "receptions": "2",
             "targets": "3",
             "recTD": "0",
-            "recYds": "24"
+            "recYds": "23"
           },
           "fumblesLost": "0",
           "pos": "WR",
@@ -277011,9 +276973,9 @@
           "longName": "Cody White",
           "playerID": "4241983",
           "fantasyPointsDefault": {
-            "standard": "2.4",
-            "PPR": "4.4",
-            "halfPPR": "3.4"
+            "standard": "2.3",
+            "PPR": "4.3",
+            "halfPPR": "3.3"
           }
         },
         {
@@ -277031,10 +276993,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "17.5",
-            "targets": "23.5",
+            "receptions": "17.8",
+            "targets": "24.5",
             "recTD": "0.7",
-            "recYds": "93.4"
+            "recYds": "96.4"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -277043,9 +277005,9 @@
           "longName": "J.K. Dobbins",
           "playerID": "4241985",
           "fantasyPointsDefault": {
-            "standard": "121.54",
-            "PPR": "139.04",
-            "halfPPR": "130.29"
+            "standard": "121.84",
+            "PPR": "139.64",
+            "halfPPR": "130.74"
           }
         },
         {
@@ -279303,9 +279265,9 @@
         {
           "twoPointConversion": "0",
           "Rushing": {
-            "rushYds": "130",
-            "carries": "21.3",
-            "rushTD": "0.7"
+            "rushYds": "274",
+            "carries": "44.3",
+            "rushTD": "1.2"
           },
           "Passing": {
             "passAttempts": "0",
@@ -279315,10 +279277,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "11",
-            "recTD": "0.2",
-            "recYds": "75.7"
+            "receptions": "12.8",
+            "targets": "18",
+            "recTD": "0.7",
+            "recYds": "98.2"
           },
           "fumblesLost": "0",
           "pos": "RB",
@@ -279327,9 +279289,9 @@
           "longName": "Emari Demercado",
           "playerID": "4362478",
           "fantasyPointsDefault": {
-            "standard": "25.97",
-            "PPR": "35.77",
-            "halfPPR": "30.87"
+            "standard": "48.62",
+            "PPR": "61.42",
+            "halfPPR": "55.02"
           }
         },
         {
@@ -280249,7 +280211,7 @@
           "Receiving": {
             "receptions": "35.9",
             "targets": "45.7",
-            "recTD": "2.2",
+            "recTD": "1.9",
             "recYds": "296"
           },
           "fumblesLost": "1.1",
@@ -280259,9 +280221,9 @@
           "longName": "James Cook III",
           "playerID": "4379399",
           "fantasyPointsDefault": {
-            "standard": "231.2",
-            "PPR": "267.1",
-            "halfPPR": "249.15"
+            "standard": "229.4",
+            "PPR": "265.3",
+            "halfPPR": "247.35"
           }
         },
         {
@@ -281565,9 +281527,9 @@
         {
           "twoPointConversion": "0.4",
           "Rushing": {
-            "rushYds": "743",
-            "carries": "182",
-            "rushTD": "6.7"
+            "rushYds": "714",
+            "carries": "174",
+            "rushTD": "6.3"
           },
           "Passing": {
             "passAttempts": "0",
@@ -281577,10 +281539,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "31.8",
-            "targets": "39.5",
-            "recTD": "1.9",
-            "recYds": "221"
+            "receptions": "29.8",
+            "targets": "35.5",
+            "recTD": "1.6",
+            "recYds": "206"
           },
           "fumblesLost": "1.0",
           "pos": "RB",
@@ -281589,9 +281551,9 @@
           "longName": "MarShawn Lloyd",
           "playerID": "4429023",
           "fantasyPointsDefault": {
-            "standard": "147.8",
-            "PPR": "179.6",
-            "halfPPR": "163.7"
+            "standard": "139.2",
+            "PPR": "169.0",
+            "halfPPR": "154.1"
           }
         },
         {
@@ -281883,6 +281845,38 @@
           }
         },
         {
+          "twoPointConversion": "0",
+          "Rushing": {
+            "rushYds": "11",
+            "carries": "3",
+            "rushTD": "0"
+          },
+          "Passing": {
+            "passAttempts": "0",
+            "passTD": "0",
+            "passYds": "0",
+            "int": "0",
+            "passCompletions": "0"
+          },
+          "Receiving": {
+            "receptions": "0",
+            "targets": "0",
+            "recTD": "0",
+            "recYds": "1"
+          },
+          "fumblesLost": "0",
+          "pos": "RB",
+          "teamID": "9",
+          "team": "DAL",
+          "longName": "Israel Abanikanda",
+          "playerID": "4429202",
+          "fantasyPointsDefault": {
+            "standard": "1.2",
+            "PPR": "1.2",
+            "halfPPR": "1.2"
+          }
+        },
+        {
           "twoPointConversion": "0.1",
           "Rushing": {
             "rushYds": "32.9",
@@ -282025,10 +282019,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "13.2",
-            "targets": "15.3",
+            "receptions": "12.9",
+            "targets": "14.3",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "109"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -282037,9 +282031,9 @@
           "longName": "Ray Davis",
           "playerID": "4429501",
           "fantasyPointsDefault": {
-            "standard": "63.2",
-            "PPR": "76.4",
-            "halfPPR": "69.8"
+            "standard": "62.9",
+            "PPR": "75.8",
+            "halfPPR": "69.35"
           }
         },
         {
@@ -282380,7 +282374,7 @@
             "receptions": "54.4",
             "targets": "79.7",
             "recTD": "3.9",
-            "recYds": "610"
+            "recYds": "611"
           },
           "fumblesLost": "0.1",
           "pos": "TE",
@@ -282389,9 +282383,9 @@
           "longName": "Brenton Strange",
           "playerID": "4430539",
           "fantasyPointsDefault": {
-            "standard": "84.5",
-            "PPR": "138.9",
-            "halfPPR": "111.7"
+            "standard": "84.6",
+            "PPR": "139.0",
+            "halfPPR": "111.8"
           }
         },
         {
@@ -284063,10 +284057,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "42.1",
-            "targets": "51.1",
+            "receptions": "43.1",
+            "targets": "53.1",
             "recTD": "2.4",
-            "recYds": "330"
+            "recYds": "338"
           },
           "fumblesLost": "0.8",
           "pos": "RB",
@@ -284075,9 +284069,9 @@
           "longName": "RJ Harvey",
           "playerID": "4568490",
           "fantasyPointsDefault": {
-            "standard": "116.9",
-            "PPR": "159.0",
-            "halfPPR": "137.95"
+            "standard": "117.7",
+            "PPR": "160.8",
+            "halfPPR": "139.25"
           }
         },
         {
@@ -287357,10 +287351,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "35.9",
-            "targets": "45.8",
+            "receptions": "36.6",
+            "targets": "47.3",
             "recTD": "1.8",
-            "recYds": "312"
+            "recYds": "319"
           },
           "fumblesLost": "0.9",
           "pos": "RB",
@@ -287369,9 +287363,9 @@
           "longName": "Cam Skattebo",
           "playerID": "4696981",
           "fantasyPointsDefault": {
-            "standard": "176.6",
-            "PPR": "212.5",
-            "halfPPR": "194.55"
+            "standard": "177.3",
+            "PPR": "213.9",
+            "halfPPR": "195.6"
           }
         },
         {
@@ -288213,8 +288207,8 @@
         {
           "twoPointConversion": "0.1",
           "Rushing": {
-            "rushYds": "278",
-            "carries": "75.7",
+            "rushYds": "252",
+            "carries": "68.3",
             "rushTD": "2.4"
           },
           "Passing": {
@@ -288225,10 +288219,10 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "9.8",
-            "targets": "9.7",
+            "receptions": "9.2",
+            "targets": "8.2",
             "recTD": "0.4",
-            "recYds": "87.8"
+            "recYds": "83.8"
           },
           "fumblesLost": "0.2",
           "pos": "RB",
@@ -288237,9 +288231,9 @@
           "longName": "Kaleb Johnson",
           "playerID": "4819231",
           "fantasyPointsDefault": {
-            "standard": "53.38",
-            "PPR": "63.18",
-            "halfPPR": "58.28"
+            "standard": "50.38",
+            "PPR": "59.58",
+            "halfPPR": "54.98"
           }
         },
         {
@@ -289061,7 +289055,7 @@
             "passCompletions": "0"
           },
           "Receiving": {
-            "receptions": "30.5",
+            "receptions": "30.8",
             "targets": "43.2",
             "recTD": "1.6",
             "recYds": "243"
@@ -289074,8 +289068,8 @@
           "playerID": "4882093",
           "fantasyPointsDefault": {
             "standard": "145.4",
-            "PPR": "175.9",
-            "halfPPR": "160.65"
+            "PPR": "176.2",
+            "halfPPR": "160.8"
           }
         },
         {
@@ -289224,7 +289218,7 @@
             "receptions": "15.7",
             "targets": "23.0",
             "recTD": "0.9",
-            "recYds": "112"
+            "recYds": "113"
           },
           "fumblesLost": "0.1",
           "pos": "RB",
@@ -289233,9 +289227,9 @@
           "longName": "LeQuint Allen Jr.",
           "playerID": "4911851",
           "fantasyPointsDefault": {
-            "standard": "24.03",
-            "PPR": "39.73",
-            "halfPPR": "31.88"
+            "standard": "24.13",
+            "PPR": "39.83",
+            "halfPPR": "31.98"
           }
         },
         {
