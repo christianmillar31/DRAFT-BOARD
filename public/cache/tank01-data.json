@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-09-21T14:59:40.558Z",
-  "lastUpdated": "9/21/2026, 7:59:40 AM",
+  "timestamp": "2026-09-22T13:16:53.793Z",
+  "lastUpdated": "9/22/2026, 6:16:53 AM",
   "data": {
     "players": [
       {
@@ -593,7 +593,7 @@
         "rotoWirePlayerID": "19313",
         "height": "6'4\"",
         "cbsPlayerIDFull": "26706066/malachi-fields/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4682648",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/malachi-fields.php"
@@ -1672,10 +1672,10 @@
         "rotoWirePlayerIDFull": "kylen-granson-15245",
         "cbsLongName": "Kylen Granson",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Granson (coach's decision) is inactive for Sunday's game against Philadelphia.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "31",
         "pos": "TE",
@@ -2156,10 +2156,10 @@
         "rotoWirePlayerIDFull": "elijah-williams-19124",
         "cbsLongName": "Elijah Williams",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "21",
         "pos": "DE",
@@ -2453,10 +2453,10 @@
         "rotoWirePlayerIDFull": "nick-muse-16286",
         "cbsLongName": "Nick Muse",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260924",
+          "description": "Sep 21: Muse (shoulder) was a limited participant in Monday's estimated practice, Tori McElhaney of the Falcons' official site reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "2",
         "pos": "TE",
@@ -2542,7 +2542,7 @@
         "cbsLongName": "Ed Oliver",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Oliver (hip) is considered day-to-day and could be available for the Bills' Week 3 tilt against the Chargers on Sunday, Sept. 27, Ian Rapoport of NFL Network reports.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -4253,10 +4253,10 @@
         "rotoWirePlayerIDFull": "reggie-virgil-19445",
         "cbsLongName": "Reggie Virgil",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Virgil (coach's decision) is inactive for Sunday's game against the Seahawks.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "1",
         "pos": "WR",
@@ -4945,7 +4945,7 @@
         "rotoWirePlayerID": "17967",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2963637/tyrone-tracy-jr/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4360516",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tyrone-tracy-jr.php"
@@ -5153,7 +5153,7 @@
         "cbsLongName": "Donovan Jennings",
         "injury": {
           "injReturnDate": "20260924",
-          "description": "Sep 20: Jennings (hand) is questionable to return to Sunday's game against the Jets.",
+          "description": "Sep 21: Jennings (hand) did not participate in Monday's estimated practice, Tom Silverstein of the Milwaukee Journal Sentinel reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -5330,10 +5330,10 @@
         "rotoWirePlayerIDFull": "logan-taylor-19456",
         "cbsLongName": "Logan Taylor",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "18",
         "pos": "G",
@@ -5376,7 +5376,7 @@
         "cbsLongName": "Dalvin Tomlinson",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Tomlinson (hamstring) is questionable to return to Sunday's game against the Raiders.",
+          "description": "Sep 21: Tomlinson is in line to miss time after sustaining a hamstring injury during Sunday's game versus the Raiders, Noah Furtado of The Athletic reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -6366,8 +6366,8 @@
         "rotoWirePlayerIDFull": "cobie-durant-16157",
         "cbsLongName": "Decobie Durant",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Durant (hamstring) has been ruled out for the remainder of Sunday's game against the Commanders, Calvin Watkins of The Dallas Morning News reports.",
+          "injReturnDate": "20261018",
+          "description": "Sep 21: Durant (hamstring) could miss a few weeks due to injury, Todd Archer of ESPN.com reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -6832,10 +6832,10 @@
         "rotoWirePlayerIDFull": "ayden-garnes-19793",
         "cbsLongName": "Ayden Garnes",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "30",
         "pos": "CB",
@@ -7216,10 +7216,10 @@
         "rotoWirePlayerIDFull": "brevin-jordan-15369",
         "cbsLongName": "Brevin Jordan",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "20240801",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "13",
         "pos": "TE",
@@ -8560,10 +8560,10 @@
         "rotoWirePlayerIDFull": "kendre-miller-16898",
         "cbsLongName": "Kendre Miller",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Miller (coach's decision) is listed as inactive Sunday in Baltimore.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "20240501",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "23",
         "pos": "RB",
@@ -8829,7 +8829,7 @@
           "injReturnDate": "20261011",
           "description": "",
           "injDate": "",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "20",
         "pos": "LB",
@@ -9409,10 +9409,10 @@
         "rotoWirePlayerIDFull": "tatum-bethune-17961",
         "cbsLongName": "Tatum Bethune",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "28",
         "pos": "LB",
@@ -9629,10 +9629,10 @@
         "rotoWirePlayerIDFull": "ronnie-rivers-16108",
         "cbsLongName": "Ronnie Rivers",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Rivers has been ruled out for the remainder of Monday's game against the Giants due to a calf injury.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "19",
         "pos": "RB",
@@ -9987,7 +9987,7 @@
           "injReturnDate": "20261018",
           "description": "",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "6",
         "pos": "S",
@@ -10209,10 +10209,10 @@
         "rotoWirePlayerIDFull": "mason-murphy-20058",
         "cbsLongName": "Mason Murphy",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "23",
         "pos": "OT",
@@ -10778,7 +10778,7 @@
         "cbsLongName": "B.J. Hill",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Hill (Achilles) is inactive for Sunday's Week 2 matchup against the Texans.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -10836,7 +10836,7 @@
         "rotoWirePlayerID": "16758",
         "height": "6'2\"",
         "cbsPlayerIDFull": "3123718/byron-young/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4875196",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/byron-young-edge.php"
@@ -11086,10 +11086,10 @@
         "rotoWirePlayerIDFull": "drew-allar-19286",
         "cbsLongName": "Drew Allar",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Allar (coach's decision) is inactive for Sunday's game against the Patriots, Teresa Varley of the Steelers' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "26",
         "pos": "QB",
@@ -11875,7 +11875,7 @@
         "cbsLongName": "J.K. Dobbins",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Dobbins exited Sunday's game versus the Jaguars due to a hamstring injury, Sam Jane of The Denver Post reports.",
+          "description": "Sep 21: The Broncos believe that Dobbins' injured hamstring is \"good\" heading into next Sunday's game against the Rams, Tom Pelissero of Netflix reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -12091,10 +12091,10 @@
         "rotoWirePlayerIDFull": "luke-mccaffrey-17820",
         "cbsLongName": "Luke McCaffrey",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: McCaffrey (coach's decision) is inactive for Sunday's game against the Cowboys.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "32",
         "pos": "WR",
@@ -12531,10 +12531,10 @@
         "rotoWirePlayerIDFull": "jatavion-sanders-17748",
         "cbsLongName": "Ja'Tavion Sanders",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Sanders (coach's decision) is inactive for Sunday's game against the Falcons, Darin Gantt of the Panthers' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "5",
         "pos": "TE",
@@ -12875,10 +12875,10 @@
         "rotoWirePlayerIDFull": "ethan-onianwa-19706",
         "cbsLongName": "Ethan Onianwa",
         "injury": {
-          "injReturnDate": "20260924",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "2",
         "pos": "OT",
@@ -13696,7 +13696,7 @@
         "rotoWirePlayerIDFull": "josh-jacobs-13582",
         "cbsLongName": "Josh Jacobs",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "20261004",
           "description": "Sep 13: Jacobs (personal) remains on the Commissioner's Exempt List, but the NFL may count time on the list as time served if it eventually issues a suspension to the running back, Adam Schefter of ESPN reports.",
           "injDate": "",
           "designation": "Out"
@@ -13919,7 +13919,7 @@
           "injReturnDate": "20261011",
           "description": "Aug 30: The Texans placed Ingram (shoulder) on injured reserve Sunday with a designation to return, Aaron Wilson of KPRC 2 Houston reports.",
           "injDate": "",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "13",
         "pos": "CB",
@@ -15503,7 +15503,7 @@
         "cbsShortName": "H. Reddick",
         "team": "TB",
         "yahooPlayerID": "30126",
-        "age": "31",
+        "age": "32",
         "espnLink": "https://www.espn.com/nfl/player/_/id/2980504/haason-reddick",
         "yahooLink": "https://sports.yahoo.com/nfl/players/30126",
         "bDay": "9/22/1994",
@@ -17361,10 +17361,10 @@
         "rotoWirePlayerIDFull": "tyler-goodson-15990",
         "cbsLongName": "Tyler Goodson",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Goodson (coach's decision) is inactive for Sunday's game against the Commanders, Todd Archer of ESPN.com reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "9",
         "pos": "RB",
@@ -17667,7 +17667,7 @@
         "cbsLongName": "Jaylen Wright",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Wright (neck) is questionable to return to Sunday's game against the 49ers.",
+          "description": "Sep 21: Wright (neck) is day-to-day heading into Week 3, David Furones of the South Florida Sun Sentinel reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -17853,7 +17853,7 @@
         "rotoWirePlayerID": "17279",
         "height": "6'3\"",
         "cbsPlayerIDFull": "2960956/desjuan-johnson/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4362294",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/desjuan-johnson.php"
@@ -17928,10 +17928,10 @@
         "rotoWirePlayerIDFull": "ricky-barber-19181",
         "cbsLongName": "Ricky Barber",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "32",
         "pos": "DT",
@@ -18240,10 +18240,10 @@
         "rotoWirePlayerIDFull": "dalton-johnson-19576",
         "cbsLongName": "Dalton Johnson",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "17",
         "pos": "S",
@@ -18638,53 +18638,6 @@
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tanner-mccalister.php"
       },
       {
-        "espnID": "3116746",
-        "espnName": "Justin Jones",
-        "sleeperBotID": "5063",
-        "fantasyProsPlayerID": "17572",
-        "lastName": "Jones",
-        "espnIDFull": "3116746/justin-jones",
-        "fRefID": "JoneJu03",
-        "firstName": "Justin",
-        "weight": "300",
-        "jerseyNum": "98",
-        "draftInfo": {
-          "round": "3",
-          "pick": "84",
-          "year": "2018",
-          "teamID": "18"
-        },
-        "cbsShortName": "J. Jones",
-        "team": "ARI",
-        "yahooPlayerID": "31054",
-        "age": "30",
-        "espnLink": "https://www.espn.com/nfl/player/_/id/3116746/justin-jones",
-        "yahooLink": "https://sports.yahoo.com/nfl/players/31054",
-        "bDay": "8/28/1996",
-        "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3116746.png",
-        "isFreeAgent": "True",
-        "rotoWirePlayerIDFull": "justin-jones-12785",
-        "cbsLongName": "Justin Jones",
-        "injury": {
-          "injReturnDate": "",
-          "description": "",
-          "injDate": "20240501",
-          "designation": ""
-        },
-        "teamID": "1",
-        "pos": "DT",
-        "school": "NC State",
-        "cbsPlayerID": "2146582",
-        "longName": "Justin Jones",
-        "rotoWirePlayerID": "12785",
-        "height": "6'3\"",
-        "cbsPlayerIDFull": "2146582/justin-jones",
-        "lastGamePlayed": "20240922_DET@ARI",
-        "playerID": "3116746",
-        "exp": "8",
-        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/justin-jones-dt.php"
-      },
-      {
         "espnID": "4426405",
         "espnName": "Trent McDuffie",
         "sleeperBotID": "8364",
@@ -18725,7 +18678,7 @@
         "rotoWirePlayerID": "16003",
         "height": "5'11\"",
         "cbsPlayerIDFull": "3121359/trent-mcduffie/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4426405",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/trent-mcduffie.php"
@@ -19670,10 +19623,10 @@
         "rotoWirePlayerIDFull": "keith-abney-19559",
         "cbsLongName": "Keith Abney II",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "11",
         "pos": "CB",
@@ -20143,10 +20096,10 @@
         "rotoWirePlayerIDFull": "tyson-campbell-15359",
         "cbsLongName": "Tyson Campbell",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Campbell (ankle) is active for Sunday's game against the Buccaneers.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "8",
         "pos": "CB",
@@ -20552,10 +20505,10 @@
         "rotoWirePlayerIDFull": "jalon-kilgore-19392",
         "cbsLongName": "Jalon Kilgore",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "4",
         "pos": "S",
@@ -20947,7 +20900,7 @@
         "rotoWirePlayerID": "13449",
         "height": "5'7\"",
         "cbsPlayerIDFull": "2241251/devin-singletary",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4040761",
         "exp": "8",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/devin-singletary.php"
@@ -21118,10 +21071,10 @@
         "rotoWirePlayerIDFull": "jack-kiser-18727",
         "cbsLongName": "Jack Kiser",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "15",
         "pos": "LB",
@@ -21248,7 +21201,7 @@
           "injReturnDate": "20261011",
           "description": "Aug 30: The Jaguars placed Durfee (upper body) on injured reserve Sunday with a designation to return, Matt Zenitz of CBSSports.com reports.",
           "injDate": "",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "15",
         "pos": "DE",
@@ -21463,10 +21416,10 @@
         "rotoWirePlayerIDFull": "josh-newton-17744",
         "cbsLongName": "Josh Newton",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "7",
         "pos": "CB",
@@ -21811,10 +21764,10 @@
         "rotoWirePlayerIDFull": "nick-cross-16139",
         "cbsLongName": "Nick Cross",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Cross (undisclosed) stayed in Dallas overnight Sunday due to an internal injury, and his status for Week 3 against the Seahawks is up in the air, Ben Standig of Big 100 Washington D.C. reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "32",
         "pos": "S",
@@ -22839,10 +22792,10 @@
         "rotoWirePlayerIDFull": "zemaiah-vaughn-18836",
         "cbsLongName": "Zemaiah Vaughn",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "21",
         "pos": "CB",
@@ -23689,7 +23642,7 @@
         "rotoWirePlayerID": "15826",
         "height": "6'3\"",
         "cbsPlayerIDFull": "2869949/jordan-stout",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4260224",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jordan-stout.php"
@@ -23822,7 +23775,7 @@
         "rotoWirePlayerID": "11114",
         "height": "6'3\"",
         "cbsPlayerIDFull": "1983526/dj-reader/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "2977670",
         "exp": "11",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/dj-reader.php"
@@ -24230,7 +24183,7 @@
         "cbsLongName": "Brandon Dorlus",
         "injury": {
           "injReturnDate": "20260924",
-          "description": "Sep 20: Dorlus (hand) is questionable to return to Sunday's game against the Panthers, Josh Kendall of The Athletic reports.",
+          "description": "Sep 21: Dorlus (thumb) was a limited participant in Monday's estimated practice, Tori McElhaney of the Falcons' official site reports.",
           "injDate": "20240501",
           "designation": "Questionable"
         },
@@ -24310,10 +24263,10 @@
         "rotoWirePlayerIDFull": "blake-grupe-17595",
         "cbsLongName": "Blake Grupe",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Grupe (coach's decision) is inactive for Sunday's game against the Packers.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "25",
         "pos": "PK",
@@ -24826,10 +24779,10 @@
         "rotoWirePlayerIDFull": "carson-beck-19287",
         "cbsLongName": "Carson Beck",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Beck (coach's decision) is inactive but will serve as the emergency third quarterback against the Seahawks on Sunday, Darren Urban of the Cardinals' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "1",
         "pos": "QB",
@@ -25380,10 +25333,10 @@
         "rotoWirePlayerIDFull": "taylen-green-19289",
         "cbsLongName": "Taylen Green",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Green (coach's decision) is inactive as the emergency third quarterback for Sunday's game against the Buccaneers.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "8",
         "pos": "QB",
@@ -25523,7 +25476,7 @@
         "rotoWirePlayerID": "15415",
         "height": "5'8\"",
         "cbsPlayerIDFull": "2962092/ardarius-washington/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4362492",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/ardarius-washington.php"
@@ -25644,10 +25597,10 @@
         "rotoWirePlayerIDFull": "deonte-banks-16727",
         "cbsLongName": "Deonte Banks",
         "injury": {
-          "injReturnDate": "20260921",
-          "description": "Sep 19: Banks (calf) is listed as questionable ahead of Monday night's game against the Rams, Dan Salomone of the Giants' official site reports.",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Banks (calf) is inactive for Monday's game against the Rams, Dan Salomone of the Giants' official site reports.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "24",
         "pos": "CB",
@@ -26044,10 +25997,10 @@
         "rotoWirePlayerIDFull": "darius-alexander-18696",
         "cbsLongName": "Darius Alexander",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260927",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Inactive"
         },
         "teamID": "24",
         "pos": "DT",
@@ -27004,7 +26957,7 @@
         "cbsLongName": "Anthony Campbell",
         "injury": {
           "injReturnDate": "20260924",
-          "description": "Sep 20: Campbell (ankle) is questionable to return to Sunday's game against the Jets.",
+          "description": "Sep 21: Campbell (ankle) did not participate in Monday's practice, Tom Silverstein of the Milwaukee Journal Sentinel reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -27144,7 +27097,7 @@
         "rotoWirePlayerID": "14510",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2240651/darnell-mooney",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4040655",
         "exp": "7",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/darnell-mooney.php"
@@ -28149,7 +28102,7 @@
         "cbsLongName": "Darien Porter",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "",
+          "description": "Sep 21: Porter (foot) was inactive for Sunday's 26-14 win over the Chargers.",
           "injDate": "",
           "designation": "Out"
         },
@@ -28798,10 +28751,10 @@
         "rotoWirePlayerIDFull": "gabe-rubio-19899",
         "cbsLongName": "Gabriel Rubio",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "26",
         "pos": "DE",
@@ -28845,10 +28798,10 @@
         "rotoWirePlayerIDFull": "jimmy-rolder-19553",
         "cbsLongName": "Jimmy Rolder",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "11",
         "pos": "LB",
@@ -28885,10 +28838,10 @@
         "rotoWirePlayerIDFull": "isas-waxter-18613",
         "cbsLongName": "Isas Waxter",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "18",
         "pos": "CB",
@@ -29065,10 +29018,10 @@
         "rotoWirePlayerIDFull": "enrique-cruz-19480",
         "cbsLongName": "Enrique Cruz Jr.",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "28",
         "pos": "OT",
@@ -29498,10 +29451,10 @@
         "rotoWirePlayerIDFull": "thomas-fidone-18507",
         "cbsLongName": "Thomas Fidone II",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260927",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "24",
         "pos": "TE",
@@ -29955,8 +29908,8 @@
         "rotoWirePlayerIDFull": "pj-locke-14198",
         "cbsLongName": "P.J. Locke",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Locke (foot) has been ruled out for the remainder of Sunday's game against the Commanders, Calvin Watkins of The Dallas Morning News reports.",
+          "injReturnDate": "20261018",
+          "description": "Sep 21: Locke (foot) is set to miss a few weeks, Todd Archer of ESPN.com reported Monday.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -30215,10 +30168,10 @@
         "rotoWirePlayerIDFull": "mike-onwenu-14674",
         "cbsLongName": "Mike Onwenu",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Onwenu broke his right ankle during Sunday's game against the Steelers, Adam Schefter of ESPN reports.",
+          "injReturnDate": "20261004",
+          "description": "Sep 20: Initial X-rays revealed that Onwenu fractured his right ankle during Sunday's 20-3 win over the Steelers, Mike Reiss of ESPN.com reports.",
           "injDate": "",
-          "designation": "Doubtful"
+          "designation": "Out"
         },
         "teamID": "22",
         "pos": "G",
@@ -30435,10 +30388,10 @@
         "rotoWirePlayerIDFull": "walter-rouse-18027",
         "cbsLongName": "Walter Rouse",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "22",
         "pos": "OL",
@@ -30527,10 +30480,10 @@
         "rotoWirePlayerIDFull": "jordan-whittington-17688",
         "cbsLongName": "Jordan Whittington",
         "injury": {
-          "injReturnDate": "20260921",
-          "description": "Sep 19: Whittington (quadriceps) is doubtful to play in Monday's game against the Giants, Benjamin Royer of The Orange County Register reports.",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Whittington (quadriceps) is inactive for Monday's game against the Giants.",
           "injDate": "",
-          "designation": "Doubtful"
+          "designation": "Inactive"
         },
         "teamID": "19",
         "pos": "WR",
@@ -30972,7 +30925,7 @@
         "rotoWirePlayerID": "12612",
         "height": "6'4\"",
         "cbsPlayerIDFull": "2186270/tremaine-edmunds",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "3929950",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tremaine-edmunds.php"
@@ -31267,10 +31220,10 @@
         "rotoWirePlayerIDFull": "john-ridgeway-16128",
         "cbsLongName": "John Ridgeway",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "23",
         "pos": "DT",
@@ -32630,10 +32583,10 @@
         "rotoWirePlayerIDFull": "dj-campbell-19485",
         "cbsLongName": "DJ Campbell",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "20",
         "pos": "G",
@@ -33168,10 +33121,10 @@
         "rotoWirePlayerIDFull": "charlie-kolar-15924",
         "cbsLongName": "Charlie Kolar",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Kolar (forearm) is questionable to return to Sunday's game against the Raiders.",
+          "injReturnDate": "20261101",
+          "description": "Sep 21: Head coach Jim Harbaugh said Monday that Kolar will go on injured reserve due to a forearm injury he sustained during Sunday's 26-14 loss to the Raiders, Kris Rhim of ESPN.com reports.",
           "injDate": "20240501",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "18",
         "pos": "TE",
@@ -33515,7 +33468,7 @@
         "cbsLongName": "Jadarian Price",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Seahawks head coach Mike Macdonald said after Sunday's 31-7 win over the Cardinals that X-rays came back negative on Price's chest injury, Curtis Crabtree of Fox 13 Seattle reports.",
+          "description": "Sep 21: Coach Mike Macdonald said Monday that Price suffered a shoulder injury during Sunday's win at Arizona, but \"it's intact and nothing serious, it seems like,\" Brady Henderson of ESPN.com reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -33615,7 +33568,7 @@
         "rotoWirePlayerID": "14463",
         "height": "6'7\"",
         "cbsPlayerIDFull": "2867522/colby-parkinson",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4242557",
         "exp": "7",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/colby-parkinson.php"
@@ -33885,7 +33838,7 @@
         "rotoWirePlayerID": "19404",
         "height": "6'0\"",
         "cbsPlayerIDFull": "29128902/colton-hood/",
-        "lastGamePlayed": "20260815_MIN@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4921249",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/colton-hood.php"
@@ -34187,10 +34140,10 @@
         "rotoWirePlayerIDFull": "jakobe-thomas-19599",
         "cbsLongName": "Jakobe Thomas",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "21",
         "pos": "S",
@@ -34841,7 +34794,7 @@
           "injReturnDate": "20270215",
           "description": "Aug 31: The Saints placed Long (undisclosed) on injured reserve Sunday.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "23",
         "pos": "CB",
@@ -36171,7 +36124,7 @@
         "cbsLongName": "Carlton Davis",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 19: Davis (neck) has been ruled out ahead of Sunday's game against the Steelers.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -37260,7 +37213,7 @@
         "rotoWirePlayerID": "18385",
         "height": "6'0\"",
         "cbsPlayerIDFull": "3122957/jaylen-mccollough",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4427120",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jaylen-mccollough.php"
@@ -37392,7 +37345,7 @@
         "rotoWirePlayerID": "14381",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2866171/kamren-curl/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4242154",
         "exp": "7",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/kamren-curl.php"
@@ -37803,7 +37756,7 @@
           "injReturnDate": "20270215",
           "description": "Jul 31: The Panthers placed Brazzell (knee) on injured reserve Friday.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "5",
         "pos": "WR",
@@ -38489,53 +38442,6 @@
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/skyy-moore.php"
       },
       {
-        "espnID": "4362087",
-        "espnName": "Keaontay Ingram",
-        "sleeperBotID": "8221",
-        "fantasyProsPlayerID": "23162",
-        "lastName": "Ingram",
-        "espnIDFull": "4362087/keaontay-ingram",
-        "fRefID": "IngrKe01",
-        "firstName": "Keaontay",
-        "weight": "220",
-        "jerseyNum": "30",
-        "draftInfo": {
-          "round": "6",
-          "pick": "201",
-          "year": "2022",
-          "teamID": "1"
-        },
-        "cbsShortName": "K. Ingram",
-        "team": "KC",
-        "yahooPlayerID": "34157",
-        "age": "26",
-        "espnLink": "https://www.espn.com/nfl/player/_/id/4362087/keaontay-ingram",
-        "yahooLink": "https://sports.yahoo.com/nfl/players/34157",
-        "bDay": "10/26/1999",
-        "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4362087.png",
-        "isFreeAgent": "True",
-        "rotoWirePlayerIDFull": "keaontay-ingram-15847",
-        "cbsLongName": "Keaontay Ingram",
-        "injury": {
-          "injReturnDate": "",
-          "description": "",
-          "injDate": "",
-          "designation": ""
-        },
-        "teamID": "16",
-        "pos": "RB",
-        "school": "USC",
-        "cbsPlayerID": "2962791",
-        "longName": "Keaontay Ingram",
-        "rotoWirePlayerID": "15847",
-        "height": "6'0\"",
-        "cbsPlayerIDFull": "2962791/keaontay-ingram",
-        "lastGamePlayed": "20240922_KC@ATL",
-        "playerID": "4362087",
-        "exp": "3",
-        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/keaontay-ingram.php"
-      },
-      {
         "espnID": "4243253",
         "espnName": "Jaylon Johnson",
         "sleeperBotID": "6839",
@@ -38647,7 +38553,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/40522",
         "bDay": "4/30/2000",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4368056.png",
-        "isFreeAgent": "False",
+        "isFreeAgent": "True",
         "rotoWirePlayerIDFull": "liam-anderson-17502",
         "cbsLongName": "Liam Anderson",
         "injury": {
@@ -39126,10 +39032,10 @@
         "rotoWirePlayerIDFull": "jude-bowry-19391",
         "cbsLongName": "Jude Bowry",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "4",
         "pos": "OT",
@@ -39242,10 +39148,10 @@
         "rotoWirePlayerIDFull": "albert-reese-19923",
         "cbsLongName": "Albert Reese IV",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "5",
         "pos": "OT",
@@ -41930,10 +41836,10 @@
         "rotoWirePlayerIDFull": "micah-mcfadden-16186",
         "cbsLongName": "Micah McFadden",
         "injury": {
-          "injReturnDate": "20260921",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: McFadden (neck) is inactive for Monday's game against the Rams, Dan Salomone of the Giants' official site reports.",
           "injDate": "20240501",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "24",
         "pos": "LB",
@@ -42231,6 +42137,53 @@
         "espnLink": "https://www.espn.com/nfl/player/_/id/4575745/aj-gillie"
       },
       {
+        "espnID": "16716",
+        "espnName": "Aaron Donald",
+        "sleeperBotID": "2227",
+        "fantasyProsPlayerID": "12205",
+        "lastName": "Donald",
+        "espnIDFull": "16716/aaron-donald",
+        "fRefID": "DonaAa00",
+        "firstName": "Aaron",
+        "weight": "280",
+        "jerseyNum": "99",
+        "draftInfo": {
+          "round": "1",
+          "pick": "13",
+          "year": "2014",
+          "teamID": "19"
+        },
+        "cbsShortName": "A. Donald",
+        "team": "LAR",
+        "yahooPlayerID": "27541",
+        "age": "35",
+        "espnLink": "https://www.espn.com/nfl/player/_/id/16716/aaron-donald",
+        "yahooLink": "https://sports.yahoo.com/nfl/players/27541",
+        "bDay": "5/23/1991",
+        "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/16716.png",
+        "isFreeAgent": "False",
+        "rotoWirePlayerIDFull": "aaron-donald-9391",
+        "cbsLongName": "Aaron Donald",
+        "injury": {
+          "injReturnDate": "",
+          "description": "",
+          "injDate": "",
+          "designation": ""
+        },
+        "teamID": "19",
+        "pos": "DT",
+        "school": "Pittsburgh",
+        "cbsPlayerID": "1737460",
+        "longName": "Aaron Donald",
+        "rotoWirePlayerID": "9391",
+        "height": "6'1\"",
+        "cbsPlayerIDFull": "1737460/aaron-donald",
+        "lastGamePlayed": "20260921_NYG@LAR",
+        "playerID": "16716",
+        "exp": "10",
+        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/aaron-donald.php"
+      },
+      {
         "espnID": "4837388",
         "espnName": "VJ Payne",
         "sleeperBotID": "13567",
@@ -42392,10 +42345,10 @@
         "rotoWirePlayerIDFull": "brian-robinson-15907",
         "cbsLongName": "Brian Robinson Jr.",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260924",
+          "description": "Sep 21: Robinson was listed as a limited participant in Monday's walkthrough practice due to an ankle injury, Marc Raimondi of ESPN.com reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "2",
         "pos": "RB",
@@ -42762,7 +42715,7 @@
         "rotoWirePlayerID": "17081",
         "height": "6'1\"",
         "cbsPlayerIDFull": "26694679/konata-mumpfield",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4710855",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/konata-mumpfield.php"
@@ -42796,10 +42749,10 @@
         "rotoWirePlayerIDFull": "jordan-watkins-18647",
         "cbsLongName": "Jordan Watkins",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Watkins (coach's decision) is inactive for Sunday's game against the Dolphins.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "28",
         "pos": "WR",
@@ -43261,10 +43214,10 @@
         "rotoWirePlayerIDFull": "demonte-capehart-19495",
         "cbsLongName": "DeMonte Capehart",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "30",
         "pos": "DT",
@@ -43813,10 +43766,10 @@
         "rotoWirePlayerIDFull": "trevin-wallace-17872",
         "cbsLongName": "Trevin Wallace",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "20240501",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "25",
         "pos": "LB",
@@ -45120,7 +45073,7 @@
         "rotoWirePlayerID": "16033",
         "height": "6'4\"",
         "cbsPlayerIDFull": "2961906/isaiah-likely",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4361050",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/isaiah-likely.php"
@@ -45832,10 +45785,10 @@
         "rotoWirePlayerIDFull": "toriano-pride-19587",
         "cbsLongName": "Toriano Pride Jr.",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "8",
         "pos": "CB",
@@ -45924,10 +45877,10 @@
         "rotoWirePlayerIDFull": "puka-nacua-16790",
         "cbsLongName": "Puka Nacua",
         "injury": {
-          "injReturnDate": "20260921",
-          "description": "Sep 20: Nacua (hip), who is officially listed as questionable for Monday's game against the Giants, \"is trending the wrong way\" in advance of the Week 2 contest, Adam Schefter of ESPN reports.",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Nacua (hip) is listed as inactive Monday against the Giants, Adam Schefter of ESPN reports.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "19",
         "pos": "WR",
@@ -46018,10 +45971,10 @@
         "rotoWirePlayerIDFull": "jackie-marshall-19522",
         "cbsLongName": "Jackie Marshall",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "31",
         "pos": "DT",
@@ -46950,9 +46903,9 @@
         "cbsLongName": "Will Johnson",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Johnson (neck) is questionable to return Sunday against the Seahawks.",
+          "description": "Sep 21: Johnson (neck) may be forced to miss the remainder of the 2026 season, Darren Urban of the Cardinals' official site reports.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Doubtful"
         },
         "teamID": "1",
         "pos": "CB",
@@ -47121,7 +47074,7 @@
         "cbsShortName": "J. Roberts",
         "team": "TB",
         "yahooPlayerID": "42442",
-        "age": "24",
+        "age": "25",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4566165/jj-roberts",
         "yahooLink": "https://sports.yahoo.com/nfl/players/42442",
         "bDay": "9/22/2001",
@@ -47445,10 +47398,10 @@
         "rotoWirePlayerIDFull": "demarcus-robinson-11163",
         "cbsLongName": "Demarcus Robinson",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Robinson (ankle) has been ruled out for the rest of Sunday's game against the Dolphins, Matt Barrows of The Athletic reports.",
+          "injReturnDate": "20261011",
+          "description": "Sep 21: San Francisco head coach Kyle Shanahan said that Robinson is facing a recovery timeline of 3-to-6 weeks after sustaining a high-ankle sprain in Sunday's 35-13 win over the Dolphins, Nick Wagoner of ESPN.com reports.",
           "injDate": "",
-          "designation": "Doubtful"
+          "designation": "Out"
         },
         "teamID": "28",
         "pos": "WR",
@@ -48148,10 +48101,10 @@
         "rotoWirePlayerIDFull": "case-keenum-8065",
         "cbsLongName": "Case Keenum",
         "injury": {
-          "injReturnDate": "20260928",
-          "description": "Sep 20: Keenum (coach's decision) is inactive but serving as the Bears' emergency third quarterback against the Vikings on Sunday.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "6",
         "pos": "QB",
@@ -49762,7 +49715,7 @@
         },
         "team": "MIA",
         "yahooPlayerID": "31179",
-        "age": "30",
+        "age": "31",
         "espnLink": "https://www.espn.com/nfl/player/_/id/3123963/cornell-armstrong",
         "yahooLink": "https://sports.yahoo.com/nfl/players/31179",
         "bDay": "9/22/1995",
@@ -50145,10 +50098,10 @@
         "rotoWirePlayerIDFull": "tanoa-togiai-20041",
         "cbsLongName": "Tanoa Togiai",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "32",
         "pos": "G",
@@ -50189,10 +50142,10 @@
         "rotoWirePlayerIDFull": "tanner-mckee-16686",
         "cbsLongName": "Tanner McKee",
         "injury": {
-          "injReturnDate": "20260928",
-          "description": "Sep 20: McKee (coach's decision) is inactive as the emergency third quarterback for Sunday's game against the Titans.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "27",
         "pos": "QB",
@@ -51269,10 +51222,10 @@
         "rotoWirePlayerIDFull": "bryce-cabeldue-18794",
         "cbsLongName": "Bryce Cabeldue",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "17",
         "pos": "G",
@@ -51316,7 +51269,7 @@
         "cbsLongName": "Tyrion Ingram-Dawkins",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Ingram-Dawkins (hip) is questionable to return to Sunday's game against the Bears.",
+          "description": "Sep 21: Coach Kevin O'Connell said Monday that Ingram-Dawkins is \"day-to-day\" after injuring his hip in Week 2 at Chicago, Alec Lewis of The Athletic reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -52086,10 +52039,10 @@
         "rotoWirePlayerIDFull": "collin-wright-19601",
         "cbsLongName": "Collin Wright",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "13",
         "pos": "CB",
@@ -52193,7 +52146,7 @@
         "rotoWirePlayerID": "18514",
         "height": "5'11\"",
         "cbsPlayerIDFull": "26697012/cam-skattebo",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4696981",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/cam-skattebo.php"
@@ -52506,7 +52459,7 @@
         "cbsLongName": "Isaiah Stalbird",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Stalbird (shoulder) is inactive for Sunday's game against the Ravens.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -52612,7 +52565,7 @@
         "rotoWirePlayerID": "15196",
         "height": "6'1\"",
         "cbsPlayerIDFull": "2967873/jevon-holland",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4373809",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jevon-holland.php"
@@ -53178,7 +53131,7 @@
         "cbsLongName": "RJ Harvey",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Harvey (hamstring) is inactive for Sunday's game against the Jaguars, Susanna Weir of the Broncos' official site reports.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -53725,7 +53678,7 @@
         "rotoWirePlayerID": "17846",
         "height": "5'11\"",
         "cbsPlayerIDFull": "3161741/andru-phillips/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4431321",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/andru-phillips.php"
@@ -53976,7 +53929,7 @@
           "injReturnDate": "20270215",
           "description": "Aug 25: The Seahawks placed Richman (leg) on injured reserve Tuesday, Brady Henderson of ESPN.com reports.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "29",
         "pos": "G",
@@ -54824,7 +54777,7 @@
         "cbsLongName": "Jawaan Taylor",
         "injury": {
           "injReturnDate": "20260924",
-          "description": "Sep 20: Taylor (ribs) is questionable to return to Sunday's game against the Panthers, Tori McElhaney of the Falcons' official site reports.",
+          "description": "Sep 21: Taylor (ribs) was listed as limited on the Falcons' estimated injury report Monday, Tori McElhaney of the team's official site reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -55171,10 +55124,10 @@
         "rotoWirePlayerIDFull": "chau-smith-wade-17877",
         "cbsLongName": "Chau Smith-Wade",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "20240501",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "5",
         "pos": "CB",
@@ -55218,9 +55171,9 @@
         "cbsLongName": "Caleb Williams",
         "injury": {
           "injReturnDate": "20260928",
-          "description": "Sep 20: Williams will undergo imaging on his right hamstring Monday, Adam Schefter of ESPN reports.",
+          "description": "Sep 21: Bears head coach Ben Johnson said that he doesn't anticipate Williams (hamstring) practicing in Week 3, though Johnson was unwilling to officially rule out the quarterback from playing Monday against the Eagles, Sean Hammond of the Chicago Tribune reports.",
           "injDate": "20240501",
-          "designation": "Questionable"
+          "designation": "Doubtful"
         },
         "teamID": "6",
         "pos": "QB",
@@ -55452,10 +55405,10 @@
         "rotoWirePlayerIDFull": "cole-payton-19296",
         "cbsLongName": "Cole Payton",
         "injury": {
-          "injReturnDate": "20260928",
-          "description": "Sep 20: Payton (coach's decision) is inactive for Sunday's game against the Titans.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "27",
         "pos": "QB",
@@ -56052,7 +56005,7 @@
           "injReturnDate": "20270215",
           "description": "Aug 31: Brooks (undisclosed) reverted to Tennessee's injured reserve Monday, per the NFL's transaction log.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "31",
         "pos": "S",
@@ -56563,10 +56516,10 @@
         "rotoWirePlayerIDFull": "riley-leonard-18513",
         "cbsLongName": "Riley Leonard",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Leonard (coach's decision) is inactive, but he'll serve as the Colts' emergency third quarterback for Sunday night's contest against Kansas City.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "14",
         "pos": "QB",
@@ -56742,7 +56695,7 @@
         "rotoWirePlayerID": "13139",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2925531/elijah-campbell",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "3932901",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/elijah-campbell.php"
@@ -57477,7 +57430,7 @@
         "cbsLongName": "Mike Evans",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Head coach Kyle Shanahan said after Sunday's 35-13 win over the Dolphins that Evans (hip) is fine, Vic Tafur of The Athletic reports.",
+          "description": "Sep 21: San Francisco head coach Kyle Shanahan said that Evans (hip) will \"have to be managed this week\" leading up to Sunday's game against the Cardinals, Nick Wagoner of ESPN.com reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -57611,10 +57564,10 @@
         "rotoWirePlayerIDFull": "brandon-crenshaw-dickson-18770",
         "cbsLongName": "Brandon Crenshaw-Dickson",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "31",
         "pos": "OT",
@@ -58019,7 +57972,7 @@
         "rotoWirePlayerID": "10037",
         "height": "6'4\"",
         "cbsPlayerIDFull": "1998197/jameis-winston",
-        "lastGamePlayed": "20260828_NYG@NYJ",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "2969939",
         "exp": "12",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jameis-winston.php"
@@ -58382,46 +58335,6 @@
         "playerID": "4360967",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/brevyn-spann-ford.php"
-      },
-      {
-        "espnID": "4360538",
-        "espnName": "Trevor Denbow",
-        "sleeperBotID": "8834",
-        "fantasyProsPlayerID": "24884",
-        "lastName": "Denbow",
-        "espnIDFull": "4360538/trevor-denbow",
-        "fRefID": "DenbTr00",
-        "firstName": "Trevor",
-        "weight": "208",
-        "jerseyNum": "43",
-        "team": "IND",
-        "yahooPlayerID": "34487",
-        "age": "28",
-        "espnLink": "https://www.espn.com/nfl/player/_/id/4360538/trevor-denbow",
-        "yahooLink": "https://sports.yahoo.com/nfl/players/34487",
-        "bDay": "8/26/1998",
-        "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4360538.png",
-        "isFreeAgent": "True",
-        "rotoWirePlayerIDFull": "trevor-denbow-16546",
-        "cbsLongName": "Trevor Denbow",
-        "injury": {
-          "injReturnDate": "",
-          "description": "",
-          "injDate": "",
-          "designation": ""
-        },
-        "teamID": "14",
-        "pos": "S",
-        "school": "SMU",
-        "cbsPlayerID": "2962783",
-        "longName": "Trevor Denbow",
-        "rotoWirePlayerID": "16546",
-        "height": "5'10\"",
-        "cbsPlayerIDFull": "2962783/trevor-denbow/",
-        "lastGamePlayed": "20240922_CHI@IND",
-        "playerID": "4360538",
-        "exp": "3",
-        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/trevor-denbow.php"
       },
       {
         "espnID": "4429185",
@@ -59276,7 +59189,7 @@
         "cbsLongName": "Joey Porter Jr.",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 19: Porter (back) wants a long-term contract, regardless of where he will play it out, Jonathan Jones of the Athletic reports.",
+          "description": "Sep 21: Porter will be evaluated Wednesday for a back injury he aggravated during practice last week, Alan Saunders of SteelersNow.com reports.",
           "injDate": "",
           "designation": "Out"
         },
@@ -60350,7 +60263,7 @@
           "injReturnDate": "20270215",
           "description": "Aug 27: Turner (undisclosed) reverted to the Dolphins' injured-reserve list Thursday, Aaron Wilson of KPRC 2 Houston reports.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "20",
         "pos": "TE",
@@ -60474,10 +60387,10 @@
         "rotoWirePlayerIDFull": "darrick-forrest-15598",
         "cbsLongName": "Darrick Forrest",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20270215",
+          "description": "May 28: San Francisco placed Forrest (undisclosed) on its injured reserve list Thursday.",
           "injDate": "",
-          "designation": ""
+          "designation": "Injured Reserve"
         },
         "teamID": "28",
         "pos": "S",
@@ -60990,10 +60903,10 @@
         "rotoWirePlayerIDFull": "joe-fagnano-19428",
         "cbsLongName": "Joe Fagnano",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Fagnano (coach's decision) is inactive for Sunday's game versus the Saints but serving as the emergency third quarterback, Ryan Mink of the team's official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "3",
         "pos": "QB",
@@ -62194,7 +62107,7 @@
         },
         "team": "BUF",
         "yahooPlayerID": "33465",
-        "age": "26",
+        "age": "27",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4242433/joshua-palmer",
         "yahooLink": "https://sports.yahoo.com/nfl/players/33465",
         "bDay": "9/22/1999",
@@ -63050,7 +62963,7 @@
         "cbsLongName": "Samuel Cosmi",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "",
+          "description": "Sep 21: Cosmi suffered a concussion in Sunday's 37-20 loss to the Commanders, Nicki Jhabvala of The Athletic reports.",
           "injDate": "20240801",
           "designation": "Questionable"
         },
@@ -63135,10 +63048,10 @@
         "rotoWirePlayerIDFull": "dangelo-ponds-19397",
         "cbsLongName": "D'Angelo Ponds",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Ponds (coach's decision) is inactive for Sunday's game against the Packers.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "25",
         "pos": "CB",
@@ -64768,10 +64681,10 @@
         "rotoWirePlayerIDFull": "jalen-huskey-19386",
         "cbsLongName": "Jalen Huskey",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "15",
         "pos": "S",
@@ -65127,10 +65040,10 @@
         "rotoWirePlayerIDFull": "edgerrin-cooper-17753",
         "cbsLongName": "Edgerrin Cooper",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260924",
+          "description": "Sep 21: Cooper (shoulder) was listed as a limited participant on the Packers' estimated injury report Monday.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "12",
         "pos": "LB",
@@ -65500,7 +65413,7 @@
         "rotoWirePlayerID": "15904",
         "height": "6'3\"",
         "cbsPlayerIDFull": "2867156/nate-landman/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4243181",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/nathan-landman.php"
@@ -65976,7 +65889,7 @@
         "cbsLongName": "Jacob Parrish",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Parrish (back) is inactive for Sunday's game against the Browns, Brianna Dix of the Buccaneers' official site reports.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -66272,10 +66185,10 @@
         "rotoWirePlayerIDFull": "tanner-arkin-19365",
         "cbsLongName": "Tanner Arkin",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Arkin (coach's decision) is inactive for Sunday's game against the Steelers.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "22",
         "pos": "TE",
@@ -66319,9 +66232,9 @@
         "cbsLongName": "Jonathon Brooks",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Head coach Dave Canales told reporters after Sunday's 34-3 win over the Falcons that Brooks is considered day-to-day due to a groin injury, Joe Person of The Athletic reports.",
+          "description": "Sep 21: Brooks is considered week-to-week while he receives further medical opinions on the groin injury he sustained in Sunday's 34-3 win over the Falcons, Tom Pelissero of Netflix reports.",
           "injDate": "20240801",
-          "designation": "Questionable"
+          "designation": "Doubtful"
         },
         "teamID": "5",
         "pos": "RB",
@@ -67650,7 +67563,7 @@
         "rotoWirePlayerID": "17690",
         "height": "5'8\"",
         "cbsPlayerIDFull": "3169252/blake-corum/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4429096",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/blake-corum.php"
@@ -68429,7 +68342,7 @@
         "cbsShortName": "D. Coleman",
         "team": "JAX",
         "yahooPlayerID": "40370",
-        "age": "27",
+        "age": "28",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4368812/dj-coleman",
         "yahooLink": "https://sports.yahoo.com/nfl/players/40370",
         "bDay": "9/22/1998",
@@ -69176,10 +69089,10 @@
         "rotoWirePlayerIDFull": "elijah-moore-15280",
         "cbsLongName": "Elijah Moore",
         "injury": {
-          "injReturnDate": "20260928",
-          "description": "Sep 20: Moore (coach's decision) is inactive for Sunday's game against the Titans.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "27",
         "pos": "WR",
@@ -69223,10 +69136,10 @@
         "rotoWirePlayerIDFull": "daniel-thomas-14687",
         "cbsLongName": "Daniel Thomas",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "8",
         "pos": "S",
@@ -69456,10 +69369,10 @@
         "rotoWirePlayerIDFull": "bobby-jamison-travis-19515",
         "cbsLongName": "Bobby Jamison-Travis",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260927",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "24",
         "pos": "DT",
@@ -70126,7 +70039,7 @@
         "cbsLongName": "Samson Ebukam",
         "injury": {
           "injReturnDate": "20260924",
-          "description": "Sep 20: Ebukam (hamstring) has been ruled out for the remainder of Sunday's game against the Panthers, Tori McElhaney of the Falcons' official site reports.",
+          "description": "Sep 20: Ebukam (hamstring) is questionable to return to Sunday's game against the Panthers, Marc Raimondi of ESPN.com reports.",
           "injDate": "20240801",
           "designation": "Questionable"
         },
@@ -70388,10 +70301,10 @@
         "rotoWirePlayerIDFull": "jj-pegues-18687",
         "cbsLongName": "JJ Pegues",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "17",
         "pos": "DT",
@@ -71267,7 +71180,7 @@
         "rotoWirePlayerID": "15807",
         "height": "5'9\"",
         "cbsPlayerIDFull": "3121836/kyren-williams/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4430737",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/kyren-williams.php"
@@ -71613,7 +71526,7 @@
         "cbsLongName": "Martin Emerson",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Emerson (shoulder) has been ruled out for the remainder of Sunday's game against the Ravens, Katherine Terrell of ESPN.com reports.",
+          "description": "Sep 21: Coach Kellen Moore said Monday that Emerson is \"day-to-day\" after injuring his shoulder in Week 2 at Baltimore, Ross Jackson of WWL Louisiana reports.",
           "injDate": "20240501",
           "designation": "Questionable"
         },
@@ -72249,10 +72162,10 @@
         "rotoWirePlayerIDFull": "cj-williams-19898",
         "cbsLongName": "CJ Williams",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Williams (coach's decision) is inactive for Sunday's game against the Broncos, John Oehser of the Jaguars' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "15",
         "pos": "WR",
@@ -72908,10 +72821,10 @@
         "rotoWirePlayerIDFull": "mekhi-wingo-17750",
         "cbsLongName": "Mekhi Wingo",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "20240501",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "11",
         "pos": "DT",
@@ -73034,10 +72947,10 @@
         "rotoWirePlayerIDFull": "michael-penix-17700",
         "cbsLongName": "Michael Penix Jr.",
         "injury": {
-          "injReturnDate": "20260924",
-          "description": "Sep 20: Penix (knee), who has been ruled out for Sunday's game against the Panthers, could be cleared to start Thursday's game against the Packers in Week 3, Ian Rapoport of NFL Network reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "2",
         "pos": "QB",
@@ -74655,7 +74568,7 @@
         "rotoWirePlayerID": "17495",
         "height": "6'6\"",
         "cbsPlayerIDFull": "2926946/chris-okoye/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "5144942",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/basil-chijioke-okoye.php"
@@ -74686,7 +74599,7 @@
           "injReturnDate": "20270215",
           "description": "Aug 31: Rogers (knee) reverted to the Cowboys' injured-reserve list Monday, Joe Hoyt of The Dallas Morning News reports.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "9",
         "pos": "TE",
@@ -74821,10 +74734,10 @@
         "rotoWirePlayerIDFull": "connor-lew-19469",
         "cbsLongName": "Connor Lew",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "7",
         "pos": "C",
@@ -75031,7 +74944,7 @@
         "cbsLongName": "James Thompson Jr.",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "",
+          "description": "Sep 21: Thompson suffered a high-ankle sprain during Sunday's 35-13 win over Miami, David Lombardi of SFStandard.com reports.",
           "injDate": "",
           "designation": "Doubtful"
         },
@@ -75960,10 +75873,10 @@
         "rotoWirePlayerIDFull": "alex-harkey-19473",
         "cbsLongName": "Alex Harkey",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "18",
         "pos": "G",
@@ -76013,7 +75926,7 @@
         "rotoWirePlayerID": "17937",
         "height": "6'0\"",
         "cbsPlayerIDFull": "3131623/josh-wallace",
-        "lastGamePlayed": "20260118_LAR@CHI",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4572371",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/josh-wallace.php"
@@ -77215,7 +77128,7 @@
         "rotoWirePlayerID": "17303",
         "height": "6'1\"",
         "cbsPlayerIDFull": "2961652/zaire-barnes/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4362234",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/zaire-barnes.php"
@@ -77763,10 +77676,10 @@
         "rotoWirePlayerIDFull": "gennings-dunker-19477",
         "cbsLongName": "Gennings Dunker",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "26",
         "pos": "G",
@@ -78068,7 +77981,7 @@
           "injReturnDate": "20270215",
           "description": "Aug 23: The Browns placed Wright on injured reserve Sunday due to a ruptured Achilles, Adam Schefter of ESPN reports.",
           "injDate": "20240501",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "8",
         "pos": "DE",
@@ -78198,10 +78111,10 @@
         "rotoWirePlayerIDFull": "david-njoku-11734",
         "cbsLongName": "David Njoku",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Njoku (knee) won't return to Sunday's game against the Raiders.",
+          "injReturnDate": "20261101",
+          "description": "Sep 21: Head coach Jim Harbaugh told reporters Monday that Njoku (fibula) and Charlie Kolar (forearm) will both go on injured reserve, Kris Rhim of ESPN.com reports.",
           "injDate": "20240501",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "18",
         "pos": "TE",
@@ -78778,7 +78691,7 @@
         "rotoWirePlayerID": "15468",
         "height": "6'1\"",
         "cbsPlayerIDFull": "2741200/najee-harris",
-        "lastGamePlayed": "20260828_NYG@NYJ",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4241457",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/najee-harris-rb.php"
@@ -80310,10 +80223,10 @@
         "rotoWirePlayerIDFull": "connor-otoole-18971",
         "cbsLongName": "Connor O'Toole",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "29",
         "pos": "LB",
@@ -80408,46 +80321,6 @@
         "playerID": "4683096",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/caden-fordham.php"
-      },
-      {
-        "espnID": "4250969",
-        "espnName": "Rodney Williams",
-        "sleeperBotID": "8757",
-        "fantasyProsPlayerID": "24820",
-        "lastName": "Williams",
-        "espnIDFull": "4250969/rodney-williams",
-        "fRefID": "WillRo08",
-        "firstName": "Rodney",
-        "weight": "235",
-        "jerseyNum": "87",
-        "team": "PIT",
-        "yahooPlayerID": "34581",
-        "age": "28",
-        "espnLink": "https://www.espn.com/nfl/player/_/id/4250969/rodney-williams",
-        "yahooLink": "https://sports.yahoo.com/nfl/players/34581",
-        "bDay": "4/8/1998",
-        "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4250969.png",
-        "isFreeAgent": "True",
-        "rotoWirePlayerIDFull": "rodney-williams-16480",
-        "cbsLongName": "Rodney Williams",
-        "injury": {
-          "injReturnDate": "",
-          "description": "",
-          "injDate": "",
-          "designation": ""
-        },
-        "teamID": "26",
-        "pos": "TE",
-        "school": "UT Martin",
-        "cbsPlayerID": "2262718",
-        "longName": "Rodney Williams",
-        "rotoWirePlayerID": "16480",
-        "height": "6'4\"",
-        "cbsPlayerIDFull": "2262718/rodney-williams/",
-        "lastGamePlayed": "20240922_LAC@PIT",
-        "playerID": "4250969",
-        "exp": "2",
-        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/rodney-williams-te.php"
       },
       {
         "espnID": "4602389",
@@ -80650,7 +80523,7 @@
         "cbsShortName": "A. Anzalone",
         "team": "TB",
         "yahooPlayerID": "30189",
-        "age": "31",
+        "age": "32",
         "espnLink": "https://www.espn.com/nfl/player/_/id/3043107/alex-anzalone",
         "yahooLink": "https://sports.yahoo.com/nfl/players/30189",
         "bDay": "9/22/1994",
@@ -81139,10 +81012,10 @@
         "rotoWirePlayerIDFull": "gerad-christian-lichtenhan-18987",
         "cbsLongName": "Gerad Christian-Lichtenhan",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "3",
         "pos": "OT",
@@ -81564,7 +81437,7 @@
         "rotoWirePlayerID": "17336",
         "height": "6'0\"",
         "cbsPlayerIDFull": "3171024/emmanuel-forbes/",
-        "lastGamePlayed": "20260125_LAR@SEA",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4429767",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/emmanuel-forbes.php"
@@ -82286,7 +82159,7 @@
         "rotoWirePlayerID": "15321",
         "height": "6'5\"",
         "cbsPlayerIDFull": "2251096/chauncey-golston",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4036132",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/chauncey-golston.php"
@@ -82684,7 +82557,7 @@
         "rotoWirePlayerID": "18497",
         "height": "6'5\"",
         "cbsPlayerIDFull": "26701481/terrance-ferguson",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4570037",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/terrance-ferguson.php"
@@ -83303,7 +83176,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/42995",
         "bDay": "6/24/2002",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4567783.png",
-        "isFreeAgent": "False",
+        "isFreeAgent": "True",
         "rotoWirePlayerIDFull": "james-brockermeyer-19372",
         "cbsLongName": "James Brockermeyer",
         "injury": {
@@ -83429,7 +83302,7 @@
         "cbsShortName": "D. Bellinger",
         "team": "TEN",
         "yahooPlayerID": "34068",
-        "age": "25",
+        "age": "26",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4361516/daniel-bellinger",
         "yahooLink": "https://sports.yahoo.com/nfl/players/34068",
         "bDay": "9/22/2000",
@@ -84069,7 +83942,7 @@
         "rotoWirePlayerID": "19723",
         "height": "6'5\"",
         "cbsPlayerIDFull": "3177353/wesley-bailey/",
-        "lastGamePlayed": "20260822_NO@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4430919",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/wesley-bailey.php"
@@ -85115,7 +84988,7 @@
         "cbsLongName": "Max Melton",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Melton (toe) has been ruled out for the remainder of Sunday's game against the Seahawks, Darren Urban of the Cardinals' official site reports.",
+          "description": "Sep 21: Melton (toe) is considered to be day-to-day ahead of Week 3, Howard Balzer of USA Today reports.",
           "injDate": "20240501",
           "designation": "Questionable"
         },
@@ -85236,10 +85109,10 @@
         "rotoWirePlayerIDFull": "kurtis-rourke-18565",
         "cbsLongName": "Kurtis Rourke",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Rourke (coach's decision) is inactive for Sunday's game against the Dolphins but will serve as the emergency third quarterback.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "28",
         "pos": "QB",
@@ -86873,7 +86746,7 @@
         "cbsLongName": "Tua Tagovailoa",
         "injury": {
           "injReturnDate": "20260924",
-          "description": "Sep 20: Tagovailoa (oblique) is inactive for Sunday's game against the Panthers, Marc Raimondi of ESPN.com reports.",
+          "description": "Sep 21: Tagovailoa (ankle) was estimated as a limited participant in Monday's walk-through practice, Marc Raimondi of ESPN.com reports.",
           "injDate": "20240501",
           "designation": "Out"
         },
@@ -87104,7 +86977,7 @@
         "rotoWirePlayerID": "15275",
         "height": "6'0\"",
         "cbsPlayerIDFull": "2966771/greg-newsome-ii",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4361266",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/greg-newsome-db.php"
@@ -88076,7 +87949,7 @@
           "injReturnDate": "20270215",
           "description": "Aug 31: The Texans placed Gaye (knee) on injured reserve Sunday.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "13",
         "pos": "DE",
@@ -88897,7 +88770,7 @@
           "injReturnDate": "20261011",
           "description": "Aug 30: Kirk (calf) was placed on injured reserve by the 49ers on Sunday with a designation to return.",
           "injDate": "20240501",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "28",
         "pos": "WR",
@@ -89378,10 +89251,10 @@
         "rotoWirePlayerIDFull": "billy-schrauth-19460",
         "cbsLongName": "Billy Schrauth",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "30",
         "pos": "G",
@@ -89633,10 +89506,10 @@
         "rotoWirePlayerIDFull": "malcolm-dewalt-20045",
         "cbsLongName": "Malcolm DeWalt IV",
         "injury": {
-          "injReturnDate": "20260924",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "2",
         "pos": "CB",
@@ -91718,7 +91591,7 @@
         "cbsLongName": "Cordale Flott",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Flott (quadriceps) is inactive for Sunday's game versus Philadelphia.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -91878,7 +91751,7 @@
         "cbsShortName": "J. Maclin",
         "team": "BUF",
         "yahooPlayerID": "43013",
-        "age": "24",
+        "age": "25",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4430270/jamori-maclin",
         "yahooLink": "https://sports.yahoo.com/nfl/players/43013",
         "bDay": "9/22/2001",
@@ -92197,10 +92070,10 @@
         "rotoWirePlayerIDFull": "isaac-yiadom-12778",
         "cbsLongName": "Isaac Yiadom",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "32",
         "pos": "CB",
@@ -93572,8 +93445,8 @@
         "rotoWirePlayerIDFull": "brandon-aiyuk-14386",
         "cbsLongName": "Brandon Aiyuk",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Jul 25: San Francisco general manager John Lynch told reporters Saturday that Aiyuk (knee) will remain on the 49ers' reserve/left squad list, Adam Schefter of ESPN reports.",
+          "injReturnDate": "20270215",
+          "description": "Sep 21: Head coach Kyle Shanahan said Sunday that he's not viewing Aiyuk as an option for the 49ers while the club contends with multiple injuries at receiver, Matt Barrows of The Athletic reports.",
           "injDate": "20240801",
           "designation": "Out"
         },
@@ -94505,10 +94378,10 @@
         "rotoWirePlayerIDFull": "george-gumbs-19504",
         "cbsLongName": "George Gumbs Jr.",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "14",
         "pos": "LB",
@@ -95000,10 +94873,10 @@
         "rotoWirePlayerIDFull": "landon-robinson-19619",
         "cbsLongName": "Landon Robinson",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "7",
         "pos": "DT",
@@ -95685,10 +95558,10 @@
         "rotoWirePlayerIDFull": "armaj-reed-adams-19463",
         "cbsLongName": "Ar'maj Reed-Adams",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "4",
         "pos": "G",
@@ -96232,10 +96105,10 @@
         "rotoWirePlayerIDFull": "jalen-tolbert-16010",
         "cbsLongName": "Jalen Tolbert",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Tolbert (coach's decision) is inactive for Sunday's game against the 49ers.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "20",
         "pos": "WR",
@@ -96272,10 +96145,10 @@
         "rotoWirePlayerIDFull": "camden-brown-19989",
         "cbsLongName": "Camden Brown",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "9",
         "pos": "WR",
@@ -97127,7 +97000,7 @@
         "cbsLongName": "Michael Pittman",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 19: Pittman (foot) has been ruled out for Sunday's game at New England, Burt Lauten of the Steelers' official site reports.",
+          "description": "Sep 21: Steelers head coach Mike McCarthy said Monday that Pittman's foot injury is not related to the one he dealt with during training camp and the preseason, Nick Farabaugh of PennLive.com reports.",
           "injDate": "20240501",
           "designation": "Out"
         },
@@ -97825,10 +97698,10 @@
         "rotoWirePlayerIDFull": "behren-morton-19293",
         "cbsLongName": "Behren Morton",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Morton (coach's decision) is inactive but will serve as the Patriots' emergency third quarterback against the Steelers on Sunday.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "22",
         "pos": "QB",
@@ -97918,10 +97791,10 @@
         "rotoWirePlayerIDFull": "athan-kaliakmanis-19368",
         "cbsLongName": "Athan Kaliakmanis",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Kaliakmanis (coach's decision) is inactive but will serve as the Commanders' emergency third quarterback against the Cowboys on Sunday.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "32",
         "pos": "QB",
@@ -98144,7 +98017,7 @@
         "rotoWirePlayerID": "19273",
         "height": "6'4\"",
         "cbsPlayerIDFull": "29128702/arvell-reese",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4950400",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/arvell-reese.php"
@@ -98336,7 +98209,7 @@
         "cbsLongName": "Jayden Daniels",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Daniels was carted off the field at the conclusion of the first half of Sundays' game against Dallas due to a left arm injury, Tashan Reed of The Washington Post reports.",
+          "description": "Sep 21: Daniels (elbow) underwent imaging Monday and will consult with multiple experts over the next few days, Ian Rapoport of NFL Network reports.",
           "injDate": "",
           "designation": "Doubtful"
         },
@@ -99187,10 +99060,10 @@
         "rotoWirePlayerIDFull": "jaxson-dart-18574",
         "cbsLongName": "Jaxson Dart",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Dart (knee) is officially questionable to return to Monday's matchup against the Rams.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "24",
         "pos": "QB",
@@ -99200,7 +99073,7 @@
         "rotoWirePlayerID": "18574",
         "height": "6'2\"",
         "cbsPlayerIDFull": "26694019/jaxson-dart",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4689114",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jaxson-dart.php"
@@ -100088,10 +99961,10 @@
         "rotoWirePlayerIDFull": "ozzy-trapilo-18766",
         "cbsLongName": "Ozzy Trapilo",
         "injury": {
-          "injReturnDate": "20260928",
-          "description": "Sep 20: Trapilo (coach's decision) is inactive for Sunday's game against the Vikings.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "6",
         "pos": "OT",
@@ -100993,10 +100866,10 @@
         "rotoWirePlayerIDFull": "tristin-mccollum-16545",
         "cbsLongName": "Tristin McCollum",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "17",
         "pos": "S",
@@ -102029,10 +101902,10 @@
         "rotoWirePlayerIDFull": "andrew-thomas-14360",
         "cbsLongName": "Andrew Thomas",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Thomas (groin) is questionable to return to Monday's game against the Rams, Dan Salomone of the Giants' official site reports.",
           "injDate": "20240501",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "24",
         "pos": "OT",
@@ -102071,7 +101944,7 @@
         "cbsLongName": "Charvarius Ward",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Ward (groin) is questionable to return to Sunday night's contest against the Chiefs, James Boyd of The Athletic reports.",
+          "description": "Sep 21: Ward is dealing with groin tightness after Sunday night's 33-30 overtime loss to the Chiefs, Jake Arthur of Roundtable.io reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -102190,7 +102063,7 @@
         "cbsShortName": "W. Williams",
         "team": "JAX",
         "yahooPlayerID": "42741",
-        "age": "21",
+        "age": "22",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4832922/wesley-williams",
         "yahooLink": "https://sports.yahoo.com/nfl/players/42741",
         "bDay": "9/22/2004",
@@ -102199,10 +102072,10 @@
         "rotoWirePlayerIDFull": "wesley-williams-19537",
         "cbsLongName": "Wesley Williams",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "15",
         "pos": "DE",
@@ -103494,10 +103367,10 @@
         "rotoWirePlayerIDFull": "james-houston-16281",
         "cbsLongName": "James Houston",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "9",
         "pos": "LB",
@@ -103969,7 +103842,7 @@
         "cbsLongName": "Brock Bowers",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Head coach Klint Kubiak described Bowers (knee) as \"very close\" to returning after Sunday's 26-14 win over the Chargers, Adam Schefter of ESPN reports.",
+          "description": "Sep 21: Raiders head coach Klint Kubiak said that Bowers (knee) will practice this week and is gearing up to play Sunday against the Saints, Levi Edwards of the team's official site reports.",
           "injDate": "",
           "designation": "Out"
         },
@@ -104056,10 +103929,10 @@
         "rotoWirePlayerIDFull": "ahmed-hassanein-18678",
         "cbsLongName": "Ahmed Hassanein",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "11",
         "pos": "DE",
@@ -104499,10 +104372,10 @@
         "rotoWirePlayerIDFull": "cj-daniels-19316",
         "cbsLongName": "CJ Daniels",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260927",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "19",
         "pos": "WR",
@@ -104586,10 +104459,10 @@
         "rotoWirePlayerIDFull": "john-williams-18763",
         "cbsLongName": "John Williams",
         "injury": {
-          "injReturnDate": "20260924",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "12",
         "pos": "G",
@@ -104883,7 +104756,7 @@
         "cbsLongName": "Zay Flowers",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "",
+          "description": "Sep 21: Ravens head coach Jesse Minter said Monday that Flowers (hamstring) has a \"good shot\" to play Week 3 in Dallas, Ryan Mink of the Ravens' official site reports.",
           "injDate": "20240501",
           "designation": "Out"
         },
@@ -105310,10 +105183,10 @@
         "rotoWirePlayerIDFull": "bo-melton-15935",
         "cbsLongName": "Bo Melton",
         "injury": {
-          "injReturnDate": "20260924",
-          "description": "Sep 20: Melton is questionable to return to Sunday's game against the Jets due to a stinger.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": ""
         },
         "teamID": "12",
         "pos": "WR",
@@ -105891,7 +105764,7 @@
         "rotoWirePlayerID": "17723",
         "height": "6'2\"",
         "cbsPlayerIDFull": "3123449/tyler-nubin/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4430261",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tyler-nubin.php"
@@ -105971,10 +105844,10 @@
         "rotoWirePlayerIDFull": "jason-pinnock-15532",
         "cbsLongName": "Jason Pinnock",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260927",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "24",
         "pos": "S",
@@ -106383,7 +106256,7 @@
         "rotoWirePlayerID": "15229",
         "height": "5'9\"",
         "cbsPlayerIDFull": "2965372/tutu-atwell",
-        "lastGamePlayed": "20260822_NYG@MIA",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4360797",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tutu-atwell.php"
@@ -107030,7 +106903,7 @@
         "rotoWirePlayerID": "18662",
         "height": "6'1\"",
         "cbsPlayerIDFull": "26702426/josaiah-stewart",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4682983",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/josaiah-stewart.php"
@@ -107290,9 +107163,9 @@
         "cbsLongName": "Dallas Goedert",
         "injury": {
           "injReturnDate": "20260928",
-          "description": "Sep 21: Goedert (knee) is slated to undergo an MRI on Monday after exiting Sunday's 24-20 win over the Titans, Ian Rapoport of NFL Network reports.",
+          "description": "Sep 21: Goedert (knee) was diagnosed Monday with a sprained MCL and is expected to miss a few weeks, Ian Rapoport and Adam Schefter of ESPN report.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Doubtful"
         },
         "teamID": "27",
         "pos": "TE",
@@ -107650,10 +107523,10 @@
         "rotoWirePlayerIDFull": "parker-brailsford-19489",
         "cbsLongName": "Parker Brailsford",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "8",
         "pos": "C",
@@ -108905,7 +108778,7 @@
         "cbsLongName": "T.J. Sanders",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 17: Sanders (knee/illness) is officially listed as inactive for Thursday's game versus the Lions.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -110055,7 +109928,7 @@
           "injReturnDate": "20261011",
           "description": "Aug 31: The Vikings placed Jurgens (undisclosed) on injured reserve with a designation to return Sunday, Rob Kleifield of the team's official site reports.",
           "injDate": "",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "21",
         "pos": "C",
@@ -110133,10 +110006,10 @@
         "rotoWirePlayerIDFull": "keshawn-williams-18841",
         "cbsLongName": "Ke'Shawn Williams",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "7",
         "pos": "WR",
@@ -112789,7 +112662,7 @@
           "injReturnDate": "20261219",
           "description": "Sep 1: The Bears placed Bryant (knee) on injured reserve Tuesday.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "6",
         "pos": "S",
@@ -112939,7 +112812,7 @@
         "rotoWirePlayerID": "17134",
         "height": "6'3\"",
         "cbsPlayerIDFull": "29106475/ethan-evans/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "5125875",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/ethan-evans.php"
@@ -113098,7 +112971,7 @@
         "cbsLongName": "Javon Hargrave",
         "injury": {
           "injReturnDate": "20260924",
-          "description": "Sep 19: Hargrave (concussion/knee) has been ruled out ahead of Sunday's game against the Jets.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -114126,10 +113999,10 @@
         "rotoWirePlayerIDFull": "jamree-kromah-18256",
         "cbsLongName": "Jamree Kromah",
         "injury": {
-          "injReturnDate": "20260928",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "6",
         "pos": "DE",
@@ -114253,10 +114126,10 @@
         "rotoWirePlayerIDFull": "jayden-loving-19747",
         "cbsLongName": "Jayden Loving",
         "injury": {
-          "injReturnDate": "20260928",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "6",
         "pos": "DT",
@@ -114642,10 +114515,10 @@
         "rotoWirePlayerIDFull": "javon-kinlaw-14444",
         "cbsLongName": "Javon Kinlaw",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Head coach Dan Quinn told reporters Monday that Kinlaw will have an MRI for a shoulder injury, JP Finlay of NBC Sports Washington reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "32",
         "pos": "DT",
@@ -114902,7 +114775,7 @@
           "injReturnDate": "20261011",
           "description": "",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "28",
         "pos": "CB",
@@ -115884,7 +115757,7 @@
         "rotoWirePlayerID": "9785",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2129678/shelby-harris",
-        "lastGamePlayed": "20260104_CLE@CIN",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "16837",
         "exp": "12",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/shelby-harris.php"
@@ -116220,10 +116093,10 @@
         "rotoWirePlayerIDFull": "marcellas-dial-17984",
         "cbsLongName": "Marcellas Dial",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "20",
         "pos": "CB",
@@ -116326,7 +116199,7 @@
         "rotoWirePlayerID": "5971",
         "height": "6'3\"",
         "cbsPlayerIDFull": "1114942/matthew-stafford",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "12483",
         "exp": "18",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/matthew-stafford.php"
@@ -117028,7 +116901,7 @@
         "rotoWirePlayerIDFull": "jonathon-cooper-15481",
         "cbsLongName": "Jonathon Cooper",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "20261004",
           "description": "Aug 31: Cooper pleaded not guilty to five charges of domestic violence in a Douglas County (Colo.) courtroom Monday, Jeff Legwold of ESPN.com reports.",
           "injDate": "",
           "designation": "Out"
@@ -117182,7 +117055,7 @@
         "rotoWirePlayerID": "16074",
         "height": "6'2\"",
         "cbsPlayerIDFull": "3176898/jaylen-watson",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4697639",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jaylen-watson.php"
@@ -117257,10 +117130,10 @@
         "rotoWirePlayerIDFull": "leonard-taylor-iii-17726",
         "cbsLongName": "Leonard Taylor III",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "22",
         "pos": "DT",
@@ -120996,7 +120869,7 @@
           "injReturnDate": "20261018",
           "description": "Sep 1: The Panthers placed Christensen (hamstring) on injured reserve Tuesday, Darin Gantt of the team's official site reports.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "5",
         "pos": "G",
@@ -121343,10 +121216,10 @@
         "rotoWirePlayerIDFull": "benjamin-st-juste-15479",
         "cbsLongName": "Benjamin St-Juste",
         "injury": {
-          "injReturnDate": "20260924",
-          "description": "Sep 20: St-Juste (hamstring) is inactive for Sunday's game against the Jets, Mike Spofford of the Packers' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "12",
         "pos": "CB",
@@ -122039,7 +121912,7 @@
           "injReturnDate": "20270215",
           "description": "",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "21",
         "pos": "LB",
@@ -123117,7 +122990,7 @@
         "cbsLongName": "Nico Collins",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 19: Collins may miss two games due to a hamstring injury, Aaron Wilson of KPRC 2 Houston reports.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -123420,7 +123293,7 @@
           "injReturnDate": "20261011",
           "description": "",
           "injDate": "",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "26",
         "pos": "S",
@@ -123773,10 +123646,10 @@
         "rotoWirePlayerIDFull": "ty-simpson-19275",
         "cbsLongName": "Ty Simpson",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Simpson (coach's decision) is inactive but will serve as the Rams' emergency third quarterback for Monday's game against the Giants.",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "19",
         "pos": "QB",
@@ -125170,10 +125043,10 @@
         "rotoWirePlayerIDFull": "josh-johnson-5653",
         "cbsLongName": "Josh Johnson",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Johnson (coach's decision) is inactive for Sunday's game against the Texans.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "7",
         "pos": "QB",
@@ -125465,10 +125338,10 @@
         "rotoWirePlayerIDFull": "kevin-jobity-19976",
         "cbsLongName": "Kevin Jobity Jr.",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "26",
         "pos": "DT",
@@ -126561,10 +126434,10 @@
         "rotoWirePlayerIDFull": "ennis-rakestraw-jr-17720",
         "cbsLongName": "Ennis Rakestraw Jr.",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "20240501",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "11",
         "pos": "CB",
@@ -127150,7 +127023,7 @@
         "cbsLongName": "Claudin Cherelus",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Cherelus (shoulder) has been ruled out for the rest of Sunday's game against the Falcons, Joe Person of The Athletic reports.",
+          "description": "Sep 20: Cherelus (shoulder) is questionable to return to Sunday's game against the Falcons, Mike Kaye of ESPN.com reports.",
           "injDate": "20240501",
           "designation": "Questionable"
         },
@@ -127464,7 +127337,7 @@
         "rotoWirePlayerID": "18581",
         "height": "6'3\"",
         "cbsPlayerIDFull": "28890311/abdul-carter",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4725996",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/abdul-carter.php"
@@ -128412,7 +128285,7 @@
         "yahooLink": "https://sports.yahoo.com/nfl/players/29467",
         "bDay": "4/6/1994",
         "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2976540.png",
-        "isFreeAgent": "True",
+        "isFreeAgent": "False",
         "rotoWirePlayerIDFull": "jalen-mills-11137",
         "cbsLongName": "Jalen Mills",
         "injury": {
@@ -128836,7 +128709,7 @@
         "cbsLongName": "Deane Leonard",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Leonard (abdomen) is inactive for Sunday's game against the Raiders.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -129079,7 +128952,7 @@
         "cbsLongName": "James Williams",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Williams (elbow) is inactive for Sunday's game against the Eagles.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -129391,7 +129264,7 @@
         "rotoWirePlayerID": "17799",
         "height": "6'2\"",
         "cbsPlayerIDFull": "1703029/tyler-davis/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4568217",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/tyler-davis-dt.php"
@@ -129418,10 +129291,10 @@
         "rotoWirePlayerIDFull": "josh-fryar-18929",
         "cbsLongName": "Josh Fryar",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "1",
         "pos": "OT",
@@ -129945,7 +129818,7 @@
           "injReturnDate": "20270215",
           "description": "",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "17",
         "pos": "G",
@@ -130373,10 +130246,10 @@
         "rotoWirePlayerIDFull": "skyler-bell-19251",
         "cbsLongName": "Skyler Bell",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 17: Bell (coach's decision) is inactive for Thursday's game versus Detroit.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "4",
         "pos": "WR",
@@ -130922,7 +130795,7 @@
         "rotoWirePlayerID": "12771",
         "height": "5'9\"",
         "cbsPlayerIDFull": "2130981/braxton-berrios",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "3123075",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/braxton-berrios.php"
@@ -131707,10 +131580,10 @@
         "rotoWirePlayerIDFull": "tanner-koziol-19349",
         "cbsLongName": "Tanner Koziol",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Koziol (coach's decision) is inactive for Sunday's game against the Broncos, John Oehser of the Jaguars' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "15",
         "pos": "TE",
@@ -131882,10 +131755,10 @@
         "rotoWirePlayerIDFull": "kelvin-banks-18762",
         "cbsLongName": "Kelvin Banks Jr.",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Banks (ankle) has been ruled out for the remainder of Sunday's game against the Ravens, Luke Johnson of The New Orleans Times-Picayune reports.",
+          "injReturnDate": "20261129",
+          "description": "Sep 21: Banks is expected to undergo surgery for a high-ankle sprain and is out indefinitely, Ian Rapoport of NFL Network reports.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "23",
         "pos": "OT",
@@ -132236,7 +132109,7 @@
         "cbsLongName": "Caleb Douglas",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Douglas (ankle) is questionable to return to Sunday's game against the 49ers.",
+          "description": "Sep 21: Dolphins head coach Jeff Hafley said Monday that it's \"too early to tell\" the severity of the ankle injury Douglas sustained in Sunday's 35-13 loss to the 49ers, C. Isaiah Smalls II of the Miami Herald reports.",
           "injDate": "",
           "designation": "Questionable"
         },
@@ -132448,10 +132321,10 @@
         "rotoWirePlayerIDFull": "micah-morris-19468",
         "cbsLongName": "Micah Morris",
         "injury": {
-          "injReturnDate": "20260928",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "27",
         "pos": "G",
@@ -132493,10 +132366,10 @@
         "rotoWirePlayerIDFull": "brandon-cisse-19414",
         "cbsLongName": "Brandon Cisse",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260924",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "12",
         "pos": "CB",
@@ -132748,10 +132621,10 @@
         "rotoWirePlayerIDFull": "caleb-tiernan-19454",
         "cbsLongName": "Caleb Tiernan",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "21",
         "pos": "OT",
@@ -132845,7 +132718,7 @@
         "rotoWirePlayerID": "17467",
         "height": "5'9\"",
         "cbsPlayerIDFull": "1113461/xavier-smith/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4386544",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/xavier-smith.php"
@@ -133516,10 +133389,10 @@
         "rotoWirePlayerIDFull": "atonio-mafi-17287",
         "cbsLongName": "Atonio Mafi",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "31",
         "pos": "G",
@@ -133576,7 +133449,7 @@
         "rotoWirePlayerID": "9455",
         "height": "6'1\"",
         "cbsPlayerIDFull": "1893167/davante-adams",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "16800",
         "exp": "13",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/davante-adams.php"
@@ -134628,7 +134501,7 @@
         "rotoWirePlayerID": "18509",
         "height": "6'3\"",
         "cbsPlayerIDFull": "28876817/dominic-zvada",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "5082424",
         "exp": "R",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/dominic-zvada.php"
@@ -134896,7 +134769,7 @@
         "rotoWirePlayerID": "17921",
         "height": "6'0\"",
         "cbsPlayerIDFull": "3162619/harrison-mevis",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4574716",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/harrison-mevis.php"
@@ -135995,7 +135868,7 @@
         "rotoWirePlayerID": "17021",
         "height": "6'6\"",
         "cbsPlayerIDFull": "3162129/theo-johnson/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4429148",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/theo-johnson.php"
@@ -136938,7 +136811,7 @@
         "rotoWirePlayerIDFull": "terrion-arnold-17712",
         "cbsLongName": "Terrion Arnold",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "20261004",
           "description": "Aug 29: Arnold signed a contract with the Seahawks on Saturday.",
           "injDate": "",
           "designation": "Out"
@@ -136988,7 +136861,7 @@
           "injReturnDate": "20270215",
           "description": "",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "6",
         "pos": "DE",
@@ -137301,10 +137174,10 @@
         "rotoWirePlayerIDFull": "avonte-maddox-12683",
         "cbsLongName": "Avonte Maddox",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 18: Maddox left the locker room on crutches and wearing a boot on his injured left foot after Thursday night's loss to the Bills, Justin Rogers of DetroitFootball.net reports.",
+          "injReturnDate": "20270215",
+          "description": "Sep 21: Maddox will undergo season-ending surgery for a left foot injury that he sustained during the Lions' 41-31 loss to the Bills on Thursday, Dave Birkett of the Detroit Free Press reports.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Out"
         },
         "teamID": "11",
         "pos": "CB",
@@ -137671,10 +137544,10 @@
         "rotoWirePlayerIDFull": "ajani-cornelius-18790",
         "cbsLongName": "Ajani Cornelius",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "9",
         "pos": "OT",
@@ -138020,10 +137893,10 @@
         "rotoWirePlayerIDFull": "tyrel-dodson-13512",
         "cbsLongName": "Tyrel Dodson",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Dodson (coach's decision) is inactive for Sunday's game against the Falcons, Darin Gantt of the Panthers' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "5",
         "pos": "LB",
@@ -138060,10 +137933,10 @@
         "rotoWirePlayerIDFull": "will-howard-18512",
         "cbsLongName": "Will Howard",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Howard (coach's decision) is inactive as the Steelers' emergency third quarterback for Sunday's game against the Patriots, Teresa Varley of the team's official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "26",
         "pos": "QB",
@@ -138148,7 +138021,7 @@
         "cbsLongName": "Jayden Reed",
         "injury": {
           "injReturnDate": "20260924",
-          "description": "Sep 20: Coach Matt LaFleur said Reed has movement in all of his extremities after he suffered a neck injury during Sunday's 20-17 overtime win at the Jets, Rob Demovsky of ESPN.com reports.",
+          "description": "Sep 21: The Packers listed Reed (back) as a non-participant on Monday's estimated practice report, Tom Silverstein of the Milwaukee Journal Sentinel reports.",
           "injDate": "20240501",
           "designation": "Questionable"
         },
@@ -139328,10 +139201,10 @@
         "rotoWirePlayerIDFull": "montorie-foster-19119",
         "cbsLongName": "Montorie Foster Jr.",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "29",
         "pos": "WR",
@@ -139857,7 +139730,7 @@
         "cbsShortName": "J. Walley",
         "team": "IND",
         "yahooPlayerID": "41878",
-        "age": "23",
+        "age": "24",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4682909/justin-walley",
         "yahooLink": "https://sports.yahoo.com/nfl/players/41878",
         "bDay": "9/22/2002",
@@ -141795,10 +141668,10 @@
         "rotoWirePlayerIDFull": "kyler-murray-13613",
         "cbsLongName": "Kyler Murray",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Murray has been ruled out for Sunday's game against the Bears, but he's expected to clear concussion protocol next week and is \"on track\" to play Sept. 27 at Tampa Bay, Adam Schefter of ESPN reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "21",
         "pos": "QB",
@@ -142945,7 +142818,7 @@
         "cbsLongName": "Patrick Jones II",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Jones (back) is inactive for Sunday's game against the Falcons, Darin Gantt of the Panthers' official site reports.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -143070,10 +142943,10 @@
         "rotoWirePlayerIDFull": "jc-davis-19479",
         "cbsLongName": "J.C. Davis",
         "injury": {
-          "injReturnDate": "",
+          "injReturnDate": "20260927",
           "description": "",
           "injDate": "",
-          "designation": ""
+          "designation": "Out"
         },
         "teamID": "24",
         "pos": "OT",
@@ -143476,7 +143349,7 @@
         "rotoWirePlayerID": "17345",
         "height": "6'0\"",
         "cbsPlayerIDFull": "3128045/nic-jones",
-        "lastGamePlayed": "20260828_NYG@NYJ",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4427636",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/nic-jones.php"
@@ -143608,7 +143481,7 @@
         "rotoWirePlayerID": "17030",
         "height": "6'6\"",
         "cbsPlayerIDFull": "3123267/davis-allen/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4426553",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/davis-allen.php"
@@ -143635,10 +143508,10 @@
         "rotoWirePlayerIDFull": "austin-ajiake-17301",
         "cbsLongName": "Austin Jackson",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "14",
         "pos": "LB",
@@ -143975,7 +143848,7 @@
         "cbsLongName": "Kamren Kinchens",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 19: Kinchens (hamstring) has been ruled out ahead of Monday's game against the Giants, Benjamin Royer of The Orange County Register reports.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -144024,7 +143897,7 @@
           "injReturnDate": "20270215",
           "description": "Jun 17: The Lions placed Law (knee) on the reserve/injured list Wednesday.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "11",
         "pos": "WR",
@@ -144473,7 +144346,7 @@
           "injReturnDate": "20270215",
           "description": "",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "10",
         "pos": "C",
@@ -144519,7 +144392,7 @@
           "injReturnDate": "20261011",
           "description": "Aug 31: The Falcons placed Bertrand (undisclosed) on injured reserve Monday, Will McFadden of the team's official site reports.",
           "injDate": "20240501",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "2",
         "pos": "LB",
@@ -144832,7 +144705,7 @@
         "cbsLongName": "Christen Miller",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Miller (toe) is inactive for Sunday's game against the Ravens.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -145548,7 +145421,7 @@
           "injReturnDate": "20270215",
           "description": "Aug 31: Zakelj (undisclosed) was placed on the 49ers' injured reserve Sunday.",
           "injDate": "",
-          "designation": "Injured Reserve"
+          "designation": "IR"
         },
         "teamID": "28",
         "pos": "OT",
@@ -145917,7 +145790,7 @@
         "cbsShortName": "C. Bazelak",
         "team": "TB",
         "yahooPlayerID": "42084",
-        "age": "25",
+        "age": "26",
         "espnLink": "https://www.espn.com/nfl/player/_/id/4426444/connor-bazelak",
         "yahooLink": "https://sports.yahoo.com/nfl/players/42084",
         "bDay": "9/22/2000",
@@ -149500,7 +149373,7 @@
           "injReturnDate": "20261011",
           "description": "Aug 31: The Jaguars placed Mekari (back) on injured reserve with a designation to return Sunday.",
           "injDate": "",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "15",
         "pos": "G",
@@ -150412,10 +150285,10 @@
         "rotoWirePlayerIDFull": "brian-burns-13439",
         "cbsLongName": "Brian Burns",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Burns suffered a low-ankle sprain in Monday's 28-6 loss to the Rams, Connor Hughes of SNY.tv reports.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "24",
         "pos": "LB",
@@ -150425,7 +150298,7 @@
         "rotoWirePlayerID": "13439",
         "height": "6'5\"",
         "cbsPlayerIDFull": "2253012/brian-burns",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4035631",
         "exp": "8",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/brian-burns.php"
@@ -150528,10 +150401,10 @@
         "rotoWirePlayerIDFull": "romello-height-19373",
         "cbsLongName": "Romello Height",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Height will undergo hand surgery Tuesday, David Lombardi of SFStandard.com reported Monday.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "28",
         "pos": "DE",
@@ -151629,10 +151502,10 @@
         "rotoWirePlayerIDFull": "ephesians-prysock-19588",
         "cbsLongName": "Ephesians Prysock",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "28",
         "pos": "CB",
@@ -151716,10 +151589,10 @@
         "rotoWirePlayerIDFull": "myles-hinton-18785",
         "cbsLongName": "Myles Hinton",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "7",
         "pos": "OT",
@@ -153122,7 +152995,7 @@
         "rotoWirePlayerID": "17775",
         "height": "6'5\"",
         "cbsPlayerIDFull": "2964525/braden-fiske/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4362245",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/braden-fiske.php"
@@ -153197,10 +153070,10 @@
         "rotoWirePlayerIDFull": "haynes-king-19429",
         "cbsLongName": "Haynes King",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: King (coach's decision) is inactive but serving as the Panthers' emergency third quarterback Sunday against the Falcons, Darin Gantt of the team's official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "5",
         "pos": "QB",
@@ -155602,7 +155475,7 @@
         "rotoWirePlayerID": "15247",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2829825/grant-stuard",
-        "lastGamePlayed": "20260104_DET@CHI",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4240255",
         "exp": "6",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/grant-stuard.php"
@@ -155821,7 +155694,7 @@
         "rotoWirePlayerID": "12492",
         "height": "5'11\"",
         "cbsPlayerIDFull": "2925442/poona-ford",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "3125114",
         "exp": "9",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/poona-ford.php"
@@ -155901,10 +155774,10 @@
         "rotoWirePlayerIDFull": "caelen-carson-17759",
         "cbsLongName": "Caelen Carson",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "20240501",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "9",
         "pos": "CB",
@@ -157669,7 +157542,7 @@
         "rotoWirePlayerID": "18690",
         "height": "6'3\"",
         "cbsPlayerIDFull": "3169617/ty-hamilton",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4431118",
         "exp": "2",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/ty-hamilton.php"
@@ -158532,10 +158405,10 @@
         "rotoWirePlayerIDFull": "justin-joly-19276",
         "cbsLongName": "Justin Joly",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "20",
         "pos": "TE",
@@ -158591,7 +158464,7 @@
         "rotoWirePlayerID": "16146",
         "height": "6'1\"",
         "cbsPlayerIDFull": "2874690/quentin-lake/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4249128",
         "exp": "5",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/quentin-lake.php"
@@ -158791,10 +158664,10 @@
         "rotoWirePlayerIDFull": "malik-nabers-17704",
         "cbsLongName": "Malik Nabers",
         "injury": {
-          "injReturnDate": "",
-          "description": "",
+          "injReturnDate": "20260927",
+          "description": "Sep 21: Nabers brought in one of four targets for one yard in the Giants' 28-6 loss to the Rams on Monday night.",
           "injDate": "",
-          "designation": ""
+          "designation": "Questionable"
         },
         "teamID": "24",
         "pos": "WR",
@@ -158804,7 +158677,7 @@
         "rotoWirePlayerID": "17704",
         "height": "6'0\"",
         "cbsPlayerIDFull": "26697761/malik-nabers/",
-        "lastGamePlayed": "20260913_DAL@NYG",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4595348",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/malik-nabers.php"
@@ -159105,10 +158978,10 @@
         "rotoWirePlayerIDFull": "zach-wilson-15330",
         "cbsLongName": "Zach Wilson",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Wilson (coach's decision) is inactive but will serve as the Saints' emergency third quarterback against the Ravens on Sunday.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "23",
         "pos": "QB",
@@ -159379,7 +159252,7 @@
         "rotoWirePlayerID": "17157",
         "height": "6'2\"",
         "cbsPlayerIDFull": "2864982/kobie-turner/",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4250621",
         "exp": "4",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/kobie-turner.php"
@@ -159571,10 +159444,10 @@
         "rotoWirePlayerIDFull": "elijah-simmons-18701",
         "cbsLongName": "Elijah Simmons",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "30",
         "pos": "DT",
@@ -159779,10 +159652,10 @@
         "rotoWirePlayerIDFull": "brady-cook-18482",
         "cbsLongName": "Brady Cook",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Cook (coach's decision) is inactive as the Dolphins' emergency third quarterback for Sunday's game against the 49ers.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "20",
         "pos": "QB",
@@ -159872,10 +159745,10 @@
         "rotoWirePlayerIDFull": "quinn-ewers-18505",
         "cbsLongName": "Quinn Ewers",
         "injury": {
-          "injReturnDate": "20260927",
-          "description": "Sep 20: Ewers (coach's decision) is inactive for Sunday's game against the Broncos, John Oehser of the Jaguars' official site reports.",
+          "injReturnDate": "",
+          "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "15",
         "pos": "QB",
@@ -160279,9 +160152,9 @@
         "cbsLongName": "Alec Pierce",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Pierce is set for further tests on his left heel Monday, but X-rays returned negative after he exited Sunday's game against the Chiefs in the first half, Jeremy Fowler of ESPN reports.",
+          "description": "Sep 21: Pierce (heel) will try to rehab his injured left heel without surgery and could return around midseason if all goes well, Ian Rapoport of NFL Network reports.",
           "injDate": "",
-          "designation": "Questionable"
+          "designation": "Doubtful"
         },
         "teamID": "14",
         "pos": "WR",
@@ -160450,7 +160323,7 @@
           "injReturnDate": "20261011",
           "description": "Aug 31: The Bengals placed Taylor (undisclosed) on injured reserve Sunday with a designation to return, Geoff Hobson of the team's official site reports.",
           "injDate": "20240501",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "7",
         "pos": "CB",
@@ -161827,7 +161700,7 @@
         "cbsLongName": "Blake Miller",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 16: Miller (knee) has been ruled out for Thursday night's contest in Buffalo.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -162245,7 +162118,7 @@
         "cbsLongName": "Aidan O'Connell",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 19: O'Connell (personal) has been ruled out ahead of Sunday's game against the Chargers, Paul Gutierrez of Raiders.com reports.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -162573,52 +162446,6 @@
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/jahmyr-gibbs.php"
       },
       {
-        "espnID": "4242283",
-        "espnName": "Rashawn Slater",
-        "sleeperBotID": "7639",
-        "fantasyProsPlayerID": "20143",
-        "lastName": "Slater",
-        "espnIDFull": "4242283/rashawn-slater",
-        "fRefID": "SlatRa00",
-        "firstName": "Rashawn",
-        "weight": "315",
-        "jerseyNum": "70",
-        "draftInfo": {
-          "round": "1",
-          "pick": "13",
-          "year": "2021",
-          "teamID": "18"
-        },
-        "team": "LAC",
-        "yahooPlayerID": "33401",
-        "age": "27",
-        "espnLink": "https://www.espn.com/nfl/player/_/id/4242283/rashawn-slater",
-        "yahooLink": "https://sports.yahoo.com/nfl/players/33401",
-        "bDay": "3/26/1999",
-        "espnHeadshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4242283.png",
-        "isFreeAgent": "False",
-        "rotoWirePlayerIDFull": "rashawn-slater-15177",
-        "cbsLongName": "Rashawn Slater",
-        "injury": {
-          "injReturnDate": "",
-          "description": "",
-          "injDate": "",
-          "designation": ""
-        },
-        "teamID": "18",
-        "pos": "OT",
-        "school": "Northwestern",
-        "cbsPlayerID": "2835704",
-        "longName": "Rashawn Slater",
-        "rotoWirePlayerID": "15177",
-        "height": "6'4\"",
-        "cbsPlayerIDFull": "2835704/rashawn-slater/",
-        "lastGamePlayed": "20240922_LAC@PIT",
-        "playerID": "4242283",
-        "exp": "6",
-        "fantasyProsLink": "https://www.fantasypros.com/nfl/players/rashawn-slater.php"
-      },
-      {
         "espnID": "4594321",
         "espnName": "Kaleb Elarms-Orr",
         "sleeperBotID": "13488",
@@ -162695,7 +162522,7 @@
         "cbsLongName": "DJ Giddens",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 20: Giddens (knee) is inactive for Sunday night's matchup with the Chiefs.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -164853,7 +164680,7 @@
         "rotoWirePlayerID": "17914",
         "height": "6'1\"",
         "cbsPlayerIDFull": "3122472/omar-speights",
-        "lastGamePlayed": "20260910_SF@LAR",
+        "lastGamePlayed": "20260921_NYG@LAR",
         "playerID": "4428550",
         "exp": "3",
         "fantasyProsLink": "https://www.fantasypros.com/nfl/players/omar-speights.php"
@@ -164934,7 +164761,7 @@
         "cbsLongName": "Ty Johnson",
         "injury": {
           "injReturnDate": "20260927",
-          "description": "Sep 17: Johnson (hamstring) is listed as inactive Thursday against the Lions.",
+          "description": "",
           "injDate": "",
           "designation": "Out"
         },
@@ -164982,7 +164809,7 @@
           "injReturnDate": "20261011",
           "description": "Aug 31: The Commanders placed McNichols (quadriceps) on injured reserve with a designation to return Sunday, Zach Selby of the team's official site reports.",
           "injDate": "",
-          "designation": "Injured Reserve - Designated to Return"
+          "designation": "IR"
         },
         "teamID": "32",
         "pos": "RB",
@@ -165989,10 +165816,10 @@
         "rotoWirePlayerIDFull": "justin-jefferson-19547",
         "cbsLongName": "Justin Jefferson",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "8",
         "pos": "LB",
@@ -166501,10 +166328,10 @@
         "rotoWirePlayerIDFull": "decamerion-richardson-17983",
         "cbsLongName": "Decamerion Richardson",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "23",
         "pos": "CB",
@@ -167196,10 +167023,10 @@
         "rotoWirePlayerIDFull": "mike-morris-16861",
         "cbsLongName": "Mike Morris",
         "injury": {
-          "injReturnDate": "20260927",
+          "injReturnDate": "",
           "description": "",
           "injDate": "",
-          "designation": "Out"
+          "designation": ""
         },
         "teamID": "29",
         "pos": "DE",
